@@ -1,0 +1,33 @@
+/*
+ *
+ * FOOTER STYLES
+ *
+ */
+
+
+/*******************************
+CONTACT INFORMATION 
+*******************************/
+.footer-wrap {
+	.widget {
+		display:block;
+		width:100%;
+		text-align: center;
+	}
+}
+
+
+/*******************************
+SOCIAL LINKS 
+*******************************/
+
+
+
+
+/*******************************
+COPYRIGHT
+*******************************/
+.copyright {
+	@include font-size(14);
+	text-align: center;
+}

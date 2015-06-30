@@ -1,0 +1,125 @@
+/*
+ *
+ * TYPOGRAPHY
+ *
+ * Variables: font-family, font-size, colors
+ */
+
+
+/*******************************
+BODY TEXT
+*******************************/
+body {
+	@include sans-serif;
+	color: site-color('text');
+	line-height: baseline(1);
+}
+
+// HEADINGS
+h1, h2, h3, h4, h5, h6 {
+	@include serif;
+	margin: baseline(0.5) 0;
+}
+h1 {
+	
+}
+h2 {
+	
+}
+h3 {
+	
+}
+h4 {
+	
+}
+h5 {
+	
+}
+h6 {
+	
+}
+
+
+// PARAGRAPH
+p {
+	margin-bottom: baseline(1);
+}
+
+
+// FORMATTING
+.normal { // Font weight normal
+	font-weight: normal;
+}
+b, .bold { // Font weight bold
+	font-weight: bold;
+}
+i, .italic { // Font style italic
+	font-style: italic;
+}
+.uppercase { // Letters uppercase
+	text-transform: uppercase; 
+}
+.capitalize { // Capitalize word
+	text-transform: capitalize;
+}
+
+
+/*******************************
+BLOCKQUOTE
+*******************************/
+blockquote {
+	color: site-color('foreground');
+	font-style: italic;
+	padding:0 1em;
+	margin-bottom: baseline(1);
+	border-left: 2px solid site-color('foreground');
+	cite {
+		width: 100%;
+		text-align: right;
+		display: block;
+	}
+}
+
+
+/*******************************
+FIGURE CAPTION
+*******************************/
+figcaption {
+	color: site-color('foreground');
+	font-style: italic;
+}
+
+
+/*******************************
+DEFINITION LIST
+*******************************/
+dt { // Term
+	@extend .bold;
+}
+dd { // Defined
+	@extend .italic;
+}
+
+
+/*******************************
+HORIZONTAL RULE
+*******************************/
+hr {
+	border-bottom:4px solid site-color('foreground');
+}
+
+
+/*******************************
+SELECTED TEXT
+*******************************/
+::selection { 
+	background: site-color-alpha('primary','dark'); 
+}
+
+
+/*******************************
+SCREEN READER TEXT 
+*******************************/
+.screen-reader-text {
+	display: none;
+}

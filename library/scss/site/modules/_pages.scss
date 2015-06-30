@@ -1,0 +1,67 @@
+/*
+ *
+ * PAGE STYLES
+ *
+ */
+
+
+/*******************************
+BLOG
+*******************************/
+// BLOG ARCHIVE LIST
+.block-thumb {
+	.b-inner {
+		@include clearfix;
+	}
+	.b-thumb {
+		@include column(3);
+	}
+	.b-text {
+		@include column(9);
+	}
+	.b-title {
+		
+	}
+}
+
+.block-headline {
+	text-decoration: none;
+}
+
+.block-hero {
+	.b-thumb {
+		@include column(12);
+	}
+}
+
+.block-inset {
+	.b-thumb {
+		
+	}
+	.b-text {
+		background: black;
+		margin-top: baseline(-4);
+		padding-left:1em;
+		position: relative;
+		z-index: 10;
+	}
+}
+
+// AUTHOR INFORMATION
+.byline { // Author name
+	@include font-size(14);
+}
+
+// COMPANY INFORMATION
+.vcard {
+	@include font-size(16);
+	.org { // Company name
+		font-weight: bold;
+	}
+	.adr { // Company address
+		
+	}
+	.tel { // Company telephone
+	
+	}
+}
