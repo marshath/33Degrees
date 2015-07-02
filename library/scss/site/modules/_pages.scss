@@ -6,6 +6,107 @@
 
 
 /*******************************
+PANELS
+*******************************/
+.panel {
+	@include clearfix;
+	
+	// HOME PAGE
+	&__home1 {
+		background: linear-gradient(to bottom, site-color('header') 0%, #1c526c 50%, #00a7bf 100%);
+		color: site-color('white');
+	}
+	&__home2 {
+	}
+	&__home3 {
+		background-color: site-color('background');
+	}
+	&__home4 {
+	}
+	
+	// PROJECTS & ABOUT
+	&__projects1, &__about1 {
+		background: #cfe1e5;
+	}
+	&__projects2, &__about2 {
+	}
+	&__projects3, &__about3 {
+		background-color: site-color('background');
+	}
+	&__projects4, &__about4 {
+	}
+}
+
+
+/*******************************
+COLUMNS
+*******************************/
+.services, .testimonials, .blogposts, .projects {
+	padding:0;
+	text-align: center;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+	align-content: space-between;
+	justify-content: space-around;
+	li {
+		list-style: none;
+		flex-grow: 1;
+	}
+}
+@include bp('tablet-h') {
+	// Services
+	.services {
+		li {
+			width: 33%;
+		}
+	}
+	
+	// Testimonials
+	.testimonials {
+		li {
+		}
+	}
+	
+	// Blogposts
+	.blogposts {
+		li {
+			width: 50%;
+			max-width: 600px;
+		}
+	}
+	
+	// Projects
+	.projects {
+		li {
+			width: 33%;
+		}
+	}
+}
+@include bp('television') {
+	// Projects
+	.projects {
+		li {
+			width: 10%;
+		}
+	}
+}
+
+
+
+/*******************************
+HOMEPAGE
+*******************************/
+
+
+/*******************************
+ABOUT
+*******************************/
+
+
+
+
+/*******************************
 BLOG
 *******************************/
 // BLOG ARCHIVE LIST

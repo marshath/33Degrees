@@ -14,6 +14,15 @@ HEADER
 	margin-top: baseline(1);
 	margin-left: 2em;
 	text-align: center;
+	@include bp('tablet-h') {
+		margin-left: 5%;
+	}
+	@include bp('laptop') {
+		margin-left: 6%;
+	}
+	@include bp('television') {
+		margin-left: 9%;
+	}
 }
 .site-title {
 	@extend .screen-reader-text;

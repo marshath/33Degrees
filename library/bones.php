@@ -249,6 +249,7 @@ function bones_related_posts() {
 	echo '</ul>';
 } /* end bones related posts function */
 
+
 /*********************
 PAGE NAVI
 *********************/
@@ -274,6 +275,12 @@ function bones_page_navi() {
 	echo '</nav>';
 } /* end page navi */
 
+add_filter( 'the_content_more_link', 'modify_read_more_link' );
+function modify_read_more_link() {
+return '<a class="more-link" href="' . get_permalink() . '">Your Read More Link Text</a>';
+}
+
+
 /*********************
 RANDOM CLEANUP ITEMS
 *********************/
@@ -287,7 +294,7 @@ function bones_filter_ptags_on_images($content){
 function bones_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...	<a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'bonestheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
+	return '...	<a class="moretag" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'bonestheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Continue Reading <span class="screen-reader-text"><em>', 'bonestheme' ) . esc_attr( get_the_title( $post->ID ) ).'</em></span></a>';
 }
 
 ?>

@@ -7,13 +7,13 @@
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'article-wrap' ); ?> role="article">
+							<article id="post-<?php the_ID(); ?>" <?php post_class( 'inner-wrap' ); ?> role="article">
 
 								<header class="article-header">
 
 									<h1 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									<p class="byline vcard">
-										<?php printf( __( 'Posted %1$s by %2$s', 'bonestheme' ),
+										<?php printf( __( '%2$s on %1$s', 'bonestheme' ),
 											/* the time the post was published */
 											'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 											/* the author of the post */
@@ -24,14 +24,14 @@
 								</header>
 
 								<section class="entry-content">
-									<?php the_content(); ?>
+									<?php the_excerpt(); ?>
 								</section>
 
 								<footer class="article-footer">
 									<p class="footer-comment-count">
 										<?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?>
 									</p>
-									<?php printf( '<p class="footer-category">' . __('filed under', 'bonestheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
+									<?php printf( '<p class="footer-category">' . __('Category', 'bonestheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
 									<?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 								</footer>
 

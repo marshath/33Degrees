@@ -15,7 +15,9 @@ body {
 BACKGROUND WRAPS 
 *******************************/
 .wrap,
-.page-wrap {
+.page-wrap,
+article,
+section {
 	width:100%;
 	display:block;
 	@include clearfix;
@@ -42,15 +44,14 @@ HEADER
 *******************************/
 .header-wrap {
 	background-color: site_color('header');
-	margin-bottom: baseline(0.5);
 }
 
 
 /*******************************
 MAIN 
 *******************************/
-.main-wrap, sidebar {
-	margin-bottom: baseline(1);
+section, sidebar {
+	margin-bottom: baseline(1) !important;
 }
 
 
