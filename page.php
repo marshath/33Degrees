@@ -3,11 +3,11 @@
 			<div id="content">
 				<div id="inner-content" class="wrap">
 
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap inner-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<article id="post-<?php the_ID(); ?>" <?php post_class( 'inner-wrap' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+						<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 							<header class="article-header">
 

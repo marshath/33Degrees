@@ -3,7 +3,7 @@
 			<div id="content">
 				<div id="inner-content" class="wrap">
 
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap inner-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						
 						<div class="inner-wrap breadcrumb"><a href="<?php echo home_url(); ?>/blog/" title="Back to blog">‹ Our Blog</a></div>
 
@@ -26,7 +26,7 @@
 
 						<?php else : ?>
 
-							<article id="post-not-found" class="inner-wrap">
+							<article id="post-not-found" class="">
 								<header class="article-header">
 									<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 								</header>
@@ -40,7 +40,7 @@
 
 						<?php endif; ?>
 
-					</main> <?php // #main .main-wrap ?>
+					</main> <?php // #main .main-wrap .inner-wrap ?>
 
 					<?php get_sidebar(); ?>
 

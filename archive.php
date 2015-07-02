@@ -75,7 +75,7 @@
 									<?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Topics:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 								</footer>
 
-							</article> <?php // end #post-<id> .article-wrap ?>
+							</article> <?php // end #post-<id> ?>
 
 						<?php endwhile; ?>
 
@@ -83,7 +83,7 @@
 
 						<?php else : ?>
 
-							<article id="post-not-found" class="inner-wrap">
+							<article id="post-not-found" class="">
 								<header class="article-header">
 									<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 								</header>
@@ -93,7 +93,7 @@
 								<footer class="article-footer">
 									<p><?php _e( 'This is the error message in the archive.php template.', 'bonestheme' ); ?></p>
 								</footer>
-							</article> <?php // end #post-not-found .inner-wrap ?>
+							</article> <?php // end #post-not-found ?>
 
 						<?php endif; ?>
 

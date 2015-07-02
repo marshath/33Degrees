@@ -8,7 +8,7 @@
 								*/
 							?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('inner-wrap'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+							<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 								
 								<figure>
 				                    <?php the_post_thumbnail(); ?>
@@ -80,4 +80,4 @@
 
 								<?php comments_template(); ?>
 
-							</article> <?php // end #post-<id> .article-wrap ?>
+							</article> <?php // end #post-<id> ?>
