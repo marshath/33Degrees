@@ -4,6 +4,8 @@
 				<div id="inner-content" class="wrap">
 
 					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						
+						<div class="inner-wrap breadcrumb"><a href="<?php echo home_url(); ?>/blog/" title="Back to blog">‹ Our Blog</a></div>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

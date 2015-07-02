@@ -39,6 +39,8 @@
 
 		<?php // Default locations for footer loading plugins is library/js/scripts
 			// all js scripts are loaded in library/bones.php ?>
+			<?php // Go to www.addthis.com/dashboard to customize your tools ?>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51b3d7b12af9a97b" async="async"></script>
 		<?php wp_footer(); ?>
 
 	</body>
