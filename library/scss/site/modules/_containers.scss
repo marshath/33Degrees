@@ -50,8 +50,8 @@ HEADER
 /*******************************
 MAIN 
 *******************************/
-section, sidebar {
-	margin-bottom: baseline(1) !important;
+main {
+	margin-bottom: baseline(3);
 }
 
 
@@ -69,7 +69,6 @@ FOOTER
 .footer-wrap {
 	background-color: site_color('footer');
 	color: site_color('white');
-	padding-top: baseline(2);
 	border-top: baseline(0.5) solid site_color('accent');
 }
 
