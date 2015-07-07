@@ -123,5 +123,11 @@ jQuery(document).ready(function($) {
 		$("#menu-header").slideToggle();
 		$(this).toggleClass("active");
 	});
-
-}); /* end of as page load scripts */
+	
+	/* 
+	 * This loads the email signup toggle
+	 */
+	$("#email-toggle").on("click", function(){
+		$("#email-signup").slideToggle();
+		$(this).toggleClass("active");
+	});}); /* end of as page load scripts */

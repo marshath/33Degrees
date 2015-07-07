@@ -3,7 +3,7 @@
 			<div id="content">
 				<div id="inner-content" class="wrap">
 
-					<main id="main" class="main-wrap inner-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap inner-wrap col2-3" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						
 						<?php // Display Blog page content
 						$id=62; // set page id

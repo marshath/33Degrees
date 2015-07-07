@@ -7,7 +7,7 @@
 
 .pdx {
 	text-align: center;
-	margin-top: - baseline(2.5);
+	margin-top: - baseline(2.5); // moves the pdx icon over the .footer border
 	img {
 		max-width: 128px;
 	}
@@ -22,6 +22,7 @@
 CONTACT INFORMATION 
 *******************************/
 .footer-wrap {
+	margin-top: baseline(3.5);  // moves the footer down to compensate for .pdx
 	.widget {
 		width:100%;
 		text-align: center;

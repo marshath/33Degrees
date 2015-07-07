@@ -37,7 +37,7 @@
 		<div id="container" class="page-wrap">
 
 			<header class="header-wrap" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-				<div id="inner-header" class="inner-wrap">
+				<div id="inner-header" class="inner-wrap inner-header-wrap">
 
 					<?php // Compnay logo or text ?>
 					<div id="logo" class="header-logo" itemscope itemtype="http://schema.org/Organization">
@@ -57,7 +57,7 @@
 					<nav class="nav-header" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						
 						<?php // mobile menu toggle ?>
-						<h3 id="menu-toggle"><a href="#"><span class="menu-icon" aria-hidden="true" data-icon="&#xe000;"></span> <span class="menu-text">Menu</span></a></h3>
+						<h3 id="menu-toggle"><a href="#">Menu</a></h3>
 						
 						<?php // menu items ?>
 						<div id="nav-menu">
