@@ -27,56 +27,74 @@ HEADER & FOOTER NAVIGATION
 	li {
 		width:100%;
 		flex-grow: 1;
+		&.current-menu-item {
+			border: 4px solid rgba(255,255,255,0.6);
+			a {
+				color: site-color('accent');
+			}
+		}
 	}
 	a {
 		color: site_color('white');
 		text-decoration: none;
 		padding: baseline(1) 0;
 		display:block;
-		&:hover, &:focus {
-			background: rgba(255,255,255,0.6);
-		}
+	}
+}
+
+// nav border & transition
+.nav-header li, .nav-footer li, .nav-header h3 {
+	border: 4px solid rgba(255,255,255,0.0);
+	@include border-radius(3);
+	transition: all 0.5s ease;
+	&:hover, &:focus {
+		border: 4px solid rgba(255,255,255,0.6);
 	}
 }
 
 .nav-header {
 	h3 { // is the 'menu-toggle'
+		width:30%;
 		text-align: center;
+		margin-left: 70%;
+		margin-top:-(baseline(3));
+		margin-bottom: baseline(1);
 	}
 	ul {
 		display: none; // hides the navigation, until the 'menu-toggle' is clicked
+		margin-bottom: baseline(0.5);
 	}
-	li {
-	}
-	a {
-	}
-	.active ul {
-		display: flex; // shows the navigation, when the 'menu-toggle' is clicked
-	}
-	@include bp('tablet-v') {
+	@include bp('tablet-h') {
+		flex-flow: row wrap;
+		justify-content: flex-end;
 		ul {
-			display: flex; // shows the navigation
-			flex-flow: row wrap; // format as a row
+			display: flex; // shows the navigation=
+			margin-top: -(baseline(3));
+			margin-bottom: baseline(1);
 		}
-		li {
-			width: auto; // reduces the width from 100%;
+		a {
+			padding: baseline(1) 1em;
 		}
 	}
 }
 
 .nav-footer {
-	ul {
-	}
 	li {
+		background-color: site-color-darken('primary'.2);
 	}
-	a {
-	}
-	@include bp('tablet-v') {
+}
+
+@include bp('tablet-v') {
+	.nav-header, .nav-footer {
 		ul {
 			flex-flow: row wrap; // format as a row
 		}
 		li {
 			width: auto; // reduces the width from 100%;
+			margin-left:1em;
+			&:last-child {
+				margin-right: 1em;
+			}
 		}
 	}
 }

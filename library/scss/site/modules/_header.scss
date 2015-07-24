@@ -10,15 +10,28 @@ HEADER
 *******************************/
 .header-logo {
 	width:30%;
-	max-width: 260px;
+	max-width: 166px;
 	margin-top: baseline(1);
+	margin-left: 2em;
 	text-align: center;
+	@include bp('tablet-h') {
+		margin-left: 5%;
+	}
+	@include bp('laptop') {
+		margin-left: 6%;
+	}
+	@include bp('television') {
+		margin-left: 9%;
+	}
+}
+.site-title {
+	@extend .screen-reader-text;
 }
 
 
 #menu-toggle { // toggles the menu visibity for mobile
 	display: block;
-	@include bp('tablet-v') {
-		display: none;
+	@include bp('tablet-h') {
+		display:none;
 	}
 }

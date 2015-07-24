@@ -1,4 +1,4 @@
-/*
+	/*
  *
  * CONTAINERS
  *
@@ -15,9 +15,11 @@ body {
 BACKGROUND WRAPS 
 *******************************/
 .wrap,
-.page-wrap {
+.page-wrap,
+section {
 	width:100%;
 	display:block;
+	margin: 0 auto;
 	@include clearfix;
 }
 .page-wrap {
@@ -25,15 +27,25 @@ BACKGROUND WRAPS
 }
 
 .header-wrap,
-.main-wrap,
 .footer-wrap {
 	width:100%;
 	@include clearfix;
 }
 
 .inner-wrap,
-.sidebar {
+.sidebar,
+.col2-3 {
 	@include column(12);
+}
+
+// BREAKPOINT TABLET HORIZONTAL
+@include bp('tablet-h') {
+	.sidebar {
+		@include column(4);
+	}
+	.col2-3 {
+		@include column(8);
+	}
 }
 
 
@@ -42,23 +54,13 @@ HEADER
 *******************************/
 .header-wrap {
 	background-color: site_color('header');
-	margin-bottom: baseline(0.5);
 }
 
 
 /*******************************
 MAIN 
 *******************************/
-.main-wrap, sidebar {
-	margin-bottom: baseline(1);
-}
-
-
-/*******************************
-SIDEBAR 
-*******************************/
-.sidebar {
-	margin-bottom: baseline(1);
+main {
 }
 
 
@@ -68,7 +70,5 @@ FOOTER
 .footer-wrap {
 	background-color: site_color('footer');
 	color: site_color('white');
-	padding-top: baseline(2);
 	border-top: baseline(0.5) solid site_color('accent');
 }
-

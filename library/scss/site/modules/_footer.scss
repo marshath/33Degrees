@@ -5,14 +5,44 @@
  */
 
 
+.pdx {
+	text-align: center;
+	margin-top: - baseline(2.5); // moves the pdx icon over the .footer border
+	img {
+		max-width: 128px;
+	}
+	p {
+		@include font-size(12);
+		margin-top: 0;
+	}
+}
+
+
 /*******************************
 CONTACT INFORMATION 
 *******************************/
 .footer-wrap {
+	margin-top: baseline(3.5);  // moves the footer down to compensate for .pdx
 	.widget {
-		display:block;
 		width:100%;
 		text-align: center;
+		line-height: baseline(1);
+		margin-bottom: baseline(2);
+		p {
+			display:flex;
+			justify-content: center;
+			align-content: center;
+			flex-flow: row wrap;
+		}
+		span {
+			width: 100%;
+			margin: 0 1em;
+		}
+		@include bp('tablet-v') {
+			span {
+				width:auto;
+			}
+		}
 	}
 }
 
@@ -20,7 +50,23 @@ CONTACT INFORMATION
 /*******************************
 SOCIAL LINKS 
 *******************************/
-
+.social {
+	text-align: center;
+	h3 {
+		margin: baseline(1) 0 0;
+	}
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		padding: 0;
+		margin-top: 0;
+	}
+	li {
+		padding: baseline(1) 1em;
+	}
+}
 
 
 

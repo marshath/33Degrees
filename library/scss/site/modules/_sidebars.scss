@@ -5,6 +5,83 @@
  */
 
 
+.sidebar { // column width controled in _containers.scss
+	margin-top: baseline(2); // moves sidebar down to align with first paragraph
+	&__email-marketing {
+		
+	}
+	&__social {
+		
+	}
+	&__blog-posts {
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		li {
+			&:hover, &:focus {
+				figcaption {
+					bottom: baseline(1);
+				}
+				.side-moretag {
+					opacity: 1;
+					margin-left: 0;
+				}
+			}
+			
+		}
+		a {
+			color: site_color('white');
+		}
+		figure {
+			display: block;
+			position: relative;
+			overflow: hidden;
+			margin-bottom: baseline(1);
+		}
+		figcaption {
+			background: rgba(0,0,0,0.8);
+			width:100%;
+			display: block;
+			position: absolute;
+			bottom: - baseline(1);
+			padding: baseline(0.25) 0.5em;
+			transition: all 0.2s ease;
+		}
+	}
+	&__search {
+		margin-bottom: baseline(1);
+		@include clearfix;
+	}
+	&__categories {
+		
+	}
+}
+
+.single .sidebar {
+}
+
+.side-moretag {
+	color: site_color('primary');
+	text-decoration: underline;
+	margin-left: 1em;
+	opacity: 0;
+	transition: all 0.2s ease-in;
+}
+
+
 /*******************************
-SOCIAL MEDIA SHARE LINKS 
+SOCIAL MEDIA LINKS 
 *******************************/
+.social-media-links {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-content: space-between;
+}
+
+.mc-form { // email signup form, gets display visible from js .active toggle
+	display: none;
+}

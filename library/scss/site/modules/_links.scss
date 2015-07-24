@@ -12,5 +12,6 @@ a {
 	color: site-color('primary');
 	&:hover {
 		color: site-color-lighten('primary',2);
+		text-decoration: none;
 	}
 }
