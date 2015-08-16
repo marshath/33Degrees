@@ -6,7 +6,7 @@
 							srcset="<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx.png 1x,
 							<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx@2x.png 2x"
 							alt="Portland, Oregon">
-						<p>45.5200&deg; N, 122.6819&deg; W</p>
+						<p>45.5424&deg; N, -122.6544&deg; W</p>
 					</div>
 					
 					<?php if ( is_active_sidebar( 'footer1' ) ) : ?>
@@ -23,14 +23,13 @@
 					<?php endif; ?>
 					
 					<div class="social">
-						<h3>Follow <a href="http://twitter.com/#!/33degreesds">@33degreesDS</a></h3>
 						<ul>
-							<li class="facebook"><a href="http://www.facebook.com/33degreesds">Facebook</a></li>
-							<li class="twitter"><a href="http://twitter.com/#!/33degreesds">Twitter</a></li>
-							<li class="google"><a href="http://plus.google.com/b/116366458762606663946/">Google Plus</a></li>
-							<li class="rss"><a href="http://33degreesds.com/feed/">RSS</a></li>
-							<li class="email"><a href="http://mailchimp.com">Email</a></li>
-							<li class="linkedin"><a href="http://linkedin.com/company/33-degrees-design-studio">LinkedIn</a></li>
+							<li class="facebook"><a href="http://www.facebook.com/33degreesds"><svg><use xlink:href="#icon-facebook"></use></svg></a></li>
+							<li class="twitter"><a href="http://twitter.com/#!/33degreesds"><svg><use xlink:href="#icon-twitter" /></svg></a></li>
+							<li class="google"><a href="http://plus.google.com/b/116366458762606663946/" class="social__icon"><svg class="social__google"><use xlink:href="#icon-google" /></svg></a></li>
+							<li class="rss"><a href="http://33degreesds.com/feed/" class="social__icon"><svg class="social__rss"><use xlink:href="#icon-rss" /></svg></a></li>
+							<li class="email"><a href="http://mailchimp.com" class="social__icon"><svg class="social__email"><use xlink:href="#icon-email" /></svg></a></li>
+							<li class="linkedin"><a href="http://linkedin.com/company/33-degrees-design-studio" class="social__icon"><svg class="social__linkedin"><use xlink:href="#icon-linkedin" /></svg></a></li>
 						</ul>
 					</div>
 	

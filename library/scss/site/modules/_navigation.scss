@@ -27,8 +27,10 @@ HEADER & FOOTER NAVIGATION
 	li {
 		width:100%;
 		flex-grow: 1;
+		text-shadow: 1px 2px 1px site_color('black');
+		box-shadow: 0 0 0em site_color('white');
 		&.current-menu-item {
-			border: 4px solid rgba(255,255,255,0.6);
+			box-shadow: 0 0 0.1em site_color('white');
 			a {
 				color: site-color('accent');
 			}
@@ -44,11 +46,10 @@ HEADER & FOOTER NAVIGATION
 
 // nav border & transition
 .nav-header li, .nav-footer li, .nav-header h3 {
-	border: 4px solid rgba(255,255,255,0.0);
 	@include border-radius(3);
-	transition: all 0.5s ease;
+	@extend .default-transition;
 	&:hover, &:focus {
-		border: 4px solid rgba(255,255,255,0.6);
+		box-shadow: 0 0 0.5em site_color('white');
 	}
 }
 

@@ -33,6 +33,9 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+		<?php // load and browser cache the SVG sprite sheet
+			require("library/images/sprite.svg"); ?>
+
 
 		<div id="container" class="page-wrap">
 
@@ -57,7 +60,7 @@
 					<nav class="nav-header" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						
 						<?php // mobile menu toggle ?>
-						<h3 id="menu-toggle"><a href="#">Menu</a></h3>
+						<h3 id="menu-toggle"><a href="#"><svg><use xlink:href="#icon-menu"></use></svg> <span>Menu</span></a></h3>
 						
 						<?php // menu items ?>
 						<div id="nav-menu">

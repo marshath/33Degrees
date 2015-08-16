@@ -7,7 +7,7 @@
 								
 								
 						<?php /* PANEL 1 */ ?>
-						<article id="panel-1" <?php post_class( 'panel panel__projects1' ); ?> role="article">
+						<article id="intro" <?php post_class( 'panel panel__projects1' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -21,7 +21,7 @@
 								
 								
 						<?php /* PANEL 2 */ ?>
-						<article id="panel-2" <?php post_class( 'panel panel__projects2' ); ?> role="article">
+						<article id="website" <?php post_class( 'panel panel__projects2' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 									
@@ -44,15 +44,13 @@
 											$projloop = new WP_Query( $my3post ); 
 											while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 											
-												<li>
-													<a href="<?php the_permalink(); ?>">
-														<figure>
-															<?php the_post_thumbnail(); ?>
-															<figcaption>View website details &raquo;</figcaption>
-														</figure>
-														<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+												<li class="tile-link">
+													<a href="<?php the_permalink(); ?>" rel="bookmark">
+														<?php the_post_thumbnail(); ?>
 														<h3><?php the_title(); ?></h3>
+														<p>View details <span class="screen-reader-text">about <?php the_title(); ?></p>
 													</a>
+													<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
 												</li>
 												
 											<?php endwhile; ?>
@@ -65,7 +63,7 @@
 								
 								
 						<?php /* PANEL 3 */ ?>
-						<article id="panel-3" <?php post_class( 'panel panel__projects3' ); ?> role="article">
+						<article id="branding" <?php post_class( 'panel panel__projects3' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php echo get_field('panel_projects3'); // Display the content ?>
@@ -87,15 +85,13 @@
 									$projloop = new WP_Query( $my3post ); 
 									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 									
-										<li>
-											<a href="<?php the_permalink(); ?>">
-												<figure>
-													<?php the_post_thumbnail(); ?>
-													<figcaption>View website details &raquo;</figcaption>
-												</figure>
-												<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+										<li class="tile-link">
+											<a href="<?php the_permalink(); ?>" rel="bookmark">
+												<?php the_post_thumbnail(); ?>
 												<h3><?php the_title(); ?></h3>
+												<p>View details &raquo;</p>
 											</a>
+											<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
 										</li>
 										
 									<?php endwhile; ?>
@@ -108,7 +104,7 @@
 								
 								
 						<?php /* PANEL 4 */ ?>
-						<article id="panel-4" <?php post_class( 'panel panel__projects4' ); ?> role="article">
+						<article id="print" <?php post_class( 'panel panel__projects4' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php echo get_field('panel_projects4'); // Display the content ?>
@@ -130,15 +126,13 @@
 									$projloop = new WP_Query( $my3post ); 
 									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 									
-										<li>
-											<a href="<?php the_permalink(); ?>">
-												<figure>
-													<?php the_post_thumbnail(); ?>
-													<figcaption>View website details &raquo;</figcaption>
-												</figure>
-												<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+										<li class="tile-link">
+											<a href="<?php the_permalink(); ?>" rel="bookmark">
+												<?php the_post_thumbnail(); ?>
 												<h3><?php the_title(); ?></h3>
+												<p>View details &raquo;</p>
 											</a>
+											<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
 										</li>
 										
 									<?php endwhile; ?>

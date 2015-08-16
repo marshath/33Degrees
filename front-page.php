@@ -6,7 +6,7 @@
 					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 								
 								
-						<?php /* PANEL 1 */ ?>
+						<?php /* SPLASH */ ?>
 						<article id="panel-1" <?php post_class( 'panel panel__home1' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -17,9 +17,42 @@
 							</section> <?php // end .entry-content .inner-wrap  ?>
 									
 						</article> <?php // end .panel .panel__home1 ?>
+						
+						
+						<?php /* NEWSLETTER */ ?>
+						<article id="panel-newsletter" <?php post_class( 'panel panel__newsletter' ); ?> role="article">
+							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
+								<h2>Receive our newsletter</h2>
 								
-						<?php /* PANEL 2 */ ?>
+								<?php // <p class="disclaimer">After you sign-up, click the link in the confirmation email to complete the process.</p> ?>
+								
+								<!-- Begin MailChimp Signup Form -->
+								<form action="http://33degreesds.us4.list-manage.com/subscribe/post?u=f5083bea3554294c46e304e54&amp;id=44fc4c953b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+									
+									<div class="mc-field-group">
+										<label for="mce-FNAME" class="screen-reader-text">Name </label>
+										<input type="text" value="" name="FNAME" class="required" placeholder="Name" id="mce-FNAME">
+									</div>
+									
+									<div class="mc-field-group">
+										<label for="mce-EMAIL" class="screen-reader-text">Email </label>
+										<input type="email" value="" name="EMAIL" class="required email" placeholder="Email Address" id="mce-EMAIL">
+									</div>
+									
+									<div id="mce-responses" class="clear">
+										<div class="response" id="mce-error-response" style="display:none"></div>
+										<div class="response" id="mce-success-response" style="display:none"></div>
+									</div>
+									
+									<input type="submit" value="Subscribe me!" name="subscribe" id="mc-embedded-subscribe">
+									
+								</form><!-- end MailChimp Signup Form -->
+							</section> <?php // end .entry-content .inner-wrap  ?>
+						</article> <?php // end .panel .panel__home2 ?>
+						
+						
+						<?php /* SERVICES */ ?>
 						<article id="panel-2" <?php post_class( 'panel panel__home2' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
@@ -29,7 +62,7 @@
 						</article> <?php // end .panel .panel__home2 ?>
 								
 								
-						<?php /* PANEL 3 */ ?>
+						<?php /* TESTIMONIALS */ ?>
 						<article id="panel-3" <?php post_class( 'panel panel__home3' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								

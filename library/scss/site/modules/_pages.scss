@@ -53,6 +53,36 @@ COLUMNS
 		list-style: none;
 		flex-grow: 1;
 	}
+	svg {
+		fill: site_color('background');
+	}
+}
+.testimonials {
+	position: relative;
+	&:before, &:after {
+		content: ''; // quotes from the SVG sprite sheet in images
+		width:48px;
+		height:48px;
+		background-image: url('../images/quote.svg'); // quote SVG above and below the testimonials
+		background-size: 100% 100%; // makes the quotes size to 100% width and height
+		display: block;
+		position: absolute;
+	}
+	&:before {
+		left: 0;
+		z-index: 0; // sets the quote SVG below the blockquote
+	}
+	&:after {
+		right: 0;
+		bottom: 0;
+		margin-bottom: baseline(2.5);
+		transform: rotate3d(0,0,1,180deg); // rotates the quote SVG to upside down
+		z-index: 0; // sets the quote SVG below the blockquote
+	}
+	blockquote {
+		position: relative;
+		z-index: 1; // sets the testimonial above the quotes
+	}
 }
 @include bp('tablet-h') {
 	// Services
@@ -97,7 +127,31 @@ COLUMNS
 /*******************************
 HOMEPAGE
 *******************************/
-
+.panel__newsletter {
+	background: site-color('background');
+	form {
+		display: flex;
+		flex-flow: column;
+		justify-content: space-between;
+		align-content: center;
+	}
+	input[type=text], input[type=email], input[type=submit] {
+		text-align: center;
+		margin: 0 auto baseline(1);
+	}
+	@include bp('tablet-v') {
+		form {
+			flex-flow: row;
+		}
+		input[type=text], input[type=email], input[type=submit] {
+			text-align: left;
+			margin: 0 0 baseline(1);
+		}
+		input[type=text], input[type=email] {
+			width:330px;
+		}
+	}
+}
 
 /*******************************
 ABOUT

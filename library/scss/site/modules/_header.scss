@@ -8,13 +8,14 @@
 /*******************************
 HEADER
 *******************************/
-.header-logo {
-	width:30%;
+.header-logo { // 33 degrees logo in the header
+	width:36%;
 	max-width: 166px;
 	margin-top: baseline(1);
 	margin-left: 2em;
 	text-align: center;
 	@include bp('tablet-h') {
+		width:30%;
 		margin-left: 5%;
 	}
 	@include bp('laptop') {
@@ -30,7 +31,20 @@ HEADER
 
 
 #menu-toggle { // toggles the menu visibity for mobile
-	display: block;
+	a {
+		padding: baseline(0.5) 0 baseline(0.25); // sets height equal to logo on mobile, alters default navigation padding
+	}
+	span {
+		@include font-size(10);
+		text-transform: uppercase;
+		text-shadow: 0px 2px 1px site-color('black');
+		display: block;
+	}
+	svg {
+		fill: site-color('white');
+		width:32px;
+		height: 32px;
+	}
 	@include bp('tablet-h') {
 		display:none;
 	}
