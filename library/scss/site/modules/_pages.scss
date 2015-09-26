@@ -38,9 +38,7 @@ PANELS
 }
 
 
-/*******************************
-COLUMNS
-*******************************/
+/* FLEX ROW WRAPS */
 .services, .testimonials, .blogposts, .projects {
 	padding:0;
 	text-align: center;
@@ -53,10 +51,27 @@ COLUMNS
 		list-style: none;
 		flex-grow: 1;
 	}
-	svg {
-		fill: site_color('background');
+}
+@include bp('tablet-h') {
+	.services li {
+		width: 33%;
+	}
+	.blogposts li {
+		width: 50%;
+		max-width: 600px;
+	}
+	.projects li {
+		width: 33%;
 	}
 }
+@include bp('television') {
+	.projects li {
+		width: 10%;
+	}
+}
+
+	
+/* GLOBAL */
 .testimonials {
 	position: relative;
 	&:before, &:after {
@@ -84,44 +99,6 @@ COLUMNS
 		z-index: 1; // sets the testimonial above the quotes
 	}
 }
-@include bp('tablet-h') {
-	// Services
-	.services {
-		li {
-			width: 33%;
-		}
-	}
-	
-	// Testimonials
-	.testimonials {
-		li {
-		}
-	}
-	
-	// Blogposts
-	.blogposts {
-		li {
-			width: 50%;
-			max-width: 600px;
-		}
-	}
-	
-	// Projects
-	.projects {
-		li {
-			width: 33%;
-		}
-	}
-}
-@include bp('television') {
-	// Projects
-	.projects {
-		li {
-			width: 10%;
-		}
-	}
-}
-
 
 
 /*******************************
@@ -153,10 +130,23 @@ HOMEPAGE
 	}
 }
 
+.services {
+	svg {
+		fill: site_color('background');
+	}
+}
+
+
+/*******************************
+PROJECTS
+*******************************/
+
+
+
+
 /*******************************
 ABOUT
 *******************************/
-
 
 
 

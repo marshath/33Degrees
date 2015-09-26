@@ -6,7 +6,7 @@
 					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 								
 								
-						<?php /* PANEL 1 */ ?>
+						<?php /* PANEL 1 — CONTENT */ ?>
 						<article id="intro" <?php post_class( 'panel panel__projects1' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
@@ -20,52 +20,49 @@
 						</article> <?php // end .panel .panel__projects1 ?>
 								
 								
-						<?php /* PANEL 2 */ ?>
+						<?php /* PANEL 2 — WEBSITE */ ?>
 						<article id="website" <?php post_class( 'panel panel__projects2' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
+								<div class="project-icon">
+									<svg><use xlink:href="#icon-website"></use></svg> Website design
+								</div>
+								
+								<ul class="projects">
+								
+									<?php query_posts(array('post_type'=>'project')); // Query projects for category: website ?>
 									
-										<?php echo get_field('panel_projects2'); // display the content ?>
+									<?php $my3post = array(
+										'post_type' => 'project',
+										'tax_query' => array(
+											array(
+												'taxonomy' => 'classification',
+												'field' => 'slug',
+												'terms' => 'website'
+											)
+										)
+									);
+									$projloop = new WP_Query( $my3post ); 
+									while ( $projloop->have_posts() ) : $projloop->the_post();
+							
+										get_template_part('inc/content-projectcallout'); // includes project callout code 	
 										
-										<ul class="projects">
-										
-											<?php query_posts(array('post_type'=>'project')); // Query projects for category: website ?>
-											
-											<?php $my3post = array(
-												'post_type' => 'project',
-												'tax_query' => array(
-													array(
-														'taxonomy' => 'classification',
-														'field' => 'slug',
-														'terms' => 'website'
-													)
-												)
-											);
-											$projloop = new WP_Query( $my3post ); 
-											while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
-											
-												<li class="tile-link">
-													<a href="<?php the_permalink(); ?>" rel="bookmark">
-														<?php the_post_thumbnail(); ?>
-														<h3><?php the_title(); ?></h3>
-														<p>View details <span class="screen-reader-text">about <?php the_title(); ?></p>
-													</a>
-													<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-												</li>
-												
-											<?php endwhile; ?>
-											<?php wp_reset_query(); ?>
-											
-										</ul> <?php // end .projects ?>
+									endwhile; ?>
+									<?php wp_reset_query(); ?>
+									
+								</ul> <?php // end .projects ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</article> <?php // end .panel .panel__projects2 ?>
 								
 								
-						<?php /* PANEL 3 */ ?>
+						<?php /* PANEL 3 — LOGO */ ?>
 						<article id="branding" <?php post_class( 'panel panel__projects3' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
+								<div class="project-icon">
+									<svg><use xlink:href="#icon-logo"></use></svg> Logo design
+								</div>
 								<?php echo get_field('panel_projects3'); // Display the content ?>
 								
 								<ul class="projects">
@@ -83,18 +80,11 @@
 										)
 									);
 									$projloop = new WP_Query( $my3post ); 
-									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
+									while ( $projloop->have_posts() ) : $projloop->the_post();
 									
-										<li class="tile-link">
-											<a href="<?php the_permalink(); ?>" rel="bookmark">
-												<?php the_post_thumbnail(); ?>
-												<h3><?php the_title(); ?></h3>
-												<p>View details &raquo;</p>
-											</a>
-											<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-										</li>
+										get_template_part('inc/content-projectcallout'); // includes project callout code 								
 										
-									<?php endwhile; ?>
+									endwhile; ?>
 									<?php wp_reset_query(); ?>
 									
 								</ul> <?php // end .projects ?>
@@ -103,10 +93,13 @@
 						</article> <?php // end .panel .panel__projects3 ?>
 								
 								
-						<?php /* PANEL 4 */ ?>
+						<?php /* PANEL 4 — DESIGN */ ?>
 						<article id="print" <?php post_class( 'panel panel__projects4' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
+								<div class="project-icon">
+									<svg><use xlink:href="#icon-design"></use></svg> Graphic Design
+								</div>
 								<?php echo get_field('panel_projects4'); // Display the content ?>
 								
 								<ul class="projects">
@@ -124,18 +117,11 @@
 										) );
 										
 									$projloop = new WP_Query( $my3post ); 
-									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
+									while ( $projloop->have_posts() ) : $projloop->the_post();
 									
-										<li class="tile-link">
-											<a href="<?php the_permalink(); ?>" rel="bookmark">
-												<?php the_post_thumbnail(); ?>
-												<h3><?php the_title(); ?></h3>
-												<p>View details &raquo;</p>
-											</a>
-											<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-										</li>
+										get_template_part('inc/content-projectcallout'); // includes project callout code 	
 										
-									<?php endwhile; ?>
+									endwhile; ?>
 									<?php wp_reset_query(); ?>
 									
 								</ul> <?php // end .projects ?>
