@@ -37,7 +37,48 @@ MOVEMENT
 }
 
 @keyframes scrollBanner {
-	from { transform : translateX(0) }
-	97%  { transform : translateX(80%) }
-	to   { transform : translateX(0%) }
+	from { transform: translateX(0) }
+	97%  { transform: translateX(80%) }
+	to   { transform: translateX(0%) }
+}
+
+
+/*******************************
+SERVICE ICON REVEALS
+*******************************/
+@keyframes zoomInFade { 						// zooms in slowly as it fades in
+	from { fill:#FFFFFF; opacity:0.4; }
+	to   { fill:inital; opacity:1; }
+}
+@keyframes revealLeft { 						// slide in slowly from the left
+	from { transform: translateX(20%) }
+	to   { transform: translateX(0) }
+}
+@keyframes revealRight { 						// slide in slowly from the right
+	from { transform: translateX(-20%) }
+	to   { transform: translateX(0) }
+}
+@keyframes revealLeftLogo { 					// slide in slowly from the lower right
+	from { transform: translate(6px, 8px) }
+	to   { transform: translate(0, 0) }
+}
+@keyframes revealRightLogo { 					// slide in slowly from the lower left
+	from { transform: translate(-6px, 8px) }
+	to   { transform: translate(0, 0) }
+}
+
+#icon-website, #icon-logo, #icon-design { 		// animate in service icons - website, logo, design
+	animation: zoomInFade 2s ease-in;
+}
+.icon-website__phone, .icon-design__email { 	// animate in left icons - phone (website), email (design)
+	animation: revealLeft 2s ease-out;
+}
+.icon-website__tablet, .icon-design__disc { 	// animate in right icons - tablet (website), cd (design)
+	animation: revealRight 2s ease-out;
+}
+.icon-logo__left { 								// animate in left logo lines
+	animation: revealLeftLogo 2s ease-out;
+}
+.icon-logo__right { 							// animate in right logo lines
+	animation: revealRightLogo 2s ease-out;
 }
