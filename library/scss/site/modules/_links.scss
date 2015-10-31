@@ -9,9 +9,9 @@
 GLOBAL LINKS 
 *******************************/
 a {
-	color: site-color('primary');
+	color: brand-color('primary');
 	&:hover {
-		color: site-color-lighten('primary',2);
+		color: brand-color-lighten('primary',2);
 		text-decoration: none;
 	}
 }

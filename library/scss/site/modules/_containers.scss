@@ -23,7 +23,7 @@ section {
 	@include clearfix;
 }
 .page-wrap {
-	background-color: #f6f6f6;
+	background-color: brand-color('white');
 }
 
 .header-wrap,
@@ -53,7 +53,7 @@ section {
 HEADER
 *******************************/
 .header-wrap {
-	background-color: site_color('header');
+	background-color: brand-color('secondary');
 }
 
 
@@ -68,7 +68,7 @@ main {
 FOOTER 
 *******************************/
 .footer-wrap {
-	background-color: site_color('footer');
-	color: site_color('white');
-	border-top: baseline(0.5) solid site_color('accent');
+	background-color: brand-color('gray1');
+	color: brand-color('white');
+	border-top: baseline(0.5) solid brand-color('accent');
 }

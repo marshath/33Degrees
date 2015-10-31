@@ -9,31 +9,35 @@
 PANELS
 *******************************/
 .panel {
+	position: relative;
 	@include clearfix;
 	
-	// HOME PAGE
-	&__home1 {
-		background: linear-gradient(to bottom, site-color('header') 0%, #1c526c 50%, #00a7bf 100%);
-		color: site-color('white');
+	// HOMEPAGE
+	&__hm-splash {
+		background: linear-gradient(to bottom, brand-color('secondary') 0%, #1c526c 50%, #00a7bf 100%);
+		color: brand-color('white');
 	}
-	&__home2 {
+	&__hm-services {
+		background-color: brand-color('secondary');
 	}
-	&__home3 {
-		background-color: site-color('background');
+	&__hm-blog {
+		background-color: tan;
 	}
-	&__home4 {
-	}
-	
-	// PROJECTS & ABOUT
+	// PROJECTS
+	// ABOUT
 	&__projects1, &__about1 {
 		background: #cfe1e5;
 	}
 	&__projects2, &__about2 {
 	}
 	&__projects3, &__about3 {
-		background-color: site-color('background');
+		background-color: brand-color('gray1');
 	}
 	&__projects4, &__about4 {
+	}
+	// GLOBAL
+	&__testimonials {
+		background-color: brand-color('white');
 	}
 }
 
@@ -70,8 +74,57 @@ PANELS
 	}
 }
 
+/*******************************
+HOMEPAGE PANELS
+*******************************/
+.panel__hm-splash {
+	.cta {
+		width:100%;
+		text-align: center;
+		position: relative;
+		z-index: 1;
+	}
+	.lady {
+		width: 400px;
+		background: url('lady.png') no-repeat center center;
+		display: block;
+		position:relative;
+		z-index: 0;
+		top: - baseline(3);
+		left:-6em;
+	}
+	ul {
+		width:intrinsic;
+		background: linear-gradient(to bottom, #ea6115 10%, #d53f15 90%);
+		@include border-radius(2);
+		box-shadow: inset 0 0 0.4em brand-color-alpha('white', 'light'), 0 0.3em 0.4em brand-color-alpha('black', 'dark');
+		margin: 0 auto baseline(1);
+		padding: 0;
+		list-style: none;
+		overflow: hidden;
+		display: flex;
+		flex-direction: row nowrap;
+		li:last-child {
+			border-left:1px dotted brand-color-alpha('white', 'dark');
+		}
+		a {
+			color: brand-color('white');
+			text-decoration: none;
+			text-shadow:0 2px 1px black;
+			font-weight:bold;
+			display: block;
+			padding: baseline(0.75) 2em;
+			&:hover {
+				background: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);;
+			}
+		}
+	}
+}
+
 	
-/* GLOBAL */
+/*******************************
+TESTIMONIALS PANEL
+*******************************/
 .testimonials {
 	position: relative;
 	&:before, &:after {
@@ -102,10 +155,10 @@ PANELS
 
 
 /*******************************
-HOMEPAGE
+NEWSLETTER PANEL
 *******************************/
 .panel__newsletter {
-	background: site-color('background');
+	background: brand-color('accent');
 	form {
 		display: flex;
 		flex-flow: column;
@@ -153,7 +206,7 @@ BLOG
 	max-height: 75px;
 	margin-right: 1em;
 	@include border-radius(10);
-	border: 4px solid site-color('white');
+	border: 4px solid brand-color('white');
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 	float: left;
 	overflow: hidden;

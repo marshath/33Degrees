@@ -23,12 +23,12 @@ figure {
 /* SERVICE ICONS */
 .fill, .stroke { // Fill and Stroke colors
 	&__white {
-		fill: site_color('white');
+		fill: brand-color('white');
 	}
 	&__gray {
-		fill: site_color('gray');
+		fill: brand-color('gray2');
 	}
 	&__black {
-		fill: site_color('black');
+		fill: brand-color('black');
 	}
 }

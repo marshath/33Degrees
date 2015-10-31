@@ -52,7 +52,7 @@ LINK OVERLAY
 		
 	}
 	a {
-		color: site_color('white');
+		color: brand-color('white');
 	}
 	figure {
 		display: block;
@@ -70,7 +70,7 @@ LINK OVERLAY
 		@extend .default-transition;
 	}
 	&__moretag { // text that slides in on hover
-		color: site_color('primary');
+		color: brand-color('primary');
 		text-decoration: underline;
 		margin-left: 1em;
 		opacity: 0;
@@ -79,7 +79,7 @@ LINK OVERLAY
 }
 
 .side-moretag {
-	color: site_color('primary');
+	color: brand-color('primary');
 	text-decoration: underline;
 	margin-left: 1em;
 	opacity: 0;

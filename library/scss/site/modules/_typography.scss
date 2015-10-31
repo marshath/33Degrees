@@ -11,7 +11,7 @@ BODY TEXT
 *******************************/
 body {
 	@include sans-serif;
-	color: site-color('text');
+	color: brand-color('text');
 	line-height: baseline(1);
 }
 
@@ -63,7 +63,6 @@ i, .italic { // Font style italic
 	text-transform: capitalize;
 }
 .disclaimer {
-	@include font-size(12);
 	text-align: center;
 	line-height: 1;
 }
@@ -73,11 +72,11 @@ i, .italic { // Font style italic
 BLOCKQUOTE
 *******************************/
 blockquote {
-	color: site-color('foreground');
+	color: brand-color('gray3');
 	font-style: italic;
 	padding:0 1em;
 	margin-bottom: baseline(1);
-	border-left: 2px solid site-color('foreground');
+	border-left: 2px solid brand-color('gray3');
 	cite {
 		width: 100%;
 		text-align: right;
@@ -90,7 +89,7 @@ blockquote {
 FIGURE CAPTION
 *******************************/
 figcaption {
-	color: site-color('foreground');
+	color: brand-color('gray3');
 	font-style: italic;
 }
 
@@ -110,7 +109,7 @@ dd { // Defined
 HORIZONTAL RULE
 *******************************/
 hr {
-	border-bottom:4px solid site-color('foreground');
+	border-bottom:4px solid brand-color('gray3');
 }
 
 
@@ -118,7 +117,7 @@ hr {
 SELECTED TEXT
 *******************************/
 ::selection { 
-	background: site-color('accent'); 
+	background: brand-color('accent'); 
 }
 
 
