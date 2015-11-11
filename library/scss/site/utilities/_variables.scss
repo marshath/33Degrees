@@ -46,27 +46,28 @@ FONT SIZE - utilities/font-sizes
 *******************************/
 $font-ems: 0.0625em; // 1px
 
+
 /*******************************
 COLORS - utilities/mixins
 *******************************/
 // BRANDING
-$site-colors: (
+$brand-colors: (
 	'primary': #e65127,		// orange
+	'secondary': #213141,	// blue
 	'accent': #fc0,			// yellow
-	'header': #213141,		// blue
-	'footer': #333,			// black
-	'background': #d1d0cf,	// tan
-	'text': #222,			// charcoal
-	'white': #fcfcfc,		// white
+	'text': #222,			// black text
 	'black': #000,			// black
-	'gray': #777,			// gray
+	'gray1': #333,			// gray-dark
+	'gray2': #777,			// gray
+	'gray3': #d1d0cf,		// gray-light
+	'white': #f6f6f6,		// white
 );
 
 // ALERTS
 $alert-colors: (
-	'error': red,		// red
-	'warning': yellow,	// yellow
-	'good': green,		// green
+	'good' : #14ab00,		// green
+	'warning' : #d4aa00,	// amber/yellow
+	'error' : #c50000,		// red
 );
 
 // SOCIAL MEDIA
@@ -83,8 +84,8 @@ $social-colors: (
 );
 
 // ALPHA (opacity)
-$color-opacity: (	// set opacity values
-  'light': 0.8,		// opacity used with lighter colors
-  'dark': 0.4,		// opacity used with darker colors
+$color-opacity: (			// set opacity values
+	'light': 0.8,			// opacity used with lighter colors
+	'dark': 0.4,			// opacity used with darker colors
 );
 

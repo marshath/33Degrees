@@ -58,21 +58,25 @@ CONTACT INFORMATION
 
 .office_info {
 	svg {
-		fill: site_color('gray');
+		fill: brand-color('gray');
 		width:24px;
 		height:24px;
 		vertical-align: text-bottom;
 		margin-right:-0.75em;
 	}
 	a {
-		color: site_color('white');
+		color: brand-color('white');
 		text-decoration: none;
+		svg {
+			fill: brand-color-darken('primary',3);
+		}
 		&:hover {
+			color: brand-color('white');
 			&:first-child {
 				text-decoration: underline;
 			}
 			svg {
-				fill: site_color('primary');
+				fill: brand-color('primary');
 			}
 		}
 	}
@@ -99,7 +103,7 @@ SOCIAL LINKS
 		width:67px;
 		height:67px;
 		margin: baseline(1) 0.5em 0;
-		border: 3px solid #333;
+		border: 3px solid brand-color('gray2');
 		border-radius: 50%;
 		box-shadow: 0 0 0 rgba(0,0,0,0.5);
 		@extend .default-transition;
@@ -117,7 +121,7 @@ SOCIAL LINKS
 		}
 	}
 	svg {
-		fill: site_color('white');
+		fill: brand-color('white');
 		width:32px;
 		height:32px;
 		top: 25%;
@@ -125,36 +129,36 @@ SOCIAL LINKS
 		position: absolute;
 	}
 	.facebook, .twitter, .google, .rss, .email, .linkedin {
-		background-color:#555;
+		background-color: brand-color('gray2');
 	}
 	.facebook {
 		&:hover {
-			background: social_color('facebook');
+			background: social-color('facebook');
 		}
 	}
 	.twitter {
 		&:hover {
-			background: social_color('twitter');
+			background: social-color('twitter');
 		}
 	}
 	.google {
 		&:hover {
-			background: social_color('google');
+			background: social-color('google');
 		}
 	}
 	.rss {
 		&:hover {
-			background: social_color('rss');
+			background: social-color('rss');
 		}
 	}
 	.email {
 		&:hover {
-			background: site_color('gray');
+			background: brand-color('gray');
 		}
 	}
 	.linkedin {
 		&:hover {
-			background: social_color('linkedin');
+			background: social-color('linkedin');
 		}
 	}
 	@include bp('tablet-v') {
@@ -169,6 +173,7 @@ SOCIAL LINKS
 COPYRIGHT
 *******************************/
 .copyright {
-	@include font-size(14);
+	color: brand-color('gray2');
+	@include font-size(12);
 	text-align: center;
 }

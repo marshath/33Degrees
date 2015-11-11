@@ -16,7 +16,6 @@ HEADER & FOOTER NAVIGATION
 	ul {
 		margin: 0;
 		padding: 0;
-		@include font-size(20);
 		text-align: center;
 		list-style: none;
 		display: flex;
@@ -27,17 +26,17 @@ HEADER & FOOTER NAVIGATION
 	li {
 		width:100%;
 		flex-grow: 1;
-		text-shadow: 1px 2px 1px site_color('black');
-		box-shadow: 0 0 0em site_color('white');
+		text-shadow: 1px 2px 1px brand-color('black');
+		box-shadow: 0 0 0em brand-color('white');
 		&.current-menu-item {
-			box-shadow: 0 0 0.1em site_color('white');
+			box-shadow: 0 0 0.1em brand-color('white');
 			a {
-				color: site-color('accent');
+				color: brand-color('accent');
 			}
 		}
 	}
 	a {
-		color: site_color('white');
+		color: brand-color('white');
 		text-decoration: none;
 		padding: baseline(1) 0;
 		display:block;
@@ -49,7 +48,7 @@ HEADER & FOOTER NAVIGATION
 	@include border-radius(3);
 	@extend .default-transition;
 	&:hover, &:focus {
-		box-shadow: 0 0 0.5em site_color('white');
+		box-shadow: 0 0 0.5em brand-color('white');
 	}
 }
 
@@ -69,7 +68,7 @@ HEADER & FOOTER NAVIGATION
 		flex-flow: row wrap;
 		justify-content: flex-end;
 		ul {
-			display: flex; // shows the navigation=
+			display: flex; // shows the navigation
 			margin-top: -(baseline(3));
 			margin-bottom: baseline(1);
 		}
@@ -81,7 +80,8 @@ HEADER & FOOTER NAVIGATION
 
 .nav-footer {
 	li {
-		background-color: site-color-darken('primary'.2);
+		background-color: brand-color('gray2');
+		margin-bottom: baseline(0.5);
 	}
 }
 
@@ -94,7 +94,7 @@ HEADER & FOOTER NAVIGATION
 			width: auto; // reduces the width from 100%;
 			margin-left:1em;
 			&:last-child {
-				margin-right: 1em;
+				margin-right:1em;
 			}
 		}
 	}
@@ -113,7 +113,7 @@ BREADCRUMB TRAIL
 		float:left;
 		&:before {
 			content:' > ';
-			color: site-color('primary');
+			color: brand-color('primary');
 		}
 		a {
 			text-decoration: none;
@@ -136,7 +136,7 @@ PAGINATION
 	li {
 		float: left;
 		margin: 1em 0;
-		border-right: 1px solid site-color('foreground');
+		border-right: 1px solid brand-color('gray2');
 		&:last-child {
 			border-right: none;
 		}
@@ -148,7 +148,7 @@ PAGINATION
 			padding:  baseline(1) 1.5em;
 			display: inline-block;
 			&:hover {
-				background: site-color('background');
+				background: brand-color('primary');
 			}
 		}
 	}
@@ -171,13 +171,13 @@ TABS
 		a {
 			width: 100%;
 			height: 100%;
-			background: site-color('primary');
+			background: brand-color('primary');
 			color:white;
 			text-decoration: none;
 			padding:  baseline(1) 1.5em;
 			display: inline-block;
 			&:hover {
-				background: site-color-lighten('primary',2);
+				background: brand-color-lighten('primary',2);
 			}
 		}
 	}
@@ -206,10 +206,10 @@ SINGLE COMMENT
 		@include column(2);
 		float: left;
 		a {
-			color: black;
+			color: brand-color('black');
 			text-decoration: none;
 			&:hover {
-				color: site-color('primary');
+				color: brand-color('primary');
 			}
 		}
 	}
@@ -225,8 +225,8 @@ SINGLE COMMENT
 ALERT 
 *******************************/
 .alert {
-	background: site-color('background');
+	background: brand-color('gray1');
 	text-align: center;
-	border: 1px solid site-color('foreground');
+	border: 1px solid brand-color('gray3');
 	padding:  baseline(1) 1.5em;
 }

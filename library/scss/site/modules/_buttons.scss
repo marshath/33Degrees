@@ -8,42 +8,46 @@
 /*******************************
 GLOBAL BUTTONS 
 *******************************/
-.btn, .btn-alt, .btn-disabled {
-	color: white;
+.btn, .btn__alt, .btn__disabled {
+	color: brand-color('white');
+	font-weight:bold;
 	text-decoration: none;
+	text-shadow:0 2px 1px black;
 	margin: baseline(0.5) 0;
 	padding: baseline(0.5) 1em;
 	display: inline-block;
 	@include border-radius(1);
 	&:hover {
-		color:white;
+		color:brand-color('white');
 	}
 }
 
 // STANDARD BUTTON
 .btn { 
-	background: site-color-alpha('secondary','dark');
+	background: linear-gradient(to bottom, #ea6115 10%, #d53f15 90%);
+	@include border-radius(2);
+	box-shadow: inset 0 0 0.4em brand-color-alpha('white', 'light'), 0 0.3em 0.4em brand-color-alpha('black', 'dark');
 	&:hover {
-		background: site-color-lighten('secondary',2);
+		background: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);
 	}
 	&:active {
-		background: site-color-lighten('secondary',2);
+		background: linear-gradient(to bottom, #c52f05 10%, #da5105 90%); // reverse of hover 
 	}
 }
 
 // ALTERNATE BUTTON
-.btn-alt { 
-	background: site-color('primary');
+.btn__alt { 
+	background: brand-color('secondary');
 	&:hover {
-		background-color: site-color-lighten('primary',2);
+		background: brand-color-lighten('secondary',1);
 	}
 }
 
 // DISABLED BUTTON
-.btn-disabled {
-	background: site-color('foreground');
+.btn__disabled {
+	background: brand-color('gray3');
 	&:hover {
-		background-color: site-color-lighten('foreground',1);
+		background-color: brand-color-lighten('gray3',1);
 	}
 }
 

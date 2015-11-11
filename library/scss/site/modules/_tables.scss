@@ -12,34 +12,34 @@ table {
 	width:100%;
 	text-align: left;
 	thead, tfoot {
-		border-top:1px solid site-color('foreground');
-		border-left:1px solid site-color-darken('foreground',2);
-		border-right: 1px solid site-color-lighten('foreground',2);
+		border-top:1px solid brand-color('gray3');
+		border-left:1px solid brand-color-darken('gray3',2);
+		border-right: 1px solid brand-color-lighten('gray3',2);
 	}
 	thead {
-		background: site-color-lighten('foreground',2);
+		background: brand-color-lighten('gray3',2);
 		color:white;
 	}
 	tfoot {
-		background: site-color-lighten('foreground',1);
+		background: brand-color-lighten('gray3',1);
 	}
 	tbody {
 		
 	}
 	tr {
-		border-bottom: 1px solid  site-color('foreground');
+		border-bottom: 1px solid  brand-color('gray3');
 		&:nth-child(odd) td {
-			background: site-color('background');
+			background: brand-color('gray1');
 		}
 		&:nth-child(even) td {
-			background: site-color-lighten('background',1);
+			background: brand-color-lighten('gray1',1);
 		}
 	}
 	td {
-		border-left:1px solid site-color-darken('foreground',2);
-		border-right: 1px solid site-color-lighten('foreground',2);
+		border-left:1px solid brand-color-darken('gray3',2);
+		border-right: 1px solid brand-color-lighten('gray3',2);
 		:nth-child(odd) {
-			background: site-color('background');
+			background: brand-color('gray1');
 		}
 	}
 }

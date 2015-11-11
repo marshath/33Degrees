@@ -7,33 +7,32 @@
 								
 								
 						<?php /* SPLASH */ ?>
-						<article id="panel-1" <?php post_class( 'panel panel__home1' ); ?> role="article">
+						<article id="panel-splash" <?php post_class( 'row hm-splash' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							
-								<?php the_content(); // display the content ?>
+								<div class="cta">
+									<?php the_content(); // display the content ?>
+								</div>
+								
+								<div class="lady">
+									<?php // load and browser cache the splash image
+									require("library/images/lady.svg"); ?>
+								</div>
 								
 							<?php endwhile; endif; ?>
 							</section> <?php // end .entry-content .inner-wrap  ?>
 									
-						</article> <?php // end .panel .panel__home1 ?>
+						</article> <?php // end #panel-splash .row .hm-splash ?>
 						
 						
 						<?php /* NEWSLETTER */ ?>
-						<article id="panel-newsletter" <?php post_class( 'panel panel__newsletter' ); ?> role="article">
+						<article id="panel-newsletter" <?php post_class( 'row newsletter' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
-								
-								<h2>Receive our newsletter</h2>
-								
-								<?php // <p class="disclaimer">After you sign-up, click the link in the confirmation email to complete the process.</p> ?>
-								
-								<!-- Begin MailChimp Signup Form -->
+								<h2>Tips in your inbox</h2>
+								<p>Get the latest articles and news from 33 Degrees on improving your digital strategy.</p>
+								<?php // Begin MailChimp Signup Form ?>
 								<form action="http://33degreesds.us4.list-manage.com/subscribe/post?u=f5083bea3554294c46e304e54&amp;id=44fc4c953b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-									
-									<div class="mc-field-group">
-										<label for="mce-FNAME" class="screen-reader-text">Name </label>
-										<input type="text" value="" name="FNAME" class="required" placeholder="Name" id="mce-FNAME">
-									</div>
 									
 									<div class="mc-field-group">
 										<label for="mce-EMAIL" class="screen-reader-text">Email </label>
@@ -45,30 +44,30 @@
 										<div class="response" id="mce-success-response" style="display:none"></div>
 									</div>
 									
-									<input type="submit" value="Subscribe me!" name="subscribe" id="mc-embedded-subscribe">
+									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
 									
-								</form><!-- end MailChimp Signup Form -->
+								</form><?php // end MailChimp Signup Form ?>
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end .panel .panel__home2 ?>
+						</article> <?php // end #panel-newsletter .row .newsletter ?>
 						
 						
 						<?php /* SERVICES */ ?>
-						<article id="panel-2" <?php post_class( 'panel panel__home2' ); ?> role="article">
+						<article id="panel-services" <?php post_class( 'row hm-services' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php echo get_field('panel_home2'); // display the content ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end .panel .panel__home2 ?>
+						</article> <?php // end #panel-services .row .hm-services ?>
 								
 								
 						<?php /* TESTIMONIALS */ ?>
-						<article id="panel-3" <?php post_class( 'panel panel__home3' ); ?> role="article">
+						<article id="panel-testimonials" <?php post_class( 'row testimonials' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php echo get_field('panel_home3'); // Display the content ?>
 								
-								<ul class="testimonials">
+								<ul class="quotes">
 								<?php // Display Testimonials
 									query_posts(array('post_type'=>'testimonials')); ?>
 									
@@ -89,11 +88,11 @@
 								</ul> <?php // end .testimonials  ?>
 											
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end .panel .panel__home3 ?>
+						</article> <?php // end #panel-testimonials .row .hm-services ?>
 								
 								
-						<?php /* PANEL 4 */ ?>
-						<article id="panel-4" <?php post_class( 'panel panel__home4' ); ?> role="article">
+						<?php /* BLOG POSTS */ ?>
+						<article id="panel-blog" <?php post_class( 'row hm-blog' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php echo get_field('panel_home4'); // Display the content ?>
@@ -108,7 +107,7 @@
 								</ul> <?php // end .blogposts  ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end .panel .panel__home4 ?>
+						</article> <?php // end #panel-blog .row .hm-blog ?>
 						
 						
 					</main> <?php // end #main .main-wrap ?>

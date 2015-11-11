@@ -40,11 +40,11 @@ input[type='date'],
 input[type='month'], 
 input[type='week'], 
 input[type='datetime'], 
-input[type='datetime-local'] {
+input[type='datetime-local'],
+input[type='submit'] {
 	width:100%;
-	padding: baseline(0.5) 0.5em;
+	padding: baseline(0.5) 1em;
 	border:none;
-	@include border-radius(2);
 }
 
 
@@ -54,7 +54,7 @@ input[type='datetime-local'] {
 }
 .is-error { // Text field
 	background:  alert-color-lighten('error',6);
-	border: 2px solid  alert-color('error');
+	border: 2px solid alert-color('error');
 }
 
 // TEXT INPUT VALID
@@ -75,7 +75,7 @@ textarea {
 PLACEHOLDER TEXT
 *******************************/
 ::placeholder {
-	color: site-color('foreground');
+	color: brand-color('gray3');
 }
 
 
@@ -89,14 +89,14 @@ fieldset {
 input[type='radio'] {
 	appearance:none;
 	cursor:pointer;
-	background-color: site-color-lighten('foreground',1);
+	background-color: brand-color-lighten('gray3',1);
 	color:#f0f;
-	margin-top: 1em;
+	margin-top: baseline(1);
 	@include border-radius(100);
 }
 
 input[type="radio"]:checked:after {
-	background-color: site-color-lighten('foreground',1);
+	background-color: brand-color-lighten('gray3',1);
 	@include border-radius(100);
 	content:"\00a0";
 	display:block;
@@ -111,7 +111,7 @@ DROPDOWN BOX
 *******************************/
 .styled-select {
 	background-color: blue;
-	color: site-color('text');
+	color: brand-color('text');
 	margin-bottom:baseline(1);
 	padding:.25em 0;
 	display:inline-block;
@@ -132,7 +132,7 @@ select {
 	-webkit-appearance: none !important;
 	appearance:none;
 	width:100%;
-	background-color: site-color('foreground');
+	background-color: brand-color('gray3');
 	margin:0;
 	padding:0.5em;
 	display:inline-block;
@@ -149,7 +149,7 @@ input[type='checkbox'] {
 	appearance:none;
 	width:14px;
 	height:14px;
-	background-color: site-color-lighten('foreground',2);
+	background-color: brand-color-lighten('gray3',2);
 	margin-top: 1em;
 	@include border-radius(1);
 	cursor:pointer;
@@ -161,7 +161,7 @@ input[type='checkbox']:checked:after {
 	height:1em;
 	display:block;
 	position:relative;
-	border:solid site-color('text');
+	border:solid brand-color('text');
 	border-width:0 4px 4px 0;
 	transform:rotate(45deg); 
 }
@@ -173,13 +173,13 @@ RANGE SLIDER
 input[type='range'] {
 	width: 100%;
 	-webkit-appearance: none !important;
-	background: site-color('foreground');
+	background: brand-color('gray3');
 	height:4px;
 	margin-bottom: baseline(1);
 }
 input[type='range']::-webkit-slider-thumb {
 	-webkit-appearance: none !important;
-	background: site-color-lighten('foreground',1);
+	background: brand-color-lighten('gray3',1);
 	height:1.5em;
 	width:1.5em;
 	@include border-radius(100);
@@ -190,11 +190,8 @@ input[type='range']::-webkit-slider-thumb {
 SUBMIT BUTTON
 *******************************/
 input[type='submit'] {
-	border:none;
-	@extend .btn-alt;
 }
 input[type='submit']:hover {
-	background-color: site-color-lighten('foreground',1);
 }
 
 

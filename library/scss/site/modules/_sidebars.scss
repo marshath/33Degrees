@@ -14,40 +14,6 @@
 		
 	}
 	&__blog-posts {
-		ul {
-			list-style: none;
-			padding: 0;
-		}
-		li {
-			&:hover, &:focus {
-				figcaption {
-					bottom: baseline(1);
-				}
-				.side-moretag {
-					opacity: 1;
-					margin-left: 0;
-				}
-			}
-			
-		}
-		a {
-			color: site_color('white');
-		}
-		figure {
-			display: block;
-			position: relative;
-			overflow: hidden;
-			margin-bottom: baseline(1);
-		}
-		figcaption {
-			background: rgba(0,0,0,0.8);
-			width:100%;
-			display: block;
-			position: absolute;
-			bottom: - baseline(1);
-			padding: baseline(0.25) 0.5em;
-			transition: all 0.2s ease;
-		}
 	}
 	&__search {
 		margin-bottom: baseline(1);
@@ -61,8 +27,59 @@
 .single .sidebar {
 }
 
+
+
+
+
+/*******************************
+LINK OVERLAY 
+*******************************/
+.sidebar__blog-posts, .projects {
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	li {
+		&:hover, &:focus {
+			figcaption {
+				bottom: baseline(1);
+			}
+			.side-moretag {
+				opacity: 1;
+				margin-left: 0;
+			}
+		}
+		
+	}
+	a {
+		color: brand-color('white');
+	}
+	figure {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		margin-bottom: baseline(1);
+	}
+	figcaption {
+		background: rgba(0,0,0,0.8);
+		width:100%;
+		display: block;
+		position: absolute;
+		bottom: - baseline(1);
+		padding: baseline(0.25) 0.5em;
+		@extend .default-transition;
+	}
+	&__moretag { // text that slides in on hover
+		color: brand-color('primary');
+		text-decoration: underline;
+		margin-left: 1em;
+		opacity: 0;
+		transition: all 0.2s ease-in;
+	}
+}
+
 .side-moretag {
-	color: site_color('primary');
+	color: brand-color('primary');
 	text-decoration: underline;
 	margin-left: 1em;
 	opacity: 0;

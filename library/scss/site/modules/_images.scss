@@ -19,3 +19,16 @@ GLOBAL IMAGES
 figure {
 	
 }
+
+/* SERVICE ICONS */
+.fill, .stroke { // Fill and Stroke colors
+	&__white {
+		fill: brand-color('white');
+	}
+	&__gray {
+		fill: brand-color('gray2');
+	}
+	&__black {
+		fill: brand-color('black');
+	}
+}

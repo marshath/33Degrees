@@ -9,37 +9,9 @@
 GLOBAL LINKS 
 *******************************/
 a {
-	color: site-color('primary');
+	color: brand-color('primary');
 	&:hover {
-		color: site-color-lighten('primary',2);
+		color: brand-color-lighten('primary',2);
 		text-decoration: none;
-	}
-}
-
-.tile-link {
-	position: relative;
-	overflow: hidden;
-	h3 {
-		width:100%;
-		color: site-color('white');
-		background: rgba(0,0,0,0.5);
-		display:block;
-		position: absolute;
-		bottom:0;
-		z-index: 10;
-	}
-	p {
-		width:100%;
-		height:100%;
-		background: rgba(0,0,0,0.5);
-		position: absolute;
-		top:100;
-		z-index: 5;
-	}
-	a:hover{
-		p {
-			top:0;
-			color: site-color('white');
-		}
 	}
 }
