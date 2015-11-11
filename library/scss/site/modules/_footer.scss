@@ -67,7 +67,11 @@ CONTACT INFORMATION
 	a {
 		color: brand-color('white');
 		text-decoration: none;
+		svg {
+			fill: brand-color-darken('primary',3);
+		}
 		&:hover {
+			color: brand-color('white');
 			&:first-child {
 				text-decoration: underline;
 			}
@@ -169,6 +173,7 @@ SOCIAL LINKS
 COPYRIGHT
 *******************************/
 .copyright {
-	@include font-size(14);
+	color: brand-color('gray2');
+	@include font-size(12);
 	text-align: center;
 }

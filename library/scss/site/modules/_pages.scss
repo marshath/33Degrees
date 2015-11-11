@@ -6,44 +6,27 @@
 
 
 /*******************************
-PANELS
+GENERAL
 *******************************/
-.panel {
+.row {
 	position: relative;
 	@include clearfix;
-	
-	// HOMEPAGE
-	&__hm-splash {
-		background: linear-gradient(to bottom, brand-color('secondary') 0%, #1c526c 50%, #00a7bf 100%);
-		color: brand-color('white');
-	}
-	&__hm-services {
-		background-color: brand-color('secondary');
-	}
-	&__hm-blog {
-		background-color: tan;
-	}
-	// PROJECTS
-	// ABOUT
-	&__projects1, &__about1 {
-		background: #cfe1e5;
-	}
-	&__projects2, &__about2 {
-	}
-	&__projects3, &__about3 {
-		background-color: brand-color('gray1');
-	}
-	&__projects4, &__about4 {
-	}
-	// GLOBAL
-	&__testimonials {
-		background-color: brand-color('white');
-	}
+}
+
+.panel__projects1, .panel__about1 {
+	background: #cfe1e5;
+}
+.panel__projects2, .panel__about2 {
+}
+.panel__projects3, .panel__about3 {
+	background-color: brand-color('gray1');
+}
+.panel__projects4, .panel__about4 {
 }
 
 
-/* FLEX ROW WRAPS */
-.services, .testimonials, .blogposts, .projects {
+/* FLEXBOX ROW WRAPS */
+.services, .quotes, .blogposts, .projects {
 	padding:0;
 	text-align: center;
 	display: flex;
@@ -75,23 +58,26 @@ PANELS
 }
 
 /*******************************
-HOMEPAGE PANELS
+HOMEPAGE SECTIONS
 *******************************/
-.panel__hm-splash {
-	.cta {
+.hm-splash {
+	background: linear-gradient(to bottom, brand-color('secondary') 0%, #1c526c 50%, #00a7bf 100%);
+	color: brand-color('white');
+	.cta { //splash text
 		width:100%;
 		text-align: center;
 		position: relative;
 		z-index: 1;
 	}
-	.lady {
-		width: 400px;
-		background: url('lady.png') no-repeat center center;
+	.lady { // splash svg image
 		display: block;
 		position:relative;
 		z-index: 0;
-		top: - baseline(3);
-		left:-6em;
+		top: baseline(0.5);
+	}
+	.lightrays { // svg splash image background
+		transform-origin: center center;
+		animation: spin 200s linear infinite;
 	}
 	ul {
 		width:intrinsic;
@@ -115,10 +101,33 @@ HOMEPAGE PANELS
 			display: block;
 			padding: baseline(0.75) 2em;
 			&:hover {
-				background: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);;
+				background: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);
 			}
 		}
 	}
+	@include bp('tablet-v') { // Tablet viewport
+		.cta {
+			width:50%;
+			position:absolute;
+			top:0;
+			right: 10%;
+		}
+		.lady {
+			width:50%;
+		}
+	}
+}
+
+.hm-services {
+	background-color: brand-color('secondary');
+	color: brand-color('white');
+	h4 {
+		text-align: center;
+	}
+}
+
+.hm-blog {
+	background-color: tan;
 }
 
 	
@@ -126,12 +135,15 @@ HOMEPAGE PANELS
 TESTIMONIALS PANEL
 *******************************/
 .testimonials {
+}
+
+.quotes {
 	position: relative;
 	&:before, &:after {
 		content: ''; // quotes from the SVG sprite sheet in images
 		width:48px;
 		height:48px;
-		background-image: url('../images/quote.svg'); // quote SVG above and below the testimonials
+		background-image: url('../images/icon-quote.svg'); // quote SVG above and below the testimonials
 		background-size: 100% 100%; // makes the quotes size to 100% width and height
 		display: block;
 		position: absolute;
@@ -148,8 +160,12 @@ TESTIMONIALS PANEL
 		z-index: 0; // sets the quote SVG below the blockquote
 	}
 	blockquote {
-		position: relative;
+		position: relative; // sets the testimonial above the quotes
 		z-index: 1; // sets the testimonial above the quotes
+		border: none;
+	}
+	cite {
+		color: brand-color('gray2');
 	}
 }
 
@@ -157,28 +173,53 @@ TESTIMONIALS PANEL
 /*******************************
 NEWSLETTER PANEL
 *******************************/
-.panel__newsletter {
+.newsletter {
 	background: brand-color('accent');
+	padding-bottom: baseline(1); // equal spacing at the bottom of the panel
+	&:before { // mailbox icon
+		content: '';
+		width: 64px;
+		height: 64px;
+		background-color: brand-color('accent');
+		background-image: url('../images/icon-inbox.svg'); // inbox SVG above newsletter
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 50% 50%; // makes the image size to 100% width and height
+		display:block;
+		margin: 0 auto;
+	}
+	p {
+		text-align: center;
+	}
 	form {
 		display: flex;
 		flex-flow: column;
-		justify-content: space-between;
-		align-content: center;
 	}
-	input[type=text], input[type=email], input[type=submit] {
+	input[type=email], input[type=submit] {
 		text-align: center;
-		margin: 0 auto baseline(1);
+		margin-bottom:baseline(0.5);
+	}
+	input[type=submit] {
+		background-color: brand-color('black');
+		color: brand-color('white');
+		@extend .default-transition;
+		&:hover {
+			background-color: brand-color('primary');
+		}
 	}
 	@include bp('tablet-v') {
+		&:before {
+			position:absolute;
+			margin-top: - baseline(2);
+			@include border-radius(10);
+			padding: baseline(1);
+		}
 		form {
 			flex-flow: row;
 		}
-		input[type=text], input[type=email], input[type=submit] {
-			text-align: left;
-			margin: 0 0 baseline(1);
+		input[type=email] {
 		}
-		input[type=text], input[type=email] {
-			width:330px;
+		input[type=submit] {
 		}
 	}
 }

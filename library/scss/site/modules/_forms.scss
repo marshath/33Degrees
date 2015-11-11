@@ -40,11 +40,11 @@ input[type='date'],
 input[type='month'], 
 input[type='week'], 
 input[type='datetime'], 
-input[type='datetime-local'] {
+input[type='datetime-local'],
+input[type='submit'] {
 	width:100%;
-	padding: baseline(0.5) 0.5em;
+	padding: baseline(0.5) 1em;
 	border:none;
-	@include border-radius(2);
 }
 
 
@@ -190,11 +190,8 @@ input[type='range']::-webkit-slider-thumb {
 SUBMIT BUTTON
 *******************************/
 input[type='submit'] {
-	border:none;
-	@extend .btn__alt;
 }
 input[type='submit']:hover {
-	background-color: brand-color-lighten('gray3',1);
 }
 
 

@@ -72,11 +72,8 @@ i, .italic { // Font style italic
 BLOCKQUOTE
 *******************************/
 blockquote {
-	color: brand-color('gray3');
 	font-style: italic;
-	padding:0 1em;
 	margin-bottom: baseline(1);
-	border-left: 2px solid brand-color('gray3');
 	cite {
 		width: 100%;
 		text-align: right;

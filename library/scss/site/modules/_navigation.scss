@@ -80,7 +80,8 @@ HEADER & FOOTER NAVIGATION
 
 .nav-footer {
 	li {
-		background-color: brand-color-darken('primary',2);
+		background-color: brand-color('gray2');
+		margin-bottom: baseline(0.5);
 	}
 }
 
@@ -93,7 +94,7 @@ HEADER & FOOTER NAVIGATION
 			width: auto; // reduces the width from 100%;
 			margin-left:1em;
 			&:last-child {
-				margin-right: 1em;
+				margin-right:1em;
 			}
 		}
 	}

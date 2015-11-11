@@ -42,6 +42,11 @@ MOVEMENT
 	to   { transform: translateX(0%) }
 }
 
+@keyframes spin { 
+	from { transform: rotate(0deg) }
+	to   { transform: rotate(359deg) }
+}
+
 
 /*******************************
 SERVICE ICON REVEALS
