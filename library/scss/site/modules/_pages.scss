@@ -39,16 +39,41 @@ GENERAL
 		flex-grow: 1;
 	}
 }
-@include bp('tablet-h') {
-	.services li {
-		width: 33%;
+@include bp('tablet-v') {
+	.services {
+		p, h3 {
+			width:66%;
+			float: right;
+		}
+		svg {
+			width:33%;
+			float: left;
+		}
 	}
+}
+@include bp('tablet-h') {
 	.blogposts li {
 		width: 50%;
 		max-width: 600px;
 	}
 	.projects li {
 		width: 33%;
+	}
+}
+@include bp('laptop') {
+	.services {
+		li {
+			width: 33%;
+			padding:0 1em;
+		}
+		p, h3 { // overrides the tablet-v styles
+			width:100%;
+			float: none;
+		}
+		svg { // overrides the tablet-v styles
+			width:100%;
+			float: none;
+		}
 	}
 }
 @include bp('television') {
@@ -119,8 +144,9 @@ HOMEPAGE SECTIONS
 }
 
 .hm-services {
-	background-color: brand-color('secondary');
+	background: linear-gradient(to right, brand-color('secondary') 10%, #1c526c 50%, brand-color('secondary') 90%);
 	color: brand-color('white');
+	box-shadow: inset 0 10px 200px black;
 	h4 {
 		text-align: center;
 	}

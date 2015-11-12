@@ -21,7 +21,7 @@ figure {
 }
 
 /* SERVICE ICONS */
-.fill, .stroke { // Fill and Stroke colors
+.fill { // Fill colors
 	&__white {
 		fill: brand-color('white');
 	}
@@ -30,5 +30,16 @@ figure {
 	}
 	&__black {
 		fill: brand-color('black');
+	}
+}
+.stroke { // Stroke colors
+	&__white {
+		stroke: brand-color('white');
+	}
+	&__gray {
+		stroke: brand-color('gray2');
+	}
+	&__black {
+		stroke: brand-color('black');
 	}
 }
