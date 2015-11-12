@@ -176,50 +176,57 @@ NEWSLETTER PANEL
 .newsletter {
 	background: brand-color('accent');
 	padding-bottom: baseline(1); // equal spacing at the bottom of the panel
-	&:before { // mailbox icon
-		content: '';
-		width: 64px;
-		height: 64px;
-		background-color: brand-color('accent');
-		background-image: url('../images/icon-inbox.svg'); // inbox SVG above newsletter
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: 50% 50%; // makes the image size to 100% width and height
-		display:block;
-		margin: 0 auto;
+	text-align: center;
+	.icon-inbox {
+		height:64px;
+		width:20%;
+		min-width: 64px;
+		background: brand-color('accent');
+		padding:0.25em;
+		margin: (- baseline(1)) auto (- baseline(0.5));
+		display: block;
+		border-radius: 50%;
 	}
-	p {
-		text-align: center;
+	svg { // inbox icon at top of newsletter panel
+		height:80%;
+		width:80%;
+		display: block;
+		margin:baseline(0.5) auto;
 	}
 	form {
-		display: flex;
-		flex-flow: column;
+		max-width: 600px;
+		display: block;
 	}
 	input[type=email], input[type=submit] {
 		text-align: center;
 		margin-bottom:baseline(0.5);
 	}
 	input[type=submit] {
-		background-color: brand-color('black');
+		background-color:#000;
 		color: brand-color('white');
 		@extend .default-transition;
 		&:hover {
 			background-color: brand-color('primary');
 		}
 	}
-	@include bp('tablet-v') {
-		&:before {
-			position:absolute;
-			margin-top: - baseline(2);
-			@include border-radius(10);
-			padding: baseline(1);
+	@include bp('mobile-h') {
+		.icon-inbox { // move inbox icon above the newsletter panel
+			width: 160px;
+			height: 80px;
+			margin-top: - baseline(1.5);
 		}
+	}
+	@include bp('tablet-v') {
 		form {
-			flex-flow: row;
+			margin:0 auto;
 		}
 		input[type=email] {
+			width:80%;
+			float:left;
 		}
 		input[type=submit] {
+			width:20%;
+			float:right;
 		}
 	}
 }
