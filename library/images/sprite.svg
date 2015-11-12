@@ -101,16 +101,14 @@
 		<title id="img-title">Logo design</title>
 		<desc id="img-desc"></desc>
 		<g class="icon-logo__left">
-			<line fill="none" class="stroke__black" stroke-linecap="round" stroke-miterlimit="10" x1="392.915" y1="8.099" x2="389.515" y2="3.493"/>
-			<line fill="none" class="stroke__black" stroke-linecap="round" stroke-miterlimit="10" x1="389.683" y1="9.345" x2="387.415" y2="7.993"/>
-			<line fill="none" class="stroke__black" stroke-linecap="round" stroke-miterlimit="10" x1="395.192" y1="5.449" x2="394.53" y2="2.742"/>
-			<path fill="none" class="stroke__black" stroke-linecap="round" stroke-miterlimit="10" d="M389.677,9.36"/>
+			<line fill="none" class="stroke__gray" stroke-linecap="round" stroke-miterlimit="10" x1="392.915" y1="8.099" x2="389.515" y2="3.493"/>
+			<line fill="none" class="stroke__gray" stroke-linecap="round" stroke-miterlimit="10" x1="389.683" y1="9.345" x2="387.415" y2="7.993"/>
+			<line fill="none" class="stroke__gray" stroke-linecap="round" stroke-miterlimit="10" x1="395.192" y1="5.449" x2="394.53" y2="2.742"/>
 		</g>
 		<g class="icon-logo__right">
-			<line fill="none"  class="stroke__black" stroke-linecap="round" stroke-miterlimit="10" x1="406.942" y1="8.099" x2="410.343" y2="3.493"/>
-			<line fill="none"  class="stroke__black" stroke-linecap="round" stroke-miterlimit="10" x1="410.175" y1="9.345" x2="412.442" y2="7.993"/>
-			<line fill="none"  class="stroke__black" stroke-linecap="round" stroke-miterlimit="10" x1="404.665" y1="5.449" x2="405.329" y2="2.742"/>
-			<path fill="none"  class="stroke__black" stroke-linecap="round" stroke-miterlimit="10" d="M410.181,9.36"/>
+			<line fill="none"  class="stroke__gray" stroke-linecap="round" stroke-miterlimit="10" x1="406.942" y1="8.099" x2="410.343" y2="3.493"/>
+			<line fill="none"  class="stroke__gray" stroke-linecap="round" stroke-miterlimit="10" x1="410.175" y1="9.345" x2="412.442" y2="7.993"/>
+			<line fill="none"  class="stroke__gray" stroke-linecap="round" stroke-miterlimit="10" x1="404.665" y1="5.449" x2="405.329" y2="2.742"/>
 		</g>
 		<g class="icon-logo__center">
 			<path class="fill__black" d="M409.812,31l-9.715-5.156l-9.756,5.08l1.902-10.832l-7.846-7.708l10.891-1.54L400.194,1l4.83,9.882
