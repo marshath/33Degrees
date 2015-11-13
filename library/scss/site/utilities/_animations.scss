@@ -44,9 +44,13 @@ MOVEMENT
 
 @keyframes spin { 
 	from { transform: rotate(0deg) }
-	to   { transform: rotate(359deg) }
+	to   { transform: rotate(18.8deg) }
 }
 
+@keyframes stripesBG {
+	from { background-position-x: 0px; }
+	to   { background-position-x: -45px; }
+}
 
 /*******************************
 SERVICE ICON REVEALS

@@ -34,7 +34,7 @@
 /*******************************
 LINK OVERLAY 
 *******************************/
-.sidebar__blog-posts, .projects {
+.blog-posts, .projects {
 	ul {
 		list-style: none;
 		padding: 0;
@@ -44,7 +44,7 @@ LINK OVERLAY
 			figcaption {
 				bottom: baseline(1);
 			}
-			.side-moretag {
+			.slide-moretag { // override .slide-moretag
 				opacity: 1;
 				margin-left: 0;
 			}
@@ -55,30 +55,21 @@ LINK OVERLAY
 		color: brand-color('white');
 	}
 	figure {
-		display: block;
 		position: relative;
 		overflow: hidden;
 		margin-bottom: baseline(1);
 	}
 	figcaption {
-		background: rgba(0,0,0,0.8);
+		background: brand-color-alpha('black', 'light');
 		width:100%;
-		display: block;
 		position: absolute;
 		bottom: - baseline(1);
 		padding: baseline(0.25) 0.5em;
 		@extend .default-transition;
 	}
-	&__moretag { // text that slides in on hover
-		color: brand-color('primary');
-		text-decoration: underline;
-		margin-left: 1em;
-		opacity: 0;
-		transition: all 0.2s ease-in;
-	}
 }
 
-.side-moretag {
+.slide-moretag {
 	color: brand-color('primary');
 	text-decoration: underline;
 	margin-left: 1em;

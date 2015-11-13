@@ -53,7 +53,9 @@ section {
 HEADER
 *******************************/
 .header-wrap {
-	background-color: brand-color('secondary');
+	background-color: brand-color('secondary'); // fallback for gradient
+	background-image: linear-gradient(to bottom, brand-color-darken('secondary',3) 0%, brand-color('secondary') 100%);
+	
 }
 
 

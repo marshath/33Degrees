@@ -4,7 +4,7 @@
 												<figure><?php the_post_thumbnail("thumbnail"); ?>
 													<figcaption>
 														<?php the_title(); ?> <br>
-														<span class="side-moretag">View details &raquo;</span>
+														<span class="slide-moretag">View details &raquo;</span>
 													</figcaption>
 												</figure>
 											</a>

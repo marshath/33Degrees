@@ -26,7 +26,7 @@ GENERAL
 
 
 /* FLEXBOX ROW WRAPS */
-.services, .quotes, .blogposts, .projects {
+.services, .quotes, .projects {
 	padding:0;
 	text-align: center;
 	display: flex;
@@ -52,10 +52,6 @@ GENERAL
 	}
 }
 @include bp('tablet-h') {
-	.blogposts li {
-		width: 50%;
-		max-width: 600px;
-	}
 	.projects li {
 		width: 33%;
 	}
@@ -86,7 +82,8 @@ GENERAL
 HOMEPAGE SECTIONS
 *******************************/
 .hm-splash {
-	background: linear-gradient(to bottom, brand-color('secondary') 0%, #1c526c 50%, #00a7bf 100%);
+	background-color: brand-color('secondary'); // fallback for gradient
+	background-image: linear-gradient(to bottom, brand-color('secondary') 0%, #1c526c 50%, #00a7bf 100%);
 	color: brand-color('white');
 	.cta { //splash text
 		width:100%;
@@ -99,14 +96,20 @@ HOMEPAGE SECTIONS
 		position:relative;
 		z-index: 0;
 		top: baseline(0.5);
+		&:hover {
+			.lightrays {
+				animation: spin 2s linear infinite;
+			}
+		}
 	}
 	.lightrays { // svg splash image background
 		transform-origin: center center;
-		animation: spin 200s linear infinite;
+		// animation: spin 10s linear infinite;
 	}
 	ul {
 		width:intrinsic;
-		background: linear-gradient(to bottom, #ea6115 10%, #d53f15 90%);
+		background-color: brand-color('primary'); // fallback for gradient
+		background-image: linear-gradient(to bottom, #ea6115 10%, #d53f15 90%);
 		@include border-radius(2);
 		box-shadow: inset 0 0 0.4em brand-color-alpha('white', 'light'), 0 0.3em 0.4em brand-color-alpha('black', 'dark');
 		margin: 0 auto baseline(1);
@@ -126,7 +129,8 @@ HOMEPAGE SECTIONS
 			display: block;
 			padding: baseline(0.75) 2em;
 			&:hover {
-				background: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);
+				background-color: brand-color-darken('primary',2);
+				background-image: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);
 			}
 		}
 	}
@@ -144,16 +148,51 @@ HOMEPAGE SECTIONS
 }
 
 .hm-services {
-	background: linear-gradient(to right, brand-color('secondary') 10%, #1c526c 50%, brand-color('secondary') 90%);
+	background-color: brand-color-darken('secondary',2);
+	background-image: linear-gradient(to right, brand-color('secondary') 10%, #1c526c 50%, brand-color('secondary') 90%);
 	color: brand-color('white');
 	box-shadow: inset 0 10px 200px black;
+	.entry-content { // moving background animation
+		background-image: repeating-linear-gradient(-45deg, rgba(0,0,0,0), rgba(0,0,0,0) 4px, rgba(0,0,0,0.3) 4px, rgba(0,0,0,0.3) 16px);
+		background-size: 110%;
+		background-position-x: 12px;
+		margin:0;
+		width:100%;
+		height:100%;
+		display: block;
+		animation : stripesBG 6s linear infinite;
+		z-index:0;
+		position:relative;
+	}
+	.inner-wrap {
+		padding: 0 5%;
+	}
 	h4 {
 		text-align: center;
 	}
 }
 
 .hm-blog {
-	background-color: tan;
+	background: url('../images/paper.jpg') repeat #f8f8f3;
+	text-align: center;
+	.blog-posts {
+		max-width:1280px;
+		margin: 0 auto;
+		padding:0;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+	}
+	li {
+	}
+	@include bp('tablet-v') {
+		.blog-posts {
+			flex-flow: row nowrap;
+		}
+		li {
+			width: 48%;
+		}
+	}
 }
 
 	
@@ -161,6 +200,14 @@ HOMEPAGE SECTIONS
 TESTIMONIALS PANEL
 *******************************/
 .testimonials {
+	max-width:960px;
+	margin:0 auto;
+	li {
+		display:none;
+		&:first-child {
+			display: block;
+		}
+	}
 }
 
 .quotes {
