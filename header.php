@@ -42,7 +42,7 @@
 			<header class="header-wrap" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 				<div id="inner-header" class="inner-wrap inner-header-wrap">
 
-					<?php // Compnay logo or text ?>
+					<?php // Company logo or text ?>
 					<div id="logo" class="header-logo" itemscope itemtype="http://schema.org/Organization">
 						<a href="<?php echo home_url(); ?>" title="Home" rel="nofollow">
 							<?php // responsive image - logo ?>
@@ -60,7 +60,7 @@
 					<nav class="nav-header" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						
 						<?php // mobile menu toggle ?>
-						<h3 id="menu-toggle"><a href="#"><svg><use xlink:href="#icon-menu"></use></svg> <span>Menu</span></a></h3>
+						<h3 id="menu-toggle"><a href="#">Menu</a></h3>
 						
 						<?php // menu items ?>
 						<div id="nav-menu">

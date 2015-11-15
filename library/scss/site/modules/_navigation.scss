@@ -8,15 +8,30 @@
 /*******************************
 HEADER & FOOTER NAVIGATION 
 *******************************/
+// mobile menu button 
+#menu-toggle { // toggles the menu visibity for mobile
+	a {
+		padding: baseline(0.5) 0 baseline(0.25); // sets height equal to logo on mobile, alters default navigation padding
+	}
+	@include bp('tablet-h') {
+		display:none;
+	}
+}
+
+// navigation and menu
+.nav-header li, .nav-footer li, .nav-header h3 {
+	@include border-radius(3);
+	@extend .default-transition;
+	margin-bottom: baseline(0.5);
+	border: 2px solid brand-color-alpha('white','dark');
+}
+// navigation only
 .nav-header, .nav-footer {
-	width:100%;
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: center;
 	ul {
-		margin: 0;
-		padding: 0;
+		max-width:1280px;
 		text-align: center;
+		margin: 0 auto;
+		padding: 0;
 		list-style: none;
 		display: flex;
 		flex-flow: column wrap;
@@ -25,77 +40,89 @@ HEADER & FOOTER NAVIGATION
 	}
 	li {
 		width:100%;
-		flex-grow: 1;
 		text-shadow: 1px 2px 1px brand-color('black');
-		box-shadow: 0 0 0em brand-color('white');
+		box-shadow: inset 0 0 0em brand-color('white');
 		&.current-menu-item {
-			box-shadow: 0 0 0.1em brand-color('white');
+			font-weight: bold;
+			border: 2px solid brand-color-alpha('white','light');
+			box-shadow: inset 0 0 1em brand-color-alpha('white', 'light');
 			a {
-				color: brand-color('accent');
+				color: brand-color('white');
 			}
+		}
+		&:hover, a:focus {
+			background-color: brand-color-alpha('white','dark');
+			border: 2px solid brand-color-alpha('white','light');
 		}
 	}
 	a {
-		color: brand-color('white');
+		color: brand-color-alpha('white','light');
 		text-decoration: none;
 		padding: baseline(1) 0;
-		display:block;
+		display: block;
+		&:hover {
+			color: brand-color('white');
+		}
 	}
 }
-
-// nav border & transition
-.nav-header li, .nav-footer li, .nav-header h3 {
-	@include border-radius(3);
-	@extend .default-transition;
-	&:hover, &:focus {
-		box-shadow: 0 0 0.5em brand-color('white');
-	}
-}
-
 .nav-header {
 	h3 { // is the 'menu-toggle'
-		width:30%;
+		width:20%;
+		@include font-size(16);
 		text-align: center;
+		text-shadow: 1px 2px 1px brand-color('black');
+		padding: baseline(0.5) 1em;
 		margin-left: 70%;
-		margin-top:-(baseline(3));
-		margin-bottom: baseline(1);
+		margin-top:-(baseline(3.5));
+		margin-bottom: baseline(1.5);
+		&:hover {
+			background: brand-color-alpha('white','dark');
+		}
 	}
 	ul {
 		display: none; // hides the navigation, until the 'menu-toggle' is clicked
-		margin-bottom: baseline(0.5);
-	}
-	@include bp('tablet-h') {
-		flex-flow: row wrap;
-		justify-content: flex-end;
-		ul {
-			display: flex; // shows the navigation
-			margin-top: -(baseline(3));
-			margin-bottom: baseline(1);
-		}
-		a {
-			padding: baseline(1) 1em;
-		}
+		margin-bottom: baseline(1); // adds margin to the bottom for mobile
 	}
 }
-
 .nav-footer {
-	li {
-		background-color: brand-color('gray2');
-		margin-bottom: baseline(0.5);
+	ul {
+		max-width: 1080px;
 	}
 }
-
 @include bp('tablet-v') {
-	.nav-header, .nav-footer {
+	.nav-header {
+		li { // think this can be combined with the tablet-h .nav-header ul flex: row
+			// may need to add an extra div to show and hide the navigation
+			width:22%; // shrink width to display as a row
+			margin:0 1%;
+			display: inline-block;
+		}
+	}
+	.nav-footer {
 		ul {
-			flex-flow: row wrap; // format as a row
+			display:flex; // shows the navigation
+			flex-flow: row nowrap; // format as a row
 		}
 		li {
-			width: auto; // reduces the width from 100%;
-			margin-left:1em;
+			margin:0 1em 0 0; // adds spacing between items
 			&:last-child {
-				margin-right:1em;
+				margin-right:0em; // removes spacing to the right of the last child
 			}
+		}
+	}
+}
+@include bp('tablet-h') {
+	.nav-header {
+		ul {
+			width: 70%;
+			max-width: 600px;
+			margin-top: -(baseline(3.5)); // sets distance from the top
+			margin-right:0; // positions the nav right
+			display:flex; // shows the navigation
+			flex-flow: row nowrap; // format as a row
+		}
+		li {
+			margin-left:1em; // adds spacing between items
 		}
 	}
 }

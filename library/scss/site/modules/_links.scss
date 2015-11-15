@@ -15,3 +15,52 @@ a {
 		text-decoration: none;
 	}
 }
+
+
+/*******************************
+OVERLAY LINKS
+*******************************/
+.overlay-links { // used on callout blog posts and projects
+	margin: 0 auto;
+	padding:0;
+	list-style: none;
+	text-align: left;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	li {
+		margin-bottom: baseline(1);
+		&:hover, &:focus {
+			figcaption {
+				bottom: baseline(1);
+			}
+			.moretag__slide { // override .moretag__slide
+				opacity: 1;
+				margin-left: 0;
+			}
+		}
+	}
+	a {
+		color: brand-color('white');
+	}
+	figure {
+		position: relative;
+		overflow: hidden;
+	}
+	figcaption {
+		background: brand-color-alpha('black', 'light');
+		width:100%;
+		position: absolute;
+		bottom: - baseline(1);
+		padding: baseline(0.25) 0.5em;
+		@extend .default-transition;
+	}
+}
+
+.moretag__slide {
+	color: brand-color('primary');
+	text-decoration: underline;
+	margin-left: 1em;
+	opacity: 0;
+	transition: all 0.2s ease-in;
+}

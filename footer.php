@@ -1,12 +1,21 @@
 			<footer class="footer-wrap" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 				<div id="inner-footer" class="inner-wrap">
 					
-					<div class="pdx">
+					<?php /* <div class="pdx">
 						<img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx.png"
 							srcset="<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx.png 1x,
 							<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx@2x.png 2x"
 							alt="Portland, Oregon">
 						<p>45.5424&deg; N, -122.6544&deg; W</p>
+					</div> */ ?>
+					<div class="footer-format">
+					<?php // Company logo or text ?>
+					<div class="footer-logo">
+						<?php // responsive image - logo ?>
+						<img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png"
+							srcset="<?php echo get_template_directory_uri(); ?>/library/images/logo.png 1x,
+							<?php echo get_template_directory_uri(); ?>/library/images/logo@2x.png 2x"
+							alt="<?php bloginfo('name'); ?>'s logo">
 					</div>
 					
 					<?php if ( is_active_sidebar( 'footer1' ) ) : ?>
@@ -31,6 +40,8 @@
 							<li class="email"><a href="http://mailchimp.com" class="social__icon"><svg class="social__email"><use xlink:href="#icon-email" /></svg></a></li>
 							<li class="linkedin"><a href="http://linkedin.com/company/33-degrees-design-studio" class="social__icon"><svg class="social__linkedin"><use xlink:href="#icon-linkedin" /></svg></a></li>
 						</ul>
+					</div> <?php end .social ?>
+					
 					</div>
 	
 					<nav class="nav-footer" role="navigation">
@@ -47,7 +58,7 @@
 							'depth' => 0,									// limit the depth of the nav
 							'fallback_cb' => 'bones_footer_links_fallback'	// fallback function
 						)); ?>
-					</nav>
+					</nav> <?php end .nav-footer ?>
 
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>, LLC. All rights reserved.</p>
 
