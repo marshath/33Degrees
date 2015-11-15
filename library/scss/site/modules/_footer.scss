@@ -5,7 +5,7 @@
  */
 
 
-.pdx {
+/* .pdx {
 	text-align: center;
 	margin-top: - baseline(2.5); // moves the pdx icon over the .footer border
 	img {
@@ -23,62 +23,52 @@
 		color:white;
 		text-decoration: none;
 	}
-}
+} */
 
 
 /*******************************
 CONTACT INFORMATION 
 *******************************/
 .footer-wrap {
-	margin-top: baseline(3.5);  // moves the footer down to compensate for .pdx
-	.widget {
-		width:100%;
-		text-align: center;
-		h3 {
-			
-		}
-		p {
-			display:flex;
-			justify-content: center;
-			align-content: center;
-			flex-flow: row wrap;
-			margin-bottom: baseline(0.5);
-		}
-		span {
-			width: 100%;
-			margin: 0 1em;
-		}
-		@include bp('tablet-v') {
-			span {
-				width:auto;
-			}
-		}
-	}
+	padding-top:baseline(2);
 }
-
-.office_info {
-	svg {
-		fill: brand-color('gray');
-		width:24px;
-		height:24px;
-		vertical-align: text-bottom;
-		margin-right:-0.75em;
+.footer-format {
+	display:flex;
+	flex-direction: column;
+	max-width: 1280px;
+	margin:0 auto;
+}
+.footer-logo {
+	width:36%;
+	max-width: 166px;
+	text-align: center;
+	margin:0 auto;
+	display: block;
+}
+.office-info {
+	text-align: center;
+	.phone, .email {
+		display: inline-block;
 	}
-	a {
-		color: brand-color('white');
-		text-decoration: none;
-		svg {
-			fill: brand-color-darken('primary',3);
-		}
-		&:hover {
-			color: brand-color('white');
-			&:first-child {
-				text-decoration: underline;
-			}
-			svg {
-				fill: brand-color('primary');
-			}
-		}
+	.phone {
+		margin-right:1em; // gives email button space 
+	}
+	svg {
+		width:32px;
+		height: 32px;
+		vertical-align: middle;
+		fill: brand-color('white');
+		margin-right: 1em;
+	}
+	.mobile { // visible on mobile
+		display: inline-block;
+		text-indent: 0;
+		width: intrinsic;
+	}
+	.non-mobile { // hidden on mobile
+		display: inline-block;
+		text-indent: -9999px;
+		width:0; // removes extra space
 	}
 }
 
@@ -87,9 +77,6 @@ CONTACT INFORMATION
 SOCIAL LINKS 
 *******************************/
 .social {
-	h3 {
-		margin: baseline(1) 0 0;
-	}
 	ul {
 		list-style: none;
 		display: flex;
@@ -97,7 +84,7 @@ SOCIAL LINKS
 		align-content: center;
 		flex-wrap: wrap;
 		padding: 0;
-		margin-bottom: baseline(2);
+		margin: 0 auto baseline(3);
 	}
 	li {
 		width:67px;
@@ -161,12 +148,56 @@ SOCIAL LINKS
 			background: social-color('linkedin');
 		}
 	}
-	@include bp('tablet-v') {
-		li {
-		}
-	}
 }
 
+
+@include bp('tablet-v') {
+	.footer-format {
+		flex-direction: row; // overrides .footer-format row-direction: column
+		flex-wrap: wrap;
+	}
+	.footer-logo {
+		margin-right:1em; // override right margin
+	}
+	.widget {
+		margin-right:auto; // center with .footer-logo margin-left:auto;
+	}
+	.office-info {
+		text-align: left;
+		a { // remove .btn__mobile formatting
+			padding:0;
+			margin:0;
+		}
+		h3 { 
+			margin-top: 0;
+		}
+		.phone, .email {
+		}
+		svg {
+			display:none;
+		}
+		.mobile { // hidden on tablet+
+			text-indent: -9999px; // override .mobile styles
+			width:0; // removes extra space
+		}
+		.non-mobile { // visible on tablet+
+			text-indent: 0;  // override .non-mobile styles
+			width: intrinsic;  // override .non-mobile styles
+		}
+	}
+	.social {
+		margin-right: auto; // centers social links
+		margin-left: auto; // centers social links
+	}
+}
+@include bp('laptop') {
+	.footer-format {
+		flex-wrap:  nowrap; // overrides .footer-format tablet-v
+	}
+	.social {
+		margin-top: -(baseline(0.5)); // moves social links up
+	}
+}
 
 
 /*******************************
@@ -176,4 +207,5 @@ COPYRIGHT
 	color: brand-color('gray2');
 	@include font-size(12);
 	text-align: center;
+	margin-top:baseline(2);
 }

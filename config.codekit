@@ -92,15 +92,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/inc\/content-projectcallout.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/inc\/content-projectcallout.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/inc\/header-icons.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -335,6 +326,28 @@
 		"initialSize": 4803,
 		"inputAbbreviatedPath": "\/library\/images\/logo@2x.png",
 		"outputAbbreviatedPath": "\/library\/images\/logo@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/paper.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3391,
+		"inputAbbreviatedPath": "\/library\/images\/paper.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/paper.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/paper2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 34538,
+		"inputAbbreviatedPath": "\/library\/images\/paper2.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/paper2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

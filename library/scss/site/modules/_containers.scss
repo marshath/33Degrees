@@ -70,7 +70,7 @@ main {
 FOOTER 
 *******************************/
 .footer-wrap {
-	background-color: brand-color('gray1');
+	background-color: brand-color-darken('secondary',3); // fallback for gradient
+	background-image: linear-gradient(to bottom, brand-color('secondary') 0%, brand-color('black') 100%);
 	color: brand-color('white');
-	border-top: baseline(0.5) solid brand-color('accent');
 }

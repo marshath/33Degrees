@@ -28,7 +28,7 @@
 									<svg><use xlink:href="#icon-website"></use></svg> Website design
 								</div>
 								
-								<ul class="projects">
+								<ul class="overlay-links">
 								
 									<?php query_posts(array('post_type'=>'project')); // Query projects for category: website ?>
 									
@@ -43,11 +43,21 @@
 										)
 									);
 									$projloop = new WP_Query( $my3post ); 
-									while ( $projloop->have_posts() ) : $projloop->the_post();
+									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 							
-										get_template_part('inc/content-projectcallout'); // includes project callout code 	
+									<li>
+										<a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark">
+											<figure><?php the_post_thumbnail("thumbnail"); ?>
+												<figcaption>
+													<?php the_title(); ?> <br>
+													<span class="moretag__slide">View details &raquo;</span>
+												</figcaption>
+											</figure>
+										</a>
+										<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+									</li>
 										
-									endwhile; ?>
+									<? endwhile; ?>
 									<?php wp_reset_query(); ?>
 									
 								</ul> <?php // end .projects ?>
@@ -65,7 +75,7 @@
 								</div>
 								<?php echo get_field('panel_projects3'); // Display the content ?>
 								
-								<ul class="projects">
+								<ul class="overlay-links">
 								
 									<?php query_posts(array('post_type'=>'project')); // Query projects for category: website ?>
 									
@@ -80,11 +90,21 @@
 										)
 									);
 									$projloop = new WP_Query( $my3post ); 
-									while ( $projloop->have_posts() ) : $projloop->the_post();
-									
-										get_template_part('inc/content-projectcallout'); // includes project callout code 								
+									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
+							
+									<li>
+										<a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark">
+											<figure><?php the_post_thumbnail("thumbnail"); ?>
+												<figcaption>
+													<?php the_title(); ?> <br>
+													<span class="moretag__slide">View details &raquo;</span>
+												</figcaption>
+											</figure>
+										</a>
+										<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+									</li>
 										
-									endwhile; ?>
+									<? endwhile; ?>
 									<?php wp_reset_query(); ?>
 									
 								</ul> <?php // end .projects ?>
@@ -102,7 +122,7 @@
 								</div>
 								<?php echo get_field('panel_projects4'); // Display the content ?>
 								
-								<ul class="projects">
+								<ul class="overlay-links">
 								
 									<?php query_posts(array('post_type'=>'project')); // Query projects for category: print ?>
 									
@@ -117,11 +137,21 @@
 										) );
 										
 									$projloop = new WP_Query( $my3post ); 
-									while ( $projloop->have_posts() ) : $projloop->the_post();
-									
-										get_template_part('inc/content-projectcallout'); // includes project callout code 	
+									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
+							
+									<li>
+										<a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark">
+											<figure><?php the_post_thumbnail("thumbnail"); ?>
+												<figcaption>
+													<?php the_title(); ?> <br>
+													<span class="moretag__slide">View details &raquo;</span>
+												</figcaption>
+											</figure>
+										</a>
+										<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+									</li>
 										
-									endwhile; ?>
+									<? endwhile; ?>
 									<?php wp_reset_query(); ?>
 									
 								</ul> <?php // end .projects ?>

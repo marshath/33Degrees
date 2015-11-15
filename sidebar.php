@@ -45,7 +45,7 @@
 							
 							<h3>Popular Blog Posts</h3>
 							
-							<ul class="blog-posts">
+							<ul class="overlay-links">
 							<?php query_posts('meta_key=post_views_count&orderby=meta_value_num&order=DESC&posts_per_page=4');
 							if (have_posts()) : while (have_posts()) : the_post(); ?>
 								
@@ -54,7 +54,7 @@
 										<figure><?php the_post_thumbnail("thumbnail"); ?>
 											<figcaption>
 												<?php the_title(); ?> <br>
-												<span class="slide-moretag">Read article &raquo;</span>
+												<span class="moretag__slide">Read article &raquo;</span>
 											</figcaption>
 										</figure>
 									</a>

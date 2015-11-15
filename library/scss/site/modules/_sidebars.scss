@@ -8,10 +8,8 @@
 .sidebar { // column width controled in _containers.scss
 	margin-top: baseline(2); // moves sidebar down to align with first paragraph
 	&__email-marketing {
-		
 	}
 	&__social {
-		
 	}
 	&__blog-posts {
 	}
@@ -20,61 +18,10 @@
 		@include clearfix;
 	}
 	&__categories {
-		
 	}
 }
 
 .single .sidebar {
-}
-
-
-
-
-
-/*******************************
-LINK OVERLAY 
-*******************************/
-.blog-posts, .projects {
-	ul {
-		list-style: none;
-		padding: 0;
-	}
-	li {
-		&:hover, &:focus {
-			figcaption {
-				bottom: baseline(1);
-			}
-			.slide-moretag { // override .slide-moretag
-				opacity: 1;
-				margin-left: 0;
-			}
-		}
-		
-	}
-	a {
-		color: brand-color('white');
-	}
-	figure {
-		position: relative;
-		overflow: hidden;
-		margin-bottom: baseline(1);
-	}
-	figcaption {
-		background: brand-color-alpha('black', 'light');
-		width:100%;
-		position: absolute;
-		bottom: - baseline(1);
-		padding: baseline(0.25) 0.5em;
-		@extend .default-transition;
-	}
-}
-
-.slide-moretag {
-	color: brand-color('primary');
-	text-decoration: underline;
-	margin-left: 1em;
-	opacity: 0;
-	transition: all 0.2s ease-in;
 }
 
 

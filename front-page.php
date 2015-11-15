@@ -101,7 +101,7 @@
 								
 								<?php echo get_field('panel_home4'); // Display the content ?>
 								
-								<ul class="blog-posts">
+								<ul class="overlay-links">
 								<?php // Display recent blog posts
 									$args = array( 'numberposts' => '2', 'post_status' => 'publish' );
 									$recent_posts = wp_get_recent_posts($args);
@@ -110,7 +110,7 @@
 											<a href="' . get_permalink($recent["ID"]) . '" title="Read '.esc_attr($recent["post_title"]).'" >
 												<figure>' .  get_the_post_thumbnail($recent["ID"], "thumbnail") . '
 												<figcaption>' . $recent["post_title"] . ' <br>
-												<span class="slide-moretag">Read article &raquo;</span></figcaption>
+												<span class="moretag__slide">Read article &raquo;</span></figcaption>
 											</figure></a>
 										</li>';
 									} ?>
