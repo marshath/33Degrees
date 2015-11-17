@@ -17,31 +17,33 @@ body {
 
 // HEADINGS
 h1, h2, h3, h4, h5, h6 {
-	@include serif;
+	@include sans-serif;
+	font-weight: 600;
 	margin: baseline(0.5) 0;
 }
 h1 {
-	
+	@include font-size(46);
 }
 h2 {
-	text-align: center;
+	@include font-size(36);
 }
 h3 {
-	
+	@include font-size(30);
 }
 h4 {
-	
+	@include font-size(24);
 }
 h5 {
-	
+	@include font-size(30);
 }
 h6 {
-	
+	@include font-size(18);
 }
 
 
 // PARAGRAPH
 p {
+	@include font-size(18);
 	margin-bottom: baseline(1);
 }
 
@@ -50,10 +52,11 @@ p {
 .normal { // Font weight normal
 	font-weight: normal;
 }
-b, .bold { // Font weight bold
+b, strong, .bold { // Font weight bold
 	font-weight: bold;
+	font-weight: 600;
 }
-i, .italic { // Font style italic
+i, em, .italic { // Font style italic
 	font-style: italic;
 }
 .uppercase { // Letters uppercase
@@ -72,7 +75,9 @@ i, .italic { // Font style italic
 BLOCKQUOTE
 *******************************/
 blockquote {
+	@include font-size(20);
 	font-style: italic;
+	line-height: baseline(1);
 	margin-bottom: baseline(1);
 	cite {
 		width: 100%;

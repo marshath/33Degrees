@@ -22,10 +22,12 @@
 			get_template_part('inc/header-icons'); ?>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
-		<?php // header includes
-			get_template_part('inc/header-social'); // includes social media profiles 
-			get_template_part('inc/header-plugins'); // includes plugins and analytics ?>
+		
+		<?php // TYPEKIT // ?>
+		<script src="https://use.typekit.net/cqu0hqz.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		<?php // ADDTHIS // ?>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51b3d7b12af9a97b" async="async"></script>
 
 		<?php // wordpress head functions
 			wp_head(); // end of wordpress head ?>

@@ -11,7 +11,7 @@ HEADER & FOOTER NAVIGATION
 // mobile menu button 
 #menu-toggle { // toggles the menu visibity for mobile
 	a {
-		padding: baseline(0.5) 0 baseline(0.25); // sets height equal to logo on mobile, alters default navigation padding
+		padding: baseline(0.4) 0 baseline(0.5); // sets height equal to logo on mobile, alters default navigation padding
 	}
 	@include bp('tablet-h') {
 		display:none;
@@ -20,9 +20,9 @@ HEADER & FOOTER NAVIGATION
 
 // navigation and menu
 .nav-header li, .nav-footer li, .nav-header h3 {
+	@include font-size(18);
 	@include border-radius(3);
 	@extend .default-transition;
-	margin-bottom: baseline(0.5);
 	border: 2px solid brand-color-alpha('white','dark');
 }
 // navigation only
@@ -42,6 +42,7 @@ HEADER & FOOTER NAVIGATION
 		width:100%;
 		text-shadow: 1px 2px 1px brand-color('black');
 		box-shadow: inset 0 0 0em brand-color('white');
+		margin-bottom: baseline(0.5);
 		&.current-menu-item {
 			font-weight: bold;
 			border: 2px solid brand-color-alpha('white','light');
@@ -58,7 +59,7 @@ HEADER & FOOTER NAVIGATION
 	a {
 		color: brand-color-alpha('white','light');
 		text-decoration: none;
-		padding: baseline(1) 0;
+		padding: baseline(0.9) 0 baseline(1);
 		display: block;
 		&:hover {
 			color: brand-color('white');
@@ -118,6 +119,7 @@ HEADER & FOOTER NAVIGATION
 			max-width: 600px;
 			margin-top: -(baseline(3.5)); // sets distance from the top
 			margin-right:0; // positions the nav right
+			margin-bottom: baseline(1.5);
 			display:flex; // shows the navigation
 			flex-flow: row nowrap; // format as a row
 		}
