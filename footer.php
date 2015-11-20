@@ -1,13 +1,6 @@
 			<footer class="footer-wrap" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 				<div id="inner-footer" class="inner-wrap">
-					
-					<?php /* <div class="pdx">
-						<img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx.png"
-							srcset="<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx.png 1x,
-							<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx@2x.png 2x"
-							alt="Portland, Oregon">
-						<p>45.5424&deg; N, -122.6544&deg; W</p>
-					</div> */ ?>
+				
 					<div class="footer-format">
 					<?php // Company logo or text ?>
 					<div class="footer-logo">

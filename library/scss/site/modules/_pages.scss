@@ -88,6 +88,7 @@ HOMEPAGE SECTIONS
 	.cta { //splash text
 		width:100%;
 		text-align: center;
+		@include font-size(18);
 		position: relative;
 		z-index: 1;
 	}
@@ -144,6 +145,7 @@ HOMEPAGE SECTIONS
 		.lady {
 			width:50%;
 		}
+		
 	}
 }
 
@@ -170,6 +172,9 @@ HOMEPAGE SECTIONS
 	h2, h4 {
 		font-weight: normal;
 		text-align: center;
+	}
+	h2, h3 {
+		text-shadow: 0 2px 2px brand-color('black');
 	}
 	@include bp('tablet-v') {
 		p, h3 {
@@ -201,7 +206,7 @@ HOMEPAGE SECTIONS
 			box-shadow: 4px 10px 1em brand-color-alpha('black','dark');
 		}
 		figcaption { // override .overlay-links figcaption
-			@include font-size(28);
+			@include font-size(22);
 			bottom: -(baseline(0.75));
 			line-height: baseline(0.75);
 		}

@@ -12,8 +12,10 @@
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							
 								<div class="cta">
-									<div class="next"><?php // load and browser cache the SVG for the homepage
-									require("library/images/splash-text.svg"); ?></div>
+									<div class="splash-text">
+										<?php // load and browser cache the SVG for the homepage
+										require("library/images/splash-text.svg"); ?>
+									</div>
 									<?php the_content(); // display the content ?>
 								</div>
 								

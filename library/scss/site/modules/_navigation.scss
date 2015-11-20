@@ -11,7 +11,7 @@ HEADER & FOOTER NAVIGATION
 // mobile menu button 
 #menu-toggle { // toggles the menu visibity for mobile
 	a {
-		padding: baseline(0.4) 0 baseline(0.5); // sets height equal to logo on mobile, alters default navigation padding
+		padding: baseline(0.5) 0; // sets height equal to logo on mobile, alters default navigation padding
 	}
 	@include bp('tablet-h') {
 		display:none;
@@ -42,7 +42,7 @@ HEADER & FOOTER NAVIGATION
 		width:100%;
 		text-shadow: 1px 2px 1px brand-color('black');
 		box-shadow: inset 0 0 0em brand-color('white');
-		margin-bottom: baseline(0.5);
+		margin-bottom: baseline(0.5); // bottom spacing for mobile navigation
 		&.current-menu-item {
 			font-weight: bold;
 			border: 2px solid brand-color-alpha('white','light');
@@ -59,7 +59,7 @@ HEADER & FOOTER NAVIGATION
 	a {
 		color: brand-color-alpha('white','light');
 		text-decoration: none;
-		padding: baseline(0.9) 0 baseline(1);
+		padding: baseline(1) 0;
 		display: block;
 		&:hover {
 			color: brand-color('white');

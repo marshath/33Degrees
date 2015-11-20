@@ -47,6 +47,11 @@ CONTACT INFORMATION
 }
 .office-info {
 	text-align: center;
+	h3 {
+		@include font-size(20);
+		margin-bottom: baseline(0.25);
+		padding-top: baseline(0.25); // sets .office-info text lower
+	}
 	.phone, .email {
 		display: inline-block;
 	}
@@ -170,8 +175,6 @@ SOCIAL LINKS
 		}
 		h3 { 
 			margin-top: 0;
-		}
-		.phone, .email {
 		}
 		svg {
 			display:none;
