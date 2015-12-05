@@ -3,19 +3,19 @@
 			<div id="content">
 				<div id="inner-content" class="wrap">
 
-					<main id="main" class="main-wrap inner-wrap col2-3" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap inner-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						
 						<?php // Display Blog page content
 						$id=62; // set page id
 						$post = get_post($id); 
 						$title = apply_filters('the_title', $post->post_title); // page title
 						$content = apply_filters('the_content', $post->post_content); // page content
-						echo '<h1 class="page-title" itemprop="headline">' . $title . '</h1><h3>' . $content . '</h3>';  
+						echo '<h1 class="page-title" itemprop="headline">' . $title . '</h1>' . $content ;  
 						?>
 						
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article">
+						<article id="post-<?php the_ID(); ?>" <?php post_class( 'col2-3' ); ?> role="article">
 							
 							<figure>
 			                    <?php the_post_thumbnail(); ?>
@@ -24,29 +24,22 @@
 							<header class="article-header">
 
 								<h1 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-								<p class="byline vcard">
-									<?php printf( __( '%2$s on %1$s', 'bonestheme' ),
+								
+								<div class="byline">
+									<?php printf( __( '%1$s %2$s', 'bonestheme' ),
 										// the time the post was published
-										'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+										'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished"><svg><use xlink:href="#icon-time"></use></svg>' . get_the_time(get_option('date_format')) . '</time>',
 										// the author of the post
-										'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author">' . get_the_author('ID') . '</a></span>'
-									); ?>
-								</p>
-
+										'<span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person"><svg><use xlink:href="#icon-user"></use></svg><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author">' . get_the_author('ID') . '</a></span>' ); ?>
+									<span class="entry-category"><svg><use xlink:href="#icon-category"></use></svg><?php printf( get_the_category_list(', ') ); ?></span>
+									<span class="entry-comment-count"><svg><use xlink:href="#icon-comments"></use></svg><?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?></span>
+								</div><?php // end .byline ?>
+								
 							</header>
 
 							<section class="entry-content">
 								<?php the_excerpt(); ?>
 							</section>
-
-							<footer class="article-footer">
-								<p class="footer-comment-count">
-									<?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?>
-								</p>
-								
-								<?php printf( '<p class="footer-category">' . __('Filed under', 'bonestheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
-								<?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Topics:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-							</footer>
 
 						</article> <?php // end #post-<id> .article-wrap ?>
 

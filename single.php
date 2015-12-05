@@ -29,9 +29,9 @@
 
 						<?php endif; ?>
 
-					<?php get_sidebar(); ?>
-
 					</main> <?php // #main .main-wrap .inner-wrap ?>
+
+					<?php get_sidebar(); ?>
 
 				</div> <?php // end #inner-content .wrap ?>
 			</div> <?php // end #content ?>

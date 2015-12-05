@@ -376,6 +376,37 @@ ABOUT
 /*******************************
 BLOG
 *******************************/
+.attachment-post-thumbnail {
+	margin-top:baseline(1);
+}
+
+.article-header {
+	svg { // icons for blog global
+		width:16px;
+		height:16px;
+	}
+}
+.single .article-header svg {
+	margin-left:0.5em;
+	fill: brand-color('primary');
+	&:hover {
+		fill: brand-color('text');
+	}
+}
+
+h1.entry-title {
+	margin-top:0;
+	margin-bottom: baseline(0.25);
+	font-weight: normal;
+	@include font-size(36);
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
 .author__pic {
 	max-width: 75px;
 	max-height: 75px;
@@ -392,13 +423,13 @@ BLOG
 // BLOG ARCHIVE LIST
 .block-thumb {
 	.b-inner {
-		@include clearfix;
+		// @include clearfix;
 	}
 	.b-thumb {
-		@include column(3);
+		// @include column(3);
 	}
 	.b-text {
-		@include column(9);
+		// @include column(9);
 	}
 	.b-title {
 		
@@ -411,7 +442,7 @@ BLOG
 
 .block-hero {
 	.b-thumb {
-		@include column(12);
+		// @include column(12);
 	}
 }
 
@@ -425,7 +456,44 @@ BLOG
 
 
 // AUTHOR INFORMATION
-.byline { // Author name
+.byline { // time, author, category, comments
+	width:100%;
+	padding-top: baseline(0.5);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	font-size: 0.8rem;
+	border-top:1px solid brand-color('gray3');
+	a {
+		text-decoration: none;
+		color: brand-color('text');
+		&:hover {
+			text-decoration: underline;
+			color: brand-color('primary');
+		}
+	}
+	.entry-time, .entry-author, .entry-category, .entry-comment-count { // width of flex items
+		width:25%;
+	}
+	.entry-time, .entry-author, .entry-category { // spacing between flex items
+		margin-right:1.5em;
+	}
+	svg { // icons for blog posts
+		fill: brand-color('gray3');
+		vertical-align: top;
+		display: none;
+		margin-right: 0.5em;
+	}
+	@include bp('phone-h') {
+		svg {
+			display: inline-block;
+		}
+	}
+	@include bp('tablet-v') {
+		.entry-time, .entry-author, .entry-category, .entry-comment-count { // width of flex items
+			width:intrinsic;
+		}
+	}
 }
 
 // COMPANY INFORMATION

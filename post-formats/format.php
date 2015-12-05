@@ -30,16 +30,16 @@
 										<?php printf ('Follow the author: ');
 											// the author social profiles, if they have them
 											if ($social = get_the_author_meta('facebook')) { // author Facebook profile
-												printf ('<a href="http://facebook.com/' . get_the_author_meta('facebook') . '" title="Follow ' . get_the_author('ID') . ' on Facebook" rel="bookmark">[F]</a> ');
+												printf ('<a href="http://facebook.com/' . get_the_author_meta('facebook') . '" title="Follow ' . get_the_author('ID') . ' on Facebook" rel="bookmark"><svg><use xlink:href="#icon-facebook"></use></svg><span class="screen-reader-text">Follow ' . get_the_author('ID') . 'on Facebook</span></a> ');
 											};
 											if ($social = get_the_author_meta('twitter')) {  // author Twitter profile
-												printf ('<a href="http://twitter.com/' . get_the_author_meta('twitter') . '" title="Follow ' . get_the_author('ID') . ' on Twitter" rel="bookmark">[T]</a> ');
+												printf ('<a href="http://twitter.com/' . get_the_author_meta('twitter') . '" title="Follow ' . get_the_author('ID') . ' on Twitter" rel="bookmark"><svg><use xlink:href="#icon-twitter"></use></svg><span class="screen-reader-text">Follow ' . get_the_author('ID') . 'on Twitter</span></a> ');
 											};
 											if ($social = get_the_author_meta( 'googleplus' )) { // author Google+ profile
-												printf ('<a href="https://plus.google.com/' . get_the_author_meta( 'googleplus' ) . '" title="Follow ' . get_the_author('ID') . ' on Google+" rel="bookmark">[G]</a> ');
+												printf ('<a href="https://plus.google.com/' . get_the_author_meta( 'googleplus' ) . '" title="Follow ' . get_the_author('ID') . ' on Google+" rel="bookmark"><svg><use xlink:href="#icon-google"></use></svg><span class="screen-reader-text">Follow ' . get_the_author('ID') . 'on Google Plus</span></a> ');
 											};
 											if ($social = get_the_author_meta('aim')) { // author LinkedIn profile
-												printf ('<a href="http://www.linkedin.com/in/' . get_the_author_meta( 'aim' ) . '" title="Follow ' . get_the_author('ID') . ' on LinkedIn" rel="bookmark">[L]</a>');
+												printf ('<a href="http://www.linkedin.com/in/' . get_the_author_meta( 'aim' ) . '" title="Follow ' . get_the_author('ID') . ' on LinkedIn" rel="bookmark"><svg><use xlink:href="#icon-linkedin"></use></svg><span class="screen-reader-text">Follow ' . get_the_author('ID') . 'on LinkedIn</span></a>');
 											};
 										?>
 										
