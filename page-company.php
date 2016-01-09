@@ -23,7 +23,7 @@
 						<article id="panel-2" <?php post_class( 'panel panel__about2' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
-								<?php echo get_field('panel_about2'); // display the content ?>
+								<?php echo get_field('panel_2'); // display the content ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</article> <?php // end .panel .panel__about2 ?>
@@ -33,20 +33,20 @@
 						<article id="panel-3" <?php post_class( 'panel panel__about3' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
-								<?php echo get_field('panel_about3'); // Display the content ?>
+								<?php echo get_field('panel_3'); // Display the content ?>
 								
 								<ul class="testimonials">
 								<?php // Display Testimonials
-									query_posts(array('post_type'=>'testimonials')); ?>
+									query_posts(array('post_type'=>'testimonial')); ?>
 									
-									<?php $my1post = array( 'post_type' => 'testimonials' );
+									<?php $my1post = array( 'post_type' => 'testimonial' );
 									$qloop = new WP_Query( $my1post ); // Cycle through all posts
 									while ( $qloop->have_posts() ) : $qloop->the_post(); ?>
 									
 									<li>
 										<blockquote>
 											<?php the_content(); ?>
-											<cite>&mdash;<?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_client', true ) ); ?>, <a href="<?php echo esc_url( home_url( '/' ) ); ?><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_url', true ) ); ?>"><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_company', true ) ); ?></a></cite>
+											<cite>&mdash;<?php echo get_the_title(get_the_ID()); ?>, <a href="<?php echo esc_url( home_url( '/' ) ); ?><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_url', true ) ); ?>"><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_company', true ) ); ?></a></cite>
 										</blockquote>
 									</li>
 									
@@ -63,7 +63,7 @@
 						<article id="panel-4" <?php post_class( 'panel panel__about4' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
-								<?php echo get_field('panel_about4'); // Display the content ?>
+								<?php echo get_field('panel_4'); // Display the content ?>
 								
 							</section> <?php // end .inner-wrap  ?>
 						</article> <?php // end .panel .panel__about4 ?>

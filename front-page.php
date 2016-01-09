@@ -64,7 +64,7 @@
 						<article id="panel-services" <?php post_class( 'row hm-services' ); ?> role="article">
 							<section class="entry-content" itemprop="articleBody">
 								<div class="inner-wrap">
-								<?php echo get_field('panel_home2'); // display the content ?>
+								<?php echo get_field('panel_2'); // display the content ?>
 								</div>
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</article> <?php // end #panel-services .row .hm-services ?>
@@ -73,20 +73,20 @@
 						<?php /* TESTIMONIALS */ ?>
 						<article id="panel-testimonials" <?php post_class( 'row testimonials' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
-								<?php echo get_field('panel_home3'); // Display the content ?>
+								<?php echo get_field('panel_3'); // Display the content ?>
 								
 								<ul class="quotes">
 								<?php // Display Testimonials
-									query_posts(array('post_type'=>'testimonials')); ?>
+									query_posts(array('post_type'=>'testimonial')); ?>
 									
-									<?php $my1post = array( 'post_type' => 'testimonials' );
+									<?php $my1post = array( 'post_type' => 'testimonial' );
 									$qloop = new WP_Query( $my1post ); // Cycle through all posts
 									while ( $qloop->have_posts() ) : $qloop->the_post(); ?>
 									
 									<li>
 										<blockquote>
 											<?php the_content(); ?>
-											<cite>&mdash;<?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_client', true ) ); ?>, <a href="<?php echo esc_url( home_url( '/' ) ); ?><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_url', true ) ); ?>"><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_company', true ) ); ?></a></cite>
+											<cite>&mdash;<?php echo get_the_title(get_the_ID()); ?>, <a href="<?php echo esc_url( home_url( '/' ) ); ?><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_url', true ) ); ?>"><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_company', true ) ); ?></a></cite>
 										</blockquote>
 									</li>
 									
@@ -103,7 +103,7 @@
 						<article id="panel-blog" <?php post_class( 'row hm-blog' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
-								<?php echo get_field('panel_home4'); // Display the content ?>
+								<?php echo get_field('panel_4'); // Display the content ?>
 								
 								<ul class="overlay-links">
 								<?php // Display recent blog posts

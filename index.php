@@ -18,7 +18,7 @@
 						<article id="post-<?php the_ID(); ?>" <?php post_class( 'col2-3' ); ?> role="article">
 							
 							<figure>
-			                    <?php the_post_thumbnail(); ?>
+			                    <?php the_post_thumbnail('thumbnail'); ?>
 							</figure>
 
 							<header class="article-header">
