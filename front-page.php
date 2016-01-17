@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-			<div id="content">
-				<div id="inner-content" class="wrap">
+			<div id="content" class="wrap">
+				<div id="inner-content">
 					
 					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 								
@@ -126,7 +126,7 @@
 						
 					</main> <?php // end #main .main-wrap ?>
 					
-				</div> <?php // end #inner-content .wrap ?>
-			</div> <?php // end #content ?>
+				</div> <?php // end #inner-content ?>
+			</div> <?php // end #content .wrap ?>
 
 <?php get_footer(); ?>

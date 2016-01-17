@@ -69,8 +69,10 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-// add_image_size( 'bones-thumb-600', 600, 150, true );
-// add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'blog-600', 600, 200, true );
+add_image_size( 'blog-1200', 1200, 400, true );
+add_image_size( 'blog-500', 500, 300, true );
+add_image_size( 'blog-1000', 1000, 600, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -90,14 +92,16 @@ for the 600 x 150 image:
 
 */
 
-/* add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
 	return array_merge( $sizes, array(
-		'bones-thumb-600' => __('600px by 150px'),
-		'bones-thumb-300' => __('300px by 100px'),
+		'blog-600' => __('600px by 200px'),
+		'blog-1200' => __('1200px by 400px'),
+		'blog-500' => __('500px by 300px'),
+		'blog-1000' => __('1000px by 600px'),
 	) );
-} */
+}
 
 /*
 The function above adds the ability to use the dropdown menu to select

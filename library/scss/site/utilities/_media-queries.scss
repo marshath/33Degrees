@@ -20,7 +20,8 @@ BREAK POINTS
 	$bp-tablet-v: "screen and (min-width: 640px)";		// tablet vertically & up
 	$bp-tablet-h: "screen and (min-width: 764px)";		// tablet horizontally & up
 	$bp-laptop: "screen and (min-width: 1024px)";		// laptop & up
-	$bp-television: "screen and (min-width: 1480px)";	// television & up
+	$bp-monitor: "screen and (min-width: 1480px)";		// monitor & up
+	$bp-television: "screen and (min-width: 1800px)";	// television & up
 	
 	// DISPLAY RESOLUTION
 	$bp-image2x: "screen and (min-device-pixel-ratio: 1.5)";	// @2x high resolution displays & up
@@ -41,6 +42,9 @@ BREAK POINTS
 	}
 	@else if $point == laptop {					// laptop
 		@media #{$bp-laptop}  { @content; }
+	}
+	@else if $point == monitor {				// monitor
+		@media #{$bp-monitor}  { @content; }
 	}
 	@else if $point == television {				// television
 		@media #{$bp-television}  { @content; }

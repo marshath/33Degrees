@@ -20,10 +20,7 @@ HEADER & FOOTER NAVIGATION
 
 // navigation and menu
 .nav-header li, .nav-footer li, .nav-header h3 {
-	@include font-size(18);
-	@include border-radius(3);
 	@extend .default-transition;
-	border: 2px solid brand-color-alpha('white','dark');
 }
 // navigation only
 .nav-header, .nav-footer {
@@ -45,7 +42,6 @@ HEADER & FOOTER NAVIGATION
 		margin-bottom: baseline(0.5); // bottom spacing for mobile navigation
 		&.current-menu-item {
 			font-weight: bold;
-			border: 2px solid brand-color-alpha('white','light');
 			box-shadow: inset 0 0 1em brand-color-alpha('white', 'light');
 			a {
 				color: brand-color('white');
@@ -53,7 +49,6 @@ HEADER & FOOTER NAVIGATION
 		}
 		&:hover, a:focus {
 			background-color: brand-color-alpha('white','dark');
-			border: 2px solid brand-color-alpha('white','light');
 		}
 	}
 	a {
@@ -73,9 +68,9 @@ HEADER & FOOTER NAVIGATION
 		text-align: center;
 		text-shadow: 1px 2px 1px brand-color('black');
 		padding: baseline(0.5) 1em;
-		margin-left: 70%;
-		margin-top:-(baseline(3.5));
-		margin-bottom: baseline(1.5);
+		margin-left: 75%;
+		margin-top:-(baseline(3));
+		margin-bottom: baseline(1);
 		&:hover {
 			background: brand-color-alpha('white','dark');
 		}
@@ -117,9 +112,9 @@ HEADER & FOOTER NAVIGATION
 		ul {
 			width: 70%;
 			max-width: 600px;
-			margin-top: -(baseline(3.5)); // sets distance from the top
+			margin-top: -(baseline(3)); // sets distance from the top
 			margin-right:0; // positions the nav right
-			margin-bottom: baseline(1.5);
+			margin-bottom: baseline(0.5);
 			display:flex; // shows the navigation
 			flex-flow: row nowrap; // format as a row
 		}

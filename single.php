@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-			<div id="content">
-				<div id="inner-content" class="wrap">
+			<div id="content" class="wrap">
+				<div id="inner-content">
 
-					<main id="main" class="main-wrap inner-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -23,15 +23,16 @@
 								<footer class="article-footer">
 										<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
 								</footer>
-							</article> <?php // #post-not-found .inner-wrap ?>
+							</article> <?php // #post-not-found ?>
 
 						<?php endif; ?>
 
-					</main> <?php // #main .main-wrap .inner-wrap ?>
+					</main> <?php // #main .main-wrap ?>
 
+					<?php comments_template(); ?>
 					<?php get_sidebar(); ?>
 
-				</div> <?php // end #inner-content .wrap ?>
-			</div> <?php // end #content ?>
+				</div> <?php // end #inner-content ?>
+			</div> <?php // end #content .wrap ?>
 
 <?php get_footer(); ?>

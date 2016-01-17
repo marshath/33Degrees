@@ -10,20 +10,11 @@ HEADER
 *******************************/
 .header-logo { // 33 degrees logo in the header
 	width:36%;
-	max-width: 166px;
-	margin-top: baseline(1);
-	margin-left: 2em;
-	text-align: center;
-	@extend .default-transition;
-	@include bp('tablet-h') {
-		width:30%;
-		margin-left: 5%;
-	}
-	@include bp('laptop') {
-		margin-left: 6%;
-	}
-	@include bp('television') {
-		margin-left: 9%;
+	max-width: 130px;
+	margin-top: baseline(0.5);
+	margin-left: 3%;
+	@include bp('mobile-h') {
+		margin-left: 0;
 	}
 }
 .site-title {

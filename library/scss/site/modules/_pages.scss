@@ -166,9 +166,6 @@ HOMEPAGE SECTIONS
 		z-index:0;
 		position:relative;
 	}
-	.inner-wrap {
-		padding: 0 5%;
-	}
 	h2, h4 {
 		font-weight: normal;
 		text-align: center;
@@ -186,7 +183,6 @@ HOMEPAGE SECTIONS
 			text-align:center; // override tablet view
 		}
 		.services {
-			max-width: 1280px;
 			margin: 0 auto;
 		}
 	}
@@ -200,7 +196,6 @@ HOMEPAGE SECTIONS
 		font-weight: normal;
 	}
 	.overlay-links {
-		max-width:1280px;
 		figure {
 			border: 0.5em solid brand-color('white');
 			box-shadow: 4px 10px 1em brand-color-alpha('black','dark');
@@ -229,7 +224,6 @@ HOMEPAGE SECTIONS
 TESTIMONIALS PANEL
 *******************************/
 .testimonials {
-	max-width:960px;
 	margin:0 auto;
 	h2 {
 		text-align: center;
@@ -376,21 +370,76 @@ ABOUT
 /*******************************
 BLOG
 *******************************/
+
+.blog { // index, blog archive formatting
+	article {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		margin-bottom: baseline(2);
+	}
+	@include bp('tablet-h') {
+		article {
+			flex-direction: row;
+		}
+		.post-wrap {
+			width: 62%;
+			margin-left: 3%;
+			
+		}
+		figure {
+			width:35%;
+		}
+	}
+	@include bp('laptop') {
+		.post-wrap {
+			width: 57%;
+			margin-left: 3%;
+			
+		}
+		figure {
+			width:40%;
+		}
+	}
+}
+
 .attachment-post-thumbnail {
 	margin-top:baseline(1);
 }
 
-.article-header {
-	svg { // icons for blog global
+.article-footer {
+	svg { // icon size for blog header
 		width:16px;
 		height:16px;
+		margin-left:0.5em;
+		fill: brand-color('primary');
+		&:hover {
+			fill: brand-color('text');
+		}
 	}
 }
-.single .article-header svg {
-	margin-left:0.5em;
-	fill: brand-color('primary');
-	&:hover {
-		fill: brand-color('text');
+.single {
+	.article-header { // center the title
+		text-align: center;
+	}
+}
+
+.blog-wrap {
+	h2, h3, p, ul, .vcard { // blog text indenting
+		margin-right:3%;
+		margin-left:3%;
+		@include bp('tablet-v') {
+			margin-right:5%;
+			margin-left:5%;
+		}
+		@include bp('tablet-h') {
+			margin-right:7%;
+			margin-left:7%;
+		}
+		@include bp('laptop') {
+			margin-right:10%;
+			margin-left:10%;
+		}
 	}
 }
 
@@ -407,16 +456,35 @@ h1.entry-title {
 	}
 }
 
-.author__pic {
-	max-width: 75px;
-	max-height: 75px;
-	margin-right: 1em;
+.entry-header {
+	margin-top: baseline(1); // adds spacing from featured image at the top
+	margin-bottom: baseline(0.5); // removes p bottom spacing
+}
+.author-header {
+	margin: baseline(0.5) auto baseline(1);
+}
+.single-title {
+	margin-top: 0; // removes h1 top spacing
+	margin-bottom: 0; // removes h1 top spacing
+}
+
+
+// AUTHOR IMAGE
+.author__pic, .author__img {
 	@include border-radius(10);
-	border: 4px solid brand-color('white');
+	border: 4px solid white;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-	float: left;
 	overflow: hidden;
-	
+	display: inline-block;
+}
+.author__pic {
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+}
+.author__img {
+	width: 100px;
+	height: 100px;
 }
 
 
@@ -456,55 +524,15 @@ h1.entry-title {
 
 
 // AUTHOR INFORMATION
-.byline { // time, author, category, comments
-	width:100%;
-	padding-top: baseline(0.5);
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	font-size: 0.8rem;
-	border-top:1px solid brand-color('gray3');
-	a {
-		text-decoration: none;
-		color: brand-color('text');
-		&:hover {
-			text-decoration: underline;
-			color: brand-color('primary');
-		}
-	}
-	.entry-time, .entry-author, .entry-category, .entry-comment-count { // width of flex items
-		width:25%;
-	}
-	.entry-time, .entry-author, .entry-category { // spacing between flex items
-		margin-right:1.5em;
-	}
-	svg { // icons for blog posts
-		fill: brand-color('gray3');
-		vertical-align: top;
-		display: none;
-		margin-right: 0.5em;
-	}
-	@include bp('phone-h') {
-		svg {
-			display: inline-block;
-		}
-	}
-	@include bp('tablet-v') {
-		.entry-time, .entry-author, .entry-category, .entry-comment-count { // width of flex items
-			width:intrinsic;
-		}
-	}
+.byline { 
 }
 
 // COMPANY INFORMATION
 .vcard {
-	
 	.org { // Company name
 	}
 	.adr { // Company address
-		
 	}
 	.tel { // Company telephone
-	
 	}
 }

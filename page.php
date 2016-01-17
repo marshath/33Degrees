@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-			<div id="content">
-				<div id="inner-content" class="wrap">
+			<div id="content" class="wrap">
+				<div id="inner-content" class="inner-wrap">
 
-					<main id="main" class="main-wrap inner-wrap col2-3" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -25,7 +25,7 @@
 
 							</footer> <?php // end .article-footer ?>
 
-						</article> <?php // end #post-<id> .inner-wrap ?>
+						</article> <?php // end #post-<id> ?>
 
 						<?php endwhile; 
 						endif; ?>
@@ -34,7 +34,7 @@
 
 					<?php get_sidebar(); ?>
 
-				</div> <?php // end #inner-content .wrap ?>
-			</div> <?php // end #content ?>
+				</div> <?php // end #inner-content .inner-wrap ?>
+			</div> <?php // end #content .wrap ?>
 
 <?php get_footer(); ?>

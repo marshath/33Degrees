@@ -16,6 +16,27 @@ a {
 	}
 }
 
+.moretag {
+	background-color: none;
+	text-decoration: none;
+	display: inline-block;
+	&:after {
+		content:'';
+		width:8px;
+		height:8px;
+		border-right:2px solid;
+		border-top:2px solid;
+		border-color: brand-color-lighten('primary',8);
+		transform: rotate(45deg);
+		display: inline-block;
+		@extend .default-transition;
+	}
+	&:hover:after {
+		margin-left:0.5em;
+		border-color: brand-color-lighten('primary',2);
+	}
+}
+
 
 /*******************************
 OVERLAY LINKS

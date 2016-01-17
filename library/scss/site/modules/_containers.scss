@@ -32,21 +32,27 @@ section {
 	@include clearfix;
 }
 
-.inner-wrap,
-.sidebar,
-.col2-3 {
-	@include column(12);
+.inner-wrap {
+	width:94%;
+	margin:0 auto;
+	@include bp('tablet-v') {
+		width:90%;
+	}
+	@include bp('tablet-h') {
+		width:86%;
+	}
+	@include bp('laptop') {
+		width:80%;
+	}
+	@include bp('monitor') {
+		width:74%;
+	}
+	@include bp('television') {
+		width:66%;
+	}
 }
 
-// BREAKPOINT TABLET HORIZONTAL
-@include bp('tablet-h') {
-	.sidebar {
-		@include column(4);
-	}
-	.col2-3 {
-		@include column(8);
-	}
-}
+
 
 
 /*******************************
@@ -55,7 +61,6 @@ HEADER
 .header-wrap {
 	background-color: brand-color('secondary'); // fallback for gradient
 	background-image: linear-gradient(to bottom, brand-color-darken('secondary',3) 0%, brand-color('secondary') 100%);
-	
 }
 
 

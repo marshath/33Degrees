@@ -43,11 +43,12 @@ h6 {
 
 
 // PARAGRAPH
-p {
+p, ul { // global
 	@include font-size(18);
+}
+p {
 	margin-bottom: baseline(1);
 }
-
 
 // FORMATTING
 .page-title, .page-subtitle {
@@ -73,7 +74,17 @@ i, em, .italic { // Font style italic
 	text-align: center;
 	line-height: 1;
 }
-
+code {
+	@include font-size(14);
+	background: brand-color('gray3');
+	padding:0 5px;
+	display:inline-block;
+}
+.blockcode {
+	width:100%;
+	padding: 1em;
+	display:block;
+}
 
 /*******************************
 BLOCKQUOTE
