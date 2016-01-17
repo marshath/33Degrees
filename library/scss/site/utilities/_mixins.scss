@@ -30,7 +30,9 @@ FONT FAMILY
 @mixin sans-serif {
 	font-family: $font-sans;
 }
-
+@mixin sans-text {
+	font-family: $font-text;
+}
 @mixin serif {
 	font-family: $font-serif;
 }

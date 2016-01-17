@@ -27,7 +27,7 @@
 								<div class="project-icon">
 									<svg><use xlink:href="#icon-website"></use></svg>
 								</div>
-								<?php echo get_field('panel_services2'); // display the content ?>
+								<?php echo get_field('panel_2'); // display the content ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</article> <?php // end .panel .panel__projects2 ?>
@@ -40,7 +40,7 @@
 								<div class="project-icon">
 									<svg><use xlink:href="#icon-logo"></use></svg>
 								</div>
-								<?php echo get_field('panel_services3'); // Display the content ?>
+								<?php echo get_field('panel_3'); // Display the content ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</article> <?php // end .panel .panel__projects3 ?>
@@ -53,7 +53,7 @@
 								<div class="project-icon">
 									<svg><use xlink:href="#icon-design"></use></svg>
 								</div>
-								<?php echo get_field('panel_services4'); // Display the content ?>
+								<?php echo get_field('panel_4'); // Display the content ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</article> <?php // end .panel .panel__projects4 ?>

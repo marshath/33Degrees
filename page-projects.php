@@ -73,7 +73,6 @@
 								<div class="project-icon">
 									<svg><use xlink:href="#icon-logo"></use></svg> Logo design
 								</div>
-								<?php echo get_field('panel_projects3'); // Display the content ?>
 								
 								<ul class="overlay-links">
 								
@@ -120,7 +119,6 @@
 								<div class="project-icon">
 									<svg><use xlink:href="#icon-design"></use></svg> Graphic Design
 								</div>
-								<?php echo get_field('panel_projects4'); // Display the content ?>
 								
 								<ul class="overlay-links">
 								

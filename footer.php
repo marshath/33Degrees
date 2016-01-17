@@ -1,13 +1,6 @@
 			<footer class="footer-wrap" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 				<div id="inner-footer" class="inner-wrap">
-					
-					<?php /* <div class="pdx">
-						<img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx.png"
-							srcset="<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx.png 1x,
-							<?php echo get_template_directory_uri(); ?>/library/images/logo-pdx@2x.png 2x"
-							alt="Portland, Oregon">
-						<p>45.5424&deg; N, -122.6544&deg; W</p>
-					</div> */ ?>
+				
 					<div class="footer-format">
 					<?php // Company logo or text ?>
 					<div class="footer-logo">
@@ -33,12 +26,12 @@
 					
 					<div class="social">
 						<ul>
-							<li class="facebook"><a href="http://www.facebook.com/33degreesds"><svg><use xlink:href="#icon-facebook"></use></svg></a></li>
-							<li class="twitter"><a href="http://twitter.com/#!/33degreesds"><svg><use xlink:href="#icon-twitter" /></svg></a></li>
-							<li class="google"><a href="http://plus.google.com/b/116366458762606663946/" class="social__icon"><svg class="social__google"><use xlink:href="#icon-google" /></svg></a></li>
-							<li class="rss"><a href="http://33degreesds.com/feed/" class="social__icon"><svg class="social__rss"><use xlink:href="#icon-rss" /></svg></a></li>
-							<li class="email"><a href="http://mailchimp.com" class="social__icon"><svg class="social__email"><use xlink:href="#icon-email" /></svg></a></li>
-							<li class="linkedin"><a href="http://linkedin.com/company/33-degrees-design-studio" class="social__icon"><svg class="social__linkedin"><use xlink:href="#icon-linkedin" /></svg></a></li>
+							<li class="facebook"><a href="http://www.facebook.com/33degreesds"><svg><use xlink:href="#icon-facebook"></use></svg><span class="screen-reader-text">Facebook</span></a></li>
+							<li class="twitter"><a href="http://twitter.com/#!/33degreesds"><svg><use xlink:href="#icon-twitter" /></svg><span class="screen-reader-text">Twitter</span></a></li>
+							<li class="google"><a href="http://plus.google.com/b/116366458762606663946/" class="social__icon"><svg class="social__google"><use xlink:href="#icon-google" /></svg><span class="screen-reader-text">Google Plus</span></a></li>
+							<li class="rss"><a href="http://33degreesds.com/feed/" class="social__icon"><svg class="social__rss"><use xlink:href="#icon-rss" /></svg><span class="screen-reader-text">RSS feed</span></a></li>
+							<li class="email"><a href="http://mailchimp.com" class="social__icon"><svg class="social__email"><use xlink:href="#icon-email" /></svg><span class="screen-reader-text">Email Newsletter</span></a></li>
+							<li class="linkedin"><a href="http://linkedin.com/company/33-degrees-design-studio" class="social__icon"><svg class="social__linkedin"><use xlink:href="#icon-linkedin" /></svg><span class="screen-reader-text">LinkedIn</span></a></li>
 						</ul>
 					</div> <?php end .social ?>
 					
