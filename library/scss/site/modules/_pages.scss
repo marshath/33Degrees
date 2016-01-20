@@ -201,7 +201,7 @@ HOMEPAGE SECTIONS
 			box-shadow: 4px 10px 1em brand-color-alpha('black','dark');
 		}
 		figcaption { // override .overlay-links figcaption
-			@include font-size(22);
+			@include font-size(20);
 			bottom: -(baseline(0.75));
 			line-height: baseline(0.75);
 		}
@@ -275,8 +275,6 @@ NEWSLETTER PANEL
 *******************************/
 .newsletter {
 	background: brand-color('accent');
-	padding-bottom: baseline(1); // equal spacing at the bottom of the panel
-	text-align: center;
 	.icon-inbox {
 		height:96px;
 		width:20%;
@@ -294,45 +292,20 @@ NEWSLETTER PANEL
 		display: block;
 		margin:baseline(0.5) auto;
 	}
-	h2 {
+	h2, p {
 		margin-bottom: 0; // set the next line closer
-		font-style: italic
-	}
-	form {
-		max-width: 600px;
-		display: block;
-	}
-	input[type=email], input[type=submit] {
+		font-style: italic;
 		text-align: center;
-		margin-bottom:baseline(0.5);
 	}
-	input[type=submit] {
-		background-color:#000;
-		color: brand-color('white');
-		@extend .default-transition;
-		&:hover {
-			background-color: brand-color('primary');
-		}
+	input[type='email'] {
+		width:100%;
+		border: 1px solid brand-color('accent'); // fix for 1px white below subscribe button
 	}
 	@include bp('mobile-h') {
 		.icon-inbox { // move inbox icon above the newsletter panel
 			width: 160px;
 			height: 80px;
 			margin-top: - baseline(1.5);
-		}
-	}
-	@include bp('tablet-v') {
-		form {
-			margin:0 auto;
-		}
-		input[type=email] {
-			width:80%;
-			float:left;
-			text-align: left;
-		}
-		input[type=submit] {
-			width:20%;
-			float:right;
 		}
 	}
 }
@@ -366,21 +339,25 @@ ABOUT
 *******************************/
 
 
-
 /*******************************
 BLOG
 *******************************/
 
-.blog { // index, blog archive formatting
+.blog, .archive, .search-results { // index, blog archive, blog search formatting
 	article {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: nowrap;
-		margin-bottom: baseline(2);
+		padding-top: baseline(1); // adds top spacing from border
+		border-bottom: 2px solid brand-color-lighten('gray3', 5);
+		border-top: 2px solid white;
+		&:first-child {
+			border-top:none; // remove border from first child
+		}
 	}
 	@include bp('tablet-h') {
 		article {
-			flex-direction: row;
+			flex-direction: row; // changes flexbox orientation
 		}
 		.post-wrap {
 			width: 62%;
@@ -389,6 +366,7 @@ BLOG
 		}
 		figure {
 			width:35%;
+			margin-bottom: baseline(1); // adds spacing below figure when viewport is tablet or higher
 		}
 	}
 	@include bp('laptop') {
@@ -399,6 +377,42 @@ BLOG
 		}
 		figure {
 			width:40%;
+		}
+	}
+}
+
+.blog-categories {
+	width: intrinsic;
+	display: block;
+	margin: 0 auto;
+	h3 {
+		color: brand-color('gray2');
+		@include font-size(16);
+		font-weight: normal;
+		text-align: center;
+	}
+	ul {
+		list-style: none;
+		padding-left: 1em;
+		margin-bottom: baseline(1.5);
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		line-height: 2.5;
+	}
+	li a {
+		@extend .btn__alt;
+		padding: 0.5em;
+		margin-right: 0.5em;
+	}
+	@include bp('tablet-h') {
+		h3 {
+			float:left;
+			display: inline-block;
+		}
+		ul {
+			justify-content: flex-start;
 		}
 	}
 }
@@ -418,13 +432,23 @@ BLOG
 		}
 	}
 }
+
 .single {
 	.article-header { // center the title
 		text-align: center;
 	}
+	figure {
+	}
+	.entry-content { // blog text indenting
+		h2, h3, p, ul {
+			max-width: 980px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
 }
 
-.blog-wrap {
+/* .blog-wrap {
 	h2, h3, p, ul, .vcard { // blog text indenting
 		margin-right:3%;
 		margin-left:3%;
@@ -441,7 +465,7 @@ BLOG
 			margin-left:10%;
 		}
 	}
-}
+} */
 
 h1.entry-title {
 	margin-top:0;
@@ -470,23 +494,42 @@ h1.entry-title {
 
 
 // AUTHOR IMAGE
-.author__pic, .author__img {
-	@include border-radius(10);
+.author-box { // white border and shadow
 	border: 4px solid white;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+.author-pic, .author-img {
+	@include border-radius(10);
 	overflow: hidden;
 	display: inline-block;
 }
-.author__pic {
+.author-pic {
 	width: 50px;
 	height: 50px;
 	vertical-align: middle;
 }
-.author__img {
+.author-img {
 	width: 100px;
 	height: 100px;
+	float: left;
+	margin-right: 1em;
+	vertical-align: top;
 }
 
+
+.tags {
+	margin-top: 0; // bottom spacing for About the Author
+	margin-bottom: baseline(1.25); // bottom spacing for About the Author
+	line-height: 2.5; // line spacing for tag links on mobile
+	text-align: center; // center tags under article
+	&-title {
+		font-weight: bold;
+	}
+	a {
+		@extend .btn__alt;
+		padding: baseline(0.25) 0.5em;
+	}
+}
 
 // BLOG ARCHIVE LIST
 .block-thumb {
@@ -527,12 +570,20 @@ h1.entry-title {
 .byline { 
 }
 
-// COMPANY INFORMATION
 .vcard {
-	.org { // Company name
+	max-width:700px;
+	background-color: brand-color-lighten('gray3', 5);
+	padding: baseline(0.5) 1em baseline(1);
+	margin: 0 auto baseline(2); // center vcard and add margin to the bottom
+	h3 {
+		margin-top: baseline(4);
 	}
-	.adr { // Company address
+	p:last-child{
+		margin-bottom: 0; // removes extra spacing at the bottom of author vcard
 	}
-	.tel { // Company telephone
+	svg {
+		width:20px;
+		height:20px;
+		vertical-align: middle;
 	}
 }

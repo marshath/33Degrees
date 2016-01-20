@@ -45,17 +45,19 @@ CONTACT INFORMATION
 	margin:0 auto;
 	display: block;
 }
-.office-info {
+
+// COMPANY INFORMATION
+.company {
 	text-align: center;
-	h3 {
-		@include font-size(20);
-		margin-bottom: baseline(0.25);
+	.org { // Company name
 		padding-top: baseline(0.25); // sets .office-info text lower
 	}
-	.phone, .email {
+	.adr { // Company address
+	}
+	.tel, .email { // Company telephone, email
 		display: inline-block;
 	}
-	.phone {
+	.tel { // Company telephone
 		margin-right:1em; // gives email button space 
 	}
 	svg {
@@ -167,13 +169,13 @@ SOCIAL LINKS
 	.widget {
 		margin-right:auto; // center with .footer-logo margin-left:auto;
 	}
-	.office-info {
+	.company { // Company information
 		text-align: left;
 		a { // remove .btn__mobile formatting
 			padding:0;
 			margin:0;
 		}
-		h3 { 
+		.org { // Company name
 			margin-top: 0;
 		}
 		svg {

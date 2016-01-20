@@ -44,6 +44,8 @@
 									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 								</footer> <?php // end .article-footer ?>
 
-								<?php comments_template(); ?>
+								<div class="comments">
+									<?php comments_template(); ?>
+								</div>
 
 							</article> <?php // #post-<id> .article-wrap ?>

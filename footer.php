@@ -53,7 +53,7 @@
 						)); ?>
 					</nav> <?php end .nav-footer ?>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>, LLC. All rights reserved.</p>
+					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> by <?php bloginfo( 'name' ); ?>, LLC. All rights reserved.</p>
 
 				</div> <?php // end #inner-footer .inner-wrap ?>
 			</footer> <?php // end .footer-wrap ?>

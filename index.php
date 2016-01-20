@@ -10,12 +10,23 @@
 							$post = get_post($id); 
 							$title = apply_filters('the_title', $post->post_title); // page title
 							$content = apply_filters('the_content', $post->post_content); // page content
-							echo '<h1 class="page-title" itemprop="headline">' . $title . '</h1>' . $content ;  
+							echo '<h1 class="page-title" itemprop="headline">' . $title . '</h1><div class="subhead">' . $content . '</div>';  
 							?>
+						
+							<?php // BLOG SEARCH ?>
+							<div class="blog-search"><?php get_search_form(); ?></div>
+							
+							<?php // BLOG CATEGORIES ?>
+							<div class="blog-categories">
+								<h3>Categories:</h3>
+								<ul>
+									<?php wp_list_categories('title_li='); ?>
+								</ul>
+							</div><?php // .sidebar__categories ?>
 							
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
-							<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article">
+							<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-archive' ); ?> role="article">
 								
 								<figure>
 				                    <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(''); ?></a>
@@ -65,8 +76,6 @@
 							<?php endif; ?>
 	
 						</main> <?php // end #main .main-wrap .inner-wrap ?>
-	
-						<?php get_sidebar(); ?>
 					
 				</div> <?php // end #inner-content .inner-wrap ?>
 			</div> <?php // end #content .wrap ?>

@@ -5,8 +5,7 @@
  */
 
 
-.sidebar { // column width controled in _containers.scss
-	margin-top: baseline(2); // moves sidebar down to align with first paragraph
+.sidebar { // column width controlled in _containers.scss
 	&__email-marketing {
 	}
 	&__social {
@@ -14,8 +13,6 @@
 	&__blog-posts {
 	}
 	&__search {
-		margin-bottom: baseline(1);
-		@include clearfix;
 	}
 	&__categories {
 	}

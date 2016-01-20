@@ -153,28 +153,37 @@ BREADCRUMB TRAIL
 PAGINATION
 *******************************/
 .pagination {
-	list-style: none;
 	margin-top:0;
+	margin-bottom: baseline(2); // spacing under pagination links
 	padding-left:0;
 	@include clearfix;
+	&-title, li {
+		height: baseline(1.5);
+		margin-right: 0.5em;
+		float:left;
+	}
+	&-title {
+		font-weight: bold;
+		display:inline-block;
+		padding-top: baseline(1.15);
+	}
 	li {
-		float: left;
-		margin: 1em 0;
-		border-right: 1px solid brand-color('gray2');
-		&:last-child {
-			border-right: none;
-		}
-		a {
-			width: 100%;
-			height: 100%;
-			color: site-color('primary');
-			text-decoration: none;
-			padding:  baseline(1) 1.5em;
-			display: inline-block;
-			&:hover {
-				background: brand-color('primary');
-			}
-		}
+		width: baseline(1.5);
+		@include font-size(20);
+		list-style: none;
+	}
+	a, .current {
+		@extend .btn__alt; // rounded orange outline
+		width:100%;
+		height: 100%;
+		text-align: center;
+		padding-top: baseline(0.2);
+		display: inline-block;
+	}
+	.current, .current:hover {
+		border-color: brand-color('gray3');
+		background-color: brand-color('gray3');
+		color: brand-color('gray1');
 	}
 }
 

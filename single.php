@@ -28,8 +28,7 @@
 						<?php endif; ?>
 
 					</main> <?php // #main .main-wrap ?>
-
-					<?php comments_template(); ?>
+					
 					<?php get_sidebar(); ?>
 
 				</div> <?php // end #inner-content ?>
