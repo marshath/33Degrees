@@ -23,13 +23,13 @@
 										'order' => DESC,
 										'orderby' => rand,
 										'post__not_in' => array($post->ID),
-										'posts_per_page' => 4,
+										'posts_per_page' => 2,
 										'caller_gets_posts' => 1
 									);
 									$my_query = null;
 									$my_query = new WP_Query($args);
 									if( $my_query->have_posts() ) {
-										echo '<h3>' . $category -> name . ' Articles</h3>'; // Related articles title
+										echo '<h3>Related <span class="screen-reader-text">' . $category -> name . '</span> Articles</h3>'; // Related articles title
 										echo '<ul class="overlay-links">'; // Related article links
 										while ($my_query->have_posts()) : $my_query->the_post(); ?>
 										

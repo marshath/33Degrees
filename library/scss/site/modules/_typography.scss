@@ -49,8 +49,6 @@ h6 {
 }
 
 // PARAGRAPH
-p, ul { // global
-}
 p {
 	margin-bottom: baseline(1);
 }
@@ -89,6 +87,8 @@ code {
 	width:100%;
 	padding: 1em;
 	display:block;
+	overflow: hidden;
+	overflow-x: scroll;
 }
 
 /*******************************

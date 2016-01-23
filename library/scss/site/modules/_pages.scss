@@ -13,20 +13,20 @@ GENERAL
 	@include clearfix;
 }
 
-.panel__projects1, .panel__about1 {
+.panel__about1 {
 	background: #cfe1e5;
 }
-.panel__projects2, .panel__about2 {
+.panel__about2 {
 }
-.panel__projects3, .panel__about3 {
+.panel__about3 {
 	background-color: brand-color('gray1');
 }
-.panel__projects4, .panel__about4 {
+.panel__about4 {
 }
 
 
 /* FLEXBOX ROW WRAPS */
-.services, .quotes, .projects {
+.services, { // .projects, .quotes
 	padding:0;
 	text-align: center;
 	display: flex;
@@ -51,11 +51,6 @@ GENERAL
 		}
 	}
 }
-@include bp('tablet-h') {
-	.projects li {
-		width: 33%;
-	}
-}
 @include bp('laptop') {
 	.services {
 		li {
@@ -72,11 +67,7 @@ GENERAL
 		}
 	}
 }
-@include bp('television') {
-	.projects li {
-		width: 10%;
-	}
-}
+
 
 /*******************************
 HOMEPAGE SECTIONS
@@ -315,28 +306,34 @@ NEWSLETTER PANEL
 /*******************************
 PROJECTS
 *******************************/
-.panel__projects2, .panel__projects3, .panel__projects4 {
+.projects { // panels
+	&-intro {
+		background: #cfe1e5;
+	}
+	&-websites {
+	}
+	&-branding {
+		background-color: brand-color('gray1');
+	}
+	&-design {
+	}
+}
+.page-id-65 { // override overlay links
 	@include bp('phone-h') {
 		.overlay-links {
 			flex-flow: row wrap;
-		}
-		li {
-			width:48%;
-			margin-left:1%;
-			margin-right:1%;
+			justify-content: space-between;
+			li {
+				width:48%;
+			}
 		}
 	}
 	@include bp('tablet-v') {
-		li {
+		.overlay-links li {
 			width:31%;
 		}
 	}
 }
-
-
-/*******************************
-ABOUT
-*******************************/
 
 
 /*******************************
@@ -485,7 +482,7 @@ h1.entry-title {
 	margin-bottom: baseline(0.5); // removes p bottom spacing
 }
 .author-header {
-	margin: baseline(0.5) auto baseline(1);
+	margin: baseline(0.5) auto baseline(1.5);
 }
 .single-title {
 	margin-top: 0; // removes h1 top spacing

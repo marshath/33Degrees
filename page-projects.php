@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
-			<div id="content">
-				<div id="inner-content" class="wrap">
+			<div id="content" class="wrap">
+				<div id="inner-content">
 					
 					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 								
 								
 						<?php /* PANEL 1 — CONTENT */ ?>
-						<article id="intro" <?php post_class( 'panel panel__projects1' ); ?> role="article">
+						<article id="projects-intro" <?php post_class( 'row projects-intro' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -21,7 +21,7 @@
 								
 								
 						<?php /* PANEL 2 — WEBSITE */ ?>
-						<article id="website" <?php post_class( 'panel panel__projects2' ); ?> role="article">
+						<article id="projects-website" <?php post_class( 'row projects-websites' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<div class="project-icon">
@@ -54,7 +54,7 @@
 												</figcaption>
 											</figure>
 										</a>
-										<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+										<?php // edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
 									</li>
 										
 									<? endwhile; ?>
@@ -66,8 +66,8 @@
 						</article> <?php // end .panel .panel__projects2 ?>
 								
 								
-						<?php /* PANEL 3 — LOGO */ ?>
-						<article id="branding" <?php post_class( 'panel panel__projects3' ); ?> role="article">
+						<?php /* PANEL 3 — BRANDING */ ?>
+						<article id="projects-branding" <?php post_class( 'row projects-branding' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<div class="project-icon">
@@ -93,7 +93,7 @@
 							
 									<li>
 										<a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark">
-											<figure><?php the_post_thumbnail("thumbnail"); ?>
+											<figure><?php the_post_thumbnail(''); ?>
 												<figcaption>
 													<?php the_title(); ?> <br>
 													<span class="moretag__slide">View details &raquo;</span>
@@ -113,7 +113,7 @@
 								
 								
 						<?php /* PANEL 4 — DESIGN */ ?>
-						<article id="print" <?php post_class( 'panel panel__projects4' ); ?> role="article">
+						<article id="projects-design" <?php post_class( 'row projects-design' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<div class="project-icon">
