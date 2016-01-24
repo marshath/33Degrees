@@ -11,7 +11,7 @@ GLOBAL LINKS
 a {
 	color: brand-color('primary');
 	&:hover {
-		color: brand-color-lighten('primary',2);
+		color: brand-color-darken('primary',4);
 		text-decoration: none;
 	}
 }

@@ -62,7 +62,7 @@
 					<nav class="nav-header" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						
 						<?php // mobile menu toggle ?>
-						<h3 id="menu-toggle"><a href="#">Menu</a></h3>
+						<button id="menu-toggle" class="menu-toggle"><span></span> Menu</button>
 						
 						<?php // menu items ?>
 						<div id="nav-menu">

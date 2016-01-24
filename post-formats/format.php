@@ -47,10 +47,10 @@
 										
 										<div class="author-img"><?php userphoto_the_author_photo(); ?></div>
 										
-										<?php printf( '<h5 class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">About <a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author">' . get_the_author('ID') . '</a></h5>'
+										<?php printf( '<h4 class="entry-author author">About <br><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author"><span itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author('ID') . '</span></a></h4>'
 										); ?>
 										
-										<?php printf ('<p>Follow the author: ');
+										<?php printf ('<p>Follow<span class="screen-reader-text"> ' . get_the_author('ID') . '</span>:');
 											// the author social profiles, if they have them
 											if ($social = get_the_author_meta('facebook')) { // author Facebook profile
 												printf ('<a href="http://facebook.com/' . get_the_author_meta('facebook') . '" title="Follow ' . get_the_author('ID') . ' on Facebook" rel="bookmark"><svg><use xlink:href="#icon-facebook"></use></svg><span class="screen-reader-text">Follow ' . get_the_author('ID') . 'on Facebook</span></a> ');

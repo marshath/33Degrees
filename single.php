@@ -29,7 +29,7 @@
 
 					</main> <?php // #main .main-wrap ?>
 					
-					<?php get_sidebar(); ?>
+					<?php get_sidebar(); ?> 
 
 				</div> <?php // end #inner-content ?>
 			</div> <?php // end #content .wrap ?>

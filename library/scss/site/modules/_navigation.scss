@@ -10,16 +10,14 @@ HEADER & FOOTER NAVIGATION
 *******************************/
 // mobile menu button 
 #menu-toggle { // toggles the menu visibity for mobile
-	a {
-		padding: baseline(0.5) 0; // sets height equal to logo on mobile, alters default navigation padding
-	}
 	@include bp('tablet-h') {
 		display:none;
 	}
 }
 
+
 // navigation and menu
-.nav-header li, .nav-footer li, .nav-header h3 {
+.nav-header li, .nav-footer li, .nav-header button {
 	@extend .default-transition;
 }
 // navigation only
@@ -37,21 +35,22 @@ HEADER & FOOTER NAVIGATION
 	}
 	li {
 		width:100%;
-		background-color: brand-color-lighten('secondary', 1);
+		background: brand-color-lighten('secondary', 1);
 		text-shadow: 1px 2px 1px brand-color('black');
 		margin-bottom: baseline(0.5); // bottom spacing for mobile navigation
 		border: 3px solid rgba(240,240,240,0);
 		@include border-radius(10);
-		&.current-menu-item, &.current_page_parent {
-				border-color: brand-color-alpha('white', 'dark');
-			a {
-			}
+		&:first-child {
+			margin-top: baseline(0.5); // adds margin to the top of mobile nav
 		}
-		&:hover, a:focus {
+		&.current-menu-item, &.current_page_parent {
+			border-color: brand-color-alpha('white', 'dark');
+		}
+		&:hover, &:focus {
 			background: brand-color-lighten('secondary', 2);
 		}
 	}
-	a {
+	button, a {
 		color: brand-color('white');
 		text-decoration: none;
 		padding: baseline(0.5) 0;
@@ -61,34 +60,81 @@ HEADER & FOOTER NAVIGATION
 		}
 	}
 }
+
+// HAMBURGER VARIABLES
+$button-size: 30px;                    // The height of the button area
+$bar-thickness: 4px;                   // The thickness of the button bars
+$button-bar-space: 6px;                // The spacing between button bars
+
 .nav-header {
-	h3 { // is the 'menu-toggle'
-		width:20%;
-		@include font-size(16);
-		text-align: center;
-		font-weight: normal;
-		text-shadow: 1px 2px 1px brand-color('black');
-		padding: baseline(0.25) 0.5em;
-		margin-left: 75%;
-		margin-top:-(baseline(2.5));
-		@include border-radius(10);
-		background: brand-color-lighten('secondary', 1);
-		&:hover {
-			background: brand-color-alpha('white','dark');
-		}
-	}
 	ul {
 		display: none; // hides the navigation, until the 'menu-toggle' is clicked
-		margin-bottom: baseline(1); // adds margin to the bottom for mobile
+		margin: 0 auto baseline(1); // extra bottom margin
+	}
+	button { // is the 'menu-toggle'
+		background: brand-color-lighten('secondary', 1);
+		text-align: center;
+		padding: baseline(0.75) 1em baseline(0.75) 3.5em;
+		/* margin-bottom: baseline(0.5); // bottom spacing for header
+		margin-left: 75%;
+		margin-top:-(baseline(2.5)); */
+		@include border-radius(10);
+		position: absolute;
+		right:3%;
+		top: baseline(0.5);
+		&:hover, &:focus {
+			background: brand-color-alpha('white','dark');
+		}
+		span {
+			width: 28px;
+			height: $bar-thickness;
+			background: white;
+			display: inline-block;
+			position: absolute;
+			top: $button-size - ($bar-thickness / 2);
+			left: 22px; // The left/right padding between button area and bars
+			transition: all 0.2s linear;
+			&:before, &:after {
+				content: "";
+				width: 100%;
+				height: $bar-thickness;
+				background: white;
+				position: absolute;
+				display: block;
+				left: 0;
+				transition: all 0.2s linear;
+			}
+			&:before {
+				top: -$bar-thickness - $button-bar-space;
+			}
+			&:after {
+				bottom: -$bar-thickness - $button-bar-space;
+			}
+		}
+		&.active span {
+			background: none;
+			&:before {
+				top: 0;
+				transform: rotate(45deg);
+			}
+			&:after {
+				bottom: 0;
+				transform: rotate(-45deg);
+			}
+		}
 	}
 }
 @include bp('tablet-v') {
 	.nav-header {
-		li { // think this can be combined with the tablet-h .nav-header ul flex: row
-			// may need to add an extra div to show and hide the navigation
-			width:22%; // shrink width to display as a row
-			margin:0 1%;
+		ul {
+			margin: 0 auto; // removes extra bottom margin
+		}
+		li {
+			width: 24%; // shrink width to display as a row
 			display: inline-block;
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 	}
 	.nav-footer {
@@ -111,12 +157,11 @@ HEADER & FOOTER NAVIGATION
 			max-width: 600px;
 			margin-top: -(baseline(2.5)); // sets distance from the top
 			margin-right:0; // positions the nav right
-			margin-bottom: baseline(0.5); // reduces the bottom margin on tablet
 			display:flex; // shows the navigation
 			flex-flow: row nowrap; // format as a row
 		}
-		li {
-			margin-left:1em; // adds spacing between items
+		li:first-child {
+			margin-top: 0;
 		}
 	}
 }

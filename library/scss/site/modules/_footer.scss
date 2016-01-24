@@ -73,9 +73,11 @@ CONTACT INFORMATION
 		width: intrinsic;
 	}
 	.non-mobile { // hidden on mobile
-		display: inline-block;
-		text-indent: -9999px;
+		height: 0; // removes extra space
 		width:0; // removes extra space
+		display: inline-block;
+		overflow: hidden;
+		clip: rect(0,0,0,0); // hide
 	}
 }
 
@@ -186,8 +188,9 @@ SOCIAL LINKS
 			width:0; // removes extra space
 		}
 		.non-mobile { // visible on tablet+
-			text-indent: 0;  // override .non-mobile styles
-			width: intrinsic;  // override .non-mobile styles
+			clip: none;          // override
+			height: intrinsic;   // override
+			width: intrinsic;    // override
 		}
 	}
 	.social {
