@@ -80,8 +80,8 @@ $button-bar-space: 6px;                // The spacing between button bars
 		margin-top:-(baseline(2.5)); */
 		@include border-radius(10);
 		position: absolute;
-		right:3%;
-		top: baseline(0.5);
+		right:0;
+		top: 0;
 		&:hover, &:focus {
 			background: brand-color-alpha('white','dark');
 		}
@@ -94,6 +94,7 @@ $button-bar-space: 6px;                // The spacing between button bars
 			top: $button-size - ($bar-thickness / 2);
 			left: 22px; // The left/right padding between button area and bars
 			transition: all 0.2s linear;
+			@include border-radius(2);
 			&:before, &:after {
 				content: "";
 				width: 100%;
@@ -103,6 +104,7 @@ $button-bar-space: 6px;                // The spacing between button bars
 				display: block;
 				left: 0;
 				transition: all 0.2s linear;
+				@include border-radius(2);
 			}
 			&:before {
 				top: -$bar-thickness - $button-bar-space;

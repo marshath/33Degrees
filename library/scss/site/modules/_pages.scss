@@ -6,64 +6,94 @@
 
 
 /*******************************
-GENERAL
+GLOBAL
 *******************************/
 .row {
 	position: relative;
 	@include clearfix;
 }
-
-.panel__about1 {
-	background: #cfe1e5;
-}
-.panel__about2 {
-}
-.panel__about3 {
-	background-color: brand-color('gray1');
-}
-.panel__about4 {
-}
-
-
-/* FLEXBOX ROW WRAPS */
-.services, { // .projects, .quotes
-	padding:0;
-	text-align: center;
-	display: flex;
-	flex-flow: row wrap;
-	align-items: stretch;
-	align-content: space-between;
-	justify-content: space-around;
+	
+/***** TESTIMONIALS PANEL *****/
+.testimonials {
+	margin:0 auto;
+	h2 {
+		text-align: center;
+		font-style: italic;
+	}
 	li {
-		list-style: none;
-		flex-grow: 1;
-	}
-}
-@include bp('tablet-v') {
-	.services {
-		p, h3 {
-			width:66%;
-			float: right;
-		}
-		svg {
-			width:33%;
-			float: left;
+		display:none;
+		&:first-child {
+			display: block;
 		}
 	}
 }
-@include bp('laptop') {
-	.services {
-		li {
-			width: 33%;
-			padding:0 1em;
-		}
-		p, h3 { // overrides the tablet-v styles
-			width:100%;
-			float: none;
-		}
-		svg { // overrides the tablet-v styles
-			width:100%;
-			float: none;
+
+.quotes {
+	position: relative;
+	&:before, &:after {
+		content: ''; // quotes from the SVG sprite sheet in images
+		width:48px;
+		height:48px;
+		background-image: url('../images/icon-quote.svg'); // quote SVG above and below the testimonials
+		background-size: 100% 100%; // makes the quotes size to 100% width and height
+		display: block;
+		position: absolute;
+	}
+	&:before {
+		left: 0;
+		z-index: 0; // sets the quote SVG below the blockquote
+	}
+	&:after {
+		right: 0;
+		bottom: 0;
+		margin-bottom: baseline(2.5);
+		transform: rotate3d(0,0,1,180deg); // rotates the quote SVG to upside down
+		z-index: 0; // sets the quote SVG below the blockquote
+	}
+	blockquote {
+		position: relative; // sets the testimonial above the quotes
+		z-index: 1; // sets the testimonial above the quotes
+		border: none;
+	}
+	cite {
+		color: brand-color('gray2');
+	}
+}
+
+/***** NEWSLETTER PANEL *****/
+.newsletter {
+	background: brand-color('accent');
+	.icon-inbox {
+		height:96px;
+		width:20%;
+		min-width: 64px;
+		max-width: 160px;
+		background: brand-color('accent');
+		padding:0.25em;
+		margin: (- baseline(1.5)) auto (- baseline(1.5));
+		display: block;
+		border-radius: 50%;
+	}
+	svg { // inbox icon at top of newsletter panel
+		height:60%;
+		width:60%;
+		display: block;
+		margin:baseline(0.5) auto;
+	}
+	h2, p {
+		margin-bottom: 0; // set the next line closer
+		font-style: italic;
+		text-align: center;
+	}
+	input[type='email'] {
+		width:100%;
+		border: 1px solid brand-color('accent'); // fix for 1px white below subscribe button
+	}
+	@include bp('mobile-h') {
+		.icon-inbox { // move inbox icon above the newsletter panel
+			width: 160px;
+			height: 80px;
+			margin-top: - baseline(1.5);
 		}
 	}
 }
@@ -164,6 +194,14 @@ HOMEPAGE SECTIONS
 	h2, h3 {
 		text-shadow: 0 2px 2px brand-color('black');
 	}
+	svg {
+		width: 200px !important;
+		height: 200px;
+		padding: 0.75em;
+		box-shadow: inset 0 4px 10px black;
+		background-color: brand-color-alpha('white', 'dark');
+		@include border-radius(20);
+	}
 	@include bp('tablet-v') {
 		p, h3 {
 			text-align:left;
@@ -175,6 +213,43 @@ HOMEPAGE SECTIONS
 		}
 		.services {
 			margin: 0 auto;
+		}
+	}
+}
+.services { // homepage service columns
+	padding:0;
+	text-align: center;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+	align-content: space-between;
+	justify-content: space-around;
+	li {
+		list-style: none;
+		flex-grow: 1;
+	}
+	@include bp('tablet-v') {
+		p, h3 {
+			width:66%;
+			float: right;
+		}
+		svg {
+			width:33%;
+			float: left;
+		}
+		}
+	@include bp('laptop') {
+		li {
+			width: 33%;
+			padding:0 1em;
+		}
+		p, h3 { // overrides the tablet-v styles
+			width:100%;
+			float: none;
+		}
+		svg { // overrides the tablet-v styles
+			width:100%;
+			float: none;
 		}
 	}
 }
@@ -210,365 +285,70 @@ HOMEPAGE SECTIONS
 	}
 }
 
-	
-/*******************************
-TESTIMONIALS PANEL
-*******************************/
-.testimonials {
-	margin:0 auto;
-	h2 {
-		text-align: center;
-		font-style: italic;
-	}
-	li {
-		display:none;
-		&:first-child {
-			display: block;
-		}
-	}
-}
-
-.quotes {
-	position: relative;
-	&:before, &:after {
-		content: ''; // quotes from the SVG sprite sheet in images
-		width:48px;
-		height:48px;
-		background-image: url('../images/icon-quote.svg'); // quote SVG above and below the testimonials
-		background-size: 100% 100%; // makes the quotes size to 100% width and height
-		display: block;
-		position: absolute;
-	}
-	&:before {
-		left: 0;
-		z-index: 0; // sets the quote SVG below the blockquote
-	}
-	&:after {
-		right: 0;
-		bottom: 0;
-		margin-bottom: baseline(2.5);
-		transform: rotate3d(0,0,1,180deg); // rotates the quote SVG to upside down
-		z-index: 0; // sets the quote SVG below the blockquote
-	}
-	blockquote {
-		position: relative; // sets the testimonial above the quotes
-		z-index: 1; // sets the testimonial above the quotes
-		border: none;
-	}
-	cite {
-		color: brand-color('gray2');
-	}
-}
-
 
 /*******************************
-NEWSLETTER PANEL
+SERVICES
 *******************************/
-.newsletter {
-	background: brand-color('accent');
-	.icon-inbox {
-		height:96px;
-		width:20%;
-		min-width: 64px;
-		max-width: 160px;
-		background: brand-color('accent');
-		padding:0.25em;
-		margin: (- baseline(1.5)) auto (- baseline(1.5));
-		display: block;
-		border-radius: 50%;
-	}
-	svg { // inbox icon at top of newsletter panel
-		height:60%;
-		width:60%;
-		display: block;
-		margin:baseline(0.5) auto;
-	}
-	h2, p {
-		margin-bottom: 0; // set the next line closer
-		font-style: italic;
-		text-align: center;
-	}
-	input[type='email'] {
-		width:100%;
-		border: 1px solid brand-color('accent'); // fix for 1px white below subscribe button
-	}
-	@include bp('mobile-h') {
-		.icon-inbox { // move inbox icon above the newsletter panel
-			width: 160px;
-			height: 80px;
-			margin-top: - baseline(1.5);
-		}
-	}
+.page-id-63 h2 {
+	text-align: center;
+}
+.services-intro {
+	text-align: center;
+	background: #cfe1e5;
 }
 
-
-
-/*******************************
-PROJECTS
-*******************************/
-.projects { // panels
-	&-intro {
-		background: #cfe1e5;
-	}
-	&-websites {
-	}
-	&-branding {
-		background-color: brand-color('gray1');
-	}
-	&-design {
-	}
-}
-.page-id-65 { // override overlay links
-	@include bp('phone-h') {
-		.overlay-links {
-			flex-flow: row wrap;
-			justify-content: space-between;
-			li {
-				width:48%;
-			}
-		}
-	}
-	@include bp('tablet-v') {
-		.overlay-links li {
-			width:31%;
-		}
-	}
+.services-websites {
 }
 
-
-/*******************************
-BLOG
-*******************************/
-
-.blog, .archive, .search-results { // index, blog archive, blog search formatting
-	article {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: nowrap;
-		padding-top: baseline(1); // adds top spacing from border
-		border-bottom: 2px solid brand-color-lighten('gray3', 5);
-		border-top: 2px solid white;
-		&:first-child {
-			border-top:none; // remove border from first child
-		}
-	}
-	@include bp('tablet-h') {
-		article {
-			flex-direction: row; // changes flexbox orientation
-		}
-		.post-wrap {
-			width: 62%;
-			margin-left: 3%;
-			
-		}
-		figure {
-			width:35%;
-			margin-bottom: baseline(1); // adds spacing below figure when viewport is tablet or higher
-		}
-	}
-	@include bp('laptop') {
-		.post-wrap {
-			width: 57%;
-			margin-left: 3%;
-			
-		}
-		figure {
-			width:40%;
-		}
-	}
+.services-branding {
+	background-color: brand-color-lighten('secondary', 9);
 }
 
-.blog-categories {
-	width: intrinsic;
-	display: block;
-	margin: 0 auto;
-	h3 {
-		color: brand-color('gray2');
-		@include font-size(16);
-		font-weight: normal;
-		text-align: center;
-	}
-	ul {
-		list-style: none;
-		padding-left: 1em;
-		margin-bottom: baseline(1.5);
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		flex-wrap: wrap;
-		line-height: 2.5;
-	}
-	li a {
-		@extend .btn__alt;
-		padding: 0.5em;
-		margin-right: 0.5em;
-	}
-	@include bp('tablet-h') {
-		h3 {
-			float:left;
-			display: inline-block;
-		}
-		ul {
-			justify-content: flex-start;
-		}
-	}
+.services-design {
 }
 
-.attachment-post-thumbnail {
-	margin-top:baseline(1);
-}
-
-.article-footer {
-	svg { // icon size for About the Author
-		width:16px;
-		height:16px;
-		margin-left:0.5em;
-		fill: brand-color('primary');
-		&:hover, &:focus {
-			fill: brand-color-darken('primary', 4);
-		}
-	}
-}
-
-.single {
-	.article-header { // center the title
-		text-align: center;
-	}
-	figure {
-	}
-	.entry-content { // blog text indenting
-		h2, h3, p, ul {
-			max-width: 980px;
-			margin-right: auto;
-			margin-left: auto;
-		}
-	}
-}
-
-h1.entry-title {
-	margin-top:0;
-	margin-bottom: baseline(0.25);
-	font-weight: normal;
-	@include font-size(36);
-	a {
-		text-decoration: none;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-}
-
-.entry-header {
-	margin-top: baseline(1); // adds spacing from featured image at the top
-	margin-bottom: baseline(0.5); // removes p bottom spacing
-}
-.author-header {
-	margin: baseline(0.5) auto baseline(1.5);
-}
-.single-title {
-	margin-top: 0; // removes h1 top spacing
-	margin-bottom: 0; // removes h1 top spacing
-}
-
-
-// AUTHOR IMAGE
-.author-box { // white border and shadow
-	border: 4px solid white;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-	h4 {
-		margin-top: baseline(0.25);
-		margin-bottom: baseline(0.25);
-	}
-	p {
-		margin-top:0;
-	}
-}
-.author-pic, .author-img {
-	@include border-radius(10);
-	overflow: hidden;
-	display: inline-block;
-}
-.author-pic {
-	width: 50px;
-	height: 50px;
-	vertical-align: middle;
-}
-.author-img {
-	width: 100px;
-	height: 100px;
-	float: left;
-	margin-right: 1em;
-	vertical-align: top;
-}
-
-
-.tags {
-	margin-top: 0; // bottom spacing for About the Author
-	margin-bottom: baseline(1.25); // bottom spacing for About the Author
-	line-height: 2.5; // line spacing for tag links on mobile
-	text-align: center; // center tags under article
-	&-title {
-		font-weight: bold;
-	}
-	a {
-		@extend .btn__alt;
-		padding: baseline(0.25) 0.5em;
-	}
-}
-
-// BLOG ARCHIVE LIST
-.block-thumb {
-	.b-inner {
-		// @include clearfix;
-	}
-	.b-thumb {
-		// @include column(3);
-	}
-	.b-text {
-		// @include column(9);
-	}
-	.b-title {
-		
-	}
-}
-
-.block-headline {
-	text-decoration: none;
-}
-
-.block-hero {
-	.b-thumb {
-		// @include column(12);
-	}
-}
-
-.block-inset {
-	.b-thumb {
-		
-	}
-	.b-text {
-	}
-}
-
-
-// AUTHOR INFORMATION
-.byline { 
-}
-
-.vcard {
-	max-width:700px;
-	background-color: brand-color-lighten('gray3', 5);
-	padding: baseline(0.5) 1em baseline(1);
-	margin: 0 auto baseline(2); // center vcard and add margin to the bottom
-	h3 {
-		margin-top: baseline(4);
-	}
-	p:last-child{
-		margin-bottom: 0; // removes extra spacing at the bottom of author vcard
-	}
+.project-icon { // used on Services, Project pages
 	svg {
-		width:20px;
-		height:20px;
-		vertical-align: middle;
+		display: block;
+		margin: 0 auto;
 	}
+}
+
+
+/*******************************
+PORTFOLIO
+*******************************/
+.portfolio-intro {
+	text-align: center;
+	background: #cfe1e5;
+}
+
+.portfolio-websites {
+}
+
+.portfolio-branding {
+	background-color: brand-color-lighten('secondary', 9);
+}
+
+.portfolio-design {
+}
+
+
+/*******************************
+COMPANY
+*******************************/
+.company-intro {
+	text-align: center;
+	background: #cfe1e5;
+}
+
+.company-success {
+	background-color: brand-color-lighten('secondary', 9);
+}
+
+.portfolio-branding {
+}
+
+.company-methodology {
+	background-color: brand-color-lighten('secondary', 9);
 }

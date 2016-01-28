@@ -7,35 +7,38 @@
 								
 								
 						<?php /* PANEL 1 */ ?>
-						<article id="panel-1" <?php post_class( 'panel panel__about1' ); ?> role="article">
+						<article id="panel-company1" <?php post_class( 'row company-intro' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-								
-									<?php the_content(); // display the content ?>
+									
+									<h1 class="page-title"><?php the_title(); ?></h1>
+									
+									<div class="subhead">
+										<?php the_content(); // display the content ?>
+									</div>
 									
 								<?php endwhile; endif; ?>
 								
 							</section> <?php // end .entry-content .inner-wrap ?>
-						</article> <?php // end .panel .panel__about1 ?>
+						</article> <?php // end .row .company-intro ?>
 								
 							
 						<?php /* PANEL 2 */ ?>
-						<article id="panel-2" <?php post_class( 'panel panel__about2' ); ?> role="article">
+						<article id="panel-company2" <?php post_class( 'row company-success' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php echo get_field('panel_2'); // display the content ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end .panel .panel__about2 ?>
+						</article> <?php // end .row .company-success ?>
 								
 								
-						<?php /* PANEL 3 */ ?>
-						<article id="panel-3" <?php post_class( 'panel panel__about3' ); ?> role="article">
+						<?php /* TESTIMONIALS */ ?>
+						<article id="panel-testimonials" <?php post_class( 'row testimonials' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
-								
 								<?php echo get_field('panel_3'); // Display the content ?>
 								
-								<ul class="testimonials">
+								<ul class="quotes">
 								<?php // Display Testimonials
 									query_posts(array('post_type'=>'testimonial')); ?>
 									
@@ -54,19 +57,19 @@
 								wp_reset_query(); ?>
 								
 								</ul> <?php // end .testimonials  ?>
-								
-							</section> <?php // end .entry-content.inner-wrap  ?>
-						</article> <?php // end .panel .panel__about3 ?>
+											
+							</section> <?php // end .entry-content .inner-wrap  ?>
+						</article> <?php // end #panel-testimonials .row .hm-services ?>
 								
 								
 						<?php /* PANEL 4 */ ?>
-						<article id="panel-4" <?php post_class( 'panel panel__about4' ); ?> role="article">
+						<article id="panel-company4" <?php post_class( 'row company-methodology' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php echo get_field('panel_4'); // Display the content ?>
 								
-							</section> <?php // end .inner-wrap  ?>
-						</article> <?php // end .panel .panel__about4 ?>
+							</section> <?php // end .entry-content .inner-wrap  ?>
+						</article> <?php // end .row .company-methodology ?>
 						
 						
 					</main> <?php // end #main .main-wrap ?>

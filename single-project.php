@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-			<div id="content">
-				<div id="inner-content" class="wrap">
+			<div id="content" class="wrap">
+				<div id="inner-content" class="inner-wrap">
 
-					<main id="main" class="main-wrap inner-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -19,10 +19,7 @@
 							</section> <?php // end .entry-content ?>
 
 							<footer class="article-footer">
-								<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Custom Tags:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
 							</footer>
-
-							<?php comments_template(); ?>
 
 						</article> <?php // #post-<id> ?>
 
@@ -44,11 +41,11 @@
 
 						<?php endif; ?>
 
-					</main> <?php // #main .main-wrap .inner-wrap ?>
+					</main> <?php // #main .main-wrapp ?>
 
 					<?php get_sidebar(); ?>
 
-				</div> <?php // end #inner-content .wrap ?>
-			</div> <?php // end #content ?>
+				</div> <?php // end #inner-content .inner-wrap ?>
+			</div> <?php // end #content .wrap ?>
 
 <?php get_footer(); ?>

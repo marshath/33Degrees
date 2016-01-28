@@ -670,6 +670,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/library\/scss\/site\/modules\/_posts.scss": {
+		"createSourceMap": 1,
+		"debugStyle": 2,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/scss\/site\/modules\/_posts.scss",
+		"outputAbbreviatedPath": "\/library\/scss\/site\/css\/style.css\/_posts.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 3,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/library\/scss\/site\/modules\/_sidebars.scss": {
 		"createSourceMap": 1,
 		"debugStyle": 2,
@@ -924,11 +940,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/page-projects.php": {
+	"\/page-portfolio.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/page-projects.php",
+		"inputAbbreviatedPath": "\/page-portfolio.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

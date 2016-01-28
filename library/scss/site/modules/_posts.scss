@@ -1,0 +1,243 @@
+/*
+ *
+ * POST STYLES
+ *
+ */
+ 
+ 
+ /*******************************
+BLOG
+*******************************/
+
+.blog, .archive, .search-results { // index, blog archive, blog search formatting
+	article {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		padding-top: baseline(1); // adds top spacing from border
+		border-bottom: 2px solid brand-color-lighten('gray3', 5);
+		border-top: 2px solid white;
+		&:first-child {
+			border-top:none; // remove border from first child
+		}
+	}
+	@include bp('tablet-h') {
+		article {
+			flex-direction: row; // changes flexbox orientation
+		}
+		.post-wrap {
+			width: 62%;
+			margin-left: 3%;
+			
+		}
+		figure {
+			width:35%;
+			margin-bottom: baseline(1); // adds spacing below figure when viewport is tablet or higher
+		}
+	}
+	@include bp('laptop') {
+		.post-wrap {
+			width: 57%;
+			margin-left: 3%;
+			
+		}
+		figure {
+			width:40%;
+		}
+	}
+}
+
+.blog-categories {
+	width: intrinsic;
+	display: block;
+	margin: 0 auto;
+	h3 {
+		color: brand-color('gray2');
+		@include font-size(16);
+		font-weight: normal;
+		text-align: center;
+	}
+	ul {
+		list-style: none;
+		padding-left: 1em;
+		margin-bottom: baseline(1.5);
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		line-height: 2.5;
+	}
+	li a {
+		@extend .btn__alt;
+		padding: 0.5em;
+		margin-right: 0.5em;
+	}
+	@include bp('tablet-h') {
+		h3 {
+			float:left;
+			display: inline-block;
+		}
+		ul {
+			justify-content: flex-start;
+		}
+	}
+}
+
+.attachment-post-thumbnail {
+	margin-top:baseline(1);
+}
+
+.article-footer {
+	svg { // icon size for About the Author
+		width:16px;
+		height:16px;
+		margin-left:0.5em;
+		fill: brand-color('primary');
+		&:hover, &:focus {
+			fill: brand-color-darken('primary', 4);
+		}
+	}
+}
+
+.single {
+	.article-header { // center the title
+		text-align: center;
+	}
+	figure {
+	}
+	.entry-content { // blog text indenting
+		h2, h3, p, ul {
+			max-width: 980px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
+
+h1.entry-title {
+	margin-top:0;
+	margin-bottom: baseline(0.25);
+	font-weight: normal;
+	@include font-size(36);
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.entry-header {
+	margin-top: baseline(1); // adds spacing from featured image at the top
+	margin-bottom: baseline(0.5); // removes p bottom spacing
+}
+.author-header {
+	margin: baseline(0.5) auto baseline(1.5);
+}
+.single-title {
+	margin-top: 0; // removes h1 top spacing
+	margin-bottom: 0; // removes h1 top spacing
+}
+
+
+// AUTHOR IMAGE
+.author-box { // white border and shadow
+	border: 4px solid white;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+	h4 {
+		margin-top: baseline(0.25);
+		margin-bottom: baseline(0.25);
+	}
+	p {
+		margin-top:0;
+	}
+}
+.author-pic, .author-img {
+	@include border-radius(10);
+	overflow: hidden;
+	display: inline-block;
+}
+.author-pic {
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+}
+.author-img {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin-right: 1em;
+	vertical-align: top;
+}
+
+
+.tags {
+	margin-top: 0; // bottom spacing for About the Author
+	margin-bottom: baseline(1.25); // bottom spacing for About the Author
+	line-height: 2.5; // line spacing for tag links on mobile
+	text-align: center; // center tags under article
+	&-title {
+		font-weight: bold;
+	}
+	a {
+		@extend .btn__alt;
+		padding: baseline(0.25) 0.5em;
+	}
+}
+
+// BLOG ARCHIVE LIST
+.block-thumb {
+	.b-inner {
+		// @include clearfix;
+	}
+	.b-thumb {
+		// @include column(3);
+	}
+	.b-text {
+		// @include column(9);
+	}
+	.b-title {
+		
+	}
+}
+
+.block-headline {
+	text-decoration: none;
+}
+
+.block-hero {
+	.b-thumb {
+		// @include column(12);
+	}
+}
+
+.block-inset {
+	.b-thumb {
+		
+	}
+	.b-text {
+	}
+}
+
+
+// AUTHOR INFORMATION
+.byline { 
+}
+
+.vcard {
+	max-width:700px;
+	background-color: brand-color-lighten('gray3', 5);
+	padding: baseline(0.5) 1em baseline(1);
+	margin: 0 auto baseline(2); // center vcard and add margin to the bottom
+	h3 {
+		margin-top: baseline(4);
+	}
+	p:last-child{
+		margin-bottom: 0; // removes extra spacing at the bottom of author vcard
+	}
+	svg {
+		width:20px;
+		height:20px;
+		vertical-align: middle;
+	}
+}

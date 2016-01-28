@@ -8,6 +8,10 @@
 /*******************************
 HEADER
 *******************************/
+.inner-header-wrap { // positioning menu toggle
+	position: relative;
+}
+
 .header-logo { // 33 degrees logo in the header
 	width:36%;
 	max-width: 120px;
