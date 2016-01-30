@@ -6,77 +6,90 @@
 
 
 /*******************************
-GENERAL
+GLOBAL
 *******************************/
 .row {
 	position: relative;
 	@include clearfix;
 }
+	
+/***** TESTIMONIALS PANEL *****/
+.testimonials {
+	h2 {
+		text-align: center;
+		font-style: italic;
+	}
+	li { // quotes before and after testimonial
+		position: relative;
+		&:before, &:after {
+			content: ''; // quotes from the SVG sprite sheet in images
+			width:48px;
+			height:48px;
+			background-image: url('../images/icon-quote.svg'); // quote SVG above and below the testimonials
+			background-size: 100% 100%; // makes the quotes size to 100% width and height
+			display: block;
+			position: absolute;
+		}
+		&:before {
+			left: 0;
+			z-index: 0; // sets the quote SVG below the blockquote
+		}
+		&:after {
+			right: 0;
+			bottom: 0;
+			margin-bottom: baseline(2.5);
+			transform: rotate3d(0,0,1,180deg); // rotates the quote SVG to upside down
+			z-index: 0; // sets the quote SVG below the blockquote
+		}
+	}
+	blockquote {
+		position: relative; // sets the testimonial above the quotes
+		z-index: 1; // sets the testimonial above the quotes
+		border: none;
+	}
+	cite {
+		color: brand-color('gray2');
+	}
+}
 
-.panel__projects1, .panel__about1 {
-	background: #cfe1e5;
-}
-.panel__projects2, .panel__about2 {
-}
-.panel__projects3, .panel__about3 {
-	background-color: brand-color('gray1');
-}
-.panel__projects4, .panel__about4 {
+/***** NEWSLETTER PANEL *****/
+.newsletter {
+	background: brand-color('accent');
+	.icon-inbox {
+		height:96px;
+		width:20%;
+		min-width: 64px;
+		max-width: 160px;
+		background: brand-color('accent');
+		padding:0.25em;
+		margin: (- baseline(1.5)) auto (- baseline(1.5));
+		display: block;
+		border-radius: 50%;
+	}
+	svg { // inbox icon at top of newsletter panel
+		height:60%;
+		width:60%;
+		display: block;
+		margin:baseline(0.5) auto;
+	}
+	h2, p {
+		margin-bottom: 0; // set the next line closer
+		font-style: italic;
+		text-align: center;
+	}
+	input[type='email'] {
+		width:100%;
+		border: 1px solid brand-color('accent'); // fix for 1px white below subscribe button
+	}
+	@include bp('mobile-h') {
+		.icon-inbox { // move inbox icon above the newsletter panel
+			width: 160px;
+			height: 80px;
+			margin-top: - baseline(1.5);
+		}
+	}
 }
 
-
-/* FLEXBOX ROW WRAPS */
-.services, .quotes, .projects {
-	padding:0;
-	text-align: center;
-	display: flex;
-	flex-flow: row wrap;
-	align-items: stretch;
-	align-content: space-between;
-	justify-content: space-around;
-	li {
-		list-style: none;
-		flex-grow: 1;
-	}
-}
-@include bp('tablet-v') {
-	.services {
-		p, h3 {
-			width:66%;
-			float: right;
-		}
-		svg {
-			width:33%;
-			float: left;
-		}
-	}
-}
-@include bp('tablet-h') {
-	.projects li {
-		width: 33%;
-	}
-}
-@include bp('laptop') {
-	.services {
-		li {
-			width: 33%;
-			padding:0 1em;
-		}
-		p, h3 { // overrides the tablet-v styles
-			width:100%;
-			float: none;
-		}
-		svg { // overrides the tablet-v styles
-			width:100%;
-			float: none;
-		}
-	}
-}
-@include bp('television') {
-	.projects li {
-		width: 10%;
-	}
-}
 
 /*******************************
 HOMEPAGE SECTIONS
@@ -85,7 +98,7 @@ HOMEPAGE SECTIONS
 	background-color: brand-color('secondary'); // fallback for gradient
 	background-image: linear-gradient(to bottom, brand-color('secondary') 0%, #1c526c 50%, #00a7bf 100%);
 	color: brand-color('white');
-	.cta { //splash text
+	.cta { // splash text
 		width:100%;
 		text-align: center;
 		@include font-size(18);
@@ -107,6 +120,20 @@ HOMEPAGE SECTIONS
 		transform-origin: center center;
 		// animation: spin 10s linear infinite;
 	}
+	@include bp('tablet-v') { // Tablet viewport
+		.cta {
+			width:50%;
+			position:absolute;
+			top:0;
+			right: 10%;
+		}
+		.lady {
+			width:50%;
+		}
+		
+	}
+}
+.hm-splash, .company-intro { // callout buttons for the splash and contact page
 	ul {
 		width:intrinsic;
 		background-color: brand-color('primary'); // fallback for gradient
@@ -128,24 +155,12 @@ HOMEPAGE SECTIONS
 			text-shadow:0 2px 1px black;
 			font-weight:bold;
 			display: block;
-			padding: baseline(0.75) 2em;
+			padding: baseline(0.5) 1em;
 			&:hover {
 				background-color: brand-color-darken('primary',2);
 				background-image: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);
 			}
 		}
-	}
-	@include bp('tablet-v') { // Tablet viewport
-		.cta {
-			width:50%;
-			position:absolute;
-			top:0;
-			right: 10%;
-		}
-		.lady {
-			width:50%;
-		}
-		
 	}
 }
 
@@ -173,6 +188,14 @@ HOMEPAGE SECTIONS
 	h2, h3 {
 		text-shadow: 0 2px 2px brand-color('black');
 	}
+	svg {
+		width: 200px !important;
+		height: 200px;
+		padding: 0.75em;
+		box-shadow: inset 0 4px 10px black;
+		background-color: brand-color-alpha('white', 'dark');
+		@include border-radius(20);
+	}
 	@include bp('tablet-v') {
 		p, h3 {
 			text-align:left;
@@ -184,6 +207,43 @@ HOMEPAGE SECTIONS
 		}
 		.services {
 			margin: 0 auto;
+		}
+	}
+}
+.services { // homepage service columns
+	padding:0;
+	text-align: center;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+	align-content: space-between;
+	justify-content: space-around;
+	li {
+		list-style: none;
+		flex-grow: 1;
+	}
+	@include bp('tablet-v') {
+		p, h3 {
+			width:66%;
+			float: right;
+		}
+		svg {
+			width:33%;
+			float: left;
+		}
+		}
+	@include bp('laptop') {
+		li {
+			width: 33%;
+			padding:0 1em;
+		}
+		p, h3 { // overrides the tablet-v styles
+			width:100%;
+			float: none;
+		}
+		svg { // overrides the tablet-v styles
+			width:100%;
+			float: none;
 		}
 	}
 }
@@ -201,7 +261,7 @@ HOMEPAGE SECTIONS
 			box-shadow: 4px 10px 1em brand-color-alpha('black','dark');
 		}
 		figcaption { // override .overlay-links figcaption
-			@include font-size(22);
+			@include font-size(20);
 			bottom: -(baseline(0.75));
 			line-height: baseline(0.75);
 		}
@@ -219,320 +279,76 @@ HOMEPAGE SECTIONS
 	}
 }
 
-	
-/*******************************
-TESTIMONIALS PANEL
-*******************************/
-.testimonials {
-	margin:0 auto;
-	h2 {
-		text-align: center;
-		font-style: italic;
-	}
-	li {
-		display:none;
-		&:first-child {
-			display: block;
-		}
-	}
-}
-
-.quotes {
-	position: relative;
-	&:before, &:after {
-		content: ''; // quotes from the SVG sprite sheet in images
-		width:48px;
-		height:48px;
-		background-image: url('../images/icon-quote.svg'); // quote SVG above and below the testimonials
-		background-size: 100% 100%; // makes the quotes size to 100% width and height
-		display: block;
-		position: absolute;
-	}
-	&:before {
-		left: 0;
-		z-index: 0; // sets the quote SVG below the blockquote
-	}
-	&:after {
-		right: 0;
-		bottom: 0;
-		margin-bottom: baseline(2.5);
-		transform: rotate3d(0,0,1,180deg); // rotates the quote SVG to upside down
-		z-index: 0; // sets the quote SVG below the blockquote
-	}
-	blockquote {
-		position: relative; // sets the testimonial above the quotes
-		z-index: 1; // sets the testimonial above the quotes
-		border: none;
-	}
-	cite {
-		color: brand-color('gray2');
-	}
-}
-
 
 /*******************************
-NEWSLETTER PANEL
+SERVICES
 *******************************/
-.newsletter {
-	background: brand-color('accent');
-	padding-bottom: baseline(1); // equal spacing at the bottom of the panel
+.services-intro {
 	text-align: center;
-	.icon-inbox {
-		height:96px;
-		width:20%;
-		min-width: 64px;
-		max-width: 160px;
-		background: brand-color('accent');
-		padding:0.25em;
-		margin: (- baseline(1.5)) auto (- baseline(1.5));
-		display: block;
-		border-radius: 50%;
-	}
-	svg { // inbox icon at top of newsletter panel
-		height:60%;
-		width:60%;
-		display: block;
-		margin:baseline(0.5) auto;
-	}
-	h2 {
-		margin-bottom: 0; // set the next line closer
-		font-style: italic
-	}
-	form {
-		max-width: 600px;
-		display: block;
-	}
-	input[type=email], input[type=submit] {
-		text-align: center;
-		margin-bottom:baseline(0.5);
-	}
-	input[type=submit] {
-		background-color:#000;
-		color: brand-color('white');
-		@extend .default-transition;
-		&:hover {
-			background-color: brand-color('primary');
-		}
-	}
-	@include bp('mobile-h') {
-		.icon-inbox { // move inbox icon above the newsletter panel
-			width: 160px;
-			height: 80px;
-			margin-top: - baseline(1.5);
-		}
-	}
-	@include bp('tablet-v') {
-		form {
-			margin:0 auto;
-		}
-		input[type=email] {
-			width:80%;
-			float:left;
-			text-align: left;
-		}
-		input[type=submit] {
-			width:20%;
-			float:right;
-		}
-	}
+	background: #cfe1e5;
 }
 
+.services-websites {
+}
 
+.services-branding {
+	background-color: brand-color-lighten('secondary', 9);
+}
 
-/*******************************
-PROJECTS
-*******************************/
-.panel__projects2, .panel__projects3, .panel__projects4 {
-	@include bp('phone-h') {
-		.overlay-links {
-			flex-flow: row wrap;
-		}
-		li {
-			width:48%;
-			margin-left:1%;
-			margin-right:1%;
-		}
-	}
-	@include bp('tablet-v') {
-		li {
-			width:31%;
-		}
+.services-design {
+}
+
+.project-icon { // used on Services, Project pages
+	svg {
+		display: block;
+		margin: 0 auto;
 	}
 }
 
 
 /*******************************
-ABOUT
+PORTFOLIO
 *******************************/
+.portfolio-intro {
+	text-align: center;
+	background: #cfe1e5;
+}
 
+.portfolio-websites {
+}
+
+.portfolio-branding {
+	background-color: brand-color-lighten('secondary', 9);
+}
+
+.portfolio-design {
+}
 
 
 /*******************************
-BLOG
+COMPANY
 *******************************/
+.company-intro {
+	text-align: center;
+	background: #cfe1e5;
+}
 
-.blog { // index, blog archive formatting
+.company-success {
+	background-color: brand-color-lighten('secondary', 9);
+}
+
+.portfolio-branding {
+}
+
+.company-methodology {
+	background-color: brand-color-lighten('secondary', 9);
+}
+
+
+
+.error404 {
 	article {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: nowrap;
-		margin-bottom: baseline(2);
-	}
-	@include bp('tablet-h') {
-		article {
-			flex-direction: row;
-		}
-		.post-wrap {
-			width: 62%;
-			margin-left: 3%;
-			
-		}
-		figure {
-			width:35%;
-		}
-	}
-	@include bp('laptop') {
-		.post-wrap {
-			width: 57%;
-			margin-left: 3%;
-			
-		}
-		figure {
-			width:40%;
-		}
-	}
-}
-
-.attachment-post-thumbnail {
-	margin-top:baseline(1);
-}
-
-.article-footer {
-	svg { // icon size for blog header
-		width:16px;
-		height:16px;
-		margin-left:0.5em;
-		fill: brand-color('primary');
-		&:hover {
-			fill: brand-color('text');
-		}
-	}
-}
-.single {
-	.article-header { // center the title
 		text-align: center;
-	}
-}
-
-.blog-wrap {
-	h2, h3, p, ul, .vcard { // blog text indenting
-		margin-right:3%;
-		margin-left:3%;
-		@include bp('tablet-v') {
-			margin-right:5%;
-			margin-left:5%;
-		}
-		@include bp('tablet-h') {
-			margin-right:7%;
-			margin-left:7%;
-		}
-		@include bp('laptop') {
-			margin-right:10%;
-			margin-left:10%;
-		}
-	}
-}
-
-h1.entry-title {
-	margin-top:0;
-	margin-bottom: baseline(0.25);
-	font-weight: normal;
-	@include font-size(36);
-	a {
-		text-decoration: none;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-}
-
-.entry-header {
-	margin-top: baseline(1); // adds spacing from featured image at the top
-	margin-bottom: baseline(0.5); // removes p bottom spacing
-}
-.author-header {
-	margin: baseline(0.5) auto baseline(1);
-}
-.single-title {
-	margin-top: 0; // removes h1 top spacing
-	margin-bottom: 0; // removes h1 top spacing
-}
-
-
-// AUTHOR IMAGE
-.author__pic, .author__img {
-	@include border-radius(10);
-	border: 4px solid white;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-	overflow: hidden;
-	display: inline-block;
-}
-.author__pic {
-	width: 50px;
-	height: 50px;
-	vertical-align: middle;
-}
-.author__img {
-	width: 100px;
-	height: 100px;
-}
-
-
-// BLOG ARCHIVE LIST
-.block-thumb {
-	.b-inner {
-		// @include clearfix;
-	}
-	.b-thumb {
-		// @include column(3);
-	}
-	.b-text {
-		// @include column(9);
-	}
-	.b-title {
-		
-	}
-}
-
-.block-headline {
-	text-decoration: none;
-}
-
-.block-hero {
-	.b-thumb {
-		// @include column(12);
-	}
-}
-
-.block-inset {
-	.b-thumb {
-		
-	}
-	.b-text {
-	}
-}
-
-
-// AUTHOR INFORMATION
-.byline { 
-}
-
-// COMPANY INFORMATION
-.vcard {
-	.org { // Company name
-	}
-	.adr { // Company address
-	}
-	.tel { // Company telephone
+		margin: baseline(3) auto;
 	}
 }

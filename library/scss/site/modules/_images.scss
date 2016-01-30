@@ -17,30 +17,29 @@ img {
 GLOBAL IMAGES
 *******************************/
 figure {
-	
 }
 
 /* SERVICE ICONS */
 .fill { // Fill colors
 	&__white {
-		fill: brand-color('white');
+		fill: brand-color('secondary');
 	}
 	&__gray {
-		fill: brand-color('gray2');
+		fill: brand-color-lighten('secondary', 8);
 	}
 	&__black {
-		fill: brand-color('black');
+		fill: brand-color('white');
 	}
 }
 .stroke { // Stroke colors
 	&__white {
-		stroke: brand-color('white');
+		stroke: brand-color('secondary');
 	}
 	&__gray {
-		stroke: brand-color('gray2');
+		stroke: brand-color-lighten('secondary', 8);
 	}
 	&__black {
-		stroke: brand-color('black');
+		stroke: brand-color('white');
 	}
 }
 

@@ -260,7 +260,7 @@ function bones_page_navi() {
 	$bignum = 999999999;
 	if ( $wp_query->max_num_pages <= 1 )
 	return;
-	echo '<nav class="pagination">';
+	echo '<nav class="pagination"><span class="pagination-title">Pages: </span>';
 	echo paginate_links( array(
 		'base'               => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
 		'format'             => '',
@@ -277,7 +277,7 @@ function bones_page_navi() {
 
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
 function modify_read_more_link() {
-return '<a class="more-link" href="' . get_permalink() . '">Your Read More Link Text</a>';
+	return '<a class="more-link" href="' . get_permalink() . '">Your Read More Link Text</a>';
 }
 
 

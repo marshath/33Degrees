@@ -35,22 +35,18 @@ section {
 .inner-wrap {
 	width:94%;
 	margin:0 auto;
-	@include bp('tablet-v') {
+	@extend .default-transition;
+	@include bp('tablet-h') {
 		width:90%;
 	}
-	@include bp('tablet-h') {
-		width:86%;
-	}
-	@include bp('laptop') {
+	@include bp('monitor') {
 		width:80%;
 	}
-	@include bp('monitor') {
-		width:74%;
-	}
 	@include bp('television') {
-		width:66%;
+		width:70%;
 	}
 }
+
 
 
 
@@ -67,7 +63,44 @@ HEADER
 /*******************************
 MAIN 
 *******************************/
-main {
+.comments, .sidebar  { // comments and sidebar
+	width:94%;
+	margin:0 auto;
+	margin-bottom: baseline(2); // provides spacing before website footer
+	display:block; // for margin-bottom to work
+}
+@include bp('tablet-h') { // (.comments + .sidebar = 100%) - margins = 90%
+	.comments { // 61%
+		width:53%;
+		margin-right: 3%;
+		margin-left: 5%;
+		float:left;
+	}
+	.sidebar { // 39%
+		width:34%;
+		margin-right: 5%;
+		float:right;
+	}
+}
+@include bp('monitor') { // (.comments + .sidebar + margin-right 3% = 100%) - margins = 80%
+	.comments { // 62% + margin-right 3%
+		width:52%;
+		margin-left: 10%;
+	}
+	.sidebar { // 35%
+		width:25%;
+		margin-right: 10%;
+	}
+}
+@include bp('television') { // (.comments + .sidebar + margin-right 3% = 100%) - margins = 70%
+	.comments { // 62% + margin-right 3%
+		width:47%;
+		margin-left: 15%;
+	}
+	.sidebar { // 35%
+		width:20%;
+		margin-right: 15%;
+	}
 }
 
 

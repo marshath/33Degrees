@@ -122,12 +122,7 @@ jQuery(document).ready(function($) {
 	$("#menu-toggle").on("click", function(){
 		$("#menu-header").slideToggle();
 		$(this).toggleClass("active");
+		$("#nav-menu").toggleClass("active");
 	});
-	
-	/* 
-	 * This loads the email signup toggle
-	 */
-	$("#email-toggle").on("click", function(){
-		$("#email-signup").slideToggle();
-		$(this).toggleClass("active");
-	});}); /* end of as page load scripts */
+
+}); /* end of as page load scripts */

@@ -26,32 +26,35 @@ h1 {
 	@include font-size(46);
 }
 h2 {
-	@include font-size(36);
+	@include font-size(30);
 }
 h3 {
-	@include font-size(30);
-}
-h4 {
 	@include font-size(24);
 }
+h4 {
+	@include font-size(20);
+}
 h5 {
-	@include font-size(30);
+	@include font-size(18);
 }
 h6 {
-	@include font-size(18);
+	@include font-size(16);
 }
 
+.subhead { // main page subheads
+	h2, h3, h4, h5, h6, p {
+		text-align: center;
+		font-weight: normal;
+	}
+}
 
 // PARAGRAPH
-p, ul { // global
-	@include font-size(18);
-}
 p {
 	margin-bottom: baseline(1);
 }
 
 // FORMATTING
-.page-title, .page-subtitle {
+.page-title, .page-subtitle, .archive-title {
 	text-align: center;
 }
 .normal { // Font weight normal
@@ -84,6 +87,8 @@ code {
 	width:100%;
 	padding: 1em;
 	display:block;
+	overflow: hidden;
+	overflow-x: scroll;
 }
 
 /*******************************
@@ -106,7 +111,6 @@ blockquote {
 FIGURE CAPTION
 *******************************/
 figcaption {
-	color: brand-color('gray3');
 	font-style: italic;
 }
 

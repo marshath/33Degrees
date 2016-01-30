@@ -149,6 +149,19 @@ function bones_register_sidebars() {
 } // don't remove this bracket!
 
 
+/************* SEARCH RESULTS *********************/
+/*
+This is modifies the search results to only display blog posts.
+*/
+function fb_search_filter($query) {
+	if ( !$query->is_admin && $query->is_search ) {
+		$query->set('post_type', array('post'));
+	}
+	return $query;
+}
+add_filter('pre_get_posts', 'fb_search_filter');
+
+
 /************* GOOGLE FONTS *********************/
 /*
 This is a modification of a function found in the twentythirteen theme where we can declare some external fonts. If you're using Google Fonts, you can replace these fonts, change it in your scss files and be up and running in seconds.

@@ -5,26 +5,6 @@
  */
 
 
-.sidebar { // column width controled in _containers.scss
-	margin-top: baseline(2); // moves sidebar down to align with first paragraph
-	&__email-marketing {
-	}
-	&__social {
-	}
-	&__blog-posts {
-	}
-	&__search {
-		margin-bottom: baseline(1);
-		@include clearfix;
-	}
-	&__categories {
-	}
-}
-
-.single .sidebar {
-}
-
-
 /*******************************
 SOCIAL MEDIA LINKS 
 *******************************/
