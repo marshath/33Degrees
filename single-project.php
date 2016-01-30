@@ -1,25 +1,58 @@
 <?php get_header(); ?>
 
 			<div id="content" class="wrap">
-				<div id="inner-content" class="inner-wrap">
+				<div id="inner-content">
 
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" <?php // itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog" ?> >
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
+							
+							<div class="inner-wrap">
+								<div class="flex-section-container">
+									<div class="flexslider">
+										<ul class="slides">
+											
+										<?php if ( have_rows('gallery') ) {
+											while ( have_rows('gallery') ) {
+												the_row();
+												
+												$image = get_sub_field('artwork');
+												$title = get_sub_field('artwork_title'); ?>
+												
+												<li><figure><img src='<?php echo $image; ?>' alt='<?php echo $title; ?>'></figure></li>
+											
+											<?php } // endwhile ?>
+											
+										<?php } // endif ?>
+										
+										</ul>
+									</div>
+								</div>
+							</div>
 
-							<header class="article-header">
-								<h1 class="single-title"><?php the_title(); ?></h1>
+							<header class="article-header inner-wrap">
+								<h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1>
 							</header>
 
-							<section class="entry-content">
-								<img height="500px">
+							<section class="entry-content inner-wrap" itemprop="articleBody">
+								
 								<?php the_content(); ?>
+								
+								<?php if ($website = get_field('website')) { // if there is a URL, display a link ?>
+								
+									<div class="website-link">
+									    <p class="tags"><span class="tags-title">Visit:</span> <a class="btn__alt" href="http://<?php echo $website; ?>" target="_blank" rel="nofollow"><?php echo $website; ?></a></p>
+									</div>
+									
+								<?php } ?>
+								
 							</section> <?php // end .entry-content ?>
 
-							<footer class="article-footer">
-							</footer>
+							<div class="comments">
+								<?php comments_template(); ?>
+							</div>
 
 						</article> <?php // #post-<id> ?>
 

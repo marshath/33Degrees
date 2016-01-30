@@ -51,6 +51,9 @@
 									<section class="entry-content">
 										<?php the_excerpt(); ?>
 									</section>
+									
+									<?php edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
+									
 								</div>
 	
 							</article> <?php // end #post-<id> .article-wrap ?>

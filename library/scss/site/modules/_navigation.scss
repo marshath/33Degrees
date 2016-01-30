@@ -61,6 +61,17 @@ HEADER & FOOTER NAVIGATION
 	}
 }
 
+// Navigation highlighting override for Projects post type
+.single-project {
+	.current_page_parent {
+		border-color: rgba(240,240,240,0) !important; // remove nav highlighting from Blog
+	}
+	.menu-item-107 { // add nav highlighting to Projects
+		border-color: brand-color-alpha('white', 'dark');
+	}
+}
+
+
 // HAMBURGER VARIABLES
 $button-size: 30px;                    // The height of the button area
 $bar-thickness: 4px;                   // The thickness of the button bars

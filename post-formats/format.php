@@ -23,7 +23,7 @@
 											'<span class="entry-category">' . get_the_category_list(', ') . '</span>' ); ?>										
 									</p> <?php // end .byline ?>
 
-									<h1 class="single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
+									<h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1>
 									
 									<div class="author-header">
 										<div class="author-pic author-box"><?php userphoto_the_author_photo(); ?></div>
@@ -47,24 +47,31 @@
 										
 										<div class="author-img"><?php userphoto_the_author_photo(); ?></div>
 										
-										<?php printf( '<h4 class="entry-author author">About <br><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author"><span itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author('ID') . '</span></a></h4>'
-										); ?>
+										<?php // ABOUT THE AUTHOR
+											// vars
+											$athr = get_the_author('ID'); 
+											
+											// author description
+											printf( '<h4 class="entry-author author">About <br><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author"><span itemprop="author" itemscope itemptype="http://schema.org/Person">' . $athr . '</span></a></h4>'
+										); 
 										
-										<?php printf ('<p>Follow<span class="screen-reader-text"> ' . get_the_author('ID') . '</span>:');
+											//author social media links
+											printf ('<p>Follow<span class="screen-reader-text"> ' . $athr . '</span>:');
 											// the author social profiles, if they have them
 											if ($social = get_the_author_meta('facebook')) { // author Facebook profile
-												printf ('<a href="http://facebook.com/' . get_the_author_meta('facebook') . '" title="Follow ' . get_the_author('ID') . ' on Facebook" rel="bookmark"><svg><use xlink:href="#icon-facebook"></use></svg><span class="screen-reader-text">Follow ' . get_the_author('ID') . 'on Facebook</span></a> ');
+												printf ('<a href="http://facebook.com/' . $social . '" title="Follow ' . $athr . ' on Facebook" rel="bookmark"><svg><use xlink:href="#icon-facebook"></use></svg><span class="screen-reader-text">Follow ' . $athr . 'on Facebook</span></a> ');
 											};
 											if ($social = get_the_author_meta('twitter')) {  // author Twitter profile
-												printf ('<a href="http://twitter.com/' . get_the_author_meta('twitter') . '" title="Follow ' . get_the_author('ID') . ' on Twitter" rel="bookmark"><svg><use xlink:href="#icon-twitter"></use></svg><span class="screen-reader-text">Follow ' . get_the_author('ID') . 'on Twitter</span></a> ');
+												printf ('<a href="http://twitter.com/' . $social . '" title="Follow ' . $athr . ' on Twitter" rel="bookmark"><svg><use xlink:href="#icon-twitter"></use></svg><span class="screen-reader-text">Follow ' . $athr . 'on Twitter</span></a> ');
 											};
 											if ($social = get_the_author_meta( 'googleplus' )) { // author Google+ profile
-												printf ('<a href="https://plus.google.com/' . get_the_author_meta( 'googleplus' ) . '" title="Follow ' . get_the_author('ID') . ' on Google+" rel="bookmark"><svg><use xlink:href="#icon-google"></use></svg><span class="screen-reader-text">Follow ' . get_the_author('ID') . 'on Google Plus</span></a> ');
+												printf ('<a href="https://plus.google.com/' . $social . '" title="Follow ' . $athr . ' on Google+" rel="bookmark"><svg><use xlink:href="#icon-google"></use></svg><span class="screen-reader-text">Follow ' . $athr . 'on Google Plus</span></a> ');
 											};
 											if ($social = get_the_author_meta('aim')) { // author LinkedIn profile
-												printf ('<a href="http://www.linkedin.com/in/' . get_the_author_meta( 'aim' ) . '" title="Follow ' . get_the_author('ID') . ' on LinkedIn" rel="bookmark"><svg><use xlink:href="#icon-linkedin"></use></svg><span class="screen-reader-text">Follow ' . get_the_author('ID') . 'on LinkedIn</span></a>');
+												printf ('<a href="http://www.linkedin.com/in/' . $social . '" title="Follow ' . $athr . ' on LinkedIn" rel="bookmark"><svg><use xlink:href="#icon-linkedin"></use></svg><span class="screen-reader-text">Follow ' . $athr . 'on LinkedIn</span></a>');
 											};
-										?></p>
+											printf ('</p>');
+										?>
 										
 										<p class="author__desc"><?php echo get_the_author_meta( 'description' ); ?></p>
 

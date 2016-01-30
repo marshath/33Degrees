@@ -39,6 +39,7 @@ GLOBAL BUTTONS
 // ALTERNATE BUTTON
 .btn__alt { // rounded orange outline
 	background: brand-color('white');
+	padding: baseline(0.25) 0.5em;
 	color: brand-color('primary');
 	text-decoration: none;
 	border:1px solid brand-color-lighten('primary', 7);

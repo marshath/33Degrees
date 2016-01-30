@@ -15,40 +15,32 @@ GLOBAL
 	
 /***** TESTIMONIALS PANEL *****/
 .testimonials {
-	margin:0 auto;
 	h2 {
 		text-align: center;
 		font-style: italic;
 	}
-	li {
-		display:none;
-		&:first-child {
+	li { // quotes before and after testimonial
+		position: relative;
+		&:before, &:after {
+			content: ''; // quotes from the SVG sprite sheet in images
+			width:48px;
+			height:48px;
+			background-image: url('../images/icon-quote.svg'); // quote SVG above and below the testimonials
+			background-size: 100% 100%; // makes the quotes size to 100% width and height
 			display: block;
+			position: absolute;
 		}
-	}
-}
-
-.quotes {
-	position: relative;
-	&:before, &:after {
-		content: ''; // quotes from the SVG sprite sheet in images
-		width:48px;
-		height:48px;
-		background-image: url('../images/icon-quote.svg'); // quote SVG above and below the testimonials
-		background-size: 100% 100%; // makes the quotes size to 100% width and height
-		display: block;
-		position: absolute;
-	}
-	&:before {
-		left: 0;
-		z-index: 0; // sets the quote SVG below the blockquote
-	}
-	&:after {
-		right: 0;
-		bottom: 0;
-		margin-bottom: baseline(2.5);
-		transform: rotate3d(0,0,1,180deg); // rotates the quote SVG to upside down
-		z-index: 0; // sets the quote SVG below the blockquote
+		&:before {
+			left: 0;
+			z-index: 0; // sets the quote SVG below the blockquote
+		}
+		&:after {
+			right: 0;
+			bottom: 0;
+			margin-bottom: baseline(2.5);
+			transform: rotate3d(0,0,1,180deg); // rotates the quote SVG to upside down
+			z-index: 0; // sets the quote SVG below the blockquote
+		}
 	}
 	blockquote {
 		position: relative; // sets the testimonial above the quotes
@@ -106,7 +98,7 @@ HOMEPAGE SECTIONS
 	background-color: brand-color('secondary'); // fallback for gradient
 	background-image: linear-gradient(to bottom, brand-color('secondary') 0%, #1c526c 50%, #00a7bf 100%);
 	color: brand-color('white');
-	.cta { //splash text
+	.cta { // splash text
 		width:100%;
 		text-align: center;
 		@include font-size(18);
@@ -128,6 +120,20 @@ HOMEPAGE SECTIONS
 		transform-origin: center center;
 		// animation: spin 10s linear infinite;
 	}
+	@include bp('tablet-v') { // Tablet viewport
+		.cta {
+			width:50%;
+			position:absolute;
+			top:0;
+			right: 10%;
+		}
+		.lady {
+			width:50%;
+		}
+		
+	}
+}
+.hm-splash, .company-intro { // callout buttons for the splash and contact page
 	ul {
 		width:intrinsic;
 		background-color: brand-color('primary'); // fallback for gradient
@@ -149,24 +155,12 @@ HOMEPAGE SECTIONS
 			text-shadow:0 2px 1px black;
 			font-weight:bold;
 			display: block;
-			padding: baseline(0.75) 2em;
+			padding: baseline(0.5) 1em;
 			&:hover {
 				background-color: brand-color-darken('primary',2);
 				background-image: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);
 			}
 		}
-	}
-	@include bp('tablet-v') { // Tablet viewport
-		.cta {
-			width:50%;
-			position:absolute;
-			top:0;
-			right: 10%;
-		}
-		.lady {
-			width:50%;
-		}
-		
 	}
 }
 
@@ -289,9 +283,6 @@ HOMEPAGE SECTIONS
 /*******************************
 SERVICES
 *******************************/
-.page-id-63 h2 {
-	text-align: center;
-}
 .services-intro {
 	text-align: center;
 	background: #cfe1e5;
@@ -351,4 +342,13 @@ COMPANY
 
 .company-methodology {
 	background-color: brand-color-lighten('secondary', 9);
+}
+
+
+
+.error404 {
+	article {
+		text-align: center;
+		margin: baseline(3) auto;
+	}
 }

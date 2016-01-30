@@ -24,6 +24,7 @@
 								
 								
 						<?php /* PANEL 2 — WEBSITE */ ?>
+						<a id="website"></a>
 						<article id="panel-website" <?php post_class( 'row portfolio-websites' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
@@ -49,10 +50,11 @@
 									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 							
 									<li>
-										<?php the_post_thumbnail(''); ?>
+					                    <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(''); ?></a>
 										<h3><a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-										<p><?php the_excerpt(); ?></p>
-										<?php // edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+										<?php the_excerpt(); ?>
+										<?php // <p><a class="moretag" href="" title="">Title</a></p> ?>
+										<?php edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
 									</li>
 										
 									<? endwhile; ?>
@@ -65,6 +67,7 @@
 								
 								
 						<?php /* PANEL 3 — BRANDING */ ?>
+						<a id="branding"></a>
 						<article id="panel-branding" <?php post_class( 'row portfolio-branding' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
@@ -90,10 +93,10 @@
 									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 							
 									<li>
-										<?php the_post_thumbnail(''); ?>
+					                    <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(''); ?></a>
 										<h3><a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 										<p><?php the_excerpt(); ?></p>
-										<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+										<?php edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
 									</li>
 										
 									<? endwhile; ?>
@@ -106,6 +109,7 @@
 								
 								
 						<?php /* PANEL 4 — DESIGN */ ?>
+						<a id="design"></a>
 						<article id="panel-design" <?php post_class( 'row portfolio-design' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
@@ -131,10 +135,10 @@
 									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 							
 									<li>
-										<?php the_post_thumbnail(''); ?>
+					                    <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(''); ?></a>
 										<h3><a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 										<p><?php the_excerpt(); ?></p>
-										<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+										<?php edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
 									</li>
 										
 									<? endwhile; ?>

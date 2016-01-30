@@ -5,7 +5,7 @@
  */
  
  
- /*******************************
+/*******************************
 BLOG
 *******************************/
 
@@ -69,7 +69,6 @@ BLOG
 	}
 	li a {
 		@extend .btn__alt;
-		padding: 0.5em;
 		margin-right: 0.5em;
 	}
 	@include bp('tablet-h') {
@@ -99,11 +98,9 @@ BLOG
 	}
 }
 
-.single {
+.single { // Blog, Project formatting
 	.article-header { // center the title
 		text-align: center;
-	}
-	figure {
 	}
 	.entry-content { // blog text indenting
 		h2, h3, p, ul {
@@ -114,7 +111,7 @@ BLOG
 	}
 }
 
-h1.entry-title {
+h1.entry-title { // blog archive titles
 	margin-top:0;
 	margin-bottom: baseline(0.25);
 	font-weight: normal;
@@ -126,17 +123,16 @@ h1.entry-title {
 		}
 	}
 }
-
 .entry-header {
 	margin-top: baseline(1); // adds spacing from featured image at the top
 	margin-bottom: baseline(0.5); // removes p bottom spacing
 }
-.author-header {
-	margin: baseline(0.5) auto baseline(1.5);
-}
 .single-title {
 	margin-top: 0; // removes h1 top spacing
 	margin-bottom: 0; // removes h1 top spacing
+}
+.author-header {
+	margin: baseline(0.5) auto baseline(1.5);
 }
 
 
@@ -181,7 +177,6 @@ h1.entry-title {
 	}
 	a {
 		@extend .btn__alt;
-		padding: baseline(0.25) 0.5em;
 	}
 }
 
@@ -241,3 +236,52 @@ h1.entry-title {
 		vertical-align: middle;
 	}
 }
+
+
+/*******************************
+PROJECTS
+*******************************/
+.single-project {
+	.article-header { // center the title
+		margin-bottom: baseline(1.5);
+	}
+	.website-link {
+		margin: baseline(1.5) auto;
+	}
+	.flex-section-container {
+		margin: baseline(1) auto;
+		@include bp('tablet-v') {
+			margin: baseline(2) auto baseline(1.5);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

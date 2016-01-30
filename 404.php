@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-			<div id="content">
-				<div id="inner-content" class="wrap">
+			<div id="content" class="wrap">
+				<div id="inner-content" class="inner-wrap">
 					
 					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						
@@ -18,10 +18,6 @@
 							<section class="search">
 								<p><?php get_search_form(); ?></p>
 							</section>
-
-							<footer class="article-footer">
-								<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
-							</footer>
 
 						</article> <?php // end #post-not-found .article-wrap ?>
 						

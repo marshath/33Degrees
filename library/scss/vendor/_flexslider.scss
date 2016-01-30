@@ -14,20 +14,9 @@ BROWSER RESETS
 }
 
 .flex-section-container {
-	width: 60%;
-	border: 1px solid site-color-lighten('foreground',1);
-	box-sizing: border-box;
-	margin-bottom: baseline(2);
+	width: 100%;
 	display: inline-block;
 	float: left;
-	@include bp(mobile-h) {
-		width: 100%;
-	}
-	@include bp(tablet-h) {
-		width: 70%;
-		margin-left: 15%;
-		margin-right: 15%;
-	}
 }
 
 .slides, .flex-control-nav, .flex-direction-nav {
