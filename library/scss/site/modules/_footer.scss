@@ -128,32 +128,32 @@ SOCIAL LINKS
 		background-color: brand-color('gray2');
 	}
 	.facebook {
-		&:hover {
+		&:hover, &:focus {
 			background: social-color('facebook');
 		}
 	}
 	.twitter {
-		&:hover {
+		&:hover, &:focus {
 			background: social-color('twitter');
 		}
 	}
 	.google {
-		&:hover {
+		&:hover, &:focus {
 			background: social-color('google');
 		}
 	}
 	.rss {
-		&:hover {
+		&:hover, &:focus {
 			background: social-color('rss');
 		}
 	}
 	.email {
-		&:hover {
+		&:hover, &:focus {
 			background: brand-color('gray');
 		}
 	}
 	.linkedin {
-		&:hover {
+		&:hover, &:focus {
 			background: social-color('linkedin');
 		}
 	}

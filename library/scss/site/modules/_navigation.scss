@@ -55,7 +55,7 @@ HEADER & FOOTER NAVIGATION
 		text-decoration: none;
 		padding: baseline(0.5) 0;
 		display: block;
-		&:hover {
+		&:hover, &:focus {
 			color: brand-color('white');
 		}
 	}
@@ -196,7 +196,7 @@ BREADCRUMB TRAIL
 		}
 		a {
 			text-decoration: none;
-			&:hover {
+			&:hover, &:focus {
 				color: alert-color('error');
 			}
 		}
@@ -235,7 +235,7 @@ PAGINATION
 		padding-top: baseline(0.2);
 		display: inline-block;
 	}
-	.current, .current:hover {
+	.current, .current:hover, .current:focus {
 		border-color: brand-color('gray3');
 		background-color: brand-color('gray3');
 		color: brand-color('gray1');
@@ -264,7 +264,7 @@ TABS
 			text-decoration: none;
 			padding:  baseline(1) 1.5em;
 			display: inline-block;
-			&:hover {
+			&:hover, &:focus {
 				background: brand-color-lighten('primary',2);
 			}
 		}
@@ -296,7 +296,7 @@ SINGLE COMMENT
 		a {
 			color: brand-color('black');
 			text-decoration: none;
-			&:hover {
+			&:hover, &:focus {
 				color: brand-color('primary');
 			}
 		}

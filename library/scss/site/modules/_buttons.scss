@@ -17,7 +17,7 @@ GLOBAL BUTTONS
 	padding: baseline(0.5) 1em;
 	display: inline-block;
 	border: 0;
-	&:hover {
+	&:hover, &:focus {
 		color:brand-color('white');
 	}
 }
@@ -28,7 +28,7 @@ GLOBAL BUTTONS
 	background: linear-gradient(to bottom, #ea6115 10%, #d53f15 90%);
 	@include border-radius(2);
 	box-shadow: inset 0 0 0.4em brand-color-alpha('white', 'light'), 0 0.3em 0.4em brand-color-alpha('black', 'dark');
-	&:hover {
+	&:hover, &:focus {
 		background: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);
 	}
 	&:active {
@@ -44,7 +44,7 @@ GLOBAL BUTTONS
 	text-decoration: none;
 	border:1px solid brand-color-lighten('primary', 7);
 	@include border-radius(8);
-	&:hover {
+	&:hover, &:focus {
 		background: brand-color('primary');
 		color: brand-color('white');
 		border:1px solid brand-color('primary');
@@ -62,7 +62,7 @@ GLOBAL BUTTONS
 	display: block;
 	position: relative;
 	@extend .default-transition;
-	&:hover {
+	&:hover, &:focus {
 		background: brand-color('primary');
 	}
 	@include bp('tablet-v') {
@@ -80,7 +80,7 @@ GLOBAL BUTTONS
 	@extend .btn;
 	background: brand-color('gray3');
 	@include border-radius(1);
-	&:hover {
+	&:hover, &:focus {
 		background-color: brand-color-lighten('gray3',1);
 	}
 }
@@ -90,14 +90,14 @@ GLOBAL BUTTONS
 	@extend .btn;
 	background-color: brand-color('secondary');
 	@include border-radius(1);
-	&:hover {
+	&:hover, &:focus {
 		background-color: brand-color-lighten('secondary', 1);
 	}
 	@include bp('tablet-v') { // override .btn__mobile a styles
 		font-weight: normal;
 		padding:0;
 		background: rgba(0,0,0,0);
-		&:hover {
+		&:hover, &:focus {
 			background: rgba(0,0,0,0);
 		}
 	}

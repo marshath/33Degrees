@@ -15,40 +15,53 @@ GLOBAL
 	
 /***** TESTIMONIALS PANEL *****/
 .testimonials {
-	h2 {
 		text-align: center;
+		padding-bottom: baseline(1.5); // bottom panel padding
+		display: flex;
+		align-items: stretch;
+		align-content: center;
+		justify-content: center;
+	h2 {
 		font-style: italic;
 	}
-	li { // quotes before and after testimonial
-		position: relative;
+	.flex-section-container {
+	}
+	blockquote {
+		@extend .inner-wrap;
+		padding-left: 1em;
+		padding-right: 1em;
+		margin: 0 auto;
+		position: relative; // quotes before and after testimonial
+		overflow: hidden;
+		z-index: 1; // sets testimonial text above before/after quotes
 		&:before, &:after {
-			content: ''; // quotes from the SVG sprite sheet in images
+			content: '';
 			width:48px;
 			height:48px;
 			background-image: url('../images/icon-quote.svg'); // quote SVG above and below the testimonials
 			background-size: 100% 100%; // makes the quotes size to 100% width and height
 			display: block;
-			position: absolute;
+			position: absolute; // relative blockquote
 		}
 		&:before {
+			top: 0;
 			left: 0;
-			z-index: 0; // sets the quote SVG below the blockquote
+			z-index: -1; // sets the quote SVG below the blockquote
 		}
 		&:after {
 			right: 0;
-			bottom: 0;
-			margin-bottom: baseline(2.5);
+			bottom: baseline(1.5); // sets quote above <cite>
 			transform: rotate3d(0,0,1,180deg); // rotates the quote SVG to upside down
-			z-index: 0; // sets the quote SVG below the blockquote
+			z-index: -1; // sets the quote SVG below the blockquote
 		}
-	}
-	blockquote {
-		position: relative; // sets the testimonial above the quotes
-		z-index: 1; // sets the testimonial above the quotes
-		border: none;
+		@include bp('phone-h') {
+			width: intrinsic;
+			max-width: 980px;
+		}
 	}
 	cite {
 		color: brand-color('gray2');
+		text-align: center; // override _typography.scss
 	}
 }
 
@@ -345,7 +358,9 @@ COMPANY
 }
 
 
-
+/*******************************
+404 ERROR
+*******************************/
 .error404 {
 	article {
 		text-align: center;

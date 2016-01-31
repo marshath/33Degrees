@@ -10,7 +10,7 @@ GLOBAL LINKS
 *******************************/
 a {
 	color: brand-color('primary');
-	&:hover {
+	&:hover, &:focus {
 		color: brand-color-darken('primary',4);
 		text-decoration: none;
 	}

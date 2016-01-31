@@ -10,7 +10,7 @@
 						<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
 							
 							<div class="inner-wrap">
-								<div class="flex-section-container">
+								<div class="flex-section-container"> <? // could be depreiciated ?>
 									<div class="flexslider">
 										<ul class="slides">
 											
@@ -39,7 +39,7 @@
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php the_content(); ?>
-								
+								</span> <?php // end .addthis-remove in the_content() ?>
 								<?php if ($website = get_field('website')) { // if there is a URL, display a link ?>
 								
 									<div class="website-link">

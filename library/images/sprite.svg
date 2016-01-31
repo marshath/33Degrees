@@ -1,9 +1,9 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="678px" height="32px" viewBox="0 0 678 32" enable-background="new 0 0 678 32" xml:space="preserve" style="display:none;" role="img" aria-labelledby="img-title img-desc">
 	
-	<symbol id="icon-menu" viewbox="0 0 32 32">
-		<title id="img-title">Menu</title>
-		<desc id="img-desc">The site navigation</desc>
-		<path d="M32,30.5H0v-5.75h32V30.5z M32,19H0v-5.625h32V19z M32,7.625H0V1.5h32V7.625z"/>
+	<symbol id="icon-arrow" viewbox="0 0 32 32">
+		<title id="img-title">Arrow</title>
+		<desc id="img-desc">Gallery navigation</desc>
+		<polygon fill="#000" points="11.57,30.349 8.742,27.521 20.763,15.5 8.742,3.479 11.57,0.651 26.42,15.5"/>
 	</symbol>
 	<symbol id="icon-search" viewbox="32 0 32 32">
 		<title id="img-title">Search</title>

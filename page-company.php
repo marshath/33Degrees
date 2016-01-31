@@ -35,9 +35,8 @@
 								
 						<?php /* TESTIMONIALS */ ?>
 						<article id="panel-testimonials" <?php post_class( 'row testimonials' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+							<section class="entry-content" itemprop="articleBody">
 								<?php echo get_field('panel_3'); // Display the content ?>
-								
 								
 								<div class="flex-section-container">
 									<div class="flexslider">

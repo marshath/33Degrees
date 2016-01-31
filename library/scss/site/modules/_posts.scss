@@ -245,18 +245,19 @@ PROJECTS
 	.article-header { // center the title
 		margin-bottom: baseline(1.5);
 	}
-	.website-link {
-		margin: baseline(1.5) auto;
-	}
 	.flex-section-container {
 		margin: baseline(1) auto;
 		@include bp('tablet-v') {
-			margin: baseline(2) auto baseline(1.5);
+			margin: baseline(2) auto;
 		}
 	}
 }
-
-
+.addthisremove {
+	height: 0;
+	overflow: hidden;
+	display: inline-block;
+	clip: rect(0,0,0,0);
+}
 
 
 
