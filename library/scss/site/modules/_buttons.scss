@@ -102,3 +102,79 @@ GLOBAL BUTTONS
 		}
 	}
 }
+
+
+/*******************************
+SOCIAL LINKS 
+*******************************/
+.social {
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-wrap: wrap;
+		padding: 0;
+		margin: 0 auto baseline(3);
+	}
+	li {
+		width:67px;
+		height:67px;
+		margin: 0 0.5em baseline(0.5);
+		border: 3px solid brand-color('gray2');
+		border-radius: 50%;
+		box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+		@extend .default-transition;
+		&:hover, &:active, &:focus {
+			border-color: white;
+		}
+		a {
+			width:100%;
+			height: 100%;
+			display: block;
+			position: relative;
+		}
+	}
+	svg {
+		fill: brand-color('white');
+		width:32px;
+		height:32px;
+		top: 25%;
+		left: 24%;
+		position: absolute;
+		@extend .default-transition;
+	}
+	.facebook, .twitter, .google, .rss, .email, .linkedin {
+		background-color: brand-color('gray2');
+	}
+	.facebook {
+		&:hover, &:focus {
+			background: social-color('facebook');
+		}
+	}
+	.twitter {
+		&:hover, &:focus {
+			background: social-color('twitter');
+		}
+	}
+	.google {
+		&:hover, &:focus {
+			background: social-color('google');
+		}
+	}
+	.rss {
+		&:hover, &:focus {
+			background: social-color('rss');
+		}
+	}
+	.email {
+		&:hover, &:focus {
+			background: brand-color('accent');
+		}
+	}
+	.linkedin {
+		&:hover, &:focus {
+			background: social-color('linkedin');
+		}
+	}
+}

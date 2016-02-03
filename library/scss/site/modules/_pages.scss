@@ -12,6 +12,12 @@ GLOBAL
 	position: relative;
 	@include clearfix;
 }
+.max-width { // width limits
+	max-width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 	
 /***** TESTIMONIALS PANEL *****/
 .testimonials {
@@ -27,7 +33,6 @@ GLOBAL
 	.flex-section-container {
 	}
 	blockquote {
-		@extend .inner-wrap;
 		padding-left: 1em;
 		padding-right: 1em;
 		margin: 0 auto;
@@ -91,8 +96,11 @@ GLOBAL
 		text-align: center;
 	}
 	input[type='email'] {
-		width:100%;
+		text-align: center;
 		border: 1px solid brand-color('accent'); // fix for 1px white below subscribe button
+		@include bp('tablet-v') {
+			text-align: left;
+		}
 	}
 	@include bp('mobile-h') {
 		.icon-inbox { // move inbox icon above the newsletter panel
@@ -355,6 +363,19 @@ COMPANY
 
 .company-methodology {
 	background-color: brand-color-lighten('secondary', 9);
+}
+
+
+/*******************************
+CONTACT & ESTIMATE FORMS, THANK YOU
+*******************************/
+.post-69 {
+	h3 {
+		margin-top:0;
+	}
+}
+.page-id-71 p {
+	@extend .max-width; // from _page.scss
 }
 
 

@@ -16,7 +16,6 @@ input, select, textarea {
 }
 
 label { 
-	
 }
 
 label abbr { // Required Form Fields
@@ -41,9 +40,12 @@ input[type='week'],
 input[type='datetime'], 
 input[type='datetime-local'],
 input[type='submit'] {
-	width: 96%;
-	padding: baseline(0.5) 2%;
+	width: 100%;
+	padding: baseline(0.5) 1em;
 	border:0;
+}
+input[type="search"] { // override for blog search
+	width: 96%;
 	text-align: center;
 	@include bp('tablet-v') {
 		text-align: left;
@@ -83,61 +85,15 @@ PLACEHOLDER TEXT
 
 
 /*******************************
-RADIO BUTTONS
-*******************************/
-fieldset {
-	@include border-radius(1);
-}
-
-input[type='radio'] {
-	appearance:none;
-	cursor:pointer;
-	background-color: brand-color-lighten('gray3',1);
-	color:#f0f;
-	margin-top: baseline(1);
-	@include border-radius(100);
-}
-
-input[type="radio"]:checked:after {
-	background-color: brand-color-lighten('gray3',1);
-	@include border-radius(100);
-	content:"\00a0";
-	display:block;
-	height:1.5em;
-	width:1.5em;
-	margin:-.3em -.4em;
-}
-
-
-/*******************************
 DROPDOWN BOX
 *******************************/
-.styled-select {
-	background-color: blue;
-	color: brand-color('text');
-	margin-bottom:baseline(1);
-	padding:.25em 0;
-	display:inline-block;
-	@include border-radius(1);
-	cursor:pointer;
-}
-
-.styled-select:before {
-	content:'\f103';
-	padding-left:.25em;
-	border: solid 2px blue;
-	border-width: 0 0 0 1px;
-	pointer-events:none;
-	display:block;
-}
-
 select {
 	-webkit-appearance: none !important;
 	appearance:none;
 	width:100%;
-	background-color: brand-color('gray3');
+	background-color: brand-color-lighten('gray3',5);
 	margin:0;
-	padding:0.5em;
+	padding: baseline(0.5) 1em;
 	display:inline-block;
 	border:none;
 	cursor:pointer;
@@ -145,47 +101,38 @@ select {
 
 
 /*******************************
-CHECKBOX
+CHECKBOX & RADIO BUTTONS
 *******************************/
-input[type='checkbox'] {
+input[type='checkbox'], input[type='radio'] {
 	-webkit-appearance: none !important;
 	appearance:none;
 	width:14px;
 	height:14px;
-	background-color: brand-color-lighten('gray3',2);
+	background-color: brand-color('gray3');
 	margin-top: 1em;
-	@include border-radius(1);
-	cursor:pointer;
-}
-
-input[type='checkbox']:checked:after {
-	content:"\00a0";
-	width:.5em;
-	height:1em;
-	display:block;
+	@include border-radius(4);
+	border:2px solid white;
+	box-shadow: 0 0 6px brand-color('gray3');
 	position:relative;
-	border:solid brand-color('text');
-	border-width:0 4px 4px 0;
-	transform:rotate(45deg); 
+	cursor:pointer;
+	margin-right: 0.5em; // pushes text to the right
+	&:checked:after {
+		content:'';
+		width:10px;
+		height:10px;
+		background: brand-color('primary');
+		display:block;
+		@include border-radius(4);
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	&:checked + label {
+		color: brand-color('primary');
+	}
 }
-
-
-/*******************************
-RANGE SLIDER
-*******************************/
-input[type='range'] {
-	width: 100%;
-	-webkit-appearance: none !important;
-	background: brand-color('gray3');
-	height:4px;
-	margin-bottom: baseline(1);
-}
-input[type='range']::-webkit-slider-thumb {
-	-webkit-appearance: none !important;
-	background: brand-color-lighten('gray3',1);
-	height:1.5em;
-	width:1.5em;
-	@include border-radius(100);
+input[type='radio'] {
+	margin-right: 0.75em; // overrides distance text is pushed to the right
 }
 
 
@@ -206,3 +153,139 @@ SEARCH FORM
 	max-width: 700px;
 	margin: baseline(1) auto;
 }
+
+
+
+
+/*******************************
+GRAVITY FORMS
+*******************************/
+.gform_wrapper {
+	max-width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	ul {
+		margin:0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+	}
+	input[type="text"], textarea {
+		box-sizing: border-box;
+		background: white;
+		border-bottom: 4px solid brand-color('white');
+		@extend .default-transition;
+		&:focus {
+			border-color: brand-color('primary'); // override off-white
+			+ label { // offset label when in focus
+				top: baseline(0);
+				@include font-size(10);
+				color: brand-color('primary');
+			}
+		}
+	}
+	input[type='submit'] {
+		@extend .btn__callout;
+		width: intrinsic; // override width 100%
+	}
+}
+.gfield {
+	margin-bottom: baseline(1); // bottom spacing between all form items
+	&_label {
+		font-weight: bold; // all form labels
+	}
+	&_radio {
+		display: flex;
+		flex-direction: row nowrap;
+		li {
+			margin-right: 1em;
+		}
+	}
+}
+
+// COMPLEX FIELDS (2-up)
+.ginput_complex {
+	display: flex;
+	flex-direction: column;
+	span {
+		width: 100%;
+		position: relative;
+		margin: 0 0 baseline(0.5) 0;
+	}
+	label {
+		@extend .screen-reader-text;
+		// position: absolute;
+		// top: baseline(0.4);
+		// left: 18px;
+		// color: brand-color('gray3');
+		// @extend .default-transition;
+	}
+	@include bp('tablet-v') {
+		flex-direction: row;
+		span {
+			width: 96%;
+			margin:0;
+			&:first-child {
+				margin-right: 2%;
+			}
+		}
+	}
+}
+
+// DATE LABELS
+.gfield_date_month, .gfield_date_day, .gfield_date_year {
+	// position: relative;
+	label {
+		@extend .screen-reader-text;
+		// position: absolute;
+		// top: baseline(0.4);
+		// left: 18px;
+		// color: brand-color('gray3');
+		// @extend .default-transition;
+		// focus state under .gform_wrapper input[type='text']
+	}
+}
+
+// DATE FIELDS (3-up)
+.ginput_container_date {
+	.clear-multi {
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-content: space-between;
+		> div {
+			width: 100%;
+			margin-bottom: baseline(0.5); // bottom spacing when column
+		}
+		@include bp('tablet-v') {
+			flex-direction: row; // override flex-direction: column
+			> div {
+				width: 32%; // override width 100%
+				margin-bottom: baseline(0.25); // override bottom spacing when row
+			}
+		}
+	}
+}
+
+
+// REQUIRED
+.gfield_required {
+	color: alert-color('error');
+	margin-left: 0.25em; // left spacing from label
+}
+
+// FORM ERRORS
+.validation_message {
+	background: alert-color('error');
+	color: white;
+	padding-left: 1em;
+	margin-top: 1px; // pushes error below .gfield border-bottom
+}
+
+// HIDE SPAMBOT HONEYBUCKET
+.gform_validation_container {
+	@extend .screen-reader-text;
+}
+
+

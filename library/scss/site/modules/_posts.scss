@@ -102,11 +102,9 @@ BLOG
 	.article-header { // center the title
 		text-align: center;
 	}
-	.entry-content { // blog text indenting
+	.entry-content { // blog page text indenting
 		h2, h3, p, ul {
-			max-width: 980px;
-			margin-right: auto;
-			margin-left: auto;
+			@extend .max-width; // from _page.scss
 		}
 	}
 }
