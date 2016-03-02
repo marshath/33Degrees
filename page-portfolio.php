@@ -50,10 +50,13 @@
 									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 							
 									<li>
-					                    <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(''); ?></a>
-										<h3><a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-										<?php the_excerpt(); ?>
-										<?php // <p><a class="moretag" href="" title="">Title</a></p> ?>
+										<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
+											<figure><?php the_post_thumbnail(''); ?></figure>
+											<div class="post-wrap">
+												<h3><?php the_title(); ?></h3>
+												<?php the_excerpt(); ?>
+											</div>
+										</a>
 										<?php edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
 									</li>
 										
@@ -93,9 +96,13 @@
 									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 							
 									<li>
-					                    <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(''); ?></a>
-										<h3><a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-										<p><?php the_excerpt(); ?></p>
+										<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
+											<figure><?php the_post_thumbnail(''); ?></figure>
+											<div class="post-wrap">
+												<h3><?php the_title(); ?></h3>
+												<?php the_excerpt(); ?>
+											</div>
+										</a>
 										<?php edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
 									</li>
 										
@@ -135,9 +142,13 @@
 									while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 							
 									<li>
-					                    <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(''); ?></a>
-										<h3><a href="<?php the_permalink(); ?>" title="View <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-										<p><?php the_excerpt(); ?></p>
+										<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
+											<figure><?php the_post_thumbnail(''); ?></figure>
+											<div class="post-wrap">
+												<h3><?php the_title(); ?></h3>
+												<?php the_excerpt(); ?>
+											</div>
+										</a>
 										<?php edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
 									</li>
 										

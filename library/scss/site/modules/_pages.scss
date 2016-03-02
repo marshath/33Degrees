@@ -345,6 +345,20 @@ PORTFOLIO
 .portfolio-design {
 }
 
+.portfolio-websites, .portfolio-branding, .portfolio-design { // project cards
+	li {
+		background: white;
+		margin-bottom: baseline(1);
+		box-shadow: 0 2px 4px brand-color-alpha('gray2','dark');
+	}
+	h3 {
+		font-weight: normal;
+	}
+	h3, p {
+		padding: 0 16px;
+	}
+}
+
 
 /*******************************
 COMPANY

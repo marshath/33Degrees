@@ -14,7 +14,7 @@ GLOBAL BUTTONS
 	text-decoration: none;
 	text-shadow:0 2px 1px black;
 	margin: baseline(0.5) 0;
-	padding: baseline(0.5) 1em;
+	padding: baseline(0.5) 2em;
 	display: inline-block;
 	border: 0;
 	&:hover, &:focus {
@@ -23,16 +23,12 @@ GLOBAL BUTTONS
 }
 
 // BUTTON CALLOUT
-.btn__callout { // rounded solid orange embossed 
+.btn__callout { // solid orange
 	@extend .btn;
-	background: linear-gradient(to bottom, #ea6115 10%, #d53f15 90%);
-	@include border-radius(2);
-	box-shadow: inset 0 0 0.4em brand-color-alpha('white', 'light'), 0 0.3em 0.4em brand-color-alpha('black', 'dark');
+	background: brand-color('primary');
+	@extend .default-transition;
 	&:hover, &:focus {
-		background: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);
-	}
-	&:active {
-		background: linear-gradient(to bottom, #c52f05 10%, #da5105 90%); // reverse of hover 
+		background: brand-color-darken('primary', 3);
 	}
 }
 

@@ -82,6 +82,13 @@ BLOG
 	}
 }
 
+.post-wrap a { // blog archive title, category, and moretag links
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
 .attachment-post-thumbnail {
 	margin-top:baseline(1);
 }
@@ -114,13 +121,8 @@ h1.entry-title { // blog archive titles
 	margin-bottom: baseline(0.25);
 	font-weight: normal;
 	@include font-size(36);
-	a {
-		text-decoration: none;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
 }
+
 .entry-header {
 	margin-top: baseline(1); // adds spacing from featured image at the top
 	margin-bottom: baseline(0.5); // removes p bottom spacing
