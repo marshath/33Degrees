@@ -186,7 +186,7 @@ GRAVITY FORMS
 		}
 	}
 	input[type='submit'] {
-		@extend .btn__callout;
+		@extend .btn__primary;
 		width: intrinsic; // override width 100%
 	}
 }

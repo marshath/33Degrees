@@ -8,11 +8,23 @@
 /*******************************
 GLOBAL LINKS 
 *******************************/
-a {
+a { // global 
 	color: brand-color('primary');
 	&:hover, &:focus {
-		color: brand-color-darken('primary',4);
+		color: brand-color-darken('primary', 4);
 		text-decoration: none;
+	}
+}
+
+p a, .default-link {
+	color: brand-color-darken('primary', 4);
+	text-decoration: none !important;
+	border-bottom: 3px solid brand-color-lighten('primary', 6);
+	transition: all 0.1s linear;
+	&:hover, &:focus {
+		background: brand-color('primary');
+		color: brand-color('white');
+		border-bottom-color: brand-color('primary');
 	}
 }
 

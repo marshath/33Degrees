@@ -68,7 +68,7 @@ BLOG
 		line-height: 2.5;
 	}
 	li a {
-		@extend .btn__alt;
+		@extend .btn__tritiary; // outline orange small
 		margin-right: 0.5em;
 	}
 	@include bp('tablet-h') {
@@ -127,6 +127,10 @@ h1.entry-title { // blog archive titles
 	margin-top: baseline(1); // adds spacing from featured image at the top
 	margin-bottom: baseline(0.5); // removes p bottom spacing
 }
+.entry-author a {
+	@extend .default-link;
+}
+
 .single-title {
 	margin-top: 0; // removes h1 top spacing
 	margin-bottom: 0; // removes h1 top spacing
@@ -167,7 +171,7 @@ h1.entry-title { // blog archive titles
 }
 
 
-.tags {
+.single .tags {
 	margin-top: 0; // bottom spacing for About the Author
 	margin-bottom: baseline(1.25); // bottom spacing for About the Author
 	line-height: 2.5; // line spacing for tag links on mobile
@@ -176,7 +180,7 @@ h1.entry-title { // blog archive titles
 		font-weight: bold;
 	}
 	a {
-		@extend .btn__alt;
+		@extend .btn__tritiary; // outline orange small
 	}
 }
 

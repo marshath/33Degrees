@@ -90,6 +90,9 @@ code {
 	overflow: hidden;
 	overflow-x: scroll;
 }
+.center {
+	text-align: center;
+}
 
 /*******************************
 BLOCKQUOTE
@@ -103,6 +106,9 @@ blockquote {
 		width: 100%;
 		text-align: right;
 		display: block;
+	}
+	a {
+		@extend .default-link;
 	}
 }
 

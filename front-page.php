@@ -11,18 +11,23 @@
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							
-								<div class="cta">
+								<div class="cta-wrap">
+									
 									<div class="splash-text">
 										<?php // load and browser cache the SVG for the homepage
 										require("library/images/splash-text.svg"); ?>
 									</div>
-									<?php the_content(); // display the content ?>
-								</div>
+									
+									<div class="cta">
+										<?php the_content(); // display the content ?>
+									</div>
+									
+								</div> <?php // end .cta-wrap ?>
 								
-								<div class="lady">
+								<?php /* <div class="lady">
 									<?php // load and browser cache the splash image
 									require("library/images/lady.svg"); ?>
-								</div>
+								</div> */ ?>
 								
 							<?php endwhile; endif; ?>
 							</section> <?php // end .entry-content .inner-wrap  ?>

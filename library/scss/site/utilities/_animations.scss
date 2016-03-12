@@ -44,7 +44,7 @@ MOVEMENT
 
 @keyframes spin { 
 	from { transform: rotate(0deg) }
-	to   { transform: rotate(18.8deg) }
+	to   { transform: rotate(360deg) }
 }
 
 @keyframes stripesBG {

@@ -12,7 +12,6 @@ GLOBAL BUTTONS
 	color: brand-color('white');
 	font-weight:bold;
 	text-decoration: none;
-	text-shadow:0 2px 1px black;
 	margin: baseline(0.5) 0;
 	padding: baseline(0.5) 2em;
 	display: inline-block;
@@ -23,16 +22,45 @@ GLOBAL BUTTONS
 }
 
 // BUTTON CALLOUT
-.btn__callout { // solid orange
+.btn__primary { // solid orange
 	@extend .btn;
 	background: brand-color('primary');
+	text-shadow:0 2px 1px black;
+	@include border-radius(0.5);
+	border: 3px solid brand-color('primary');
 	@extend .default-transition;
 	&:hover, &:focus {
 		background: brand-color-darken('primary', 3);
+		border: 3px solid brand-color-darken('primary', 3);
+	}
+}
+.btn__secondary { // outline orange
+	@extend .btn;
+	background: brand-color('white');
+	color: brand-color('primary');
+	text-decoration: none;
+	border: 3px solid brand-color('primary');
+	@include border-radius(0.5);
+	@extend .default-transition;
+	&:hover, &:focus {
+		background: brand-color('primary');
+	}
+}
+.btn__tritiary { // outline orange small
+	background: brand-color('white');
+	padding: baseline(0.25) 0.5em;
+	color: brand-color('primary');
+	text-decoration: none;
+	border:1px solid brand-color-lighten('primary', 7);
+	@include border-radius(0.5);
+	&:hover, &:focus {
+		background: brand-color('primary');
+		color: brand-color('white');
+		border:1px solid brand-color('primary');
 	}
 }
 
-// ALTERNATE BUTTON
+/* ALTERNATE BUTTON
 .btn__alt { // rounded orange outline
 	background: brand-color('white');
 	padding: baseline(0.25) 0.5em;
@@ -45,7 +73,8 @@ GLOBAL BUTTONS
 		color: brand-color('white');
 		border:1px solid brand-color('primary');
 	}
-}
+} */
+
 
 // SEARCH BUTTON
 .btn__search, input[type='submit'].btn__search { // newsletter signup, blog search
