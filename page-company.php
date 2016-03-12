@@ -22,16 +22,6 @@
 							</section> <?php // end .entry-content .inner-wrap ?>
 						</article> <?php // end .row .company-intro ?>
 								
-							
-						<?php /* PANEL 2 */ ?>
-						<article id="panel-company2" <?php post_class( 'row company-success' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
-								
-								<?php echo get_field('panel_2'); // display the content ?>
-								
-							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end .row .company-success ?>
-								
 								
 						<?php /* TESTIMONIALS */ ?>
 						<article id="panel-testimonials" <?php post_class( 'row testimonials' ); ?> role="article">
@@ -66,15 +56,25 @@
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</article> <?php // end #panel-testimonials .row .hm-services ?>
 								
+							
+						<?php /* PANEL 2 */ ?>
+						<article id="panel-company2" <?php post_class( 'row company-success' ); ?> role="article">
+							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
-						<?php /* PANEL 4 */ ?>
+								<?php echo get_field('panel_2'); // display the content ?>
+								
+							</section> <?php // end .entry-content .inner-wrap  ?>
+						</article> <?php // end .row .company-success ?>
+								
+								
+						<?php /* PANEL 4 
 						<article id="panel-company4" <?php post_class( 'row company-methodology' ); ?> role="article">
 							<section class="entry-content inner-wrap" itemprop="articleBody">
 								
 								<?php echo get_field('panel_4'); // Display the content ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end .row .company-methodology ?>
+						</article> <?php // end .row .company-methodology ?> */ ?>
 						
 						
 					</main> <?php // end #main .main-wrap ?>

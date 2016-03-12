@@ -35,19 +35,18 @@ HEADER & FOOTER NAVIGATION
 	}
 	li {
 		width:100%;
-		background: brand-color-lighten('secondary', 1);
 		text-shadow: 1px 2px 1px brand-color('black');
 		margin-bottom: baseline(0.5); // bottom spacing for mobile navigation
 		border: 3px solid rgba(240,240,240,0);
-		@include border-radius(10);
+		@include border-radius(0.5);
 		&:first-child {
 			margin-top: baseline(0.5); // adds margin to the top of mobile nav
 		}
 		&.current-menu-item, &.current_page_parent {
-			border-color: brand-color-alpha('white', 'dark');
+			border-color: brand-color-lighten('secondary', 1);
 		}
 		&:hover, &:focus {
-			background: brand-color-lighten('secondary', 2);
+			background: brand-color-lighten('secondary', 1);
 		}
 	}
 	button, a {
@@ -83,18 +82,15 @@ $button-bar-space: 6px;                // The spacing between button bars
 		margin: 0 auto baseline(1); // extra bottom margin
 	}
 	button { // is the 'menu-toggle'
-		background: brand-color-lighten('secondary', 1);
+		background: none;
 		text-align: center;
 		padding: baseline(0.75) 1em baseline(0.75) 3.5em;
-		/* margin-bottom: baseline(0.5); // bottom spacing for header
-		margin-left: 75%;
-		margin-top:-(baseline(2.5)); */
-		@include border-radius(10);
+		@include border-radius(0.5);
 		position: absolute;
 		right:0;
 		top: 0;
 		&:hover, &:focus {
-			background: brand-color-alpha('white','dark');
+			background: brand-color-lighten('secondary', 1);
 		}
 		span {
 			width: 28px;
