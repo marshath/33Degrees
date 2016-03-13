@@ -29,19 +29,16 @@ HEADER & FOOTER NAVIGATION
 		padding: 0;
 		list-style: none;
 		display: flex;
-		flex-flow: column wrap;
-		justify-content: space-around;
-		align-content: space-around;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: space-between;
 	}
 	li {
-		width:100%;
+		flex-basis: 48%;
 		text-shadow: 1px 2px 1px brand-color('black');
 		margin-bottom: baseline(0.5); // bottom spacing for mobile navigation
 		border: 3px solid rgba(240,240,240,0);
 		@include border-radius(0.5);
-		&:first-child {
-			margin-top: baseline(0.5); // adds margin to the top of mobile nav
-		}
 		&.current-menu-item, &.current_page_parent {
 			border-color: brand-color-lighten('secondary', 1);
 		}
@@ -77,9 +74,18 @@ $bar-thickness: 4px;                   // The thickness of the button bars
 $button-bar-space: 6px;                // The spacing between button bars
 
 .nav-header {
-	ul {
+	#nav-menu-curtain {
 		display: none; // hides the navigation, until the 'menu-toggle' is clicked
 		margin: 0 auto baseline(1); // extra bottom margin
+		@include bp('tablet-h') {
+			display:block;
+		}
+	}
+	ul {
+		margin-top: baseline(0.5);
+	}
+	li {
+		background: brand-color-lighten('secondary', 0.5);
 	}
 	button { // is the 'menu-toggle'
 		background: none;
@@ -133,13 +139,18 @@ $button-bar-space: 6px;                // The spacing between button bars
 		}
 	}
 }
+.nav-footer {
+	li {
+		background: brand-color-darken('secondary', 1);
+		&:first-child {
+			flex-basis: 100%; // enlarge to fill first row on mobile
+		}
+	}
+}
 @include bp('tablet-v') {
 	.nav-header {
-		ul {
-			margin: 0 auto; // removes extra bottom margin
-		}
 		li {
-			width: 24%; // shrink width to display as a row
+			flex-basis: 24%; // shrink width to display as a row
 			display: inline-block;
 			&:last-child {
 				margin-right: 0;
@@ -169,8 +180,14 @@ $button-bar-space: 6px;                // The spacing between button bars
 			display:flex; // shows the navigation
 			flex-flow: row nowrap; // format as a row
 		}
-		li:first-child {
-			margin-top: 0;
+		li {
+			background: none;
+			&:first-child {
+				margin-top: 0;
+			}
+			&:hover, &:focus {
+				background: brand-color-lighten('secondary', 0.5);
+			}
 		}
 	}
 }

@@ -120,7 +120,7 @@ jQuery(document).ready(function($) {
 	 * This loads the navigation toggle for mobile
 	 */
 	$("#menu-toggle").on("click", function(){
-		$("#menu-header").slideToggle();
+		$("#nav-menu-curtain").slideToggle();
 		$(this).toggleClass("active");
 		$("#nav-menu").toggleClass("active");
 	});

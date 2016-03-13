@@ -28,12 +28,12 @@
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 		
 		<?php // FLEXSLIDER
-			if (is_page(array('home','company')) or is_singular('project')) { ?>
+			if (is_page(array('home','company')) or is_singular('project')) { // display if Home, Company, or Project post type page ?>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.flexslider.js"></script>
 		<?php } ?>
 		<?php // FLEXSLIDER TESTIMONIAL SETTINGS
-			if (is_page(array('home','company'))) { ?>
+			if (is_page(array('home','company'))) { // display if Home or Company page ?>
 		<script type="text/javascript">
 			$(window).load(function() {
 				$('.flexslider').flexslider({
@@ -46,7 +46,7 @@
 			});
 		</script>
 		<?php } // FLEXSLIDER PROJECT SETTINGS
-			else if (is_singular('project')) { ?>
+			else if (is_singular('project')) { // display if project post type ?>
 		<script type="text/javascript">
 			$(window).load(function() {
 				$('.flexslider').flexslider({
@@ -69,7 +69,6 @@
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 		<?php // load and browser cache the SVG sprite sheet
 			require("library/images/sprite.svg"); ?>
-
 
 		<div id="container" class="page-wrap">
 
@@ -98,19 +97,21 @@
 						
 						<?php // menu items ?>
 						<div id="nav-menu">
-						<?php wp_nav_menu(array(
-							'container' => false,							// remove nav container
-							'container_class' => 'nav-menu',				// class of container (should you choose to use it)
-							'menu' => __( 'The Main Menu', 'bonestheme' ),	// nav name
-							'menu_class' => '',								// adding custom nav class
-							'theme_location' => 'main-nav',					// where it's located in the theme
-							'before' => '',									// before the menu
-							'after' => '',									// after the menu
-							'link_before' => '',							// before each link
-							'link_after' => '',								// after each link
-							'depth' => 0,									// limit the depth of the nav
-							'fallback_cb' => ''								// fallback function (if there is one)
-						)); ?>
+							<div id="nav-menu-curtain">
+								<?php wp_nav_menu(array(
+									'container' => false,							// remove nav container
+									'container_class' => 'nav-menu',				// class of container (should you choose to use it)
+									'menu' => __( 'The Main Menu', 'bonestheme' ),	// nav name
+									'menu_class' => '',								// adding custom nav class
+									'theme_location' => 'main-nav',					// where it's located in the theme
+									'before' => '',									// before the menu
+									'after' => '',									// after the menu
+									'link_before' => '',							// before each link
+									'link_after' => '',								// after each link
+									'depth' => 0,									// limit the depth of the nav
+									'fallback_cb' => ''								// fallback function (if there is one)
+								)); ?>
+							</div>
 						</div>
 						
 					</nav>
