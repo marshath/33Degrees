@@ -5,38 +5,18 @@
  */
 
 
-/* .pdx {
-	text-align: center;
-	margin-top: - baseline(2.5); // moves the pdx icon over the .footer border
-	img {
-		max-width: 128px;
-		@extend .default-transition;
-		&:hover {
-			transform: rotate3d(0,0,1,-4deg);
-		}
-	}
-	p {
-		@include font-size(12);
-		margin-top: 0;
-	}
-	a:link {
-		color:white;
-		text-decoration: none;
-	}
-} */
-
-
 /*******************************
 CONTACT INFORMATION 
 *******************************/
 .footer-wrap {
 	padding-top:baseline(2);
 }
-.footer-format {
-	display:flex;
-	flex-direction: column;
-	max-width: 1280px;
-	margin:0 auto;
+.footer-company-info {
+	display: flex;
+	flex-flow: column nowrap;
+	@include bp('tablet-v') {
+		flex-flow: row nowrap;
+	}
 }
 .footer-logo {
 	width:36%;

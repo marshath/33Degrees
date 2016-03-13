@@ -1,29 +1,36 @@
+			
+						
+			<?php /* NEWSLETTER */
+			if ( !is_page('home')) { 
+				get_template_part('inc/newsletter'); 
+			} ?>
+						
+						
 			<footer class="footer-wrap" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 				<div id="inner-footer" class="inner-wrap">
 				
-					<div class="footer-format">
-					<?php // Company logo or text ?>
-					<div class="footer-logo">
-						<?php // responsive image - logo ?>
-						<img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png"
-							srcset="<?php echo get_template_directory_uri(); ?>/library/images/logo.png 1x,
-							<?php echo get_template_directory_uri(); ?>/library/images/logo@2x.png 2x"
-							alt="<?php bloginfo('name'); ?>'s logo">
-					</div>
+					<div class="footer-company-info">
+						
+						<?php // Company logo or text ?>
+						<div class="footer-logo">
+							<?php // responsive image - logo ?>
+							<img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png"
+								srcset="<?php echo get_template_directory_uri(); ?>/library/images/logo.png 1x,
+								<?php echo get_template_directory_uri(); ?>/library/images/logo@2x.png 2x"
+								alt="<?php bloginfo('name'); ?>'s logo">
+						</div> <?php // end .footer-logo ?>
+						
+						<?php if ( is_active_sidebar( 'footer1' ) ) : ?>
+							<?php dynamic_sidebar( 'footer1' ); ?>
+						<?php else : ?>
+							<?php /* This content shows up if there are no widgets defined in the backend. */ ?>
+							<div class="no-widgets">
+								<p><?php _e( 'This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
+							</div>
+						<?php endif; ?>
 					
-					<?php if ( is_active_sidebar( 'footer1' ) ) : ?>
-	
-						<?php dynamic_sidebar( 'footer1' ); ?>
-	
-					<?php else : ?>
-	
-						<?php /* This content shows up if there are no widgets defined in the backend. */ ?>
-						<div class="no-widgets">
-							<p><?php _e( 'This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-						</div>
-	
-					<?php endif; ?>
-					
+					</div> <?php // end .footer-company-info ?>
+						
 					<div class="social">
 						<ul>
 							<li class="facebook"><a href="http://www.facebook.com/33degreesds"><svg><use xlink:href="#icon-facebook"></use></svg><span class="screen-reader-text">Facebook</span></a></li>
@@ -33,9 +40,7 @@
 							<li class="email"><a href="http://mailchimp.com" class="social__icon"><svg class="social__email"><use xlink:href="#icon-email" /></svg><span class="screen-reader-text">Email Newsletter</span></a></li>
 							<li class="linkedin"><a href="http://linkedin.com/company/33-degrees-design-studio" class="social__icon"><svg class="social__linkedin"><use xlink:href="#icon-linkedin" /></svg><span class="screen-reader-text">LinkedIn</span></a></li>
 						</ul>
-					</div> <?php end .social ?>
-					
-					</div>
+					</div> <?php // end .social ?>
 	
 					<nav class="nav-footer" role="navigation">
 						<?php wp_nav_menu(array(
@@ -51,7 +56,7 @@
 							'depth' => 0,									// limit the depth of the nav
 							'fallback_cb' => 'bones_footer_links_fallback'	// fallback function
 						)); ?>
-					</nav> <?php end .nav-footer ?>
+					</nav> <?php // end .nav-footer ?>
 
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> by <?php bloginfo( 'name' ); ?>, LLC. All rights reserved.</p>
 
