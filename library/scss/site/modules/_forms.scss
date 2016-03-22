@@ -18,7 +18,7 @@ input, select, textarea {
 label { 
 }
 
-label abbr { // Required Form Fields
+label abbr { 										// Required Form Fields
 	color: alert-color('error');
 }
 
@@ -44,29 +44,29 @@ input[type='submit'] {
 	padding: baseline(0.5) 1em;
 	border:0;
 }
-input[type="search"] { // override for blog search
+input[type="search"] { 								// override for blog search
 	width: 96%;
 	text-align: center;
-	@include bp('tablet-v') {
+	@include bp('tablet-v') {				// breakpoint tablet vertical
 		text-align: left;
 	}
 }
 
 
 // TEXT INPUT ERROR
-.error { // Label
+.error { 											// Label
 	color: alert-color('error');
 }
-.is-error { // Text field
+.is-error { 										// Text field
 	background:  alert-color-lighten('error',6);
 	border: 2px solid alert-color('error');
 }
 
 // TEXT INPUT VALID
-.valid { // Label
+.valid { 											// Label
 	color: alert-color('good');
 }
-.is-valid { // Text field
+.is-valid { 										// Text field
 	border: 2px solid alert-color('good');
 }
 
@@ -115,7 +115,7 @@ input[type='checkbox'], input[type='radio'] {
 	box-shadow: 0 0 6px brand-color('gray3');
 	position:relative;
 	cursor:pointer;
-	margin-right: 0.5em; // pushes text to the right
+	margin-right: 0.5em; 							// pushes text to the right
 	&:checked:after {
 		content:'';
 		width:10px;
@@ -132,7 +132,7 @@ input[type='checkbox'], input[type='radio'] {
 	}
 }
 input[type='radio'] {
-	margin-right: 0.75em; // overrides distance text is pushed to the right
+	margin-right: 0.75em;							// overrides distance text is pushed to the right
 }
 
 
@@ -148,7 +148,7 @@ input[type='submit']:hover, input[type='submit']:focus {
 /*******************************
 SEARCH FORM
 *******************************/
-.searchform { // newsletter signup, blog search
+.searchform { 										// newsletter signup, blog search
 	position: relative;
 	max-width: 700px;
 	margin: baseline(1) auto;
@@ -177,8 +177,8 @@ GRAVITY FORMS
 		border-bottom: 4px solid brand-color('white');
 		@extend .default-transition;
 		&:focus {
-			border-color: brand-color('primary'); // override off-white
-			+ label { // offset label when in focus
+			border-color: brand-color('primary'); 	// override off-white
+			+ label { 								// offset label when in focus
 				top: baseline(0);
 				@include font-size(10);
 				color: brand-color('primary');
@@ -187,13 +187,13 @@ GRAVITY FORMS
 	}
 	input[type='submit'] {
 		@extend .btn__primary;
-		width: intrinsic; // override width 100%
+		width: intrinsic; 							// override width 100%
 	}
 }
 .gfield {
-	margin-bottom: baseline(1); // bottom spacing between all form items
+	margin-bottom: baseline(1); 					// bottom spacing between all form items
 	&_label {
-		font-weight: bold; // all form labels
+		font-weight: bold; 							// all form labels
 	}
 	&_radio {
 		display: flex;
@@ -256,13 +256,13 @@ GRAVITY FORMS
 		align-content: space-between;
 		> div {
 			width: 100%;
-			margin-bottom: baseline(0.5); // bottom spacing when column
+			margin-bottom: baseline(0.5); 			// bottom spacing when column
 		}
-		@include bp('tablet-v') {
-			flex-direction: row; // override flex-direction: column
+		@include bp('tablet-v') {			// breakpoint tablet vertical
+			flex-direction: row; 					// override flex-direction: column
 			> div {
-				width: 32%; // override width 100%
-				margin-bottom: baseline(0.25); // override bottom spacing when row
+				width: 32%; 						// override width 100%
+				margin-bottom: baseline(0.25); 		// override bottom spacing when row
 			}
 		}
 	}
@@ -272,7 +272,7 @@ GRAVITY FORMS
 // REQUIRED
 .gfield_required {
 	color: alert-color('error');
-	margin-left: 0.25em; // left spacing from label
+	margin-left: 0.25em; 							// left spacing from label
 }
 
 // FORM ERRORS
@@ -280,7 +280,7 @@ GRAVITY FORMS
 	background: alert-color('error');
 	color: white;
 	padding-left: 1em;
-	margin-top: 1px; // pushes error below .gfield border-bottom
+	margin-top: 1px; 								// pushes error below .gfield border-bottom
 }
 
 // HIDE SPAMBOT HONEYBUCKET

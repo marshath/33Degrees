@@ -8,7 +8,7 @@
 /*******************************
 GLOBAL LINKS 
 *******************************/
-a { // global 
+a {
 	color: brand-color('primary');
 	&:hover, &:focus {
 		color: brand-color-darken('primary', 4);
@@ -73,7 +73,7 @@ p a, .default-link {
 /*******************************
 OVERLAY LINKS
 *******************************/
-.overlay-links { // used on callout blog posts and projects
+.overlay-links { 									// used on callout blog posts and projects
 	margin: 0 auto;
 	padding:0;
 	list-style: none;
@@ -87,7 +87,7 @@ OVERLAY LINKS
 			figcaption {
 				bottom: baseline(1);
 			}
-			.moretag__slide { // override .moretag__slide
+			.moretag__slide { 						// override .moretag__slide
 				opacity: 1;
 				margin-left: 0;
 			}
@@ -123,7 +123,7 @@ OVERLAY LINKS
 PROJECT LINKS
 *******************************/
 .project-links {
-	margin: baseline(2) auto; // top and bottom spacing
+	margin: baseline(2) auto; 						// top and bottom spacing
 	padding:0;
 	list-style: none;
 	display: flex;
@@ -153,14 +153,14 @@ PROJECT LINKS
 			}
 		}
 	}
-	@include bp('phone-h') {
+	@include bp('phone-h') {				// breakpoint phone horizontal
 		flex-flow: row wrap;
 		justify-content: space-between;
 		li {
 			width:48%;
 		}
 	}
-	@include bp('tablet-h') {
+	@include bp('tablet-h') {				// breakpoint tablet horizontal
 		li {
 			width:31%;
 		}

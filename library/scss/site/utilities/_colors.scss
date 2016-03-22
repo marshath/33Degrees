@@ -33,10 +33,10 @@ $color-interval: 10% !global;
 // Alpha function
 @function brand-color-alpha($name: 'primary', $opacity: 0) {					// brand-color-alpha('primary', 'light')
 	$color: brand-color($name);
-	@if map-key-exists( color-alpha(), $opacity) { // Get the named opacity level, if it exists
+	@if map-key-exists( color-alpha(), $opacity) { 										// Get the named opacity level, if it exists
 		$opacity: map-get($color-opacity, $opacity);
 	}
-	@return rgba($color, $opacity); // Use rgba() to manipulate the color's alpha level
+	@return rgba($color, $opacity); 													// Use rgba() to manipulate the color's alpha level
 }
 
 // ALERT COLORS -- Function to call the specfic alert color using
@@ -58,10 +58,10 @@ $color-interval: 10% !global;
 // Alpha function
 @function alert-color-alpha($name: 'good', $opacity: 0) {						// alert-color-alpha('good', 'light')
 	$color: alert-color($name);
-	@if map-key-exists( color-alpha(), $opacity) { // Get the named opacity level, if it exists
+	@if map-key-exists( color-alpha(), $opacity) { 										// Get the named opacity level, if it exists
 		$opacity: map-get($color-opacity, $opacity);
 	}
-	@return rgba($color, $opacity); // Use rgba() to manipulate the color's alpha level
+	@return rgba($color, $opacity); 													// Use rgba() to manipulate the color's alpha level
 }
 
 // SOCIAL MEDIA -- Function to call the specfic social media color using

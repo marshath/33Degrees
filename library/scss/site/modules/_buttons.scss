@@ -8,7 +8,7 @@
 /*******************************
 GLOBAL BUTTONS 
 *******************************/
-.btn { // base button style
+.btn { 											// base button style
 	color: brand-color('white');
 	font-weight:bold;
 	text-decoration: none;
@@ -22,7 +22,7 @@ GLOBAL BUTTONS
 }
 
 // BUTTON CALLOUT
-.btn__primary { // solid orange
+.btn__primary { 								// solid orange
 	@extend .btn;
 	background: brand-color('primary');
 	text-shadow:0 2px 1px black;
@@ -34,7 +34,7 @@ GLOBAL BUTTONS
 		border: 3px solid brand-color-darken('primary', 3);
 	}
 }
-.btn__secondary { // outline orange
+.btn__secondary { 								// outline orange
 	@extend .btn;
 	background: brand-color('white');
 	color: brand-color('primary');
@@ -46,7 +46,7 @@ GLOBAL BUTTONS
 		background: brand-color('primary');
 	}
 }
-.btn__tritiary { // outline orange small
+.btn__tritiary { 								// outline orange small
 	background: brand-color('white');
 	padding: baseline(0.25) 0.5em;
 	color: brand-color('primary');
@@ -80,7 +80,7 @@ GLOBAL BUTTONS
 .btn__search, input[type='submit'].btn__search { // newsletter signup, blog search
 	@extend .btn;
 	height: 100%;
-	width: 100%; // for blog search button width
+	width: 100%; 								// for blog search button width
 	background: brand-color('text');
 	padding: baseline(0.5) 2em;
 	margin: baseline(0.5) 0 0;
@@ -118,7 +118,7 @@ GLOBAL BUTTONS
 	&:hover, &:focus {
 		background-color: brand-color-lighten('secondary', 1);
 	}
-	@include bp('tablet-v') { // override .btn__mobile a styles
+	@include bp('tablet-v') { 					// override .btn__mobile a styles
 		font-weight: normal;
 		padding:0;
 		background: rgba(0,0,0,0);

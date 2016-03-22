@@ -13,6 +13,7 @@ body {
 	@include sans-text;
 	color: brand-color('text');
 	line-height: 1.5;
+	font-size: 120%;
 }
 
 // HEADINGS
@@ -20,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 	@include sans-serif;
 	font-weight: 600;
 	line-height: 1;
-	margin: baseline(0.5) 0;
+	margin: baseline(0.5) 0 baseline(0);
 }
 h1 {
 	@include font-size(46);
@@ -40,8 +41,34 @@ h5 {
 h6 {
 	@include font-size(16);
 }
+@include bp('tablet-v') {					// breakpoint tablet vertical - heading sizes
+	h2 {
+		@include font-size(36);
+	}
+	h3 {
+		@include font-size(28);
+	}
+	h4 {
+		@include font-size(24);
+	}
+	h5 {
+		@include font-size(20);
+	}
+	h6 {
+		@include font-size(18);
+	}
+}
+@include bp('laptop') {						// breakpoint laptop screen - heading sizes
+	h2 {
+		@include font-size(40);
+	}
+	h3 {
+		@include font-size(32);
+	}
+}
 
-.subhead { // main page subheads
+// MAIN PAGE SUBHEADS
+.subhead { 
 	h2, h3, h4, h5, h6, p {
 		text-align: center;
 		font-weight: normal;
@@ -51,26 +78,29 @@ h6 {
 // PARAGRAPH
 p {
 	margin-bottom: baseline(1);
+	@include bp('tablet-v') {				// breakpoint tablet vertical - paragraph font-size
+		@include font-size(18);
+	}
 }
 
 // FORMATTING
 .page-title, .page-subtitle, .archive-title {
 	text-align: center;
 }
-.normal { // Font weight normal
+.normal { 											// Font weight normal
 	font-weight: normal;
 }
-b, strong, .bold { // Font weight bold
+b, strong, .bold { 									// Font weight bold
 	font-weight: bold;
 	font-weight: 600;
 }
-i, em, .italic { // Font style italic
+i, em, .italic { 									// Font style italic
 	font-style: italic;
 }
-.uppercase { // Letters uppercase
+.uppercase { 										// Letters uppercase
 	text-transform: uppercase; 
 }
-.capitalize { // Capitalize word
+.capitalize { 										// Capitalize word
 	text-transform: capitalize;
 }
 .disclaimer {
@@ -79,7 +109,7 @@ i, em, .italic { // Font style italic
 }
 code {
 	@include font-size(14);
-	background: brand-color('gray3');
+	background: brand-color-lighten('gray3',3);
 	padding:0 5px;
 	display:inline-block;
 }
@@ -153,6 +183,6 @@ SCREEN READER TEXT
 *******************************/
 .screen-reader-text {
 	position: absolute !important;
-	clip: rect(0 0 0 0); /* IE6, IE7 */
+	clip: rect(0 0 0 0); 							// IE6, IE7
 	clip: rect(0,0,0,0);
 }

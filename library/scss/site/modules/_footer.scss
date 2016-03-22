@@ -14,7 +14,7 @@ CONTACT INFORMATION
 .footer-company-info {
 	display: flex;
 	flex-flow: column nowrap;
-	@include bp('tablet-v') {
+	@include bp('tablet-v') {				// breakpoint tablet vertical
 		flex-flow: row nowrap;
 	}
 }
@@ -29,16 +29,16 @@ CONTACT INFORMATION
 // COMPANY INFORMATION
 .company {
 	text-align: center;
-	.org { // Company name
-		padding-top: baseline(0.25); // sets .office-info text lower
+	.org { 											// Company name
+		padding-top: baseline(0.25); 				// sets .office-info text lower
 	}
-	.adr { // Company address
+	.adr { 											// Company address
 	}
-	.tel, .email { // Company telephone, email
+	.tel, .email { 									// Company telephone, email
 		display: inline-block;
 	}
-	.tel { // Company telephone
-		margin-right:1em; // gives email button space 
+	.tel { 											// Company telephone
+		margin-right:1em; 							// gives email button space 
 	}
 	svg {
 		width:32px;
@@ -47,65 +47,65 @@ CONTACT INFORMATION
 		fill: brand-color('white');
 		margin-right: 1em;
 	}
-	.mobile { // visible on mobile
+	.mobile { 										// visible on mobile
 		display: inline-block;
 		text-indent: 0;
 		width: intrinsic;
 	}
-	.non-mobile { // hidden on mobile
-		height: 0; // removes extra space
-		width:0; // removes extra space
+	.non-mobile { 									// hidden on mobile
+		height: 0; 									// removes extra space
+		width:0; 									// removes extra space
 		display: inline-block;
 		overflow: hidden;
-		clip: rect(0,0,0,0); // hide
+		clip: rect(0,0,0,0); 						// hide
 	}
 }
 
 
-@include bp('tablet-v') {
+@include bp('tablet-v') {					// breakpoint tablet vertical
 	.footer-format {
-		flex-direction: row; // overrides .footer-format row-direction: column
+		flex-direction: row; 						// overrides .footer-format row-direction: column
 		flex-wrap: wrap;
 	}
 	.footer-logo {
-		margin-right:1em; // override right margin
+		margin-right:1em; 							// override right margin
 	}
 	.widget {
-		margin-right:auto; // center with .footer-logo margin-left:auto;
+		margin-right:auto; 							// center with .footer-logo margin-left:auto;
 	}
-	.company { // Company information
+	.company { 										// Company information
 		text-align: left;
-		a { // remove .btn__mobile formatting
+		a { 										// remove .btn__mobile formatting
 			padding:0;
 			margin:0;
 		}
-		.org { // Company name
+		.org { 										// Company name
 			margin-top: 0;
 		}
 		svg {
 			display:none;
 		}
-		.mobile { // hidden on tablet+
-			text-indent: -9999px; // override .mobile styles
-			width:0; // removes extra space
+		.mobile { 									// hidden on tablet+
+			text-indent: -9999px; 					// override .mobile styles
+			width:0; 								// removes extra space
 		}
-		.non-mobile { // visible on tablet+
-			clip: none;          // override
-			height: intrinsic;   // override
-			width: intrinsic;    // override
+		.non-mobile { 								// visible on tablet+
+			clip: none;								// override
+			height: intrinsic;						// override
+			width: intrinsic;						// override
 		}
 	}
 	.social {
-		margin-right: auto; // centers social links
-		margin-left: auto; // centers social links
+		margin-right: auto; 						// centers social links
+		margin-left: auto; 							// centers social links
 	}
 }
-@include bp('laptop') {
+@include bp('laptop') {						// breakpoint laptop screen
 	.footer-format {
-		flex-wrap:  nowrap; // overrides .footer-format tablet-v
+		flex-wrap:  nowrap; 						// overrides .footer-format tablet-v
 	}
 	.social {
-		margin-top: -(baseline(0.5)); // moves social links up
+		margin-top: -(baseline(0.5)); 				// moves social links up
 	}
 }
 

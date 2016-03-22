@@ -12,67 +12,95 @@ GLOBAL
 	position: relative;
 	@include clearfix;
 }
-.max-width { // width limits
+.max-width { 									// width limits
 	max-width: 980px;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-	
+
 /***** TESTIMONIALS PANEL *****/
 .testimonials {
-		text-align: center;
-		padding-bottom: baseline(1.5); // bottom panel padding
-		display: flex;
-		align-items: stretch;
-		align-content: center;
-		justify-content: center;
-	h2 {
-		font-style: italic;
+	background-color: brand-color-lighten('secondary', 8.5);
+	text-align: center;
+	padding: baseline(0.5) 0 baseline(1.5); 	// bottom panel padding
+	// border-top: 0.5em solid white;
+	// border-bottom: 0.5em solid white;
+	box-shadow: 0 0 40px black;
+	display: flex;
+	align-items: stretch;
+	align-content: center;
+	justify-content: center;
+	p {
+		margin-top: baseline(0.5);
+		margin-bottom: 0; 						// remove bottom padding to bring up <cite>
 	}
-	.flex-section-container {
+	cite {
+		@include font-size(12);
+		color: brand-color('gray2');
+		text-align: center; 					// override _typography.scss
+	}
+	h2 {
+		color: brand-color-lighten('secondary',0);
+		font-style: italic;
+		text-shadow: 1px 2px 1px brand-color-alpha('white','light');
 	}
 	blockquote {
 		padding-left: 1em;
 		padding-right: 1em;
-		margin: 0 auto;
-		position: relative; // quotes before and after testimonial
+		margin: baseline(1) auto 0;
+		position: relative; 					// quotes before and after testimonial
 		overflow: hidden;
-		z-index: 1; // sets testimonial text above before/after quotes
+		z-index: 1; 							// sets testimonial text above before/after quotes
 		&:before, &:after {
 			content: '';
 			width:48px;
 			height:48px;
 			background-image: url('../images/icon-quote.svg'); // quote SVG above and below the testimonials
-			background-size: 100% 100%; // makes the quotes size to 100% width and height
+			background-size: 100% 100%; 		// makes the quotes size to 100% width and height
 			display: block;
-			position: absolute; // relative blockquote
+			position: absolute; 				// relative blockquote
 		}
 		&:before {
 			top: 0;
 			left: 0;
-			z-index: -1; // sets the quote SVG below the blockquote
+			z-index: -1; 						// sets the quote SVG below the blockquote
 		}
 		&:after {
 			right: 0;
-			bottom: baseline(1.5); // sets quote above <cite>
-			transform: rotate3d(0,0,1,180deg); // rotates the quote SVG to upside down
-			z-index: -1; // sets the quote SVG below the blockquote
+			bottom: baseline(1.25); 			// sets quote above <cite>
+			transform: rotate3d(0,0,1,180deg); 	// rotates the quote SVG to upside down
+			z-index: -1; 						// sets the quote SVG below the blockquote
 		}
-		@include bp('phone-h') {
+	}
+	@include bp('phone-h') { 			// breakpoint smartphone horizontal
+		blockquote {
 			width: intrinsic;
 			max-width: 980px;
 		}
 	}
-	cite {
-		color: brand-color('gray2');
-		text-align: center; // override _typography.scss
+	@include bp('tablet-v') { 			// breakpoint tablet vertical
+		padding-bottom: baseline(2); 			// add more bottom padding override
+		cite {
+			@include font-size(14);
+		}
 	}
+	@include bp('laptop') { 			// breakpoint laptop sceen
+		padding-bottom: baseline(2.5); 			// add more bottom padding override
+	}
+}
+.client-heart {
+	fill: alert-color('error');
+}
+.client-love {
+	@extend .screen-reader-text;
 }
 
 /***** NEWSLETTER PANEL *****/
 .newsletter {
 	background: brand-color('accent');
+	padding: baseline(0.5) 0 baseline(1);
+	box-shadow: 0 0 40px black;
 	.icon-inbox {
 		height:96px;
 		width:20%;
@@ -84,33 +112,45 @@ GLOBAL
 		display: block;
 		border-radius: 50%;
 	}
-	svg { // inbox icon at top of newsletter panel
+	svg { 										// inbox icon at top of newsletter panel
 		height:60%;
 		width:60%;
 		display: block;
 		margin:baseline(0.5) auto;
 	}
 	h2, p {
-		margin-bottom: 0; // set the next line closer
-		font-style: italic;
+		color: brand-color('black');
+		margin-bottom: 0; 						// set the next line closer
 		text-align: center;
+	}
+	h2 { 										// similar to .testimonials h2
+		font-style: italic;
+		text-shadow: 1px 2px 1px brand-color-alpha('white','dark');
 	}
 	input[type='email'] {
 		text-align: center;
 		border: 1px solid brand-color('accent'); // fix for 1px white below subscribe button
 		@extend .default-transition;
 		&:focus {
-		}
-		@include bp('tablet-v') {
-			text-align: left;
+			border: 1px solid brand-color-darken('accent',2);
 		}
 	}
-	@include bp('mobile-h') {
-		.icon-inbox { // move inbox icon above the newsletter panel
+	@include bp('phone-h') {			// breakpoint smartphone horizontal
+		.icon-inbox { 							// move inbox icon above the newsletter panel
 			width: 160px;
 			height: 80px;
 			margin-top: - baseline(1.5);
 		}
+	}
+	@include bp('tablet-v') {			// breakpoint tablet vertical
+		padding-bottom: baseline(1); 			// add more bottom padding override
+		input[type='email'] {
+			text-align: left;
+		}
+	}
+	@include bp('laptop') {				// breakpoint laptop screen
+		padding-bottom: baseline(1.5); 			// add more bottom padding override
+
 	}
 }
 
@@ -138,18 +178,17 @@ HOMEPAGE SECTIONS
 }
 .cta { // splash text
 	text-align: center;
-	@include font-size(18);
 	p {
-		margin: 0; // overrides global p - brings cta text closer together
+		margin: 0; 								// overrides global p - brings cta text closer together
 		&:last-child {
-			margin-bottom: baseline(2); // extra bottom spacing for mobile
+			margin-bottom: baseline(2); 		// extra bottom spacing for mobile
 		}
 	}
 }
 .splash-text {
 	margin: baseline(1) 0;
 }
-.lightrays { // svg splash image background
+.lightrays { 									// svg splash image background
 	transform-origin: center center;
 	animation: spin 40s linear infinite;
 }
@@ -158,7 +197,7 @@ HOMEPAGE SECTIONS
 	background-position: center center;
 	background-size: 100% 100%;
 }
-@include bp('tablet-h') {
+@include bp('tablet-h') {				// breakpoint tablet horizontal
 	.cta, .lady {
 		width: 50%; 
 	}
@@ -166,11 +205,11 @@ HOMEPAGE SECTIONS
 		float:right;
 	}
 }
-@include bp('laptop') {
+@include bp('laptop') {					// breakpoint laptop screen
 	.cta-wrap {
 		width: 70%; 
 		float: right;
-		//margin-bottom: baseline(2);
+		// margin-bottom: baseline(2);
 	}
 	.cta {
 		width: 100%;
@@ -178,45 +217,39 @@ HOMEPAGE SECTIONS
 }
 
 .hm-services {
-	background-color: brand-color-darken('secondary',2);
-	background-image: linear-gradient(to right, brand-color('secondary') 10%, #1c526c 50%, brand-color('secondary') 90%);
+	background: url('../images/wood.jpg') center center no-repeat #2c170e;
+	background-size: auto 100%; 				// make bg container full height of container
 	color: brand-color('white');
-	box-shadow: inset 0 10px 200px black;
-	.entry-content { // moving background animation
-		// background-image: repeating-linear-gradient(-45deg, rgba(0,0,0,0), rgba(0,0,0,0) 4px, rgba(0,0,0,0.3) 4px, rgba(0,0,0,0.3) 16px);
-		// background-size: 110%;
-		// background-position-x: 12px;
-		margin:0;
-		width:100%;
-		height:100%;
-		display: block;
-		// animation : stripesBG 6s linear infinite;
-		z-index:0;
-		position:relative;
-	}
-	h2, h4 {
-		font-weight: normal;
-		text-align: center;
+	padding: baseline(1) 0 baseline(3); 		// container padding
+	h2 {
+		@include font-size(60);
 	}
 	h2, h3 {
-		text-shadow: 0 2px 2px brand-color('black');
+		@include serif;
+		letter-spacing: 0.05em;
+		text-shadow: 2px 4px 2px brand-color('black');
 	}
-	svg {
-		width: 200px !important;
-		height: 200px;
-		padding: 0.75em;
-		box-shadow: inset 0 4px 10px black;
-		background-color: brand-color-alpha('white', 'dark');
-		@include border-radius(20);
+	h2, h4 {
+		text-align: center;
 	}
-	@include bp('tablet-v') {
+	h4 {
+		font-style: italic;
+		font-weight: normal;
+		color: brand-color-lighten('secondary',8);
+	}
+	p {
+		color: brand-color-lighten('secondary', 8);
+	}
+	@include bp('tablet-v') {			// breakpoint tablet vertical
 		p, h3 {
 			text-align:left;
 		}
 	}
-	@include bp('laptop') {
+	@include bp('laptop') {				// breakpoint laptop screen
+		padding-bottom: baseline(4); 			// override container padding
+		background-size: 100% 100%; 			// make bg image fit container
 		p, h3 {
-			text-align:center; // override tablet view
+			text-align:center; 					// override tablet view
 		}
 		.services {
 			margin: 0 auto;
@@ -226,6 +259,7 @@ HOMEPAGE SECTIONS
 
 .services { // homepage service columns
 	padding:0;
+	margin-top: baseline(2)!important; 			// spacing above and below services
 	text-align: center;
 	display: flex;
 	flex-flow: row wrap;
@@ -234,47 +268,81 @@ HOMEPAGE SECTIONS
 	justify-content: space-around;
 	li {
 		list-style: none;
-		flex-grow: 1;
+		padding: baseline(1.5) 1em 0;
+		background: rgba(0,0,0,0.3);
+		border: 2px dotted brand-color-alpha('white', 'dark');
+		&:nth-child(2) {
+			margin: baseline(1) 0;
+		}
+		p:last-child {
+			margin-top: auto; 					// bottom align button links
+		}
 	}
-	@include bp('tablet-v') {
-		p, h3 {
+	.btn__primary {
+		margin-top: 0; 							// remove top margin from buttons
+	}
+	@include bp('tablet-v') {			// breakpoint tablet vertical
+		h3 {
+			margin-top: 0; 						// remove top spacing
+		}
+		h3, p {
 			width:66%;
 			float: right;
 		}
 		svg {
-			width:33%;
+			width:30%;
 			float: left;
 		}
-		}
-	@include bp('laptop') {
+	}
+	@include bp('laptop') {				// breakpoint laptop screen
 		li {
-			width: 33%;
+			width: 30%;
 			padding:0 1em;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			&:nth-child(2) {
+				margin: 0;
+			}
 		}
-		p, h3 { // overrides the tablet-v styles
+		h3 {
+			margin-top: baseline(0.5); 			// add back top spacing
+		}
+		h3, p { 								// overrides the tablet-v styles
 			width:100%;
 			float: none;
 		}
-		svg { // overrides the tablet-v styles
+		svg { 									// overrides the tablet-v styles
 			width:100%;
 			float: none;
+			margin-top: baseline(1);
 		}
 	}
 }
 
 .hm-blog {
-	background: url('../images/paper.jpg') repeat #f8f8f3;
+	background-color: brand-color('white');
+	background: url('../images/paper.jpg') repeat;
+	// box-shadow: inset 0 0 100px brand-color-alpha('black', 'dark');
+	padding: baseline(1) 0 baseline(2.5); 		// container padding
 	text-align: center;
-	padding-bottom: baseline(1);
-	h2, h4 {
-		font-weight: normal;
+	h2 {
+		@include serif;
+		@include font-size(60);
+		letter-spacing: 0.05em;
 	}
+	h4 {
+		font-weight: normal;
+		font-style: italic;
+	}
+	
 	.overlay-links {
 		figure {
-			border: 0.5em solid brand-color('white');
-			box-shadow: 0 2px 4px brand-color-alpha('gray1','dark');
+			// border: 0.5em solid brand-color('white');
+			//box-shadow: 0 2px 4px brand-color-alpha('gray1','dark');
 		}
-		figcaption { // override .overlay-links figcaption
+		figcaption { 							// override .overlay-links figcaption
 			@include font-size(20);
 			bottom: -(baseline(0.75));
 			line-height: baseline(0.75);
@@ -283,7 +351,7 @@ HOMEPAGE SECTIONS
 			font-size:1rem; // reduces font size
 		}
 	}
-	@include bp('tablet-v') {
+	@include bp('tablet-v') {			// breakpoint tablet vertical
 		.overlay-links {
 			flex-flow: row nowrap;
 		}
@@ -312,7 +380,7 @@ SERVICES
 .services-design {
 }
 
-.project-icon { // used on Services, Project pages
+.project-icon { 								// used on Services, Project pages
 	svg {
 		display: block;
 		margin: 0 auto;
@@ -394,7 +462,7 @@ CONTACT & ESTIMATE FORMS, THANK YOU
 	}
 }
 .page-id-71 p {
-	@extend .max-width; // from _page.scss
+	@extend .max-width; 							// from _page.scss
 }
 
 

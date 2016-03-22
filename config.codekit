@@ -220,6 +220,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/clouds.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 424018,
+		"inputAbbreviatedPath": "\/library\/images\/clouds.png",
+		"outputAbbreviatedPath": "\/library\/images\/clouds.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/favicon_16.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -341,6 +352,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/rays.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 97220,
+		"inputAbbreviatedPath": "\/library\/images\/rays.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/rays.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/side-emailmarketing.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -363,6 +385,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/water.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 208535,
+		"inputAbbreviatedPath": "\/library\/images\/water.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/water.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/win8-tile-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -370,6 +403,17 @@
 		"initialSize": 5619,
 		"inputAbbreviatedPath": "\/library\/images\/win8-tile-icon.png",
 		"outputAbbreviatedPath": "\/library\/images\/win8-tile-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/wood.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 403837,
+		"inputAbbreviatedPath": "\/library\/images\/wood.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/wood.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

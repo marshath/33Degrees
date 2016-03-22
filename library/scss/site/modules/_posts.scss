@@ -9,21 +9,21 @@
 BLOG
 *******************************/
 
-.blog, .archive, .search-results { // index, blog archive, blog search formatting
+.blog, .archive, .search-results { 					// index, blog archive, blog search formatting
 	article {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: nowrap;
-		padding-top: baseline(1); // adds top spacing from border
+		padding-top: baseline(1); 					// adds top spacing from border
 		border-bottom: 2px solid brand-color-lighten('gray3', 5);
 		border-top: 2px solid white;
 		&:first-child {
-			border-top:none; // remove border from first child
+			border-top:none; 						// remove border from first child
 		}
 	}
-	@include bp('tablet-h') {
+	@include bp('tablet-h') {				// breakpoint tablet horizontal
 		article {
-			flex-direction: row; // changes flexbox orientation
+			flex-direction: row; 					// changes flexbox orientation
 		}
 		.post-wrap {
 			width: 62%;
@@ -32,10 +32,10 @@ BLOG
 		}
 		figure {
 			width:35%;
-			margin-bottom: baseline(1); // adds spacing below figure when viewport is tablet or higher
+			margin-bottom: baseline(1); 			// adds spacing below figure when viewport is tablet or higher
 		}
 	}
-	@include bp('laptop') {
+	@include bp('laptop') {					// breakpoint laptop screen
 		.post-wrap {
 			width: 57%;
 			margin-left: 3%;
@@ -68,10 +68,10 @@ BLOG
 		line-height: 2.5;
 	}
 	li a {
-		@extend .btn__tritiary; // outline orange small
+		@extend .btn__tritiary; 					// outline orange small
 		margin-right: 0.5em;
 	}
-	@include bp('tablet-h') {
+	@include bp('tablet-h') {				// breakpoint tablet horizontal
 		h3 {
 			float:left;
 			display: inline-block;
@@ -82,7 +82,7 @@ BLOG
 	}
 }
 
-.post-wrap a { // blog archive title, category, and moretag links
+.post-wrap a { 										// blog archive title, category, and moretag links
 	text-decoration: none;
 	&:hover {
 		text-decoration: underline;
@@ -94,7 +94,7 @@ BLOG
 }
 
 .article-footer {
-	svg { // icon size for About the Author
+	svg { 											// icon size for About the Author
 		width:16px;
 		height:16px;
 		margin-left:0.5em;
@@ -105,18 +105,20 @@ BLOG
 	}
 }
 
-.single { // Blog, Project formatting
-	.article-header { // center the title
+// BLOG, PROJECT FORMATTING
+.single { 
+	.article-header { 								// center the title
 		text-align: center;
 	}
-	.entry-content { // blog page text indenting
+	.entry-content { 								// blog page text indenting
 		h2, h3, p, ul {
-			@extend .max-width; // from _page.scss
+			@extend .max-width; 					// from _page.scss
 		}
 	}
 }
 
-h1.entry-title { // blog archive titles
+// BLOG ARCHIVE TITLES
+h1.entry-title {
 	margin-top:0;
 	margin-bottom: baseline(0.25);
 	font-weight: normal;
@@ -124,16 +126,16 @@ h1.entry-title { // blog archive titles
 }
 
 .entry-header {
-	margin-top: baseline(1); // adds spacing from featured image at the top
-	margin-bottom: baseline(0.5); // removes p bottom spacing
+	margin-top: baseline(1); 						// adds spacing from featured image at the top
+	margin-bottom: baseline(0.5); 					// removes p bottom spacing
 }
 .entry-author a {
 	@extend .default-link;
 }
 
 .single-title {
-	margin-top: 0; // removes h1 top spacing
-	margin-bottom: 0; // removes h1 top spacing
+	margin-top: 0; 									// removes h1 top spacing
+	margin-bottom: 0; 								// removes h1 top spacing
 }
 .author-header {
 	margin: baseline(0.5) auto baseline(1.5);
@@ -141,7 +143,7 @@ h1.entry-title { // blog archive titles
 
 
 // AUTHOR IMAGE
-.author-box { // white border and shadow
+.author-box { 										// white border and shadow
 	border: 4px solid white;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 	h4 {
@@ -172,15 +174,15 @@ h1.entry-title { // blog archive titles
 
 
 .single .tags {
-	margin-top: 0; // bottom spacing for About the Author
-	margin-bottom: baseline(1.25); // bottom spacing for About the Author
-	line-height: 2.5; // line spacing for tag links on mobile
-	text-align: center; // center tags under article
+	margin-top: 0; 									// bottom spacing for About the Author
+	margin-bottom: baseline(1.25); 					// bottom spacing for About the Author
+	line-height: 2.5; 								// line spacing for tag links on mobile
+	text-align: center; 							// center tags under article
 	&-title {
 		font-weight: bold;
 	}
 	a {
-		@extend .btn__tritiary; // outline orange small
+		@extend .btn__tritiary;						// outline orange small
 	}
 }
 
@@ -227,12 +229,12 @@ h1.entry-title { // blog archive titles
 	max-width:700px;
 	background-color: brand-color-lighten('gray3', 5);
 	padding: baseline(0.5) 1em baseline(1);
-	margin: 0 auto baseline(2); // center vcard and add margin to the bottom
+	margin: 0 auto baseline(2); 					// center vcard and add margin to the bottom
 	h3 {
 		margin-top: baseline(4);
 	}
 	p:last-child{
-		margin-bottom: 0; // removes extra spacing at the bottom of author vcard
+		margin-bottom: 0; 							// removes extra spacing at the bottom of author vcard
 	}
 	svg {
 		width:20px;
@@ -246,7 +248,7 @@ h1.entry-title { // blog archive titles
 PROJECTS
 *******************************/
 .single-project {
-	.article-header { // center the title
+	.article-header { 								// center the title
 		margin-bottom: baseline(1.5);
 	}
 	.flex-section-container {
@@ -262,31 +264,3 @@ PROJECTS
 	display: inline-block;
 	clip: rect(0,0,0,0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

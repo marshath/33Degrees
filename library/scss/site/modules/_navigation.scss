@@ -8,19 +8,19 @@
 /*******************************
 HEADER & FOOTER NAVIGATION 
 *******************************/
-// mobile menu button 
-#menu-toggle { // toggles the menu visibity for mobile
+// MOBILE TOGGLE BUTTON 
+#menu-toggle { 										// toggles the menu visibity for mobile
 	@include bp('tablet-h') {
 		display:none;
 	}
 }
 
 
-// navigation and menu
+// NAVIGATION AND MENU
 .nav-header li, .nav-footer li, .nav-header button {
 	@extend .default-transition;
 }
-// navigation only
+// NAVIGATION ONLY
 .nav-header, .nav-footer {
 	ul {
 		max-width:1280px;
@@ -36,7 +36,7 @@ HEADER & FOOTER NAVIGATION
 	li {
 		flex-basis: 48%;
 		text-shadow: 1px 2px 1px brand-color('black');
-		margin-bottom: baseline(0.5); // bottom spacing for mobile navigation
+		margin-bottom: baseline(0.5); 				// bottom spacing for mobile navigation
 		border: 3px solid rgba(240,240,240,0);
 		@include border-radius(0.5);
 		&.current-menu-item, &.current_page_parent {
@@ -57,26 +57,26 @@ HEADER & FOOTER NAVIGATION
 	}
 }
 
-// Navigation highlighting override for Projects post type
+// NAVIGATION HIGHLIGHTING OVERRIDE -- PROJECTS POST TYPE
 .single-project {
 	.current_page_parent {
 		border-color: rgba(240,240,240,0) !important; // remove nav highlighting from Blog
 	}
-	.menu-item-107 { // add nav highlighting to Projects
+	.menu-item-107 { 								// add nav highlighting to Projects
 		border-color: brand-color-alpha('white', 'dark');
 	}
 }
 
 
 // HAMBURGER VARIABLES
-$button-size: 30px;                    // The height of the button area
-$bar-thickness: 4px;                   // The thickness of the button bars
-$button-bar-space: 6px;                // The spacing between button bars
+$button-size: 30px;									// The height of the button area
+$bar-thickness: 4px;								// The thickness of the button bars
+$button-bar-space: 6px;								// The spacing between button bars
 
 .nav-header {
 	#nav-menu-curtain {
-		display: none; // hides the navigation, until the 'menu-toggle' is clicked
-		margin: 0 auto baseline(1); // extra bottom margin
+		display: none; 								// hides the navigation, until the 'menu-toggle' is clicked
+		margin: 0 auto baseline(0.5); // extra bottom margin
 		@include bp('tablet-h') {
 			display:block;
 		}
@@ -87,7 +87,7 @@ $button-bar-space: 6px;                // The spacing between button bars
 	li {
 		background: brand-color-lighten('secondary', 0.5);
 	}
-	button { // is the 'menu-toggle'
+	button { 										// is the 'menu-toggle'
 		background: none;
 		text-align: center;
 		padding: baseline(0.75) 1em baseline(0.75) 3.5em;
@@ -105,7 +105,7 @@ $button-bar-space: 6px;                // The spacing between button bars
 			display: inline-block;
 			position: absolute;
 			top: $button-size - ($bar-thickness / 2);
-			left: 22px; // The left/right padding between button area and bars
+			left: 22px; 							// The left/right padding between button area and bars
 			transition: all 0.2s linear;
 			@include border-radius(2);
 			&:before, &:after {
@@ -143,14 +143,14 @@ $button-bar-space: 6px;                // The spacing between button bars
 	li {
 		background: brand-color-darken('secondary', 1);
 		&:first-child {
-			flex-basis: 100%; // enlarge to fill first row on mobile
+			flex-basis: 100%; 						// enlarge to fill first row on mobile
 		}
 	}
 }
-@include bp('tablet-v') {
+@include bp('tablet-v') {					// breakpoint tablet vertical
 	.nav-header {
 		li {
-			flex-basis: 24%; // shrink width to display as a row
+			flex-basis: 24%; 						// shrink width to display as a row
 			display: inline-block;
 			&:last-child {
 				margin-right: 0;
@@ -159,29 +159,33 @@ $button-bar-space: 6px;                // The spacing between button bars
 	}
 	.nav-footer {
 		ul {
-			display:flex; // shows the navigation
-			flex-flow: row nowrap; // format as a row
+			display:flex; 							// shows the navigation
+			flex-flow: row nowrap; 					// format as a row
 		}
 		li {
-			margin:0 1em 0 0; // adds spacing between items
+			margin:0 1em 0 0;						// adds spacing between items
+			&:first-child {
+				flex-basis: 48%;					// reset to default
+			}
 			&:last-child {
-				margin-right:0em; // removes spacing to the right of the last child
+				margin-right:0em; 					// removes spacing to the right of the last child
 			}
 		}
 	}
 }
-@include bp('tablet-h') {
+@include bp('tablet-h') {					// breakpoint tablet horizontal
 	.nav-header {
 		ul {
 			width: 70%;
 			max-width: 600px;
-			margin-top: -(baseline(2.5)); // sets distance from the top
-			margin-right:0; // positions the nav right
-			display:flex; // shows the navigation
-			flex-flow: row nowrap; // format as a row
+			margin-top: -(baseline(2.5)); 			// sets distance from the top
+			margin-right:0; 						// positions the nav right
+			display:flex; 							// shows the navigation
+			flex-flow: row nowrap; 					// format as a row
 		}
 		li {
 			background: none;
+			margin-bottom: 0; 						// override bottom spacing for mobile navigation
 			&:first-child {
 				margin-top: 0;
 			}
@@ -222,7 +226,7 @@ PAGINATION
 *******************************/
 .pagination {
 	margin-top:0;
-	margin-bottom: baseline(2); // spacing under pagination links
+	margin-bottom: baseline(2); 					// spacing under pagination links
 	padding-left:0;
 	@include clearfix;
 	&-title, li {
@@ -241,7 +245,7 @@ PAGINATION
 		list-style: none;
 	}
 	a, .current {
-		@extend .btn__tritiary; // outline orange small
+		@extend .btn__tritiary; 					// outline orange small
 		width:100%;
 		height: 100%;
 		text-align: center;

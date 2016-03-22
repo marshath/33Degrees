@@ -41,10 +41,8 @@
 						
 						<?php /* SERVICES */ ?>
 						<article id="panel-services" <?php post_class( 'row hm-services' ); ?> role="article">
-							<section class="entry-content" itemprop="articleBody">
-								<div class="inner-wrap">
+							<section class="entry-content inner-wrap" itemprop="articleBody">
 								<?php echo get_field('panel_2'); // display the content ?>
-								</div>
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</article> <?php // end #panel-services .row .hm-services ?>
 								

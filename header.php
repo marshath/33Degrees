@@ -68,7 +68,7 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 		<?php // load and browser cache the SVG sprite sheet
-			require("library/images/sprite.svg"); ?>
+			require("library/images/sprite3.svg"); ?>
 
 		<div id="container" class="page-wrap">
 
