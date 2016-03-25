@@ -13,7 +13,7 @@
 
 		<title><?php wp_title(''); ?></title>
 
-		<?php // mobile meta (hooray!) ?>
+		<?php // mobile meta ?>
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -26,18 +26,49 @@
 		<?php // TYPEKIT // ?>
 		<script src="https://use.typekit.net/cqu0hqz.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		
+		<?php // FLEXSLIDER
+			if (is_page(array('home','company')) or is_singular('project')) { // display if Home, Company, or Project post type page ?>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.flexslider.js"></script>
+		<?php } ?>
+		<?php // FLEXSLIDER TESTIMONIAL SETTINGS
+			if (is_page(array('home','company'))) { // display if Home or Company page ?>
+		<script type="text/javascript">
+			$(window).load(function() {
+				$('.flexslider').flexslider({
+					animation: 'slide',
+					controlNav: false,
+					directionNav: false,
+					randomize: true,
+					slideshowSpeed: 5000
+				});
+			});
+		</script>
+		<?php } // FLEXSLIDER PROJECT SETTINGS
+			else if (is_singular('project')) { // display if project post type ?>
+		<script type="text/javascript">
+			$(window).load(function() {
+				$('.flexslider').flexslider({
+					slideshowSpeed: 6000,
+					pauseOnHover: true,
+					touch: true
+				});
+			});
+		</script>
+		<?php } else {} ?>
+		
+		
 		<?php // ADDTHIS // ?>
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51b3d7b12af9a97b" async="async"></script>
-
+		
 		<?php // wordpress head functions
 			wp_head(); // end of wordpress head ?>
-
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 		<?php // load and browser cache the SVG sprite sheet
-			require("library/images/sprite.svg"); ?>
-
+			require("library/images/sprite3.svg"); ?>
 
 		<div id="container" class="page-wrap">
 
@@ -66,19 +97,21 @@
 						
 						<?php // menu items ?>
 						<div id="nav-menu">
-						<?php wp_nav_menu(array(
-							'container' => false,							// remove nav container
-							'container_class' => 'nav-menu',				// class of container (should you choose to use it)
-							'menu' => __( 'The Main Menu', 'bonestheme' ),	// nav name
-							'menu_class' => '',								// adding custom nav class
-							'theme_location' => 'main-nav',					// where it's located in the theme
-							'before' => '',									// before the menu
-							'after' => '',									// after the menu
-							'link_before' => '',							// before each link
-							'link_after' => '',								// after each link
-							'depth' => 0,									// limit the depth of the nav
-							'fallback_cb' => ''								// fallback function (if there is one)
-						)); ?>
+							<div id="nav-menu-curtain">
+								<?php wp_nav_menu(array(
+									'container' => false,							// remove nav container
+									'container_class' => 'nav-menu',				// class of container (should you choose to use it)
+									'menu' => __( 'The Main Menu', 'bonestheme' ),	// nav name
+									'menu_class' => '',								// adding custom nav class
+									'theme_location' => 'main-nav',					// where it's located in the theme
+									'before' => '',									// before the menu
+									'after' => '',									// after the menu
+									'link_before' => '',							// before each link
+									'link_after' => '',								// after each link
+									'depth' => 0,									// limit the depth of the nav
+									'fallback_cb' => ''								// fallback function (if there is one)
+								)); ?>
+							</div>
 						</div>
 						
 					</nav>

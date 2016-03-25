@@ -5,38 +5,18 @@
  */
 
 
-/* .pdx {
-	text-align: center;
-	margin-top: - baseline(2.5); // moves the pdx icon over the .footer border
-	img {
-		max-width: 128px;
-		@extend .default-transition;
-		&:hover {
-			transform: rotate3d(0,0,1,-4deg);
-		}
-	}
-	p {
-		@include font-size(12);
-		margin-top: 0;
-	}
-	a:link {
-		color:white;
-		text-decoration: none;
-	}
-} */
-
-
 /*******************************
 CONTACT INFORMATION 
 *******************************/
 .footer-wrap {
 	padding-top:baseline(2);
 }
-.footer-format {
-	display:flex;
-	flex-direction: column;
-	max-width: 1280px;
-	margin:0 auto;
+.footer-company-info {
+	display: flex;
+	flex-flow: column nowrap;
+	@include bp('tablet-v') {				// breakpoint tablet vertical
+		flex-flow: row nowrap;
+	}
 }
 .footer-logo {
 	width:36%;
@@ -49,16 +29,16 @@ CONTACT INFORMATION
 // COMPANY INFORMATION
 .company {
 	text-align: center;
-	.org { // Company name
-		padding-top: baseline(0.25); // sets .office-info text lower
+	.org { 											// Company name
+		padding-top: baseline(0.25); 				// sets .office-info text lower
 	}
-	.adr { // Company address
+	.adr { 											// Company address
 	}
-	.tel, .email { // Company telephone, email
+	.tel, .email { 									// Company telephone, email
 		display: inline-block;
 	}
-	.tel { // Company telephone
-		margin-right:1em; // gives email button space 
+	.tel { 											// Company telephone
+		margin-right:1em; 							// gives email button space 
 	}
 	svg {
 		width:32px;
@@ -67,143 +47,65 @@ CONTACT INFORMATION
 		fill: brand-color('white');
 		margin-right: 1em;
 	}
-	.mobile { // visible on mobile
+	.mobile { 										// visible on mobile
 		display: inline-block;
 		text-indent: 0;
 		width: intrinsic;
 	}
-	.non-mobile { // hidden on mobile
-		height: 0; // removes extra space
-		width:0; // removes extra space
+	.non-mobile { 									// hidden on mobile
+		height: 0; 									// removes extra space
+		width:0; 									// removes extra space
 		display: inline-block;
 		overflow: hidden;
-		clip: rect(0,0,0,0); // hide
+		clip: rect(0,0,0,0); 						// hide
 	}
 }
 
 
-/*******************************
-SOCIAL LINKS 
-*******************************/
-.social {
-	ul {
-		list-style: none;
-		display: flex;
-		justify-content: center;
-		align-content: center;
-		flex-wrap: wrap;
-		padding: 0;
-		margin: 0 auto baseline(3);
-	}
-	li {
-		width:67px;
-		height:67px;
-		margin: baseline(1) 0.5em 0;
-		border: 3px solid brand-color('gray2');
-		border-radius: 50%;
-		box-shadow: 0 0 0 rgba(0,0,0,0.5);
-		@extend .default-transition;
-		&:hover, &:active, &:focus {
-			margin-top: baseline(0.75);
-			margin-bottom: baseline(0.25);
-			border-color: white;
-			box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.5);
-		}
-		a {
-			width:100%;
-			height: 100%;
-			display: block;
-			position: relative;
-		}
-	}
-	svg {
-		fill: brand-color('white');
-		width:32px;
-		height:32px;
-		top: 25%;
-		left: 24%;
-		position: absolute;
-	}
-	.facebook, .twitter, .google, .rss, .email, .linkedin {
-		background-color: brand-color('gray2');
-	}
-	.facebook {
-		&:hover {
-			background: social-color('facebook');
-		}
-	}
-	.twitter {
-		&:hover {
-			background: social-color('twitter');
-		}
-	}
-	.google {
-		&:hover {
-			background: social-color('google');
-		}
-	}
-	.rss {
-		&:hover {
-			background: social-color('rss');
-		}
-	}
-	.email {
-		&:hover {
-			background: brand-color('gray');
-		}
-	}
-	.linkedin {
-		&:hover {
-			background: social-color('linkedin');
-		}
-	}
-}
-
-
-@include bp('tablet-v') {
+@include bp('tablet-v') {					// breakpoint tablet vertical
 	.footer-format {
-		flex-direction: row; // overrides .footer-format row-direction: column
+		flex-direction: row; 						// overrides .footer-format row-direction: column
 		flex-wrap: wrap;
 	}
 	.footer-logo {
-		margin-right:1em; // override right margin
+		margin-right:1em; 							// override right margin
 	}
 	.widget {
-		margin-right:auto; // center with .footer-logo margin-left:auto;
+		margin-right:auto; 							// center with .footer-logo margin-left:auto;
 	}
-	.company { // Company information
+	.company { 										// Company information
 		text-align: left;
-		a { // remove .btn__mobile formatting
+		a { 										// remove .btn__mobile formatting
 			padding:0;
 			margin:0;
 		}
-		.org { // Company name
+		.org { 										// Company name
 			margin-top: 0;
 		}
 		svg {
 			display:none;
 		}
-		.mobile { // hidden on tablet+
-			text-indent: -9999px; // override .mobile styles
-			width:0; // removes extra space
+		.mobile { 									// hidden on tablet+
+			text-indent: -9999px; 					// override .mobile styles
+			width:0; 								// removes extra space
 		}
-		.non-mobile { // visible on tablet+
-			clip: none;          // override
-			height: intrinsic;   // override
-			width: intrinsic;    // override
+		.non-mobile { 								// visible on tablet+
+			clip: none;								// override
+			height: intrinsic;						// override
+			width: intrinsic;						// override
 		}
 	}
 	.social {
-		margin-right: auto; // centers social links
-		margin-left: auto; // centers social links
+		margin-right: auto; 						// centers social links
+		margin-left: auto; 							// centers social links
 	}
 }
-@include bp('laptop') {
+@include bp('laptop') {						// breakpoint laptop screen
 	.footer-format {
-		flex-wrap:  nowrap; // overrides .footer-format tablet-v
+		flex-wrap:  nowrap; 						// overrides .footer-format tablet-v
 	}
 	.social {
-		margin-top: -(baseline(0.5)); // moves social links up
+		margin-top: -(baseline(0.5)); 				// moves social links up
 	}
 }
 

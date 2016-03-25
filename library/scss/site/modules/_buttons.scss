@@ -8,35 +8,59 @@
 /*******************************
 GLOBAL BUTTONS 
 *******************************/
-.btn { // base button style
+.btn { 											// base button style
 	color: brand-color('white');
 	font-weight:bold;
 	text-decoration: none;
-	text-shadow:0 2px 1px black;
 	margin: baseline(0.5) 0;
-	padding: baseline(0.5) 1em;
+	padding: baseline(0.5) 2em;
 	display: inline-block;
 	border: 0;
-	&:hover {
+	&:hover, &:focus {
 		color:brand-color('white');
 	}
 }
 
 // BUTTON CALLOUT
-.btn__callout { // rounded solid orange embossed 
+.btn__primary { 								// solid orange
 	@extend .btn;
-	background: linear-gradient(to bottom, #ea6115 10%, #d53f15 90%);
-	@include border-radius(2);
-	box-shadow: inset 0 0 0.4em brand-color-alpha('white', 'light'), 0 0.3em 0.4em brand-color-alpha('black', 'dark');
-	&:hover {
-		background: linear-gradient(to bottom, #da5105 10%, #c52f05 90%);
+	background: brand-color('primary');
+	text-shadow:0 2px 1px black;
+	@include border-radius(0.5);
+	border: 3px solid brand-color('primary');
+	@extend .default-transition;
+	&:hover, &:focus {
+		background: brand-color-darken('primary', 3);
+		border: 3px solid brand-color-darken('primary', 3);
 	}
-	&:active {
-		background: linear-gradient(to bottom, #c52f05 10%, #da5105 90%); // reverse of hover 
+}
+.btn__secondary { 								// outline orange
+	@extend .btn;
+	background: brand-color('white');
+	color: brand-color('primary');
+	text-decoration: none;
+	border: 3px solid brand-color('primary');
+	@include border-radius(0.5);
+	@extend .default-transition;
+	&:hover, &:focus {
+		background: brand-color('primary');
+	}
+}
+.btn__tritiary { 								// outline orange small
+	background: brand-color('white');
+	padding: baseline(0.25) 0.5em;
+	color: brand-color('primary');
+	text-decoration: none;
+	border:1px solid brand-color-lighten('primary', 7);
+	@include border-radius(0.5);
+	&:hover, &:focus {
+		background: brand-color('primary');
+		color: brand-color('white');
+		border:1px solid brand-color('primary');
 	}
 }
 
-// ALTERNATE BUTTON
+/* ALTERNATE BUTTON
 .btn__alt { // rounded orange outline
 	background: brand-color('white');
 	padding: baseline(0.25) 0.5em;
@@ -44,25 +68,26 @@ GLOBAL BUTTONS
 	text-decoration: none;
 	border:1px solid brand-color-lighten('primary', 7);
 	@include border-radius(8);
-	&:hover {
+	&:hover, &:focus {
 		background: brand-color('primary');
 		color: brand-color('white');
 		border:1px solid brand-color('primary');
 	}
-}
+} */
+
 
 // SEARCH BUTTON
 .btn__search, input[type='submit'].btn__search { // newsletter signup, blog search
 	@extend .btn;
 	height: 100%;
-	width: 100%; // for blog search button width
+	width: 100%; 								// for blog search button width
 	background: brand-color('text');
 	padding: baseline(0.5) 2em;
 	margin: baseline(0.5) 0 0;
 	display: block;
 	position: relative;
 	@extend .default-transition;
-	&:hover {
+	&:hover, &:focus {
 		background: brand-color('primary');
 	}
 	@include bp('tablet-v') {
@@ -80,7 +105,7 @@ GLOBAL BUTTONS
 	@extend .btn;
 	background: brand-color('gray3');
 	@include border-radius(1);
-	&:hover {
+	&:hover, &:focus {
 		background-color: brand-color-lighten('gray3',1);
 	}
 }
@@ -90,15 +115,91 @@ GLOBAL BUTTONS
 	@extend .btn;
 	background-color: brand-color('secondary');
 	@include border-radius(1);
-	&:hover {
+	&:hover, &:focus {
 		background-color: brand-color-lighten('secondary', 1);
 	}
-	@include bp('tablet-v') { // override .btn__mobile a styles
+	@include bp('tablet-v') { 					// override .btn__mobile a styles
 		font-weight: normal;
 		padding:0;
 		background: rgba(0,0,0,0);
-		&:hover {
+		&:hover, &:focus {
 			background: rgba(0,0,0,0);
+		}
+	}
+}
+
+
+/*******************************
+SOCIAL LINKS 
+*******************************/
+.social {
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-wrap: wrap;
+		padding: 0;
+		margin: 0 auto baseline(3);
+	}
+	li {
+		width:67px;
+		height:67px;
+		margin: 0 0.5em baseline(0.5);
+		border: 3px solid brand-color('gray2');
+		border-radius: 50%;
+		box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+		@extend .default-transition;
+		&:hover, &:active, &:focus {
+			border-color: white;
+		}
+		a {
+			width:100%;
+			height: 100%;
+			display: block;
+			position: relative;
+		}
+	}
+	svg {
+		fill: brand-color('white');
+		width:32px;
+		height:32px;
+		top: 25%;
+		left: 24%;
+		position: absolute;
+		@extend .default-transition;
+	}
+	.facebook, .twitter, .google, .rss, .email, .linkedin {
+		background-color: brand-color('gray2');
+	}
+	.facebook {
+		&:hover, &:focus {
+			background: social-color('facebook');
+		}
+	}
+	.twitter {
+		&:hover, &:focus {
+			background: social-color('twitter');
+		}
+	}
+	.google {
+		&:hover, &:focus {
+			background: social-color('google');
+		}
+	}
+	.rss {
+		&:hover, &:focus {
+			background: social-color('rss');
+		}
+	}
+	.email {
+		&:hover, &:focus {
+			background: brand-color('accent');
+		}
+	}
+	.linkedin {
+		&:hover, &:focus {
+			background: social-color('linkedin');
 		}
 	}
 }
