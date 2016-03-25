@@ -47,6 +47,12 @@ BLOG
 	}
 }
 
+.blog-intro {
+	@extend .panel-intro;
+	background: url('../images/panel-blog1.jpg') center center no-repeat;
+	background-size: cover;
+}
+
 .blog-categories {
 	width: intrinsic;
 	display: block;

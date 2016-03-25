@@ -17,6 +17,60 @@ GLOBAL
 	margin-right: auto;
 	margin-left: auto;
 }
+.panel-padding {								
+	padding: baseline(1.5) 0 baseline(1.5); 	// container padding
+}
+.panel-intro {
+	@extend .panel-padding;
+	text-align: center;
+	color: white;
+	background-color: brand-color('secondary');
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	h1, h2, h3 {
+		text-shadow: 2px 4px 2px brand-color('black');
+	}
+	h1 {
+		@include serif;
+		padding-bottom: 21px;
+		border-bottom: 1px dotted brand-color('white');
+	}
+	h2, h3 {
+		@include sans-serif;
+		margin-bottom: baseline(1);
+	}
+	> section {									// callout box
+		@include border-radius(1);
+		display: block;
+		height: intrinsic;
+		padding: 0 1em;
+		background: rgba(0,0,0,0.6);
+		@include bp('tablet-v') {		// breakpoint tablet vertical
+			padding: 0 2em;						// override side padding
+		}
+		@include bp('tablet-h') {		// breakpoint tablet horizontal
+			padding: 0 3em;						// override side padding
+		}
+		@include bp('laptop') {			// breakpoint laptop screen
+			width: 70%;							// override to shrink width
+		}
+		@include bp('monitor') {		// breakpoint monitor screen
+			width: 60%;							// override to shrink width
+			//margin: baseline(1) auto;			// override increase top & bottom margin
+		}
+		@include bp('television') {		// breakpoint televisions
+			width: 50%;							// override to shrink width
+			//margin: baseline(1) auto;			// override increase top & bottom margin
+		}
+	}
+	@include bp('laptop') {				// breakpoint laptop screen
+		min-height: 700px;
+	}
+	@include bp('television') {			// breakpoint television
+		min-height: 800px;
+	}
+}
 
 
 /***** TESTIMONIALS PANEL *****/
@@ -129,10 +183,12 @@ GLOBAL
 	}
 	input[type='email'] {
 		text-align: center;
-		border: 1px solid brand-color('accent'); // fix for 1px white below subscribe button
+		border: 1px solid brand-color-darken('accent',2); // fix for 1px white below subscribe button
+		box-shadow: inset 0 1px 4px brand-color('gray3');
 		@extend .default-transition;
 		&:focus {
-			border: 1px solid brand-color-darken('accent',2);
+			border-color: brand-color-darken('primary', 0); // override border color
+			box-shadow: inset 0 1px 4px white;	// override box-shadow color
 		}
 	}
 	@include bp('phone-h') {			// breakpoint smartphone horizontal
@@ -192,7 +248,7 @@ HOMEPAGE SECTIONS
 	transform-origin: center center;
 	animation: spin 40s linear infinite;
 }
-.hm-splash section {
+.hm-splash > section {
 	background: url('../images/lady.png') no-repeat;
 	background-position: center center;
 	background-size: 100% 100%;
@@ -226,8 +282,6 @@ HOMEPAGE SECTIONS
 	}
 	h2, h3 {
 		@include serif;
-		letter-spacing: 0.05em;
-		text-shadow: 2px 4px 2px brand-color('black');
 	}
 	h2, h4 {
 		text-align: center;
@@ -330,7 +384,6 @@ HOMEPAGE SECTIONS
 	h2 {
 		@include serif;
 		@include font-size(60);
-		letter-spacing: 0.05em;
 	}
 	h4 {
 		font-weight: normal;
@@ -366,24 +419,90 @@ HOMEPAGE SECTIONS
 SERVICES
 *******************************/
 .services-intro {
-	text-align: center;
-	background: #cfe1e5;
+	@extend .panel-intro;						// from _pages.scss
+	background: url('../images/splash_services-400.jpg') center center no-repeat; // 400 x 800
+	background-size: cover;
+	@include bp('tablet-v') {											// breakpoint tablet vertical
+		background-image: url('../images/splash_services-800.jpg'); 			// 800 x 800
+	}
+	@include bp('laptop') {												// breakpoint laptop screen
+		background-image: url('../images/splash_services-1200.jpg'); 			// 1200 x 800
+	}
+	@include bp('monitor') {											// breakpoint monitor screen
+		background-image: url('../images/splash_services-1600.jpg'); 			// 1600 x 800
+	}
 }
+
 
 .services-websites {
+	@extend .panel-padding;						// from _pages.scss
 }
 
+
 .services-branding {
+	@extend .panel-padding;						// from _pages.scss
 	background-color: brand-color-lighten('secondary', 9);
 }
 
+
 .services-design {
+	@extend .panel-padding;						// from _pages.scss
+	ul {
+		column-count: 1;
+		column-gap: 1em;
+		list-style: inside disc;
+		margin: 0;
+		padding-left: 0.5em;
+	}
+	li { 										// inside bullet positioning
+		padding-left: 1em;
+		text-indent: -1em;
+	}
+	@include bp('phone-h') {			// breakpoint smartphone horizontal
+		ul {
+			column-count:2;						// increase column count
+		}
+	}
+	@include bp('tablet-h') {			// breakpoint tablet horizontal
+		ul {
+			column-count:3;						// increase column count
+		}
+	}
+	@include bp('laptop') {				// breakpoint laptop screen
+		ul {
+			column-count:4;						// increase column count
+		}
+	}
 }
 
-.project-icon { 								// used on Services, Project pages
-	svg {
-		display: block;
-		margin: 0 auto;
+.portfolio-icon { 								// used on Services, Project pages
+	@include serif;
+	text-shadow: none;							// remove text-shadow from include serif
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	svg {										// set svg width and height
+		width: 200px;
+		height: 133px;
+	}
+	span {										// add bottom spacing and border 
+		margin-bottom: 0.5em;
+		padding-bottom: 0.5em;
+		border-bottom: 1px solid black;
+	}
+	@include bp('laptop') {				// breakpoint laptop screen
+		flex-direction: row;
+		svg {									// add side spacing and border
+			margin-right: 0.5em;
+			padding-right: 0.5em;
+			border-right: 1px solid black;
+		}
+		span {									// remove bottom spacing and border
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: none; 
+		}
 	}
 }
 
@@ -392,18 +511,33 @@ SERVICES
 PORTFOLIO
 *******************************/
 .portfolio-intro {
-	text-align: center;
-	background: #cfe1e5;
+	@extend .panel-intro;						// from _pages.scss
+	background: url('../images/splash_portfolio-400.jpg') center center no-repeat; // 400 x 800
+	background-size: cover;
+	@include bp('tablet-v') {											// breakpoint tablet vertical
+		background-image: url('../images/splash_portfolio-800.jpg'); 				// 800 x 800
+	}
+	@include bp('laptop') {												// breakpoint laptop screen
+		background-image: url('../images/splash_portfolio-1200.jpg'); 			// 1200 x 800
+	}
+	@include bp('monitor') {											// breakpoint monitor screen
+		background-image: url('../images/splash_portfolio-1600.jpg'); 			// 1600 x 800
+	}
 }
 
 .portfolio-websites {
+	@extend .panel-padding;						// from _pages.scss
+	padding-bottom: baseline(0.5);				// override .panel-padding
 }
 
 .portfolio-branding {
+	@extend .panel-padding;						// from _pages.scss
+	padding-bottom: baseline(0.5);				// override .panel-padding
 	background-color: brand-color-lighten('secondary', 9);
 }
 
 .portfolio-design {
+	@extend .panel-padding;						// from _pages.scss
 }
 
 .portfolio-websites, .portfolio-branding, .portfolio-design { // project cards
@@ -412,7 +546,7 @@ PORTFOLIO
 		margin-bottom: baseline(1);
 		box-shadow: 0 2px 4px brand-color-alpha('gray2','dark');
 		position: relative;
-		a:before {
+		a:before { 								// hidden overlay box-shadow for hover
 			content: '';
 			width: 100%;
 			height: 100%;
@@ -420,8 +554,11 @@ PORTFOLIO
 			position: absolute;
 			@extend .default-transition;
 		}
-		a:hover::before {
+		a:hover::before {						// show overlay box-shadow
 			box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+		}
+		@include bp('tablet-v') {			// breakpoint laptop screen
+			@include font-size(14);				// override ul font size — _typography.scss
 		}
 	}
 	h3 {
@@ -437,20 +574,34 @@ PORTFOLIO
 COMPANY
 *******************************/
 .company-intro {
-	text-align: center;
-	background: #cfe1e5;
+	@extend .panel-intro;
+	background: url('../images/splash_company-400.jpg') center center no-repeat; // 400 x 800
+	background-size: cover;
+	@include bp('tablet-v') {											// breakpoint tablet vertical
+		background-image: url('../images/splash_company-800.jpg'); 				// 800 x 800
+	}
+	@include bp('laptop') {												// breakpoint laptop screen
+		background-image: url('../images/splash_company-1200.jpg'); 			// 1200 x 800
+	}
+	@include bp('monitor') {											// breakpoint monitor screen
+		background-image: url('../images/splash_company-1600.jpg'); 			// 1600 x 800
+	}
 }
 
 .company-success {
+	@extend .panel-padding;
+	padding-bottom: baseline(2.5);				// override .panel-padding
 	background-color: brand-color-lighten('secondary', 9);
 }
 
-.portfolio-branding {
-}
+/* .portfolio-branding {
+	@extend .panel-padding;
+} */
 
-.company-methodology {
+/* .company-methodology {
+	@extend .panel-padding;
 	background-color: brand-color-lighten('secondary', 9);
-}
+} */
 
 
 /*******************************

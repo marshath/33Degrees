@@ -385,13 +385,134 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/water.jpg": {
+	"\/library\/images\/splash_company-1200.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 208535,
-		"inputAbbreviatedPath": "\/library\/images\/water.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/water.jpg",
+		"initialSize": 68449,
+		"inputAbbreviatedPath": "\/library\/images\/splash_company-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_company-1200.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_company-1600.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 84714,
+		"inputAbbreviatedPath": "\/library\/images\/splash_company-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_company-1600.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_company-400.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23981,
+		"inputAbbreviatedPath": "\/library\/images\/splash_company-400.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_company-400.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_company-800.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 47794,
+		"inputAbbreviatedPath": "\/library\/images\/splash_company-800.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_company-800.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_portfolio-1200.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 63908,
+		"inputAbbreviatedPath": "\/library\/images\/splash_portfolio-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_portfolio-1200.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_portfolio-1600.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 78163,
+		"inputAbbreviatedPath": "\/library\/images\/splash_portfolio-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_portfolio-1600.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_portfolio-400.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22697,
+		"inputAbbreviatedPath": "\/library\/images\/splash_portfolio-400.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_portfolio-400.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_portfolio-800.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 43102,
+		"inputAbbreviatedPath": "\/library\/images\/splash_portfolio-800.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_portfolio-800.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_services-1200.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 58941,
+		"inputAbbreviatedPath": "\/library\/images\/splash_services-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_services-1200.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_services-1600.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 77533,
+		"inputAbbreviatedPath": "\/library\/images\/splash_services-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_services-1600.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_services-400.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20955,
+		"inputAbbreviatedPath": "\/library\/images\/splash_services-400.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_services-400.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash_services-800.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38918,
+		"inputAbbreviatedPath": "\/library\/images\/splash_services-800.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash_services-800.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

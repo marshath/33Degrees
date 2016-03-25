@@ -78,10 +78,13 @@ h6 {
 // PARAGRAPH
 p {
 	margin-bottom: baseline(1);
-	@include bp('tablet-v') {				// breakpoint tablet vertical - paragraph font-size
-		@include font-size(18);
+}
+p, .entry-content > ul  {
+	@include bp('tablet-v') {				// breakpoint tablet vertical
+		@include font-size(18);						// increase paragraph font-size
 	}
 }
+
 
 // FORMATTING
 .page-title, .page-subtitle, .archive-title {

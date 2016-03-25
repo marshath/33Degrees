@@ -7,7 +7,7 @@
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+						<div id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 							<header class="article-header">
 
@@ -25,7 +25,7 @@
 
 							</footer> <?php // end .article-footer ?>
 
-						</article> <?php // end #post-<id> ?>
+						</div> <?php // end #post-<id> ?>
 
 						<?php endwhile; 
 						endif; ?>

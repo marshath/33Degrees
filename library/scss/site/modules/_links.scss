@@ -153,16 +153,30 @@ PROJECT LINKS
 			}
 		}
 	}
-	@include bp('phone-h') {				// breakpoint phone horizontal
+	@include bp('tablet-v') {					// breakpoint tablet horizontal
 		flex-flow: row wrap;
 		justify-content: space-between;
 		li {
 			width:48%;
 		}
 	}
-	@include bp('tablet-h') {				// breakpoint tablet horizontal
+	@include bp('monitor') {					// breakpoint laptop screen
 		li {
 			width:31%;
+		}
+	}
+}
+@include bp('tablet-v') {						// breakpoint tablet horizontal
+	.portfolio-branding, .portfolio-design {
+		li:first-child {								// enlarge the first child
+			width: 100%;
+		}
+	}
+}
+@include bp('monitor') {						// breakpoint laptop screen
+	.portfolio-branding, .portfolio-design {
+		li:first-child {								// enlarge the first child
+			width: 31%;
 		}
 	}
 }

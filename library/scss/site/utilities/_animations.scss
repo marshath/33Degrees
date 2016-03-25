@@ -72,7 +72,7 @@ SERVICE ICON REVEALS
 	from { transform: translate(-6px, 8px) }
 	to   { transform: translate(0, 0) }
 }
-#icon-website, #icon-logo, #icon-design { 		// animate in service icons - website, logo, design
+/* #icon-website, #icon-logo, #icon-design { 		// animate in service icons - website, logo, design
 	animation: zoomInFade 2s ease-in;
 }
 .icon-website__phone, .icon-design__email { 	// animate in left icons - phone (website), email (design)
@@ -86,4 +86,4 @@ SERVICE ICON REVEALS
 }
 .icon-logo__right { 							// animate in right logo lines
 	animation: revealRightLogo 2s ease-out infinite;
-}
+} */
