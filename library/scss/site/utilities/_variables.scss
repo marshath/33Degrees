@@ -86,7 +86,9 @@ $social-colors: (
 
 // ALPHA (opacity)
 $color-opacity: (			// set opacity values
+	'full': 1,				// opacity to 100%
 	'light': 0.8,			// opacity used with lighter colors
 	'dark': 0.4,			// opacity used with darker colors
+	'none': 0,				// opacity to 0%
 );
 

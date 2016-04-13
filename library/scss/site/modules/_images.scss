@@ -31,13 +31,13 @@ GLOBAL IMAGES
 	&__2 { stroke: #1d0e08; }
 }
 /* SERVICE ICONS - LIGHT BG */
-.page-id-63, .page-id-65 { 							// Services, Profolio icon colors
+.page-id-63, .page-id-65 { 							// Services icon colors
 	.fill { 										// Fill colors
-		&__1 { fill: brand-color('text'); }
-		&__2 { fill: brand-color('white'); }
+		&__1 { fill: brand-color-darken('primary', 6); }
+		&__2 { fill: brand-color-lighten('gray3', 5); }
 	}
 	.stroke { 										// Stroke colors
-		&__1 { stroke: brand-color('text'); }
-		&__2 { stroke: brand-color('white'); }
+		&__1 { stroke: brand-color-darken('primary', 6); }
+		&__2 { stroke: brand-color-lighten('gray3', 5); }
 	}
 }

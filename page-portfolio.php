@@ -3,12 +3,12 @@
 			<div id="content" class="wrap">
 				<div id="inner-content">
 					
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main">
 								
 								
 						<?php /* PANEL 1 — CONTENT */ ?>
-						<div id="panel-intro" <?php post_class( 'row portfolio-intro' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-intro" <?php post_class( 'row portfolio-intro' ); ?>>
+							<section class="entry-content inner-wrap">
 								
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 								
@@ -25,8 +25,8 @@
 								
 						<?php /* PANEL 2 — WEBSITE */ ?>
 						<a id="website"></a>
-						<div id="panel-website" <?php post_class( 'row portfolio-websites' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-website" <?php post_class( 'row portfolio-websites' ); ?>>
+							<section class="entry-content inner-wrap">
 								
 								<div class="subhead">
 									<?php echo get_field('panel_2'); // display the content ?>
@@ -71,8 +71,8 @@
 								
 						<?php /* PANEL 3 — BRANDING */ ?>
 						<a id="branding"></a>
-						<div id="panel-branding" <?php post_class( 'row portfolio-branding' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-branding" <?php post_class( 'row portfolio-branding' ); ?>>
+							<section class="entry-content inner-wrap">
 								
 								<div class="subhead">
 									<?php echo get_field('panel_3'); // display the content ?>
@@ -117,8 +117,8 @@
 								
 						<?php /* PANEL 4 — DESIGN */ ?>
 						<a id="design"></a>
-						<div id="panel-design" <?php post_class( 'row portfolio-design' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-design" <?php post_class( 'row portfolio-design' ); ?>>
+							<section class="entry-content inner-wrap">
 								
 								<div class="subhead">
 									<?php echo get_field('panel_4'); // display the content ?>

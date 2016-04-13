@@ -363,6 +363,72 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/services__branding-1200.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21721,
+		"inputAbbreviatedPath": "\/library\/images\/services__branding-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/services__branding-1200.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/services__branding-1600.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 32923,
+		"inputAbbreviatedPath": "\/library\/images\/services__branding-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/services__branding-1600.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/services__design-1200.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21881,
+		"inputAbbreviatedPath": "\/library\/images\/services__design-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/services__design-1200.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/services__design-1600.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 32074,
+		"inputAbbreviatedPath": "\/library\/images\/services__design-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/services__design-1600.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/services__websites-1200.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23035,
+		"inputAbbreviatedPath": "\/library\/images\/services__websites-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/services__websites-1200.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/services__websites-1600.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 33483,
+		"inputAbbreviatedPath": "\/library\/images\/services__websites-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/services__websites-1600.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/side-emailmarketing.png": {
 		"fileType": 32768,
 		"ignore": 0,

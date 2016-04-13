@@ -9,7 +9,7 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 								
-								<figure>
+								<figure class="featured-image">
 				                    <?php the_post_thumbnail(''); ?>
 								</figure>
 

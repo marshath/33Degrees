@@ -43,9 +43,9 @@ input[type='submit'] {
 	width: 100%;
 	padding: baseline(0.5) 1em;
 	border:0;
+	box-sizing: border-box;
 }
 input[type="search"] { 								// override for blog search
-	width: 96%;
 	text-align: center;
 	@include bp('tablet-v') {				// breakpoint tablet vertical
 		text-align: left;

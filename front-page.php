@@ -89,7 +89,7 @@
 								
 								<ul class="overlay-links">
 								<?php // Display recent blog posts
-									$args = array( 'numberposts' => '2', 'post_status' => 'publish' );
+									$args = array( 'numberposts' => '4', 'post_status' => 'publish' );
 									$recent_posts = wp_get_recent_posts($args);
 									foreach($recent_posts as $recent) {
 										echo '<li>

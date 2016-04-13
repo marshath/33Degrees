@@ -5,18 +5,24 @@
 
 					<main id="main" class="main-wrap" role="main">
 						
-						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+						<div class="blog-intro">
+							<section>
 						
-						<?php // BLOG SEARCH ?>
-						<div class="blog-search"><?php get_search_form(); ?></div>
+								<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+								
+								<?php // BLOG SEARCH ?>
+								<div class="blog-search"><?php get_search_form(); ?></div>
+								
+								<?php // BLOG CATEGORIES ?>
+								<div class="blog-categories">
+									<h3>Categories:</h3>
+									<ul>
+										<?php wp_list_categories('title_li='); ?>
+									</ul>
+								</div><?php // .sidebar__categories ?>
 						
-						<?php // BLOG CATEGORIES ?>
-						<div class="blog-categories">
-							<h3>Categories:</h3>
-							<ul>
-								<?php wp_list_categories('title_li='); ?>
-							</ul>
-						</div><?php // .sidebar__categories ?>
+							</section>
+						</div> <?php // end .blog-intro ?>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
