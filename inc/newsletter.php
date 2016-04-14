@@ -1,7 +1,7 @@
 <?php //--- Newsletter --// ?>
 
-						<article id="panel-newsletter" <?php post_class( 'row newsletter' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-newsletter" <?php post_class( 'row newsletter' ); ?>>
+							<section class="inner-wrap">
 								
 								<?php // Inbox icon ?>
 								<div class="icon-inbox"><svg><use xlink:href="#icon-inbox"></use></svg></div>
@@ -26,4 +26,4 @@
 									
 								</form><?php // end MailChimp Signup Form ?>
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end #panel-newsletter .row .newsletter ?>
+						</div> <?php // end #panel-newsletter .row .newsletter ?>

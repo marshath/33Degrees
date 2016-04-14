@@ -7,8 +7,8 @@
 								
 								
 						<?php /* SPLASH */ ?>
-						<article id="panel-splash" <?php post_class( 'row hm-splash' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-splash" <?php post_class( 'row hm-splash' ); ?>>
+							<section class="entry-content inner-wrap">
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							
 								<div class="cta-wrap">
@@ -32,7 +32,7 @@
 							<?php endwhile; endif; ?>
 							</section> <?php // end .entry-content .inner-wrap  ?>
 									
-						</article> <?php // end #panel-splash .row .hm-splash ?>
+						</div> <?php // end #panel-splash .row .hm-splash ?>
 						
 						
 						<?php /* NEWSLETTER */
@@ -40,52 +40,22 @@
 						
 						
 						<?php /* SERVICES */ ?>
-						<article id="panel-services" <?php post_class( 'row hm-services' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-services" <?php post_class( 'row hm-services' ); ?>>
+							<section class="entry-content inner-wrap">
 								<?php echo get_field('panel_2'); // display the content ?>
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end #panel-services .row .hm-services ?>
-								
-								
-						<?php /* TESTIMONIALS */ ?>
-						<article id="panel-testimonials" <?php post_class( 'row testimonials' ); ?> role="article">
-							<section class="entry-content" itemprop="articleBody">
-								<?php echo get_field('panel_3'); // Display the content ?>
-								
-								<div class="flex-section-container">
-									<div class="flexslider">
-										<ul class="slides quotes">
-											
-										<?php // Display Testimonials
-											query_posts(array('post_type'=>'testimonial')); ?>
-											
-											<?php $my1post = array( 'post_type' => 'testimonial' );
-											$qloop = new WP_Query( $my1post ); // Cycle through all posts
-											while ( $qloop->have_posts() ) : $qloop->the_post(); ?>
-											
-											<li>
-												<blockquote>
-													<?php the_content(); ?>
-													<cite>&mdash;<?php echo get_the_title(get_the_ID()); ?>, <a href="<?php echo esc_url( home_url( '/' ) ); ?><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_url', true ) ); ?>"><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_company', true ) ); ?></a></cite>
-												</blockquote>
-											</li>
-											
-										<?php endwhile; 
-										wp_reset_query(); ?>
-										
-										</ul> <?php // end .testimonials  ?>
-									</div>
-								</div>
-											
-							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end #panel-testimonials .row .hm-services ?>
+						</div> <?php // end #panel-services .row .hm-services ?>
+						
+						
+						<?php /* NEWSLETTER */
+						get_template_part('inc/testimonials'); ?>
 								
 								
 						<?php /* BLOG POSTS */ ?>
-						<article id="panel-blog" <?php post_class( 'row hm-blog' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-blog" <?php post_class( 'row hm-blog' ); ?>>
+							<section class="entry-content inner-wrap">
 								
-								<?php echo get_field('panel_4'); // Display the content ?>
+								<?php echo get_field('panel_3'); // Display the content ?>
 								
 								<ul class="overlay-links">
 								<?php // Display recent blog posts
@@ -103,7 +73,7 @@
 								</ul> <?php // end .blogposts  ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end #panel-blog .row .hm-blog ?>
+						</div> <?php // end #panel-blog .row .hm-blog ?>
 						
 						
 					</main> <?php // end #main .main-wrap ?>

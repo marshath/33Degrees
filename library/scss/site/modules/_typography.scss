@@ -43,27 +43,19 @@ h6 {
 }
 @include bp('tablet-v') {					// breakpoint tablet vertical - heading sizes
 	h2 {
-		@include font-size(36);
+		@include font-size(32);
 	}
 	h3 {
-		@include font-size(28);
+		@include font-size(26);
 	}
 	h4 {
-		@include font-size(24);
+		@include font-size(22);
 	}
 	h5 {
 		@include font-size(20);
 	}
 	h6 {
 		@include font-size(18);
-	}
-}
-@include bp('laptop') {						// breakpoint laptop screen - heading sizes
-	h2 {
-		@include font-size(40);
-	}
-	h3 {
-		@include font-size(32);
 	}
 }
 
@@ -78,13 +70,10 @@ h6 {
 // PARAGRAPH
 p {
 	margin-bottom: baseline(1);
-}
-p, .entry-content > ul  {
 	@include bp('tablet-v') {				// breakpoint tablet vertical
 		@include font-size(18);						// increase paragraph font-size
 	}
 }
-
 
 // FORMATTING
 .page-title, .page-subtitle, .archive-title {
@@ -121,16 +110,19 @@ code {
 	padding:0 5px;
 	display:inline-block;
 }
-.blockcode {
-	width:100%;
-	padding: 1em;
-	display:block;
-	overflow: hidden;
-	overflow-x: scroll;
-}
 .center {
 	text-align: center;
 }
+.no-space > li {
+	p {
+		margin: 0;
+		padding: 0;
+	}
+	&:last-child {
+		margin-bottom: baseline(1);
+	}
+}
+
 
 /*******************************
 BLOCKQUOTE

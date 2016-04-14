@@ -623,12 +623,12 @@ PORTFOLIO
 		a:hover::before {						// show overlay box-shadow
 			box-shadow: 0 6px 8px rgba(0,0,0,0.2);
 		}
-		@include bp('tablet-v') {			// breakpoint laptop screen
-			@include font-size(14);				// override ul font size — _typography.scss
-		}
 	}
 	h3 {
 		font-weight: normal;
+		@include bp('tablet-v') {			// breakpoint laptop screen
+			@include font-size(26);				// override ul font size — _typography.scss
+		}
 	}
 	h3, p {
 		padding: 0 16px;
@@ -658,17 +658,16 @@ COMPANY
 	@extend .panel-padding;
 	padding-bottom: baseline(2.5);				// override .panel-padding
 	background-color: brand-color-lighten('secondary', 9);
+	h2 {
+		@include serif;
+		text-shadow: none;
+	}
 }
 
-/* .portfolio-branding {
-	@extend .panel-padding;
-} */
-
-/* .company-methodology {
-	@extend .panel-padding;
-	background-color: brand-color-lighten('secondary', 9);
-} */
-
+.image-right {
+	width: 50%;
+	float: right;
+}
 
 /*******************************
 CONTACT & ESTIMATE FORMS, THANK YOU

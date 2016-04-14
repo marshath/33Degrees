@@ -6,7 +6,7 @@
 					<main id="main" class="main-wrap" role="main">
 								
 								
-						<?php /* PANEL 1 — CONTENT */ ?>
+						<?php /* CONTENT */ ?>
 						<div id="panel-intro" <?php post_class( 'row portfolio-intro' ); ?>>
 							<section class="entry-content inner-wrap">
 								
@@ -23,7 +23,7 @@
 						</div> <?php // end .row .portfolio-intro ?>
 								
 								
-						<?php /* PANEL 2 — WEBSITE */ ?>
+						<?php /* WEBSITE */ ?>
 						<a id="website"></a>
 						<div id="panel-website" <?php post_class( 'row portfolio-websites' ); ?>>
 							<section class="entry-content inner-wrap">
@@ -69,7 +69,7 @@
 						</div> <?php // end .row .portfolio-websites ?>
 								
 								
-						<?php /* PANEL 3 — BRANDING */ ?>
+						<?php /* BRANDING */ ?>
 						<a id="branding"></a>
 						<div id="panel-branding" <?php post_class( 'row portfolio-branding' ); ?>>
 							<section class="entry-content inner-wrap">
@@ -115,7 +115,7 @@
 						</div> <?php // end .row .portfolio-branding ?>
 								
 								
-						<?php /* PANEL 4 — DESIGN */ ?>
+						<?php /* DESIGN */ ?>
 						<a id="design"></a>
 						<div id="panel-design" <?php post_class( 'row portfolio-design' ); ?>>
 							<section class="entry-content inner-wrap">

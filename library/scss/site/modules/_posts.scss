@@ -131,21 +131,57 @@ BLOG
 	}
 }
 
+.single .entry-content h3 {
+	font-weight: 400;
+	text-decoration: underline;
+}
 .attachment-post-thumbnail {
 	margin-top:baseline(1);
 }
 
-.article-footer {
-	svg { 											// icon size for About the Author
+.author-social {
+	svg {											// social media icons
 		width:16px;
 		height:16px;
-		margin-left:0.5em;
+		margin:0 0.25em;
 		fill: brand-color('primary');
-		&:hover, &:focus {
-			fill: brand-color-darken('primary', 4);
+	}
+	a {
+		border-bottom: none;						// remove link bottom border
+		&:hover svg, &:focus svg {
+			fill: brand-color('white');
 		}
 	}
 }
+
+// BLOCKQUOTE CALLOUTS
+.single blockquote {
+	background: brand-color-lighten('gray3', 5);
+	margin: baseline(1.25) 0;						// override browser agent
+	padding: baseline(0.5) 2em;
+	border-left: 8px solid brand-color('primary');
+}
+
+.blockbox {											// blog callout for related posts or bonus tips
+	max-width: 980px;
+	background: white;
+	padding: 0 1em;
+	margin: 0 auto;
+	border: 4px solid brand-color-lighten('accent', 7);
+	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+	h3, h4 {
+		text-decoration: underline;
+	}
+}
+
+.blockcode {										// blog callout for code
+	width:100%;
+	padding: 1em;
+	display:block;
+	overflow: hidden;
+	overflow-x: scroll;
+}
+
 
 // BLOG, PROJECT FORMATTING
 .single { 
@@ -153,7 +189,7 @@ BLOG
 		text-align: center;
 	}
 	.entry-content { 								// blog page text indenting
-		h2, h3, p, ul {
+		h2, h3, h4, h5, h6, p, ul, ol {
 			@extend .max-width; 					// from _page.scss
 		}
 	}
@@ -186,7 +222,7 @@ h1.entry-title {
 
 // AUTHOR IMAGE
 .author-box { 										// white border and shadow
-	border: 4px solid white;
+	border: 4px solid brand-color-lighten('secondary', 8);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 	h4 {
 		margin-top: baseline(0.25);
@@ -195,6 +231,14 @@ h1.entry-title {
 	p {
 		margin-top:0;
 	}
+}
+.author-box-head {
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: baseline(0.5);
+	text-align: center;
 }
 .author-pic, .author-img {
 	@include border-radius(10);
@@ -210,8 +254,16 @@ h1.entry-title {
 	width: 100px;
 	height: 100px;
 	float: left;
-	margin-right: 1em;
 	vertical-align: top;
+}
+@include bp('tablet-v') {					// breakpoint tablet vertical
+	.author-box-head {
+		flex-direction: row;						// override flex direction
+		text-align: left;							// override text alignment
+	}
+	.author-img {
+		margin-right: 1em;							// add margin right
+	}
 }
 
 
@@ -229,37 +281,8 @@ h1.entry-title {
 }
 
 // BLOG ARCHIVE LIST
-.block-thumb {
-	.b-inner {
-		// @include clearfix;
-	}
-	.b-thumb {
-		// @include column(3);
-	}
-	.b-text {
-		// @include column(9);
-	}
-	.b-title {
-		
-	}
-}
-
 .block-headline {
 	text-decoration: none;
-}
-
-.block-hero {
-	.b-thumb {
-		// @include column(12);
-	}
-}
-
-.block-inset {
-	.b-thumb {
-		
-	}
-	.b-text {
-	}
 }
 
 
@@ -269,7 +292,7 @@ h1.entry-title {
 
 .vcard {
 	max-width:700px;
-	background-color: brand-color-lighten('gray3', 5);
+	background-color: white;
 	padding: baseline(0.5) 1em baseline(1);
 	margin: 0 auto baseline(2); 					// center vcard and add margin to the bottom
 	h3 {
