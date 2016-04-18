@@ -34,10 +34,10 @@ GLOBAL IMAGES
 .page-id-63, .page-id-65 { 							// Services icon colors
 	.fill { 										// Fill colors
 		&__1 { fill: brand-color-darken('primary', 6); }
-		&__2 { fill: brand-color-lighten('gray3', 5); }
+		&__2 { fill: brand-color-lighten('gray3', 7); }
 	}
 	.stroke { 										// Stroke colors
 		&__1 { stroke: brand-color-darken('primary', 6); }
-		&__2 { stroke: brand-color-lighten('gray3', 5); }
+		&__2 { stroke: brand-color-lighten('gray3', 7); }
 	}
 }

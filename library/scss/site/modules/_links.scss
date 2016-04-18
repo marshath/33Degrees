@@ -80,9 +80,11 @@ OVERLAY LINKS
 	text-align: left;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: space-around;
+	justify-content: space-between;
+	align-items: center;
 	li {
 		margin-bottom: baseline(1);
+		float: left;
 		&:hover, &:focus {
 			figcaption {
 				bottom: baseline(1);
@@ -160,7 +162,7 @@ PROJECT LINKS
 			width:48%;
 		}
 	}
-	@include bp('monitor') {					// breakpoint laptop screen
+	@include bp('laptop') {					// breakpoint laptop screen
 		li {
 			width:31%;
 		}
@@ -173,7 +175,7 @@ PROJECT LINKS
 		}
 	}
 }
-@include bp('monitor') {						// breakpoint laptop screen
+@include bp('laptop') {						// breakpoint laptop screen
 	.portfolio-branding, .portfolio-design {
 		li:first-child {								// enlarge the first child
 			width: 31%;

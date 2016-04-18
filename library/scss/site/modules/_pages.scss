@@ -75,7 +75,9 @@ GLOBAL
 
 /***** TESTIMONIALS PANEL *****/
 .testimonials {
-	background-color: brand-color-lighten('secondary', 8.5);
+	// background-color: brand-color-lighten('secondary', 8.5);
+	background-color: brand-color-darken('tritiary', 1);
+	color: brand-color('white');
 	text-align: center;
 	padding: baseline(0.5) 0 baseline(1.5); 	// bottom panel padding
 	// border-top: 0.5em solid white;
@@ -85,23 +87,18 @@ GLOBAL
 	align-items: stretch;
 	align-content: center;
 	justify-content: center;
+	h2 {
+		font-style: italic;
+		text-shadow: 1px 2px 1px brand-color-alpha('black','light');
+	}
 	p {
 		margin-top: baseline(0.5);
 		margin-bottom: 0; 						// remove bottom padding to bring up <cite>
 	}
-	cite {
-		@include font-size(12);
-		color: brand-color('gray2');
-		text-align: center; 					// override _typography.scss
-	}
-	h2 {
-		color: brand-color-lighten('secondary',0);
-		font-style: italic;
-		text-shadow: 1px 2px 1px brand-color-alpha('white','light');
-	}
 	blockquote {
 		padding-left: 1em;
 		padding-right: 1em;
+		font-weight: bold;
 		margin: baseline(1) auto 0;
 		position: relative; 					// quotes before and after testimonial
 		overflow: hidden;
@@ -125,6 +122,20 @@ GLOBAL
 			bottom: baseline(1.25); 			// sets quote above <cite>
 			transform: rotate3d(0,0,1,180deg); 	// rotates the quote SVG to upside down
 			z-index: -1; 						// sets the quote SVG below the blockquote
+		}
+	}
+	cite {
+		@include font-size(12);
+		color: brand-color-lighten('tritiary', 9);
+		font-weight: normal;
+		text-align: center; 					// override _typography.scss
+		a {										// override default link style
+			color: brand-color-lighten('tritiary', 8);
+			border-color: brand-color-lighten('tritiary', 8);
+			&:hover {
+				border-color: brand-color('primary');
+				color: brand-color('white');
+			}
 		}
 	}
 	@include bp('phone-h') { 			// breakpoint smartphone horizontal
@@ -208,6 +219,10 @@ GLOBAL
 		padding-bottom: baseline(1.5); 			// add more bottom padding override
 
 	}
+}
+
+.email-bounce {									// inbox arrow animation
+	animation: emailBounce 8s ease-out infinite;
 }
 
 
@@ -377,8 +392,8 @@ HOMEPAGE SECTIONS
 
 .hm-blog {
 	background-color: brand-color('white');
-	background: url('../images/paper.jpg') repeat;
-	// box-shadow: inset 0 0 100px brand-color-alpha('black', 'dark');
+	background: url('../images/paper.jpg') center center no-repeat;
+	background-size: cover;
 	padding: baseline(1) 0 baseline(2.5); 		// container padding
 	text-align: center;
 	h2 {
@@ -391,10 +406,6 @@ HOMEPAGE SECTIONS
 	}
 	
 	.overlay-links {
-		figure {
-			// border: 0.5em solid brand-color('white');
-			//box-shadow: 0 2px 4px brand-color-alpha('gray1','dark');
-		}
 		figcaption { 							// override .overlay-links figcaption
 			@include font-size(20);
 			bottom: -(baseline(0.75));
@@ -406,10 +417,15 @@ HOMEPAGE SECTIONS
 	}
 	@include bp('tablet-v') {			// breakpoint tablet vertical
 		.overlay-links {
-			flex-flow: row nowrap;
+			flex-flow: row wrap;
 		}
 		li {
 			width: 48%;
+		}
+	}
+	@include bp('monitor') {			// breakpoint tablet vertical
+		li {
+			width: 24%;
 		}
 	}
 }
@@ -420,16 +436,16 @@ SERVICES
 *******************************/
 .services-intro {
 	@extend .panel-intro;						// from _pages.scss
-	background: url('../images/splash_services-400.jpg') center center no-repeat; // 400 x 800
+	background: url('../images/splash__services-400.jpg') center center no-repeat; // 400 x 800
 	background-size: cover;
 	@include bp('tablet-v') {											// breakpoint tablet vertical
-		background-image: url('../images/splash_services-800.jpg'); 			// 800 x 800
+		background-image: url('../images/splash__services-800.jpg'); 			// 800 x 800
 	}
 	@include bp('laptop') {												// breakpoint laptop screen
-		background-image: url('../images/splash_services-1200.jpg'); 			// 1200 x 800
+		background-image: url('../images/splash__services-1200.jpg'); 			// 1200 x 800
 	}
 	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/splash_services-1600.jpg'); 			// 1600 x 800
+		background-image: url('../images/splash__services-1600.jpg'); 			// 1600 x 800
 	}
 }
 
@@ -438,11 +454,9 @@ SERVICES
 	h2 {
 		color: brand-color-darken('primary', 6); // oreverride global
 	}
-	.intro {
-		@include font-size(20);
-		&:first-line {
-			font-weight: bold;
-		}
+	.intro:first-line {
+		color: brand-color-darken('gray2', 3);
+		font-weight: bold;
 	}
 }
 .services-websites, .services-design {
@@ -457,6 +471,9 @@ SERVICES
 		}
 	}
 }
+.services-branding, .portfolio-branding {
+	background-color: #e7e7e7;
+}
 
 .services-websites {
 	@include bp('laptop') {												// breakpoint laptop screen
@@ -468,7 +485,6 @@ SERVICES
 	}
 }
 .services-branding {
-	background-color: #d7d7d7;
 	@include bp('laptop') {												// breakpoint laptop screen
 		background: url('../images/services__branding-1200.jpg') center top no-repeat; // 1200 x 800
 		background-size: cover;
@@ -550,7 +566,7 @@ SERVICES
 	}
 }
 
-.serv-right, .serv-left {						// service image
+.serv-right, .serv-left {						// service icon positioning
 	width:36%;
 	margin-bottom: baseline(1);
 	@include bp('tablet-v') {			// breakpoint tablet vertical
@@ -581,16 +597,16 @@ PORTFOLIO
 *******************************/
 .portfolio-intro {
 	@extend .panel-intro;						// from _pages.scss
-	background: url('../images/splash_portfolio-400.jpg') center center no-repeat; // 400 x 800
+	background: url('../images/splash__portfolio-400.jpg') center center no-repeat; // 400 x 800
 	background-size: cover;
 	@include bp('tablet-v') {											// breakpoint tablet vertical
-		background-image: url('../images/splash_portfolio-800.jpg'); 				// 800 x 800
+		background-image: url('../images/splash__portfolio-800.jpg'); 				// 800 x 800
 	}
 	@include bp('laptop') {												// breakpoint laptop screen
-		background-image: url('../images/splash_portfolio-1200.jpg'); 			// 1200 x 800
+		background-image: url('../images/splash__portfolio-1200.jpg'); 			// 1200 x 800
 	}
 	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/splash_portfolio-1600.jpg'); 			// 1600 x 800
+		background-image: url('../images/splash__portfolio-1600.jpg'); 			// 1600 x 800
 	}
 }
 
@@ -599,7 +615,6 @@ PORTFOLIO
 }
 
 .portfolio-branding {
-	background-color: #d7d7d7;
 	padding-bottom: baseline(0.5);				// override .panel-padding
 }
 
@@ -641,33 +656,54 @@ COMPANY
 *******************************/
 .company-intro {
 	@extend .panel-intro;
-	background: url('../images/splash_company-400.jpg') center center no-repeat; // 400 x 800
+	background: url('../images/splash__company-400.jpg') center center no-repeat; // 400 x 800
 	background-size: cover;
 	@include bp('tablet-v') {											// breakpoint tablet vertical
-		background-image: url('../images/splash_company-800.jpg'); 				// 800 x 800
+		background-image: url('../images/splash__company-800.jpg'); 				// 800 x 800
 	}
 	@include bp('laptop') {												// breakpoint laptop screen
-		background-image: url('../images/splash_company-1200.jpg'); 			// 1200 x 800
+		background-image: url('../images/splash__company-1200.jpg'); 			// 1200 x 800
 	}
 	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/splash_company-1600.jpg'); 			// 1600 x 800
+		background-image: url('../images/splash__company-1600.jpg'); 			// 1600 x 800
 	}
 }
 
 .company-success {
 	@extend .panel-padding;
 	padding-bottom: baseline(2.5);				// override .panel-padding
-	background-color: brand-color-lighten('secondary', 9);
+	background-color: brand-color('white');
+	background: url('../images/paper.jpg') center center no-repeat;
+	background-size: cover;
+	.entry-content {
+		max-width: 980px;
+		margin: inherit auto;
+	}
 	h2 {
 		@include serif;
 		text-shadow: none;
+		margin-bottom: baseline(1);
+	}
+	img {
+		width: 60%;
+		display: block;
+		margin: auto;
+		animation: spin 10s linear infinite;
+	}
+	@include bp('tablet-v') {
+		img {
+			width: 50%;
+			margin: 0 0 baseline(1) 5%;
+			float: right;
+		}
+	}
+	@include bp('laptop') {
+		img {
+			width: 40%;
+		}
 	}
 }
 
-.image-right {
-	width: 50%;
-	float: right;
-}
 
 /*******************************
 CONTACT & ESTIMATE FORMS, THANK YOU

@@ -229,6 +229,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/bambo.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 77063,
+		"inputAbbreviatedPath": "\/library\/images\/bambo.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/bambo.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/clouds.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -460,134 +471,134 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_company-1200.jpg": {
+	"\/library\/images\/splash__company-1200.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 68449,
-		"inputAbbreviatedPath": "\/library\/images\/splash_company-1200.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_company-1200.jpg",
+		"initialSize": 74263,
+		"inputAbbreviatedPath": "\/library\/images\/splash__company-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__company-1200.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_company-1600.jpg": {
+	"\/library\/images\/splash__company-1600.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 84714,
-		"inputAbbreviatedPath": "\/library\/images\/splash_company-1600.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_company-1600.jpg",
+		"initialSize": 92855,
+		"inputAbbreviatedPath": "\/library\/images\/splash__company-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__company-1600.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_company-400.jpg": {
+	"\/library\/images\/splash__company-400.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 23981,
-		"inputAbbreviatedPath": "\/library\/images\/splash_company-400.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_company-400.jpg",
+		"initialSize": 27235,
+		"inputAbbreviatedPath": "\/library\/images\/splash__company-400.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__company-400.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_company-800.jpg": {
+	"\/library\/images\/splash__company-800.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 47794,
-		"inputAbbreviatedPath": "\/library\/images\/splash_company-800.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_company-800.jpg",
+		"initialSize": 52326,
+		"inputAbbreviatedPath": "\/library\/images\/splash__company-800.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__company-800.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_portfolio-1200.jpg": {
+	"\/library\/images\/splash__portfolio-1200.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 63908,
-		"inputAbbreviatedPath": "\/library\/images\/splash_portfolio-1200.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_portfolio-1200.jpg",
+		"initialSize": 80545,
+		"inputAbbreviatedPath": "\/library\/images\/splash__portfolio-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__portfolio-1200.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_portfolio-1600.jpg": {
+	"\/library\/images\/splash__portfolio-1600.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 78163,
-		"inputAbbreviatedPath": "\/library\/images\/splash_portfolio-1600.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_portfolio-1600.jpg",
+		"initialSize": 99748,
+		"inputAbbreviatedPath": "\/library\/images\/splash__portfolio-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__portfolio-1600.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_portfolio-400.jpg": {
+	"\/library\/images\/splash__portfolio-400.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 22697,
-		"inputAbbreviatedPath": "\/library\/images\/splash_portfolio-400.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_portfolio-400.jpg",
+		"initialSize": 29520,
+		"inputAbbreviatedPath": "\/library\/images\/splash__portfolio-400.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__portfolio-400.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_portfolio-800.jpg": {
+	"\/library\/images\/splash__portfolio-800.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 43102,
-		"inputAbbreviatedPath": "\/library\/images\/splash_portfolio-800.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_portfolio-800.jpg",
+		"initialSize": 55394,
+		"inputAbbreviatedPath": "\/library\/images\/splash__portfolio-800.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__portfolio-800.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_services-1200.jpg": {
+	"\/library\/images\/splash__services-1200.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 58941,
-		"inputAbbreviatedPath": "\/library\/images\/splash_services-1200.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_services-1200.jpg",
+		"initialSize": 71814,
+		"inputAbbreviatedPath": "\/library\/images\/splash__services-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__services-1200.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_services-1600.jpg": {
+	"\/library\/images\/splash__services-1600.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 77533,
-		"inputAbbreviatedPath": "\/library\/images\/splash_services-1600.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_services-1600.jpg",
+		"initialSize": 92229,
+		"inputAbbreviatedPath": "\/library\/images\/splash__services-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__services-1600.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_services-400.jpg": {
+	"\/library\/images\/splash__services-400.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 20955,
-		"inputAbbreviatedPath": "\/library\/images\/splash_services-400.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_services-400.jpg",
+		"initialSize": 24790,
+		"inputAbbreviatedPath": "\/library\/images\/splash__services-400.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__services-400.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/splash_services-800.jpg": {
+	"\/library\/images\/splash__services-800.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 38918,
-		"inputAbbreviatedPath": "\/library\/images\/splash_services-800.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/splash_services-800.jpg",
+		"initialSize": 46698,
+		"inputAbbreviatedPath": "\/library\/images\/splash__services-800.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__services-800.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -610,6 +621,17 @@
 		"initialSize": 403837,
 		"inputAbbreviatedPath": "\/library\/images\/wood.jpg",
 		"outputAbbreviatedPath": "\/library\/images\/wood.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/wood2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 106453,
+		"inputAbbreviatedPath": "\/library\/images\/wood2.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/wood2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

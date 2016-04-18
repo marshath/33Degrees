@@ -42,6 +42,15 @@ MOVEMENT
 	to   { transform: translateX(0%) }
 }
 
+@keyframes emailBounce {
+	from { transform: translateY(0%) }
+	88%  { transform: translateY(0%) }
+	90%  { transform: translateY(22%) }
+	94%  { transform: translateY(0%) }
+	96%  { transform: translateY(22%) }
+	to   { transform: translateY(0%) }
+}
+
 @keyframes spin { 								// used on homepage splash image
 	from { transform: rotate(0deg) }
 	to   { transform: rotate(360deg) }
