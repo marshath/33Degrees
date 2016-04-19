@@ -229,28 +229,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/bambo.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 77063,
-		"inputAbbreviatedPath": "\/library\/images\/bambo.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/bambo.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/clouds.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 424018,
-		"inputAbbreviatedPath": "\/library\/images\/clouds.png",
-		"outputAbbreviatedPath": "\/library\/images\/clouds.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/library\/images\/favicon_16.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -317,28 +295,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/logo-pdx.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1845,
-		"inputAbbreviatedPath": "\/library\/images\/logo-pdx.png",
-		"outputAbbreviatedPath": "\/library\/images\/logo-pdx.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/logo-pdx@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3796,
-		"inputAbbreviatedPath": "\/library\/images\/logo-pdx@2x.png",
-		"outputAbbreviatedPath": "\/library\/images\/logo-pdx@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/library\/images\/logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -357,28 +313,6 @@
 		"initialSize": 4803,
 		"inputAbbreviatedPath": "\/library\/images\/logo@2x.png",
 		"outputAbbreviatedPath": "\/library\/images\/logo@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/paper.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3391,
-		"inputAbbreviatedPath": "\/library\/images\/paper.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/paper.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/rays.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 97220,
-		"inputAbbreviatedPath": "\/library\/images\/rays.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/rays.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -467,6 +401,17 @@
 		"initialSize": 56310,
 		"inputAbbreviatedPath": "\/library\/images\/side-emailmarketing@2x.png",
 		"outputAbbreviatedPath": "\/library\/images\/side-emailmarketing@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash__blog-1600.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 110002,
+		"inputAbbreviatedPath": "\/library\/images\/splash__blog-1600.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__blog-1600.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -603,6 +548,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/texture__paper.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4802,
+		"inputAbbreviatedPath": "\/library\/images\/texture__paper.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/texture__paper.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/texture__wood.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 106453,
+		"inputAbbreviatedPath": "\/library\/images\/texture__wood.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/texture__wood.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/win8-tile-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -621,17 +588,6 @@
 		"initialSize": 403837,
 		"inputAbbreviatedPath": "\/library\/images\/wood.jpg",
 		"outputAbbreviatedPath": "\/library\/images\/wood.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/wood2.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 106453,
-		"inputAbbreviatedPath": "\/library\/images\/wood2.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/wood2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

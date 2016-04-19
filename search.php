@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 			<div id="content" class="wrap">
-				<div id="inner-content" class="inner-wrap">
+				<div id="inner-content" class="">
 
 					<main id="main" class="main-wrap" role="main">
 						
 						<div class="blog-intro">
-							<section>
+							<section class="inner-wrap">
 						
 								<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 								
@@ -26,7 +26,7 @@
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-archive' ); ?> role="article">
+							<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-archive inner-wrap' ); ?> role="article">
 								
 								<figure>
 				                    <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(''); ?></a>
@@ -57,7 +57,7 @@
 
 						<?php endwhile; ?>
 
-							<?php bones_page_navi(); ?>
+							<div class="pagination-margin inner-wrap"><?php bones_page_navi(); ?></div>
 
 						<?php else : ?>
 

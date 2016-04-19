@@ -80,7 +80,7 @@ p {
 	text-align: center;
 	span { 											// first line for blog archive titles
 		@include font-size(10);
-		color: brand-color('gray2');
+		color: brand-color('gray3');
 		display: block; 									// line break
 	}
 }

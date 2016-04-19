@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 			<div id="content" class="wrap">
-				<div id="inner-content" class="inner-wrap">
+				<div id="inner-content" class="">
 
 					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						
 						<div class="blog-intro">
-							<section>
+							<section class="inner-wrap">
 								
 							<?php if (is_category()) { ?>
 								<h1 class="archive-title"><span><?php _e( 'Posts Categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h1>
@@ -40,12 +40,12 @@
 									</ul>
 								</div><?php // .sidebar__categories ?>
 						
-							</section>
+							</section> <?php // end .inner-wrap ?>
 						</div> <?php // end .blog-intro ?>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
-						<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-archive' ); ?> role="article">
+						<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-archive inner-wrap' ); ?> role="article">
 							
 							<figure>
 			                    <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(''); ?></a>
@@ -72,15 +72,15 @@
 								</section>
 							</div>
 
-						</article> <?php // end #post-<id> .article-wrap ?>
+						</article> <?php // end #post-<id> .article-wrap .inner-wrap ?>
 
 						<?php endwhile; ?>
 
-							<?php bones_page_navi(); ?>
+							<div class="pagination-margin inner-wrap"><?php bones_page_navi(); ?></div>
 
 						<?php else : ?>
 
-							<article id="post-not-found" class="">
+							<article id="post-not-found" class="inner-wrap">
 								<header class="article-header">
 									<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 								</header>
@@ -90,7 +90,7 @@
 								<footer class="article-footer">
 									<p><?php _e( 'This is the error message in the archive.php template.', 'bonestheme' ); ?></p>
 								</footer>
-							</article> <?php // end #post-not-found ?>
+							</article> <?php // end #post-not-found .inner-wrap ?>
 
 						<?php endif; ?>
 

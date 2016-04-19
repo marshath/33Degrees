@@ -15,11 +15,8 @@ BLOG
 		flex-direction: column;
 		flex-wrap: nowrap;
 		padding-top: baseline(1); 					// adds top spacing from border
-		border-bottom: 2px solid brand-color-lighten('gray3', 5);
 		border-top: 2px solid white;
-		&:first-child {
-			border-top:none; 						// remove border from first child
-		}
+		border-bottom: 2px solid brand-color-lighten('gray3', 5);
 	}
 	@include bp('tablet-h') {				// breakpoint tablet horizontal
 		article {
@@ -48,23 +45,35 @@ BLOG
 }
 
 .blog-intro {
-	@extend .panel-padding;
-	section {
-		@include border-radius(1);
-		//display: block;
-		//height: intrinsic;
-		padding: 0 1em;
-		background: brand-color-darken('white', 0.3);
-		box-shadow: inset 0 0 10px brand-color-alpha('gray3', 'dark');
-		h1 {
-			@include serif;
-			padding-bottom: 21px;
-			border-bottom: 1px dotted brand-color('text');
-			text-shadow: none;			// remove global h1 text-shadow
+	@extend .panel-intro;
+	background: url('../images/splash__blog-1600.jpg') center center no-repeat; // 400 x 800
+	background-size: cover;
+	margin-bottom: baseline(2);
+	@include bp('tablet-v') {											// breakpoint tablet vertical
+		background-image: url('../images/splash__blog-1600.jpg'); 				// 800 x 800
+	}
+	@include bp('laptop') {												// breakpoint laptop screen
+		background-image: url('../images/splash__blog-1600.jpg'); 				// 1200 x 800
+	}
+	@include bp('monitor') {											// breakpoint monitor screen
+		background-image: url('../images/splash__blog-1600.jpg'); 				// 1600 x 800
+	}
+	.btn__search {
+		background-color: brand-color('primary');
+		&:hover, &:active {
+			background-color: brand-color-darken('primary', 4);
 		}
-		h2, h3 {
+	}
+	section {
+		h2 {
 			@include sans-serif;
 			margin-bottom: baseline(1);
+		}
+		p {
+			color: brand-color('gray3');
+			a {
+				color: brand-color('white');
+			}
 		}
 		@include bp('tablet-v') {		// breakpoint tablet vertical
 			padding: 0 2em;						// override side padding
@@ -94,10 +103,11 @@ BLOG
 	display: block;
 	margin: 0 auto;
 	h3 {
-		color: brand-color('gray2');
 		@include font-size(16);
 		font-weight: normal;
 		text-align: center;
+		margin: baseline(2) auto 0;
+		text-shadow: none;
 	}
 	ul {
 		list-style: none;
@@ -112,15 +122,9 @@ BLOG
 	li a {
 		@extend .btn__tritiary; 					// outline orange small
 		margin-right: 0.5em;
-	}
-	@include bp('tablet-h') {				// breakpoint tablet horizontal
-		h3 {
-			float:left;
-			display: inline-block;
-		}
-		ul {
-			justify-content: flex-start;
-		}
+		background: none;
+		color: brand-color('white');
+		border-color: brand-color('gray3');
 	}
 }
 

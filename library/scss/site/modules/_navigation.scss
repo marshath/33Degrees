@@ -201,9 +201,6 @@ $button-bar-space: 6px;								// The spacing between button bars
 PAGINATION
 *******************************/
 .pagination {
-	margin-top:0;
-	margin-bottom: baseline(4); 					// spacing under pagination links
-	padding-left:0;
 	@include clearfix;
 	&-title, li {
 		height: baseline(1.5);
@@ -232,6 +229,9 @@ PAGINATION
 		border-color: brand-color('gray3');
 		background-color: brand-color('gray3');
 		color: brand-color('gray1');
+	}
+	&-margin {
+		margin-bottom: baseline(4); 					// spacing under pagination links
 	}
 }
 

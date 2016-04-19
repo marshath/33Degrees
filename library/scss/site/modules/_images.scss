@@ -22,22 +22,14 @@ GLOBAL IMAGES
 *******************************/
 
 /* SERVICE ICONS - DARK BG */
-.fill { 											// Fill colors
-	&__1 { fill: brand-color('white'); }
-	&__2 { fill: #1d0e08; }
-}
-.stroke { 											// Stroke colors
-	&__1 { stroke: brand-color('white'); }
-	&__2 { stroke: #1d0e08; }
+.icon-website, .icon-logo, .icon-design { 												// Fill colors
+	&__fill { fill: brand-color('white'); }
+	&__stroke { stroke: brand-color('white'); }
 }
 /* SERVICE ICONS - LIGHT BG */
-.page-id-63, .page-id-65 { 							// Services icon colors
-	.fill { 										// Fill colors
-		&__1 { fill: brand-color-darken('primary', 6); }
-		&__2 { fill: brand-color-lighten('gray3', 7); }
-	}
-	.stroke { 										// Stroke colors
-		&__1 { stroke: brand-color-darken('primary', 6); }
-		&__2 { stroke: brand-color-lighten('gray3', 7); }
+.page-id-63, .page-id-65 { 														// Services and Portfolio
+	.icon-website, .icon-logo, .icon-design { 											// Fill colors
+		&__fill { fill: brand-color-darken('primary', 6); }
+		&__stroke { stroke: brand-color-darken('primary', 6); }
 	}
 }
