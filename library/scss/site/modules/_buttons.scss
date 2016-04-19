@@ -141,6 +141,9 @@ SOCIAL LINKS
 		flex-wrap: wrap;
 		padding: 0;
 		margin: baseline(1) auto baseline(2);
+		@include bp('monitor') {
+			margin: baseline(0.25) auto;
+		}
 	}
 	li {
 		width:67px;

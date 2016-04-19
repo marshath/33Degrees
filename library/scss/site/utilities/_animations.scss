@@ -42,7 +42,7 @@ MOVEMENT
 	to   { transform: translateX(0%) }
 }
 
-@keyframes emailBounce {
+@keyframes emailBounce {						// used on the newsletter icon
 	from { transform: translateY(0%) }
 	88%  { transform: translateY(0%) }
 	90%  { transform: translateY(22%) }

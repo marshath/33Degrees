@@ -25,12 +25,25 @@ CONTACT INFORMATION
 	margin:0 auto;
 	display: block;
 }
+.footer-hinge {
+	max-width: 1100px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	@include bp('monitor') {
+		flex-flow: row nowrap;
+		margin-bottom: baseline(2);
+	}
+}
 
 // COMPANY INFORMATION
 .company {
 	text-align: center;
 	.org { 											// Company name
-		padding-top: baseline(0.25); 				// sets .office-info text lower
+		@include font-size(20);
+		padding-bottom: 0.2em;						// pushes text undernieght down
 	}
 	.adr { 											// Company address
 	}
@@ -118,5 +131,5 @@ COPYRIGHT
 	color: brand-color-darken('gray3', 2);
 	@include font-size(12);
 	text-align: center;
-	margin:baseline(2) auto;
+	margin:baseline(3) auto baseline(1);
 }

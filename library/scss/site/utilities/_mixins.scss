@@ -36,7 +36,6 @@ FONT FAMILY
 @mixin serif {
 	font-family: $font-serif;
 	letter-spacing: 0.05em;
-	text-shadow: 2px 4px 2px brand-color('black');
 }
 
 

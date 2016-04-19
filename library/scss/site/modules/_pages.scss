@@ -17,9 +17,6 @@ GLOBAL
 	margin-right: auto;
 	margin-left: auto;
 }
-.panel-padding {								
-	padding: baseline(1.5) 0 baseline(1.5); 	// container padding
-}
 .panel-intro {
 	@extend .panel-padding;
 	text-align: center;
@@ -57,11 +54,9 @@ GLOBAL
 		}
 		@include bp('monitor') {		// breakpoint monitor screen
 			width: 60%;							// override to shrink width
-			//margin: baseline(1) auto;			// override increase top & bottom margin
 		}
 		@include bp('television') {		// breakpoint televisions
 			width: 50%;							// override to shrink width
-			//margin: baseline(1) auto;			// override increase top & bottom margin
 		}
 	}
 	@include bp('laptop') {				// breakpoint laptop screen
@@ -71,17 +66,26 @@ GLOBAL
 		min-height: 800px;
 	}
 }
+.panel-padding {								
+	padding: baseline(1.5) 0 baseline(1.5); 	// container padding
+	h2 {
+		@include serif;
+		@include bp('tablet-v') {
+			@include font-size(38);
+		}
+		@include bp('laptop') {
+			@include font-size(46);
+		}
+	}
+}
 
 
 /***** TESTIMONIALS PANEL *****/
 .testimonials {
-	// background-color: brand-color-lighten('secondary', 8.5);
 	background-color: brand-color-darken('tritiary', 1);
 	color: brand-color('white');
 	text-align: center;
 	padding: baseline(0.5) 0 baseline(1.5); 	// bottom panel padding
-	// border-top: 0.5em solid white;
-	// border-bottom: 0.5em solid white;
 	box-shadow: 0 0 40px black;
 	display: flex;
 	align-items: stretch;
@@ -399,6 +403,8 @@ HOMEPAGE SECTIONS
 	h2 {
 		@include serif;
 		@include font-size(60);
+		color: brand-color-darken('primary', 6);
+		text-shadow: 0px 2px 2px white;
 	}
 	h4 {
 		font-weight: normal;
@@ -536,8 +542,6 @@ SERVICES
 }
 
 .portfolio-icon { 								// used on Services, Project pages
-	@include serif;
-	text-shadow: none;							// remove text-shadow from include serif
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -680,15 +684,13 @@ COMPANY
 		margin: inherit auto;
 	}
 	h2 {
-		@include serif;
-		text-shadow: none;
+		color: brand-color-darken('primary', 6);
 		margin-bottom: baseline(1);
 	}
 	img {
 		width: 60%;
 		display: block;
 		margin: auto;
-		animation: spin 10s linear infinite;
 	}
 	@include bp('tablet-v') {
 		img {
