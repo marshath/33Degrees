@@ -46,14 +46,14 @@ BLOG
 
 .blog-intro {
 	@extend .panel-intro;
-	background: url('../images/splash__blog-1600.jpg') center center no-repeat; // 400 x 800
+	background: url('../images/splash__blog-400.jpg') center center no-repeat; 	// 400 x 800
 	background-size: cover;
 	margin-bottom: baseline(2);
 	@include bp('tablet-v') {											// breakpoint tablet vertical
-		background-image: url('../images/splash__blog-1600.jpg'); 				// 800 x 800
+		background-image: url('../images/splash__blog-800.jpg'); 				// 800 x 800
 	}
 	@include bp('laptop') {												// breakpoint laptop screen
-		background-image: url('../images/splash__blog-1600.jpg'); 				// 1200 x 800
+		background-image: url('../images/splash__blog-1200.jpg'); 				// 1200 x 800
 	}
 	@include bp('monitor') {											// breakpoint monitor screen
 		background-image: url('../images/splash__blog-1600.jpg'); 				// 1600 x 800

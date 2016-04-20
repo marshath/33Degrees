@@ -405,6 +405,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/splash__blog-1200.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52409,
+		"inputAbbreviatedPath": "\/library\/images\/splash__blog-1200.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__blog-1200.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/splash__blog-1600.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -412,6 +423,28 @@
 		"initialSize": 110002,
 		"inputAbbreviatedPath": "\/library\/images\/splash__blog-1600.jpg",
 		"outputAbbreviatedPath": "\/library\/images\/splash__blog-1600.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash__blog-400.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21395,
+		"inputAbbreviatedPath": "\/library\/images\/splash__blog-400.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__blog-400.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/splash__blog-800.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 39100,
+		"inputAbbreviatedPath": "\/library\/images\/splash__blog-800.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/splash__blog-800.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
