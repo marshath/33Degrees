@@ -23,7 +23,7 @@
 						</div> <?php // end .row .company-intro ?>
 						
 						
-						<?php /* NEWSLETTER */
+						<?php /* TESTIMONIALS */
 						get_template_part('inc/testimonials'); ?>
 								
 							
@@ -35,6 +35,16 @@
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</div> <?php // end .row .company-success ?>
+								
+							
+						<?php /* CONTACT */ ?>
+						<div id="panel-company3" <?php post_class( 'row company-contact' ); ?>>
+							<section class="entry-content inner-wrap">
+								
+								<?php echo get_field('panel_3'); // display the content ?>
+								
+							</section> <?php // end .entry-content .inner-wrap  ?>
+						</div> <?php // end .row .company-contact ?>
 						
 						
 					</main> <?php // end #main .main-wrap ?>

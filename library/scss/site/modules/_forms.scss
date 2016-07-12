@@ -108,31 +108,35 @@ input[type='checkbox'], input[type='radio'] {
 	appearance:none;
 	width:14px;
 	height:14px;
-	background-color: brand-color('gray3');
+	background-color: white;
 	margin-top: 1em;
-	@include border-radius(4);
-	border:2px solid white;
-	box-shadow: 0 0 6px brand-color('gray3');
+	border:2px solid brand-color('gray3');
 	position:relative;
 	cursor:pointer;
 	margin-right: 0.5em; 							// pushes text to the right
-	&:checked:after {
+	&:checked {
+		border-color: brand-color-lighten('primary', 6);
+		&:after {
 		content:'';
 		width:10px;
 		height:10px;
 		background: brand-color('primary');
 		display:block;
-		@include border-radius(4);
 		position:absolute;
 		top:0;
 		left:0;
+	}
 	}
 	&:checked + label {
 		color: brand-color('primary');
 	}
 }
 input[type='radio'] {
+	@include border-radius(4);
 	margin-right: 0.75em;							// overrides distance text is pushed to the right
+	&:checked:after {
+		@include border-radius(4);
+	}
 }
 
 
@@ -150,18 +154,16 @@ SEARCH FORM
 *******************************/
 .searchform { 										// newsletter signup, blog search
 	position: relative;
-	max-width: 700px;
+	max-width: 680px;
 	margin: baseline(1) auto;
 }
-
-
 
 
 /*******************************
 GRAVITY FORMS
 *******************************/
 .gform_wrapper {
-	max-width: 980px;
+	max-width: 960px;
 	margin-right: auto;
 	margin-left: auto;
 	ul {

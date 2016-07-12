@@ -13,7 +13,7 @@ GLOBAL
 	@include clearfix;
 }
 .max-width { 									// width limits
-	max-width: 980px;
+	max-width: 960px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -66,7 +66,7 @@ GLOBAL
 		min-height: 800px;
 	}
 }
-.panel-padding {								
+.panel-padding {
 	padding: baseline(1.5) 0 baseline(1.5); 	// container padding
 	h2 {
 		@include serif;
@@ -85,12 +85,22 @@ GLOBAL
 	background-color: brand-color-darken('tritiary', 1);
 	color: brand-color('white');
 	text-align: center;
-	padding: baseline(0.5) 0 baseline(1.5); 	// bottom panel padding
-	// box-shadow: 0 0 40px black;
+	padding: baseline(1) 0 baseline(1.5); 	// bottom panel padding
 	display: flex;
 	align-items: stretch;
 	align-content: center;
 	justify-content: center;
+	&:after {
+		content: '';
+		width: 100%;
+		height: 64px;
+		background-image: url('../images/icon-triangle2.png');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
 	h2 {
 		font-style: italic;
 		text-shadow: 1px 2px 1px brand-color-alpha('black','light');
@@ -103,7 +113,7 @@ GLOBAL
 		padding-left: 1em;
 		padding-right: 1em;
 		font-weight: bold;
-		margin: baseline(1) auto 0;
+		margin: baseline(1) auto baseline(1.5);
 		position: relative; 					// quotes before and after testimonial
 		overflow: hidden;
 		z-index: 1; 							// sets testimonial text above before/after quotes
@@ -145,7 +155,7 @@ GLOBAL
 	@include bp('phone-h') { 			// breakpoint smartphone horizontal
 		blockquote {
 			width: intrinsic;
-			max-width: 980px;
+			max-width: 960px;
 		}
 	}
 	@include bp('tablet-v') { 			// breakpoint tablet vertical
@@ -159,7 +169,7 @@ GLOBAL
 	}
 }
 .client-heart {
-	fill: alert-color('error');
+	color: alert-color('error');
 }
 .client-love {
 	@extend .screen-reader-text;
@@ -169,23 +179,29 @@ GLOBAL
 .newsletter {
 	background: brand-color('accent');
 	padding: baseline(0.5) 0 baseline(1);
-	// box-shadow: 0 0 40px black;
+	&:before {
+		content: '';
+		width: 100%;
+		height: 64px;
+		background-image: url('../images/icon-triangle.png');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: -62px;
+		left: 0;
+	}
 	.icon-inbox {
-		height:96px;
-		width:20%;
-		min-width: 64px;
-		max-width: 160px;
+		height:48px;
 		background: brand-color('accent');
-		padding:0.25em;
-		margin: (- baseline(1.5)) auto (- baseline(1.5));
+		padding: 0.25em;							// shrink inbox icon size
+		margin: 0 auto (- baseline(1));
 		display: block;
-		border-radius: 50%;
 	}
 	svg { 										// inbox icon at top of newsletter panel
-		height:60%;
-		width:60%;
+		height: 100%;
+		width: 100%;
 		display: block;
-		margin:baseline(0.5) auto;
+		margin: 0 auto;
 	}
 	h2, p {
 		color: brand-color('black');
@@ -206,17 +222,23 @@ GLOBAL
 			box-shadow: inset 0 1px 4px white;	// override box-shadow color
 		}
 	}
-	@include bp('phone-h') {			// breakpoint smartphone horizontal
-		.icon-inbox { 							// move inbox icon above the newsletter panel
-			width: 160px;
-			height: 80px;
-			margin-top: - baseline(1.5);
-		}
+	.mc-field-group div, .response {
+		position: relative;
+		width: 100%;
+		font-weight: bold;
+		background: brand-color-lighten('accent', 5);
+		padding: baseline(0.25) 0.5em;
+		margin-top: baseline(0.1);
+		border: 2px solid brand-color-darken('accent', 2);
+		@extend .default-transition;
 	}
 	@include bp('tablet-v') {			// breakpoint tablet vertical
 		padding-bottom: baseline(1); 			// add more bottom padding override
 		input[type='email'] {
 			text-align: left;
+		}
+		.mc-field-group div, .response {
+			position: absolute;
 		}
 	}
 	@include bp('laptop') {				// breakpoint laptop screen
@@ -237,63 +259,88 @@ HOMEPAGE SECTIONS
 	background-color: brand-color('secondary'); // fallback for gradient
 	background-image: linear-gradient(to bottom, brand-color('secondary') 0%, #1c526c 50%, #00a7bf 100%);
 	color: brand-color('white');
-	/* .btn__secondary { // overrides for the secondary button
-		background: brand-color-alpha('white','dark');
-		border-color: brand-color('white');
-		color: brand-color('white');
-		text-shadow:0 2px 1px black;
-		&:hover {
-			background: brand-color-darken('primary', 4);
-			border-color: brand-color-darken('primary', 4);
-		}
-	} */
+	margin-bottom: -($baseline)
 }
-.splash-text, .cta, .lady {
-	width: 100%; 
+.splash-headline {								// SVG Splash Text
+	width: 95%;
+	@include serif;
+	font-style: italic;
+	fill: white;	// svg text color
+	text-shadow: -4px 4px 2px brand-color-alpha('black','light');
+	display: block;
+	margin: baseline(1) auto 0;
 }
-.cta { // splash text
+.splash-text {									// content text
+	width: 100%;
 	text-align: center;
-	p {
-		margin: 0; 								// overrides global p - brings cta text closer together
-		&:last-child {
-			margin-bottom: baseline(2); 		// extra bottom spacing for mobile
-		}
+	font-style: italic;
+	text-shadow: -1px 2px 1px brand-color-alpha('black','light');
+	padding: 0 2em;
+}
+.splash-line {									// SVG Splash Text -- horizontal line
+	fill: brand-color('white');
+}
+.splash-image {
+}
+@include bp('tablet-v') {				// breakpoint tablet vertical
+	.splash-headline {
+		width: 88%;
+		margin-top: 0;							// override
+		position: absolute;
+		top: 22%;
+		left:6%;
 	}
-}
-.splash-text {
-	margin: baseline(1) 0;
-}
-.lightrays { 									// svg splash image background
-	transform-origin: center center;
-	animation: spin 40s linear infinite;
-}
-.hm-splash > section {
-	background: url('../images/lady.png') no-repeat;
-	background-position: center center;
-	background-size: 100% 100%;
+	.splash-text {
+		position: absolute;
+		transform: rotate(-8deg);
+		top:61%;
+		padding: 0 4em;
+	}
 }
 @include bp('tablet-h') {				// breakpoint tablet horizontal
-	.cta, .lady {
-		width: 50%; 
+	.splash-headline {
+		top: 24%;
 	}
-	.cta {
-		float:right;
+	.splash-text {
+		top:62%;
+		font-size:1.1em;
 	}
 }
 @include bp('laptop') {					// breakpoint laptop screen
-	.cta-wrap {
-		width: 70%; 
-		float: right;
-		// margin-bottom: baseline(2);
+	.splash-headline {
+		top: 26%;
 	}
-	.cta {
-		width: 100%;
+	.splash-text {
+		top:65%;
+		font-size:1.2em;
+	}
+}
+@include bp('monitor') {				// breakpoint monitor screen
+	.splash-headline {
+		width: 78%;
+		top: 28%;
+		left:11%;
+	}
+	.splash-text {
+		top:62%;
+		font-size:1.3em;
+	}
+}
+@include bp('television') {				// breakpoint television
+	.splash-headline {
+		width: 70%;
+		top: 30%;
+		left:15%;
+	}
+	.splash-text {
+		top:60%;
+		font-size:1.5em;
 	}
 }
 
 .hm-services {
-	background: url('../images/wood.jpg') center center no-repeat #2c170e;
-	background-size: auto 100%; 				// make bg container full height of container
+	background: url('../images/bg__abstract-blue.jpg') center center no-repeat brand-color-darken('secondary',3);
+	background-size: cover; 					// make bg container full height of container
 	color: brand-color('white');
 	padding: baseline(1) 0 baseline(3); 		// container padding
 	h2 {
@@ -314,16 +361,10 @@ HOMEPAGE SECTIONS
 		color: brand-color-lighten('secondary', 8);
 	}
 	@include bp('tablet-v') {			// breakpoint tablet vertical
-		p, h3 {
-			text-align:left;
-		}
 	}
 	@include bp('laptop') {				// breakpoint laptop screen
 		padding-bottom: baseline(4); 			// override container padding
 		background-size: 100% 100%; 			// make bg image fit container
-		p, h3 {
-			text-align:center; 					// override tablet view
-		}
 		.services {
 			margin: 0 auto;
 		}
@@ -341,62 +382,76 @@ HOMEPAGE SECTIONS
 	justify-content: space-around;
 	li {
 		list-style: none;
-		padding: baseline(1.5) 1em 0;
-		background: rgba(0,0,0,0.3);
-		border: 2px dotted brand-color-alpha('white', 'dark');
+		width: 100%;							// full width
+		display: flex;							// aligns buttons to bottom
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: stretch;
+		background: brand-color-alpha('black','dark');
+		@include border-radius(0.5);
+		border: 1px solid brand-color-alpha('white', 'dark');
+		box-shadow: 0 1px 8px rgba(255,255,255,0);
+		@extend .default-transition;
 		&:nth-child(2) {
-			margin: baseline(1) 0;
+			margin: baseline(1) 0;				// sets top and bottom spacing
 		}
-		p:last-child {
-			margin-top: auto; 					// bottom align button links
+		&:hover {
+			background: rgba(0,0,0,0.3);
+			box-shadow: 0 1px 8px rgba(255,255,255,1);
+			.btn__primary {
+				background: brand-color-darken('primary', 3);
+				border-color: brand-color-darken('primary', 3);
+			}
 		}
+	}
+	a {
+		color: brand-color('white');			// override global
+		text-decoration: none;					// override global
+		padding: 0 1em;							// side padding for text
+	}
+	h3 {
+		color: brand-color-lighten('accent', 9);
 	}
 	.btn__primary {
-		margin-top: 0; 							// remove top margin from buttons
-	}
-	@include bp('tablet-v') {			// breakpoint tablet vertical
-		h3 {
-			margin-top: 0; 						// remove top spacing
-		}
-		h3, p {
-			width:66%;
-			float: right;
-		}
-		svg {
-			width:30%;
-			float: left;
-		}
+		// margin-top: auto; 						// bottom align button links
+		width: 100%;
 	}
 	@include bp('laptop') {				// breakpoint laptop screen
 		li {
 			width: 30%;
-			padding:0 1em;
-			display: flex;
-			flex-flow: column nowrap;
-			justify-content: center;
-			align-items: center;
 			&:nth-child(2) {
-				margin: 0;
+				margin: 0;						// removes top and bottom gap
 			}
 		}
-		h3 {
-			margin-top: baseline(0.5); 			// add back top spacing
+	}
+}
+
+.hm-service-icon { 						// styled similar to .project-icon
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	svg {										// set svg width and height
+		width: 200px;
+		height: 133px;
+		margin-bottom: baseline(0.25);
+	}
+	span {										// add bottom spacing and border 
+		margin-bottom: 0.5em;
+	}
+	@include bp('tablet-v') {			// breakpoint tablet vertical
+		flex-direction: row;					// override .hm-service-icon column
+		svg {									// add side spacing and border
+			padding-right: 0.5em;				// shrink the svg
 		}
-		h3, p { 								// overrides the tablet-v styles
-			width:100%;
-			float: none;
-		}
-		svg { 									// overrides the tablet-v styles
-			width:100%;
-			float: none;
-			margin-top: baseline(1);
-		}
+	}
+	@include bp('laptop') {				// breakpoint laptop screen
+		flex-direction: column;					// override .hm-service-icon (tablet-V) row
 	}
 }
 
 .hm-blog {
 	background-color: brand-color('white');
-	background: url('../images/texture__wood.jpg') repeat;
 	padding: baseline(1) 0 baseline(2.5); 		// container padding
 	text-align: center;
 	h2 {
@@ -430,7 +485,11 @@ HOMEPAGE SECTIONS
 	}
 	@include bp('monitor') {			// breakpoint tablet vertical
 		li {
-			width: 24%;
+			width: 32%;
+			&:first-child {
+				width: 100%;
+				margin: 0 auto baseline(1);
+			}
 		}
 	}
 }
@@ -458,10 +517,6 @@ SERVICES
 	@extend .panel-padding;						// from _pages.scss
 	h2 {
 		color: brand-color-darken('primary', 6); // oreverride global
-	}
-	.intro:first-line {
-		color: brand-color-darken('gray2', 3);
-		font-weight: bold;
 	}
 }
 .services-websites, .services-design {
@@ -551,20 +606,11 @@ SERVICES
 	}
 	span {										// add bottom spacing and border 
 		margin-bottom: 0.5em;
-		padding-bottom: 0.5em;
-		border-bottom: 1px dotted brand-color-darken('primary', 4);
 	}
 	@include bp('laptop') {				// breakpoint laptop screen
 		flex-direction: row;
 		svg {									// add side spacing and border
-			margin-right: 0.5em;
-			padding-right: 0.5em;
-			border-right: 1px dotted brand-color-darken('primary', 4);
-		}
-		span {									// remove bottom spacing and border
-			margin-bottom: 0;
-			padding-bottom: 0;
-			border-bottom: none; 
+			padding-right: 0.5em;				// shrink the svg
 		}
 	}
 }
@@ -634,12 +680,12 @@ PORTFOLIO
 			content: '';
 			width: 100%;
 			height: 100%;
-			box-shadow: 0 6px 8px rgba(0,0,0,0);
+			box-shadow: 0 12px 14px rgba(0,0,0,0);
 			position: absolute;
 			@extend .default-transition;
 		}
 		a:hover::before {						// show overlay box-shadow
-			box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+			box-shadow: 0 8px 12px rgba(0,0,0,0.25);
 		}
 	}
 	h3 {
@@ -676,10 +722,8 @@ COMPANY
 	@extend .panel-padding;
 	padding-bottom: baseline(2.5);				// override .panel-padding
 	background-color: brand-color('white');
-	background: url('../images/texture__wood.jpg') repeat;
 	.entry-content {
-		max-width: 980px;
-		margin: inherit auto;
+		@extend .max-width;
 	}
 	h2 {
 		color: brand-color-darken('primary', 6);
@@ -693,8 +737,8 @@ COMPANY
 	@include bp('tablet-v') {
 		img {
 			width: 50%;
-			margin: 0 0 baseline(1) 5%;
-			float: right;
+			margin: 0 5% baseline(1) 0;
+			float: left;
 		}
 	}
 	@include bp('laptop') {
@@ -704,17 +748,66 @@ COMPANY
 	}
 }
 
+.company-contact {
+	@extend .panel-padding;
+	background-color: brand-color('gray3');
+}
+
 
 /*******************************
 CONTACT & ESTIMATE FORMS, THANK YOU
 *******************************/
-.post-69 {
-	h3 {
-		margin-top:0;
+.post-69, .post-73, .post-71 {	// CONTACT US, ESTIMATE, THANK YOU
+	@extend .panel-padding;
+	h1 {
+		@include serif;
+		text-align: center;
+		padding-bottom: 21px;
+		border-bottom: 1px dotted brand-color('text');
+	}
+	h2 {
+		@include sans-serif;
+	}
+	> .article-header {									// callout box
+		padding: 0 1em;
+		margin: auto;							// center header
+		@include bp('tablet-v') {		// breakpoint tablet vertical
+			padding: 0 2em;						// override side padding
+		}
+		@include bp('tablet-h') {		// breakpoint tablet horizontal
+			padding: 0 3em;						// override side padding
+		}
+		@include bp('laptop') {			// breakpoint laptop screen
+			width: 70%;							// override to shrink width
+		}
+		@include bp('monitor') {		// breakpoint monitor screen
+			width: 60%;							// override to shrink width
+		}
+		@include bp('television') {		// breakpoint televisions
+			width: 50%;							// override to shrink width
+		}
 	}
 }
-.page-id-71 p {
-	@extend .max-width; 							// from _page.scss
+.grid-half-left, .grid-half-right {
+	width: 100%;
+}
+@include bp('tablet-v') {
+	.grid-half-left {
+		width: 49%;
+		float:left;
+	}
+	.grid-half-right {
+		width: 49%;
+		margin-left: 2%;
+		float: right;
+	}
+}
+.grid-third {
+	width: 100%;
+	@include bp('laptop') {
+		width: 33%;
+		float:left;
+	}
 }
 
 

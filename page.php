@@ -19,6 +19,7 @@
 								<?php // the content
 									the_content();
 								?>
+
 							</section> <?php // end .content-entry ?>
 
 							<footer class="article-footer">

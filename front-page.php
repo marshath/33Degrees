@@ -8,26 +8,31 @@
 								
 						<?php /* SPLASH */ ?>
 						<div id="panel-splash" <?php post_class( 'row hm-splash' ); ?>>
-							<section class="entry-content inner-wrap">
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							
-								<div class="cta-wrap">
-									
-									<div class="splash-text">
-										<?php // load and browser cache the SVG for the homepage
-										require("library/images/splash-text.svg"); ?>
-									</div>
-									
-									<div class="cta">
-										<?php the_content(); // display the content ?>
-									</div>
-									
-								</div> <?php // end .cta-wrap ?>
+							<section class="splash-content">
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 								
-								<?php /* <div class="lady">
-									<?php // load and browser cache the splash image
-									require("library/images/lady.svg"); ?>
-								</div> */ ?>
+								<div class="splash-headline"><?php // load and browser cache the SVG sprite sheet
+									require("library/images/splash-text.svg"); ?>
+								</div> <?php // end .splash-headline ?>
+									
+								<div class="splash-text">
+									<?php the_content(); ?>
+								</div> <?php // end .splash-text ?>
+							
+								<div class="splash-image">
+									<picture>
+										<source
+											media="(max-width: 639px)"
+											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home2-200.png 200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-300.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-400.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-600.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-800.png 800w"
+											sizes="100vw">
+										<source
+											media="(min-width: 640px)"
+											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-300.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-400.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-600.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-800.png 800w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1000.png 1000w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1200.png 1200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1400.png 1400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600.png 1600w"
+											sizes="100vw">
+											<img src="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600.png" alt="An engaged woman looking at a mobile website.">
+									</picture>
+								</div> <?php // end .splash-image ?>
 								
 							<?php endwhile; endif; ?>
 							</section> <?php // end .entry-content .inner-wrap  ?>

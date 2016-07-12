@@ -42,6 +42,9 @@ h6 {
 	@include font-size(16);
 }
 @include bp('tablet-v') {					// breakpoint tablet vertical - heading sizes
+	h1 {
+		@include font-size(48);
+	}
 	h2 {
 		@include font-size(32);
 	}
@@ -71,8 +74,12 @@ h6 {
 p {
 	margin-bottom: baseline(1);
 	@include bp('tablet-v') {				// breakpoint tablet vertical
-		@include font-size(18);						// increase paragraph font-size
+		@include font-size(16);						// increase paragraph font-size
 	}
+}
+.intro:first-line {
+	color: brand-color-darken('gray2', 3);
+	font-weight: bold;
 }
 
 // FORMATTING

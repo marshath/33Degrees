@@ -86,6 +86,9 @@ $button-bar-space: 6px;								// The spacing between button bars
 	}
 	li {
 		background: brand-color-lighten('secondary', 0.5);
+		&:last-child a {								// Free Estimate form
+			color: brand-color-lighten('accent', 5);
+		}
 	}
 	button { 										// is the 'menu-toggle'
 		background: none;
@@ -142,9 +145,6 @@ $button-bar-space: 6px;								// The spacing between button bars
 .nav-footer {
 	li {
 		background: brand-color-darken('secondary', 1);
-		&:first-child {
-			flex-basis: 100%; 						// enlarge to fill first row on mobile
-		}
 	}
 }
 @include bp('tablet-v') {					// breakpoint tablet vertical

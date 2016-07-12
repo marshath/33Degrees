@@ -91,7 +91,7 @@ GLOBAL BUTTONS
 		background: brand-color('primary');
 	}
 	@include bp('tablet-v') {
-		width: intrinsic;
+		width: auto;
 		padding: 0 2em;
 		margin: 0;
 		position:absolute;

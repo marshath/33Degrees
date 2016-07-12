@@ -84,7 +84,7 @@ DEFAULT THEME
 	margin-right: 5px;
 }
 .flex-direction-nav {
-	*height: 0;
+	height: 0;
 }
 .flex-direction-nav a {
 	text-decoration: none;
@@ -186,7 +186,7 @@ DEFAULT THEME
 	margin: 0 6px;
 	display: inline-block;
 	zoom: 1;
-	*display: inline;
+	display: inline;
 }
 .flex-control-paging li a {
 	width: 11px;

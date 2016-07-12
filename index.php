@@ -15,6 +15,8 @@
 								$content = apply_filters('the_content', $post->post_content); // page content
 								echo '<h1 class="page-title" itemprop="headline">' . $title . '</h1><div class="subhead">' . $content . '</div>';  
 								?>
+								
+								<?php // <p class="center">Subscribe via <a href="/feed/">RSS</a> or <a href="#">Email</a>.</p> ?>
 							
 								<?php // BLOG SEARCH ?>
 								<div class="blog-search"><?php get_search_form(); ?></div>
@@ -25,13 +27,13 @@
 									<ul>
 										<?php wp_list_categories('title_li='); ?>
 									</ul>
-								</div><?php // .sidebar__categories ?>
+								</div> <?php // .sidebar__categories ?>
 							
 							</section> <?php // end .inner-wrap ?>
-						</div> <?php // end .blog-intro ?>	
+						</div> <?php // end .blog-intro ?>
 						
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
+						
 						<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-archive inner-wrap' ); ?> role="article">
 							
 							<figure>

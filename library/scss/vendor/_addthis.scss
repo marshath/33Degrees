@@ -6,8 +6,7 @@
  
  .single .entry-content div:first-child { // top and bottom border
 	width: 100%;
-	max-width: 980px;
-	margin: 0 auto;
+	@extend .max-width;
 	border-top: 2px solid brand-color-lighten('gray3', 5);
 	border-bottom: 2px solid brand-color-lighten('gray3', 5);
 	padding-top: baseline(0.25);
