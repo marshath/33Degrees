@@ -750,7 +750,7 @@ COMPANY
 
 .company-contact {
 	@extend .panel-padding;
-	background-color: brand-color('gray3');
+	background-color: brand-color-lighten('gray3', 6);
 }
 
 
