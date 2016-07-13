@@ -3,11 +3,11 @@
 			<div id="content" class="wrap">
 				<div id="inner-content" class="inner-wrap">
 
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<div id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+						<div id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
 
 							<header class="article-header">
 
@@ -15,14 +15,14 @@
 
 							</header> <?php // end .article header ?>
 
-							<section class="entry-content" itemprop="articleBody">
+							<section class="entry-content">
 								<?php // the content
 									the_content();
 								?>
+
 							</section> <?php // end .content-entry ?>
 
 							<footer class="article-footer">
-
 							</footer> <?php // end .article-footer ?>
 
 						</div> <?php // end #post-<id> ?>

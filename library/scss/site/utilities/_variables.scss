@@ -38,8 +38,8 @@ $radius: 6px; // default value
 FONT FAMILY - utilities/mixins
 *******************************/
 $font-text: "HelveticaNeue", "Helvetica", "Arial", sans-serif; // default sans-serif
-$font-sans: "omnes-pro", "Arial", "HelveticaNeue", "Helvetica", sans-serif; // default sans-serif
-$font-serif: "bourbon", Georgia, Times, "Times New Roman", serif; // default serif
+$font-sans: "omnes-pro", "HelveticaNeue", "Helvetica", "Arial", sans-serif; // default sans-serif
+$font-serif: "bourbon", Times, "Times New Roman", serif; // default serif
 
 
 /*******************************
@@ -55,6 +55,7 @@ COLORS - utilities/mixins
 $brand-colors: (
 	'primary': #e65127,		// orange
 	'secondary': #213141,	// blue
+	'tritiary': #289982, 	// teal
 	'accent': #fc0,			// yellow
 	'text': #222,			// black text
 	'black': #000,			// black
@@ -86,7 +87,9 @@ $social-colors: (
 
 // ALPHA (opacity)
 $color-opacity: (			// set opacity values
+	'full': 1,				// opacity to 100%
 	'light': 0.8,			// opacity used with lighter colors
 	'dark': 0.4,			// opacity used with darker colors
+	'none': 0,				// opacity to 0%
 );
 

@@ -68,7 +68,18 @@ $color-interval: 10% !global;
 @function social-color($social-key: 'facebook') {								// social-colors('facebook')
 	@return map-get($social-colors, $social-key);
 }
-
+// Lighten function
+@function social-color-lighten($site-color-name: 'facebook', $site-level: 0) {	// brand-color-lighten('primary',2)
+	$site-color: social-color($site-color-name);
+	$site-color-base: white;
+	@return mix($site-color-base, $site-color, $site-level * $color-interval);
+}
+// Darken function
+@function social-color-darken($site-color-name: 'facebook', $site-level: 0) {		// brand-color-darken('primary',2)
+	$site-color: social-color($site-color-name);
+	$site-color-base: black;
+	@return mix($site-color-base, $site-color, $site-level * $color-interval);
+}
 // ALPHA OPACITY -- Function to call the specfic color-opacity
 @function color-alpha($alpha-key: 'light') {									// color-alpha('light')
 	@return map-get($color-opacity, $alpha-key);

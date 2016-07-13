@@ -7,32 +7,37 @@
 								
 								
 						<?php /* SPLASH */ ?>
-						<article id="panel-splash" <?php post_class( 'row hm-splash' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<div id="panel-splash" <?php post_class( 'row hm-splash' ); ?>>
 							
-								<div class="cta-wrap">
-									
-									<div class="splash-text">
-										<?php // load and browser cache the SVG for the homepage
-										require("library/images/splash-text.svg"); ?>
-									</div>
-									
-									<div class="cta">
-										<?php the_content(); // display the content ?>
-									</div>
-									
-								</div> <?php // end .cta-wrap ?>
+							<section class="splash-content">
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 								
-								<?php /* <div class="lady">
-									<?php // load and browser cache the splash image
-									require("library/images/lady.svg"); ?>
-								</div> */ ?>
+								<div class="splash-headline"><?php // load and browser cache the SVG sprite sheet
+									require("library/images/splash-text.svg"); ?>
+								</div> <?php // end .splash-headline ?>
+									
+								<div class="splash-text">
+									<?php the_content(); ?>
+								</div> <?php // end .splash-text ?>
+							
+								<div class="splash-image">
+									<picture>
+										<source
+											media="(max-width: 639px)"
+											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home2-200.png 200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-300.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-400.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-600.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-800.png 800w"
+											sizes="100vw">
+										<source
+											media="(min-width: 640px)"
+											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-300.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-400.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-600.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-800.png 800w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1000.png 1000w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1200.png 1200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1400.png 1400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600.png 1600w"
+											sizes="100vw">
+											<img src="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600.png" alt="An engaged woman looking at a mobile website.">
+									</picture>
+								</div> <?php // end .splash-image ?>
 								
 							<?php endwhile; endif; ?>
 							</section> <?php // end .entry-content .inner-wrap  ?>
 									
-						</article> <?php // end #panel-splash .row .hm-splash ?>
+						</div> <?php // end #panel-splash .row .hm-splash ?>
 						
 						
 						<?php /* NEWSLETTER */
@@ -40,56 +45,26 @@
 						
 						
 						<?php /* SERVICES */ ?>
-						<article id="panel-services" <?php post_class( 'row hm-services' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-services" <?php post_class( 'row hm-services' ); ?>>
+							<section class="entry-content inner-wrap">
 								<?php echo get_field('panel_2'); // display the content ?>
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end #panel-services .row .hm-services ?>
-								
-								
-						<?php /* TESTIMONIALS */ ?>
-						<article id="panel-testimonials" <?php post_class( 'row testimonials' ); ?> role="article">
-							<section class="entry-content" itemprop="articleBody">
-								<?php echo get_field('panel_3'); // Display the content ?>
-								
-								<div class="flex-section-container">
-									<div class="flexslider">
-										<ul class="slides quotes">
-											
-										<?php // Display Testimonials
-											query_posts(array('post_type'=>'testimonial')); ?>
-											
-											<?php $my1post = array( 'post_type' => 'testimonial' );
-											$qloop = new WP_Query( $my1post ); // Cycle through all posts
-											while ( $qloop->have_posts() ) : $qloop->the_post(); ?>
-											
-											<li>
-												<blockquote>
-													<?php the_content(); ?>
-													<cite>&mdash;<?php echo get_the_title(get_the_ID()); ?>, <a href="<?php echo esc_url( home_url( '/' ) ); ?><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_url', true ) ); ?>"><?php echo esc_html( get_post_meta( get_the_ID(), 'testimonial_company', true ) ); ?></a></cite>
-												</blockquote>
-											</li>
-											
-										<?php endwhile; 
-										wp_reset_query(); ?>
-										
-										</ul> <?php // end .testimonials  ?>
-									</div>
-								</div>
-											
-							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end #panel-testimonials .row .hm-services ?>
+						</div> <?php // end #panel-services .row .hm-services ?>
+						
+						
+						<?php /* NEWSLETTER */
+						get_template_part('inc/testimonials'); ?>
 								
 								
 						<?php /* BLOG POSTS */ ?>
-						<article id="panel-blog" <?php post_class( 'row hm-blog' ); ?> role="article">
-							<section class="entry-content inner-wrap" itemprop="articleBody">
+						<div id="panel-blog" <?php post_class( 'row hm-blog' ); ?>>
+							<section class="entry-content inner-wrap">
 								
-								<?php echo get_field('panel_4'); // Display the content ?>
+								<?php echo get_field('panel_3'); // Display the content ?>
 								
 								<ul class="overlay-links">
 								<?php // Display recent blog posts
-									$args = array( 'numberposts' => '2', 'post_status' => 'publish' );
+									$args = array( 'numberposts' => '4', 'post_status' => 'publish' );
 									$recent_posts = wp_get_recent_posts($args);
 									foreach($recent_posts as $recent) {
 										echo '<li>
@@ -103,7 +78,7 @@
 								</ul> <?php // end .blogposts  ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
-						</article> <?php // end #panel-blog .row .hm-blog ?>
+						</div> <?php // end #panel-blog .row .hm-blog ?>
 						
 						
 					</main> <?php // end #main .main-wrap ?>

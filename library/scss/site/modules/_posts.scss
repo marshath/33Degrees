@@ -15,11 +15,8 @@ BLOG
 		flex-direction: column;
 		flex-wrap: nowrap;
 		padding-top: baseline(1); 					// adds top spacing from border
-		border-bottom: 2px solid brand-color-lighten('gray3', 5);
 		border-top: 2px solid white;
-		&:first-child {
-			border-top:none; 						// remove border from first child
-		}
+		border-bottom: 2px solid brand-color-lighten('gray3', 5);
 	}
 	@include bp('tablet-h') {				// breakpoint tablet horizontal
 		article {
@@ -49,8 +46,59 @@ BLOG
 
 .blog-intro {
 	@extend .panel-intro;
-	background: url('../images/panel-blog1.jpg') center center no-repeat;
+	background: url('../images/splash__blog-400.jpg') center center no-repeat; 	// 400 x 800
 	background-size: cover;
+	margin-bottom: baseline(2);
+	@include bp('tablet-v') {											// breakpoint tablet vertical
+		background-image: url('../images/splash__blog-800.jpg'); 				// 800 x 800
+	}
+	@include bp('laptop') {												// breakpoint laptop screen
+		background-image: url('../images/splash__blog-1200.jpg'); 				// 1200 x 800
+	}
+	@include bp('monitor') {											// breakpoint monitor screen
+		background-image: url('../images/splash__blog-1600.jpg'); 				// 1600 x 800
+	}
+	.btn__search {
+		background-color: brand-color('primary');
+		&:hover, &:active {
+			background-color: brand-color-darken('primary', 4);
+		}
+	}
+	section {
+		h2 {
+			@include sans-serif;
+			margin-bottom: baseline(1);
+		}
+		p {
+			color: brand-color('gray3');
+			a {
+				color: brand-color('white');
+			}
+		}
+		@include bp('tablet-v') {		// breakpoint tablet vertical
+			padding: 0 2em;						// override side padding
+		}
+		@include bp('tablet-h') {		// breakpoint tablet horizontal
+			padding: 0 3em;						// override side padding
+		}
+	}
+	input[type='search'] {
+		border-bottom: 1px solid black;			// remove white space from the bottom
+	}
+}
+
+.featured-image {								// featured image centered
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	@include bp('laptop') {				// breakpoint laptop screen
+		max-height: 700px;						// featured image max-height
+		
+	}
+	@include bp('television') {			// breakpoint television
+		max-height: 800px;						// featured image max-height
+	}
 }
 
 .blog-categories {
@@ -58,10 +106,11 @@ BLOG
 	display: block;
 	margin: 0 auto;
 	h3 {
-		color: brand-color('gray2');
 		@include font-size(16);
 		font-weight: normal;
 		text-align: center;
+		margin: baseline(2) auto 0;
+		text-shadow: none;
 	}
 	ul {
 		list-style: none;
@@ -76,15 +125,9 @@ BLOG
 	li a {
 		@extend .btn__tritiary; 					// outline orange small
 		margin-right: 0.5em;
-	}
-	@include bp('tablet-h') {				// breakpoint tablet horizontal
-		h3 {
-			float:left;
-			display: inline-block;
-		}
-		ul {
-			justify-content: flex-start;
-		}
+		background: none;
+		color: brand-color('white');
+		border-color: brand-color('gray3');
 	}
 }
 
@@ -95,21 +138,56 @@ BLOG
 	}
 }
 
+.single .entry-content h3 {
+	font-weight: 400;
+	text-decoration: underline;
+}
 .attachment-post-thumbnail {
 	margin-top:baseline(1);
 }
 
-.article-footer {
-	svg { 											// icon size for About the Author
+.author-social {
+	svg {											// social media icons
 		width:16px;
 		height:16px;
-		margin-left:0.5em;
+		margin:0 0.25em;
 		fill: brand-color('primary');
-		&:hover, &:focus {
-			fill: brand-color-darken('primary', 4);
+	}
+	a {
+		border-bottom: none;						// remove link bottom border
+		&:hover svg, &:focus svg {
+			fill: brand-color('white');
 		}
 	}
 }
+
+// BLOCKQUOTE CALLOUTS
+.single blockquote {
+	background: brand-color-lighten('gray3', 5);
+	margin: baseline(1.25) 0;						// override browser agent
+	padding: baseline(0.5) 2em;
+	border-left: 8px solid brand-color('primary');
+}
+
+.blockbox {											// blog callout for related posts or bonus tips
+	@extend .max-width;										// from _pages.scss
+	background: white;
+	padding: 0 1em;
+	border: 4px solid brand-color-lighten('accent', 7);
+	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+	h3, h4 {
+		text-decoration: underline;
+	}
+}
+
+.blockcode {										// blog callout for code
+	width:100%;
+	padding: 1em;
+	display:block;
+	overflow: hidden;
+	overflow-x: scroll;
+}
+
 
 // BLOG, PROJECT FORMATTING
 .single { 
@@ -117,7 +195,7 @@ BLOG
 		text-align: center;
 	}
 	.entry-content { 								// blog page text indenting
-		h2, h3, p, ul {
+		h2, h3, h4, h5, h6, p, ul, ol {
 			@extend .max-width; 					// from _page.scss
 		}
 	}
@@ -150,7 +228,7 @@ h1.entry-title {
 
 // AUTHOR IMAGE
 .author-box { 										// white border and shadow
-	border: 4px solid white;
+	border: 4px solid brand-color-lighten('secondary', 8);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 	h4 {
 		margin-top: baseline(0.25);
@@ -159,6 +237,14 @@ h1.entry-title {
 	p {
 		margin-top:0;
 	}
+}
+.author-box-head {
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: baseline(0.5);
+	text-align: center;
 }
 .author-pic, .author-img {
 	@include border-radius(10);
@@ -174,8 +260,16 @@ h1.entry-title {
 	width: 100px;
 	height: 100px;
 	float: left;
-	margin-right: 1em;
 	vertical-align: top;
+}
+@include bp('tablet-v') {					// breakpoint tablet vertical
+	.author-box-head {
+		flex-direction: row;						// override flex direction
+		text-align: left;							// override text alignment
+	}
+	.author-img {
+		margin-right: 1em;							// add margin right
+	}
 }
 
 
@@ -193,37 +287,8 @@ h1.entry-title {
 }
 
 // BLOG ARCHIVE LIST
-.block-thumb {
-	.b-inner {
-		// @include clearfix;
-	}
-	.b-thumb {
-		// @include column(3);
-	}
-	.b-text {
-		// @include column(9);
-	}
-	.b-title {
-		
-	}
-}
-
 .block-headline {
 	text-decoration: none;
-}
-
-.block-hero {
-	.b-thumb {
-		// @include column(12);
-	}
-}
-
-.block-inset {
-	.b-thumb {
-		
-	}
-	.b-text {
-	}
 }
 
 
@@ -232,8 +297,8 @@ h1.entry-title {
 }
 
 .vcard {
-	max-width:700px;
-	background-color: brand-color-lighten('gray3', 5);
+	max-width:680px;
+	background-color: white;
 	padding: baseline(0.5) 1em baseline(1);
 	margin: 0 auto baseline(2); 					// center vcard and add margin to the bottom
 	h3 {
@@ -248,6 +313,48 @@ h1.entry-title {
 		vertical-align: middle;
 	}
 }
+
+
+/***** BLOG EMAIL SIGN-UP *****/
+.blog-newsletter {
+	@extend .panel-padding;
+	max-width: 680px;
+	h4 {
+		text-align: center;
+		font-style: italic;
+		text-shadow: 1px 2px 1px white;
+	}
+	input[type='email'] {
+		position: relative;
+		text-align: center;
+		box-shadow: inset 0 1px 4px brand-color('gray3');
+		border: 1px solid brand-color('white');
+		@extend .default-transition;
+		&:focus {
+			border-color: brand-color-darken('primary', 0); // override border color
+			box-shadow: inset 0 1px 4px white;	// override box-shadow color
+		}
+	}
+	.mc-field-group div, .response {
+		position: relative;
+		width: 100%;
+		font-weight: bold;
+		background: brand-color-lighten('accent', 5);
+		padding: baseline(0.25) 0.5em;
+		margin-top: baseline(0.1);
+		border: 2px solid brand-color-darken('accent', 2);
+		@extend .default-transition;
+	}
+	@include bp('tablet-v') {			// breakpoint tablet vertical
+		input[type='email'] {
+			text-align: left;
+		}
+		.mc-field-group div, .response {
+			position: absolute;
+		}
+	}
+}
+
 
 
 /*******************************

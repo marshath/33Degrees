@@ -80,9 +80,9 @@ OVERLAY LINKS
 	text-align: left;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: space-around;
 	li {
 		margin-bottom: baseline(1);
+		float: left;
 		&:hover, &:focus {
 			figcaption {
 				bottom: baseline(1);
@@ -112,7 +112,6 @@ OVERLAY LINKS
 
 .moretag__slide {
 	color: brand-color('primary');
-	text-decoration: underline;
 	margin-left: 1em;
 	opacity: 0;
 	transition: all 0.2s ease-in;
@@ -160,7 +159,7 @@ PROJECT LINKS
 			width:48%;
 		}
 	}
-	@include bp('monitor') {					// breakpoint laptop screen
+	@include bp('laptop') {					// breakpoint laptop screen
 		li {
 			width:31%;
 		}
@@ -173,7 +172,7 @@ PROJECT LINKS
 		}
 	}
 }
-@include bp('monitor') {						// breakpoint laptop screen
+@include bp('laptop') {						// breakpoint laptop screen
 	.portfolio-branding, .portfolio-design {
 		li:first-child {								// enlarge the first child
 			width: 31%;

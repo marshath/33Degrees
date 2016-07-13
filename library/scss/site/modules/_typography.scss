@@ -42,28 +42,23 @@ h6 {
 	@include font-size(16);
 }
 @include bp('tablet-v') {					// breakpoint tablet vertical - heading sizes
+	h1 {
+		@include font-size(48);
+	}
 	h2 {
-		@include font-size(36);
+		@include font-size(32);
 	}
 	h3 {
-		@include font-size(28);
+		@include font-size(26);
 	}
 	h4 {
-		@include font-size(24);
+		@include font-size(22);
 	}
 	h5 {
 		@include font-size(20);
 	}
 	h6 {
 		@include font-size(18);
-	}
-}
-@include bp('laptop') {						// breakpoint laptop screen - heading sizes
-	h2 {
-		@include font-size(40);
-	}
-	h3 {
-		@include font-size(32);
 	}
 }
 
@@ -78,17 +73,23 @@ h6 {
 // PARAGRAPH
 p {
 	margin-bottom: baseline(1);
-}
-p, .entry-content > ul  {
 	@include bp('tablet-v') {				// breakpoint tablet vertical
-		@include font-size(18);						// increase paragraph font-size
+		@include font-size(16);						// increase paragraph font-size
 	}
 }
-
+.intro:first-line {
+	color: brand-color-darken('gray2', 3);
+	font-weight: bold;
+}
 
 // FORMATTING
 .page-title, .page-subtitle, .archive-title {
 	text-align: center;
+	span { 											// first line for blog archive titles
+		@include font-size(10);
+		color: brand-color('gray3');
+		display: block; 									// line break
+	}
 }
 .normal { 											// Font weight normal
 	font-weight: normal;
@@ -116,16 +117,19 @@ code {
 	padding:0 5px;
 	display:inline-block;
 }
-.blockcode {
-	width:100%;
-	padding: 1em;
-	display:block;
-	overflow: hidden;
-	overflow-x: scroll;
-}
 .center {
 	text-align: center;
 }
+.no-space > li {
+	p {
+		margin: 0;
+		padding: 0;
+	}
+	&:last-child {
+		margin-bottom: baseline(1);
+	}
+}
+
 
 /*******************************
 BLOCKQUOTE

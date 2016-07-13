@@ -25,7 +25,6 @@ FADE
 	}
 }
 
-
 /*******************************
 MOVEMENT
 *******************************/
@@ -42,48 +41,16 @@ MOVEMENT
 	to   { transform: translateX(0%) }
 }
 
+@keyframes emailBounce {						// used on the newsletter icon
+	from { transform: translateY(0%) }
+	88%  { transform: translateY(0%) }
+	90%  { transform: translateY(22%) }
+	94%  { transform: translateY(0%) }
+	96%  { transform: translateY(22%) }
+	to   { transform: translateY(0%) }
+}
+
 @keyframes spin { 								// used on homepage splash image
 	from { transform: rotate(0deg) }
 	to   { transform: rotate(360deg) }
 }
-
-/*******************************
-SERVICE ICON REVEALS
-*******************************/
-@keyframes zoomInFade { 						// zooms in slowly as it fades in
-	from { fill:#FFFFFF; opacity:0.4; }
-	to   { fill:inital; opacity:1; }
-}
-@keyframes revealLeft { 						// slide in slowly from the left
-	from { transform: translateX(20%) }
-	50%   { transform: translateX(0) }			// slide in slowly from the left
-	to { transform: translateX(20%) }
-}
-@keyframes revealRight { 						// slide in slowly from the right
-	from { transform: translateX(-20%) }
-	50%   { transform: translateX(0) }			// slide in slowly from the right
-	to { transform: translateX(-20%) }
-}
-@keyframes revealLeftLogo { 					// slide in slowly from the lower right
-	from { transform: translate(6px, 8px) }
-	to   { transform: translate(0, 0) }
-}
-@keyframes revealRightLogo { 					// slide in slowly from the lower left
-	from { transform: translate(-6px, 8px) }
-	to   { transform: translate(0, 0) }
-}
-/* #icon-website, #icon-logo, #icon-design { 		// animate in service icons - website, logo, design
-	animation: zoomInFade 2s ease-in;
-}
-.icon-website__phone, .icon-design__email { 	// animate in left icons - phone (website), email (design)
-	animation: revealLeft 2s ease-out infinite;
-}
-.icon-website__tablet, .icon-design__disc { 	// animate in right icons - tablet (website), cd (design)
-	animation: revealRight 2s ease-out infinite;
-}
-.icon-logo__left { 								// animate in left logo lines
-	animation: revealLeftLogo 2s ease-out infinite;
-}
-.icon-logo__right { 							// animate in right logo lines
-	animation: revealRightLogo 2s ease-out infinite;
-} */
