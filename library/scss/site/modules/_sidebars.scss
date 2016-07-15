@@ -20,3 +20,9 @@ SOCIAL MEDIA LINKS
 .mc-form { // email signup form, gets display visible from js .active toggle
 	display: none;
 }
+
+.sidebar__related-posts {
+	h3 {
+		margin-bottom: baseline(0.5);
+	}
+}

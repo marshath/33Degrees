@@ -465,7 +465,9 @@ HOMEPAGE SECTIONS
 		font-style: italic;
 	}
 	
-	.overlay-links {
+	.overlay-links {							// override _links.scss
+		justify-content: space-between;
+		align-content: space-between;
 		figcaption { 							// override .overlay-links figcaption
 			@include font-size(20);
 			bottom: -(baseline(0.75));
@@ -494,127 +496,7 @@ HOMEPAGE SECTIONS
 	}
 }
 
-
-/*******************************
-SERVICES
-*******************************/
-.services-intro {
-	@extend .panel-intro;						// from _pages.scss
-	background: url('../images/splash__services-400.jpg') center center no-repeat; // 400 x 800
-	background-size: cover;
-	@include bp('tablet-v') {											// breakpoint tablet vertical
-		background-image: url('../images/splash__services-800.jpg'); 			// 800 x 800
-	}
-	@include bp('laptop') {												// breakpoint laptop screen
-		background-image: url('../images/splash__services-1200.jpg'); 			// 1200 x 800
-	}
-	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/splash__services-1600.jpg'); 			// 1600 x 800
-	}
-}
-
-.services-websites, .services-branding, .services-design, .portfolio-websites, .portfolio-branding, .portfolio-design {
-	@extend .panel-padding;						// from _pages.scss
-	h2 {
-		color: brand-color-darken('primary', 6); // oreverride global
-	}
-}
-.services-websites, .services-design {
-	@include bp('laptop') {				// breakpoint laptop screen
-		section {
-			padding-right: 20%;					// content offset
-		}
-	}
-	@include bp('monitor') {			// breakpoint monitor screen
-		section {
-			padding-right: 30%;					// override content offset
-		}
-	}
-}
-.services-branding, .portfolio-branding {
-	background-color: #e7e7e7;
-}
-
-.services-websites {
-	@include bp('laptop') {												// breakpoint laptop screen
-		background: url('../images/services__websites-1200.jpg') center top no-repeat; // 1200 x 800
-		background-size: cover;
-	}
-	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/services__websites-1600.jpg'); 			// 1600 x 800
-	}
-}
-.services-branding {
-	@include bp('laptop') {												// breakpoint laptop screen
-		background: url('../images/services__branding-1200.jpg') center top no-repeat; // 1200 x 800
-		background-size: cover;
-		section {
-			padding-left: 20%;					// content offset
-		}
-	}
-	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/services__branding-1600.jpg'); 			// 1600 x 800
-		section {
-			padding-left: 30%;					// override content offset
-		}
-	}
-}
-.services-design {
-	@include bp('laptop') {												// breakpoint laptop screen
-		background: url('../images/services__design-1200.jpg') center top no-repeat; // 1200 x 800
-		background-size: cover;
-	}
-	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/services__design-1600.jpg'); 				// 1600 x 800
-	}
-	ul {
-		column-count: 1;
-		column-gap: 1em;
-		list-style: inside disc;
-		margin: 0;
-		padding-left: 0.5em;
-	}
-	li { 										// inside bullet positioning
-		padding-left: 1em;
-		text-indent: -1em;
-	}
-	@include bp('phone-h') {			// breakpoint smartphone horizontal
-		ul {
-			column-count:2;						// increase column count
-		}
-	}
-	@include bp('tablet-h') {			// breakpoint tablet horizontal
-		ul {
-			column-count:3;						// increase column count
-		}
-	}
-	@include bp('laptop') {				// breakpoint laptop screen
-		ul {
-			column-count:4;						// increase column count
-		}
-	}
-}
-
-.portfolio-icon { 								// used on Services, Project pages
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	svg {										// set svg width and height
-		width: 200px;
-		height: 133px;
-	}
-	span {										// add bottom spacing and border 
-		margin-bottom: 0.5em;
-	}
-	@include bp('laptop') {				// breakpoint laptop screen
-		flex-direction: row;
-		svg {									// add side spacing and border
-			padding-right: 0.5em;				// shrink the svg
-		}
-	}
-}
-
+/* 
 .serv-right, .serv-left {						// service icon positioning
 	width:36%;
 	margin-bottom: baseline(1);
@@ -638,7 +520,7 @@ SERVICES
 .serv-left {
 	float: left;
 	margin-right: 4%;
-}
+} */
 
 
 /*******************************
@@ -665,12 +547,20 @@ PORTFOLIO
 
 .portfolio-branding {
 	padding-bottom: baseline(0.5);				// override .panel-padding
+	background-color: #e7e7e7;
 }
 
 .portfolio-design {
 }
 
 .portfolio-websites, .portfolio-branding, .portfolio-design { // project cards
+	@extend .panel-padding;						// from _pages.scss
+	h2 {
+		color: brand-color-darken('primary', 6); // oreverride global
+	}
+	.subhead p {
+		text-align: left;						// override .subhead
+	}
 	li {
 		background: white;
 		margin-bottom: baseline(1);
@@ -696,6 +586,26 @@ PORTFOLIO
 	}
 	h3, p {
 		padding: 0 16px;
+	}
+}
+
+.portfolio-icon { 								// used on Services, Project pages
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	svg {										// set svg width and height
+		width: 200px;
+		height: 133px;
+	}
+	span {										// add bottom spacing and border 
+		margin-bottom: 0.5em;
+	}
+	@include bp('laptop') {				// breakpoint laptop screen
+		flex-direction: row;
+		svg {									// add side spacing and border
+			padding-right: 0.5em;				// shrink the svg
+		}
 	}
 }
 
