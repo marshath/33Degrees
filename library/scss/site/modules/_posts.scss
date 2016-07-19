@@ -138,8 +138,13 @@ BLOG
 	}
 }
 
-.single .entry-content h3 {
-	font-weight: 400;
+.single {
+	.entry-content h3 {
+		font-weight: 400;
+	}
+	figcaption {
+		text-align: center;
+	}
 }
 .attachment-post-thumbnail {
 	margin-top:baseline(1);

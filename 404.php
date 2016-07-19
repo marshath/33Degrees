@@ -18,6 +18,10 @@
 							<section class="search">
 								<p><?php get_search_form(); ?></p>
 							</section>
+							
+							<footer class="article-footer">
+								<p class="image-404"><img src="<?php echo get_template_directory_uri(); ?>/library/images/emoji-sad.svg" alt="Sad Emoji"><?php _e( '', 'bonestheme' ); ?></p>
+							</footer>
 
 						</article> <?php // end #post-not-found .article-wrap ?>
 						
