@@ -251,17 +251,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/bg__abstract-white.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 20100,
-		"inputAbbreviatedPath": "\/library\/images\/bg__abstract-white.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/bg__abstract-white.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/library\/images\/favicon_16.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -291,50 +280,6 @@
 		"initialSize": 536,
 		"inputAbbreviatedPath": "\/library\/images\/icon-triangle.png",
 		"outputAbbreviatedPath": "\/library\/images\/icon-triangle.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/icon-triangle2.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1092,
-		"inputAbbreviatedPath": "\/library\/images\/icon-triangle2.png",
-		"outputAbbreviatedPath": "\/library\/images\/icon-triangle2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/lady-full.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 350954,
-		"inputAbbreviatedPath": "\/library\/images\/lady-full.png",
-		"outputAbbreviatedPath": "\/library\/images\/lady-full.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/lady.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 80432,
-		"inputAbbreviatedPath": "\/library\/images\/lady.png",
-		"outputAbbreviatedPath": "\/library\/images\/lady.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/lady2.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/library\/images\/lady2.png",
-		"outputAbbreviatedPath": "\/library\/images\/lady2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -779,28 +724,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/texture__paper.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4802,
-		"inputAbbreviatedPath": "\/library\/images\/texture__paper.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/texture__paper.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/texture__wood.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 106453,
-		"inputAbbreviatedPath": "\/library\/images\/texture__wood.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/texture__wood.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/library\/images\/win8-tile-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -808,17 +731,6 @@
 		"initialSize": 5619,
 		"inputAbbreviatedPath": "\/library\/images\/win8-tile-icon.png",
 		"outputAbbreviatedPath": "\/library\/images\/win8-tile-icon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/wood.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 403837,
-		"inputAbbreviatedPath": "\/library\/images\/wood.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/wood.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
