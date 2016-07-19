@@ -180,9 +180,11 @@ BLOG
 	}
 }
 
-.blockcode {										// blog callout for code
+pre code {											// blog callout for code
 	width:100%;
+	@extend .max-width;										// from _pages.scss
 	padding: 1em;
+	margin: 0 auto;
 	display:block;
 	overflow: hidden;
 	overflow-x: scroll;

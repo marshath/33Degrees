@@ -13,7 +13,7 @@
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 								
 								<div class="splash-headline"><?php // load and browser cache the SVG sprite sheet
-									require("library/images/splash-text.svg"); ?>
+									require("library/images/splash-text-vector.svg"); ?>
 								</div> <?php // end .splash-headline ?>
 									
 								<div class="splash-text">

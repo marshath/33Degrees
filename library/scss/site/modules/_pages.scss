@@ -263,12 +263,10 @@ HOMEPAGE SECTIONS
 }
 .splash-headline {								// SVG Splash Text
 	width: 95%;
-	@include serif;
-	font-style: italic;
-	fill: white;	// svg text color
-	text-shadow: -4px 4px 2px brand-color-alpha('black','light');
+	fill: url(#grad1);	// svg text color
 	display: block;
 	margin: baseline(1) auto 0;
+
 }
 .splash-text {									// content text
 	width: 100%;
@@ -276,11 +274,6 @@ HOMEPAGE SECTIONS
 	font-style: italic;
 	text-shadow: -1px 2px 1px brand-color-alpha('black','light');
 	padding: 0 2em;
-}
-.splash-line {									// SVG Splash Text -- horizontal line
-	fill: brand-color('white');
-}
-.splash-image {
 }
 @include bp('tablet-v') {				// breakpoint tablet vertical
 	.splash-headline {
@@ -313,6 +306,7 @@ HOMEPAGE SECTIONS
 	.splash-text {
 		top:65%;
 		font-size:1.2em;
+		padding:0 8em;
 	}
 }
 @include bp('monitor') {				// breakpoint monitor screen
@@ -324,6 +318,7 @@ HOMEPAGE SECTIONS
 	.splash-text {
 		top:62%;
 		font-size:1.3em;
+		padding:0 12em;
 	}
 }
 @include bp('television') {				// breakpoint television
@@ -335,6 +330,7 @@ HOMEPAGE SECTIONS
 	.splash-text {
 		top:60%;
 		font-size:1.5em;
+		padding:0 15em;
 	}
 }
 
