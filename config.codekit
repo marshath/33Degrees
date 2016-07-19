@@ -284,6 +284,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/icon-triangle2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1022,
+		"inputAbbreviatedPath": "\/library\/images\/icon-triangle2.png",
+		"outputAbbreviatedPath": "\/library\/images\/icon-triangle2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/login-logo.png": {
 		"fileType": 32768,
 		"ignore": 0,

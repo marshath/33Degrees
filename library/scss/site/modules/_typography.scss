@@ -111,11 +111,21 @@ i, em, .italic { 									// Font style italic
 	text-align: center;
 	line-height: 1;
 }
-code {
+code, pre {
 	@include font-size(14);
 	background: brand-color-lighten('gray3',3);
 	padding:0 5px;
 	display:inline-block;
+}
+pre {												// blog callout for code
+	width:100%;
+	@extend .max-width;										// from _pages.scss
+	padding: 1em;
+	margin: 0 auto;
+	display: block;
+	white-space: pre;								// allows horizontal scrolling
+	overflow-x: hidden;
+	overflow-x: scroll;
 }
 .center {
 	text-align: center;
@@ -155,6 +165,7 @@ FIGURE CAPTION
 *******************************/
 figcaption {
 	font-style: italic;
+	text-align: center;
 }
 
 

@@ -11,8 +11,9 @@ img {
 	width:100%;
 	height: auto;
 }
-.max-height {
+.image-center img {
 	width: intrinsic;
+	display: block;
 	margin: 0 auto;
 }
 
