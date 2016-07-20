@@ -1,10 +1,9 @@
 			
 						
 			<?php /* NEWSLETTER */
-			if ( !is_page('home')) { 
+			if ( !is_page( array('home', 'email-marketing-the-essential-guide') )) { 
 				get_template_part('inc/newsletter'); 
 			} ?>
-						
 						
 			<footer class="footer-wrap" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 				<div id="inner-footer" class="inner-wrap">

@@ -212,6 +212,9 @@ GLOBAL
 		font-style: italic;
 		text-shadow: 1px 2px 1px brand-color-alpha('white','dark');
 	}
+	form {
+		margin-bottom: baseline(0.5);
+	}
 	input[type='email'] {
 		text-align: center;
 		border: 1px solid brand-color-darken('accent',2); // fix for 1px white below subscribe button

@@ -32,8 +32,6 @@
 
 					</main> <?php // end #main .main-wrap ?>
 
-					<?php get_sidebar(); ?>
-
 				</div> <?php // end #inner-content .inner-wrap ?>
 			</div> <?php // end #content .wrap ?>
 

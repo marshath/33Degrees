@@ -140,6 +140,43 @@ pre {												// blog callout for code
 	}
 }
 
+.tooltip {
+	width: intrinsic;
+	@include font-size(12);
+	color: brand-color('primary');
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	border-bottom: 1px dotted brand-color('primary');	// dots under the hoverable text
+	.tooltip-text {
+		visibility: hidden;
+		width: 180px;
+		background-color: black;
+		color: brand-color('white');
+		text-align: center;
+		padding: baseline(0.5) 0.5em;
+		@include border-radius(1);
+		top: 120%;
+		left:50%;
+		margin-left: -90px;							// half the width (120px/2 = 60px)
+		position: absolute;
+		z-index: 1;
+		&::after {									// top tooltip arrow
+			content: '';
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			margin-left: -10px;
+			border-width: 10px;
+			border-style: solid;
+			border-color: transparent transparent black transparent;
+		}
+	}
+	&:hover .tooltip-text {
+		visibility: visible;
+	}
+}
+
 
 /*******************************
 BLOCKQUOTE

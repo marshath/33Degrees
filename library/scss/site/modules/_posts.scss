@@ -321,6 +321,9 @@ h1.entry-title {
 		font-style: italic;
 		text-shadow: 1px 2px 1px white;
 	}
+	form {
+		margin-bottom: baseline(0.5);
+	}
 	input[type='email'] {
 		position: relative;
 		text-align: center;
@@ -341,6 +344,9 @@ h1.entry-title {
 		padding: baseline(0.25) 0.5em;
 		border: 2px solid brand-color-darken('accent', 2);
 		@extend .default-transition;
+	}
+	.tooltip {
+		margin-bottom: baseline(1);
 	}
 	@include bp('tablet-v') {			// breakpoint tablet vertical
 		padding-bottom: baseline(1); 			// add more bottom padding override
