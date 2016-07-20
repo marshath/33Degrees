@@ -41,6 +41,7 @@
 						<div id="panel-company3" <?php post_class( 'row company-contact' ); ?>>
 							<section class="entry-content inner-wrap">
 								
+								<a id="contact"></a>
 								<?php echo get_field('panel_3'); // display the content
 								gravity_form( 1, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true ); ?>
 								

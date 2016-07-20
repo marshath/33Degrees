@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+ <?php get_header(); ?>
 
 			<div id="content" class="wrap">
 				<div id="inner-content" class="inner-wrap">
