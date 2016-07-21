@@ -251,7 +251,7 @@ GLOBAL
 }
 
 .email-bounce {									// inbox arrow animation
-	animation: emailBounce 8s ease-out infinite;
+	animation: emailBounce 4s ease-out infinite;
 }
 
 
@@ -659,7 +659,10 @@ COMPANY
 
 .company-contact {
 	@extend .panel-padding;
-	background-color: brand-color-lighten('gray3', 6);
+	background-color: brand-color-lighten('secondary', 9);
+	input[type='text'], textarea {
+		border-color: brand-color-lighten('secondary', 9);
+	}
 }
 
 
