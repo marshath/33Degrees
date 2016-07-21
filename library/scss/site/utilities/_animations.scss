@@ -49,8 +49,3 @@ MOVEMENT
 	98%  { transform: translateY(22%) }
 	to   { transform: translateY(0%) }
 }
-
-@keyframes spin { 								// used on homepage splash image
-	from { transform: rotate(0deg) }
-	to   { transform: rotate(360deg) }
-}

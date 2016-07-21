@@ -137,15 +137,6 @@ BLOG
 		text-decoration: underline;
 	}
 }
-
-.single {
-	.entry-content h3 {
-		font-weight: 400;
-	}
-	figcaption {
-		text-align: center;
-	}
-}
 .attachment-post-thumbnail {
 	margin-top:baseline(1);
 }
@@ -193,6 +184,12 @@ BLOG
 	.entry-content { 								// blog page text indenting
 		h2, h3, h4, h5, h6, p, ul, ol {
 			@extend .max-width; 					// from _page.scss
+		}
+		h3 {
+			font-weight: 400;
+		}	
+		figcaption {
+			text-align: center;
 		}
 	}
 }

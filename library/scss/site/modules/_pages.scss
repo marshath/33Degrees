@@ -732,3 +732,50 @@ CONTACT & ESTIMATE FORMS, THANK YOU
 		margin: baseline(3) auto;
 	}
 }
+
+
+/*******************************
+LANDING PAGES
+*******************************/
+.landing {
+	@extend .panel-padding;
+	@extend .max-width;
+	h1 {
+		@include serif;
+	}
+	.subhead {
+		color: brand-color('gray2');
+	}
+	figure {
+		margin: baseline(2) auto 0;
+	}
+	&-form {
+		background: brand-color('accent');
+		padding: baseline(0.5) 0.5em;
+		margin: baseline(1) 0;
+		font-size: intrinsic;
+		input[type="submit"] {					// override newsletter form formatting
+			position: relative;
+			width: 100%;
+			padding: baseline(0.5);
+			margin-top:baseline(0.5);
+		}
+		input[type='email'] {
+			text-align: center;
+		}
+	}
+	&-content {									// force content below signup form
+		@include clearfix;
+		margin-bottom: baseline(1);
+	}
+	@include bp('tablet-v') {
+		figure {
+			max-width: 55%;
+		}
+		&-form {
+			margin: baseline(1.5) 0 0;
+		}
+	}
+}
+
+

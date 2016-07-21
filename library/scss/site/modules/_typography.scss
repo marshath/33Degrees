@@ -149,6 +149,7 @@ pre {												// blog callout for code
 	margin: 0 auto;
 	border-bottom: 1px dotted brand-color('primary');	// dots under the hoverable text
 	.tooltip-text {
+		opacity:0;
 		visibility: hidden;
 		width: 180px;
 		background-color: black;
@@ -156,11 +157,12 @@ pre {												// blog callout for code
 		text-align: center;
 		padding: baseline(0.5) 0.5em;
 		@include border-radius(1);
-		top: 120%;
+		top: 100%;
 		left:50%;
 		margin-left: -90px;							// half the width (120px/2 = 60px)
 		position: absolute;
 		z-index: 1;
+		transition: top 0.2s ease-out, opacity 0.2s ease-out;
 		&::after {									// top tooltip arrow
 			content: '';
 			position: absolute;
@@ -173,7 +175,9 @@ pre {												// blog callout for code
 		}
 	}
 	&:hover .tooltip-text {
+		opacity:1;
 		visibility: visible;
+		top: 120%;
 	}
 }
 

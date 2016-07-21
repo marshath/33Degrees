@@ -394,28 +394,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/side-emailmarketing.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 17974,
-		"inputAbbreviatedPath": "\/library\/images\/side-emailmarketing.png",
-		"outputAbbreviatedPath": "\/library\/images\/side-emailmarketing.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/side-emailmarketing@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 56310,
-		"inputAbbreviatedPath": "\/library\/images\/side-emailmarketing@2x.png",
-		"outputAbbreviatedPath": "\/library\/images\/side-emailmarketing@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/library\/images\/splash__blog-1200.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
