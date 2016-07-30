@@ -7,7 +7,7 @@
 								<div class="icon-inbox"><svg><use xlink:href="#icon-inbox"></use></svg></div>
 								
 								<h2>Tips in your inbox</h2>
-								<p>Get quarterly updates about the latest news, insights, and trends to improve your digital marketing strategy.</p>
+								<p>Get the latest news, insights, and trends to improve your digital marketing strategy directly in your inbox.</p>
 								
 								<?php // Begin MailChimp Signup Form ?>
 								<form action="http://33degreesds.us4.list-manage.com/subscribe/post?u=f5083bea3554294c46e304e54&amp;id=44fc4c953b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate searchform" target="_blank" novalidate>
@@ -30,6 +30,11 @@
 									<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 									<?php // End mc_embed_signup ?>
 								</form><?php // end MailChimp Signup Form ?>
+								
+								<div class="tooltip text-center">Privacy Policy
+									<span class="tooltip-text">We do not sell or share your information.</span>
+								</div> <?php // end .tooltip ?>
+								
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</div> <?php // end #panel-newsletter .row .newsletter ?>
 						

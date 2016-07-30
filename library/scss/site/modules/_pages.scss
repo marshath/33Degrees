@@ -28,7 +28,8 @@ GLOBAL
 	h1, h2, h3 {
 		text-shadow: 2px 4px 2px brand-color('black');
 	}
-	h1 {
+	h1 {		
+		@extend .max-width;
 		@include serif;
 		padding-bottom: 21px;
 		border-bottom: 1px dotted brand-color('white');
@@ -36,6 +37,9 @@ GLOBAL
 	h2, h3 {
 		@include sans-serif;
 		margin-bottom: baseline(1);
+	}
+	p {
+		@extend .max-width;
 	}
 	> section {									// callout box
 		@include border-radius(1);
@@ -212,6 +216,9 @@ GLOBAL
 		font-style: italic;
 		text-shadow: 1px 2px 1px brand-color-alpha('white','dark');
 	}
+	form {
+		margin-bottom: baseline(0.5);
+	}
 	input[type='email'] {
 		text-align: center;
 		border: 1px solid brand-color-darken('accent',2); // fix for 1px white below subscribe button
@@ -248,7 +255,7 @@ GLOBAL
 }
 
 .email-bounce {									// inbox arrow animation
-	animation: emailBounce 8s ease-out infinite;
+	animation: emailBounce 4s ease-out infinite;
 }
 
 
@@ -263,12 +270,10 @@ HOMEPAGE SECTIONS
 }
 .splash-headline {								// SVG Splash Text
 	width: 95%;
-	@include serif;
-	font-style: italic;
-	fill: white;	// svg text color
-	text-shadow: -4px 4px 2px brand-color-alpha('black','light');
+	fill: url(#grad1);    // svg text color
 	display: block;
 	margin: baseline(1) auto 0;
+
 }
 .splash-text {									// content text
 	width: 100%;
@@ -276,11 +281,6 @@ HOMEPAGE SECTIONS
 	font-style: italic;
 	text-shadow: -1px 2px 1px brand-color-alpha('black','light');
 	padding: 0 2em;
-}
-.splash-line {									// SVG Splash Text -- horizontal line
-	fill: brand-color('white');
-}
-.splash-image {
 }
 @include bp('tablet-v') {				// breakpoint tablet vertical
 	.splash-headline {
@@ -313,6 +313,7 @@ HOMEPAGE SECTIONS
 	.splash-text {
 		top:65%;
 		font-size:1.2em;
+		padding:0 8em;
 	}
 }
 @include bp('monitor') {				// breakpoint monitor screen
@@ -324,6 +325,7 @@ HOMEPAGE SECTIONS
 	.splash-text {
 		top:62%;
 		font-size:1.3em;
+		padding:0 12em;
 	}
 }
 @include bp('television') {				// breakpoint television
@@ -335,6 +337,7 @@ HOMEPAGE SECTIONS
 	.splash-text {
 		top:60%;
 		font-size:1.5em;
+		padding:0 15em;
 	}
 }
 
@@ -465,7 +468,9 @@ HOMEPAGE SECTIONS
 		font-style: italic;
 	}
 	
-	.overlay-links {
+	.overlay-links {							// override _links.scss
+		justify-content: space-between;
+		align-content: space-between;
 		figcaption { 							// override .overlay-links figcaption
 			@include font-size(20);
 			bottom: -(baseline(0.75));
@@ -494,127 +499,7 @@ HOMEPAGE SECTIONS
 	}
 }
 
-
-/*******************************
-SERVICES
-*******************************/
-.services-intro {
-	@extend .panel-intro;						// from _pages.scss
-	background: url('../images/splash__services-400.jpg') center center no-repeat; // 400 x 800
-	background-size: cover;
-	@include bp('tablet-v') {											// breakpoint tablet vertical
-		background-image: url('../images/splash__services-800.jpg'); 			// 800 x 800
-	}
-	@include bp('laptop') {												// breakpoint laptop screen
-		background-image: url('../images/splash__services-1200.jpg'); 			// 1200 x 800
-	}
-	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/splash__services-1600.jpg'); 			// 1600 x 800
-	}
-}
-
-.services-websites, .services-branding, .services-design, .portfolio-websites, .portfolio-branding, .portfolio-design {
-	@extend .panel-padding;						// from _pages.scss
-	h2 {
-		color: brand-color-darken('primary', 6); // oreverride global
-	}
-}
-.services-websites, .services-design {
-	@include bp('laptop') {				// breakpoint laptop screen
-		section {
-			padding-right: 20%;					// content offset
-		}
-	}
-	@include bp('monitor') {			// breakpoint monitor screen
-		section {
-			padding-right: 30%;					// override content offset
-		}
-	}
-}
-.services-branding, .portfolio-branding {
-	background-color: #e7e7e7;
-}
-
-.services-websites {
-	@include bp('laptop') {												// breakpoint laptop screen
-		background: url('../images/services__websites-1200.jpg') center top no-repeat; // 1200 x 800
-		background-size: cover;
-	}
-	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/services__websites-1600.jpg'); 			// 1600 x 800
-	}
-}
-.services-branding {
-	@include bp('laptop') {												// breakpoint laptop screen
-		background: url('../images/services__branding-1200.jpg') center top no-repeat; // 1200 x 800
-		background-size: cover;
-		section {
-			padding-left: 20%;					// content offset
-		}
-	}
-	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/services__branding-1600.jpg'); 			// 1600 x 800
-		section {
-			padding-left: 30%;					// override content offset
-		}
-	}
-}
-.services-design {
-	@include bp('laptop') {												// breakpoint laptop screen
-		background: url('../images/services__design-1200.jpg') center top no-repeat; // 1200 x 800
-		background-size: cover;
-	}
-	@include bp('monitor') {											// breakpoint monitor screen
-		background-image: url('../images/services__design-1600.jpg'); 				// 1600 x 800
-	}
-	ul {
-		column-count: 1;
-		column-gap: 1em;
-		list-style: inside disc;
-		margin: 0;
-		padding-left: 0.5em;
-	}
-	li { 										// inside bullet positioning
-		padding-left: 1em;
-		text-indent: -1em;
-	}
-	@include bp('phone-h') {			// breakpoint smartphone horizontal
-		ul {
-			column-count:2;						// increase column count
-		}
-	}
-	@include bp('tablet-h') {			// breakpoint tablet horizontal
-		ul {
-			column-count:3;						// increase column count
-		}
-	}
-	@include bp('laptop') {				// breakpoint laptop screen
-		ul {
-			column-count:4;						// increase column count
-		}
-	}
-}
-
-.portfolio-icon { 								// used on Services, Project pages
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	svg {										// set svg width and height
-		width: 200px;
-		height: 133px;
-	}
-	span {										// add bottom spacing and border 
-		margin-bottom: 0.5em;
-	}
-	@include bp('laptop') {				// breakpoint laptop screen
-		flex-direction: row;
-		svg {									// add side spacing and border
-			padding-right: 0.5em;				// shrink the svg
-		}
-	}
-}
-
+/* 
 .serv-right, .serv-left {						// service icon positioning
 	width:36%;
 	margin-bottom: baseline(1);
@@ -638,7 +523,7 @@ SERVICES
 .serv-left {
 	float: left;
 	margin-right: 4%;
-}
+} */
 
 
 /*******************************
@@ -665,12 +550,20 @@ PORTFOLIO
 
 .portfolio-branding {
 	padding-bottom: baseline(0.5);				// override .panel-padding
+	background-color: #e7e7e7;
 }
 
 .portfolio-design {
 }
 
 .portfolio-websites, .portfolio-branding, .portfolio-design { // project cards
+	@extend .panel-padding;						// from _pages.scss
+	h2 {
+		color: brand-color-darken('primary', 6); // oreverride global
+	}
+	.subhead p {
+		text-align: left;						// override .subhead
+	}
 	li {
 		background: white;
 		margin-bottom: baseline(1);
@@ -696,6 +589,26 @@ PORTFOLIO
 	}
 	h3, p {
 		padding: 0 16px;
+	}
+}
+
+.portfolio-icon { 								// used on Services, Project pages
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	svg {										// set svg width and height
+		width: 200px;
+		height: 133px;
+	}
+	span {										// add bottom spacing and border 
+		margin-bottom: 0.5em;
+	}
+	@include bp('laptop') {				// breakpoint laptop screen
+		flex-direction: row;
+		svg {									// add side spacing and border
+			padding-right: 0.5em;				// shrink the svg
+		}
 	}
 }
 
@@ -750,7 +663,11 @@ COMPANY
 
 .company-contact {
 	@extend .panel-padding;
-	background-color: brand-color-lighten('gray3', 6);
+	background-color: brand-color-lighten('secondary', 9);
+	padding-bottom: baseline(3);
+	input[type='text'], textarea {
+		border-color: brand-color-lighten('secondary', 9);
+	}
 }
 
 
@@ -820,3 +737,50 @@ CONTACT & ESTIMATE FORMS, THANK YOU
 		margin: baseline(3) auto;
 	}
 }
+
+
+/*******************************
+LANDING PAGES
+*******************************/
+.landing {
+	@extend .panel-padding;
+	@extend .max-width;
+	h1 {
+		@include serif;
+	}
+	.subhead {
+		color: brand-color('gray2');
+	}
+	figure {
+		margin: baseline(2) auto 0;
+	}
+	&-form {
+		background: brand-color('accent');
+		padding: baseline(0.5) 0.5em;
+		margin: baseline(1) 0;
+		font-size: intrinsic;
+		input[type="submit"] {					// override newsletter form formatting
+			position: relative;
+			width: 100%;
+			padding: baseline(0.5);
+			margin-top:baseline(0.5);
+		}
+		input[type='email'] {
+			text-align: center;
+		}
+	}
+	&-content {									// force content below signup form
+		@include clearfix;
+		margin-bottom: baseline(1);
+	}
+	@include bp('tablet-v') {
+		figure {
+			max-width: 55%;
+		}
+		&-form {
+			margin: baseline(1.5) 0 0;
+		}
+	}
+}
+
+

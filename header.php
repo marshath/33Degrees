@@ -31,6 +31,8 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+		<?php // load Google Analytics
+			require("inc/analytics.php"); ?>
 		<?php // load and browser cache the SVG sprite sheet
 			require("library/images/sprite.svg"); ?>
 

@@ -137,11 +137,6 @@ BLOG
 		text-decoration: underline;
 	}
 }
-
-.single .entry-content h3 {
-	font-weight: 400;
-	text-decoration: underline;
-}
 .attachment-post-thumbnail {
 	margin-top:baseline(1);
 }
@@ -180,14 +175,6 @@ BLOG
 	}
 }
 
-.blockcode {										// blog callout for code
-	width:100%;
-	padding: 1em;
-	display:block;
-	overflow: hidden;
-	overflow-x: scroll;
-}
-
 
 // BLOG, PROJECT FORMATTING
 .single { 
@@ -197,6 +184,12 @@ BLOG
 	.entry-content { 								// blog page text indenting
 		h2, h3, h4, h5, h6, p, ul, ol {
 			@extend .max-width; 					// from _page.scss
+		}
+		h3 {
+			font-weight: 400;
+		}	
+		figcaption {
+			text-align: center;
 		}
 	}
 }
@@ -318,17 +311,21 @@ h1.entry-title {
 /***** BLOG EMAIL SIGN-UP *****/
 .blog-newsletter {
 	@extend .panel-padding;
+	padding-top: 0;
 	max-width: 680px;
 	h4 {
 		text-align: center;
 		font-style: italic;
 		text-shadow: 1px 2px 1px white;
 	}
+	form {
+		margin-bottom: baseline(0.5);
+	}
 	input[type='email'] {
 		position: relative;
 		text-align: center;
 		box-shadow: inset 0 1px 4px brand-color('gray3');
-		border: 1px solid brand-color('white');
+		border: 1px solid brand-color('gray3');
 		@extend .default-transition;
 		&:focus {
 			border-color: brand-color-darken('primary', 0); // override border color
@@ -338,19 +335,28 @@ h1.entry-title {
 	.mc-field-group div, .response {
 		position: relative;
 		width: 100%;
+		color: brand-color('text') !important;
 		font-weight: bold;
-		background: brand-color-lighten('accent', 5);
+		background: brand-color-lighten('accent', 5) !important;
 		padding: baseline(0.25) 0.5em;
-		margin-top: baseline(0.1);
 		border: 2px solid brand-color-darken('accent', 2);
 		@extend .default-transition;
 	}
+	.tooltip {
+		margin-bottom: baseline(1);
+	}
 	@include bp('tablet-v') {			// breakpoint tablet vertical
+		padding-bottom: baseline(1); 			// add more bottom padding override
 		input[type='email'] {
 			text-align: left;
 		}
 		.mc-field-group div, .response {
 			position: absolute;
+		}
+		input[type='submit'] {
+			position: absolute;
+			top:0;
+			right:0;
 		}
 	}
 }

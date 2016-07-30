@@ -51,14 +51,14 @@ CONTACT INFORMATION
 		display: inline-block;
 	}
 	.tel { 											// Company telephone
-		margin-right:1em; 							// gives email button space 
+		margin-right:0.5em; 						// gives email button space 
 	}
 	svg {
 		width:32px;
 		height: 32px;
 		vertical-align: middle;
 		fill: brand-color('white');
-		margin-right: 1em;
+		margin-right: 0.5em;
 	}
 	.mobile { 										// visible on mobile
 		display: inline-block;
@@ -105,8 +105,9 @@ CONTACT INFORMATION
 		}
 		.non-mobile { 								// visible on tablet+
 			clip: none;								// override
-			height: intrinsic;						// override
-			width: intrinsic;						// override
+			height: auto;							// override
+			width: auto;							// override
+			overflow: visible;
 		}
 	}
 	.social {

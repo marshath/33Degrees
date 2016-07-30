@@ -111,11 +111,21 @@ i, em, .italic { 									// Font style italic
 	text-align: center;
 	line-height: 1;
 }
-code {
+code, pre {
 	@include font-size(14);
 	background: brand-color-lighten('gray3',3);
 	padding:0 5px;
 	display:inline-block;
+}
+pre {												// blog callout for code
+	width:100%;
+	@extend .max-width;										// from _pages.scss
+	padding: 1em;
+	margin: 0 auto;
+	display: block;
+	white-space: pre;								// allows horizontal scrolling
+	overflow-x: hidden;
+	overflow-x: scroll;
 }
 .center {
 	text-align: center;
@@ -127,6 +137,48 @@ code {
 	}
 	&:last-child {
 		margin-bottom: baseline(1);
+	}
+}
+
+.tooltip {
+	width: 6.5em;										// fixed width to center block
+	text-align: center;
+	@include font-size(12);
+	color: brand-color('primary');
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	border-bottom: 1px dotted brand-color('primary');	// dots under the hoverable text
+	.tooltip-text {
+		opacity:0;
+		visibility: hidden;
+		width: 180px;
+		background-color: black;
+		color: brand-color('white');
+		text-align: center;
+		padding: baseline(0.5) 0.5em;
+		@include border-radius(1);
+		top: 100%;
+		left:50%;
+		margin-left: -90px;							// half the width (120px/2 = 60px)
+		position: absolute;
+		z-index: 1;
+		transition: top 0.2s ease-out, opacity 0.2s ease-out;
+		&::after {									// top tooltip arrow
+			content: '';
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			margin-left: -10px;
+			border-width: 10px;
+			border-style: solid;
+			border-color: transparent transparent black transparent;
+		}
+	}
+	&:hover .tooltip-text {
+		opacity:1;
+		visibility: visible;
+		top: 120%;
 	}
 }
 

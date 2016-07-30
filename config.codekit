@@ -74,6 +74,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/inc\/analytics.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/inc\/analytics.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/inc\/author-bio.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -251,17 +260,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/bg__abstract-white.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 20100,
-		"inputAbbreviatedPath": "\/library\/images\/bg__abstract-white.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/bg__abstract-white.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/library\/images\/favicon_16.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -299,42 +297,9 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1092,
+		"initialSize": 1022,
 		"inputAbbreviatedPath": "\/library\/images\/icon-triangle2.png",
 		"outputAbbreviatedPath": "\/library\/images\/icon-triangle2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/lady-full.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 350954,
-		"inputAbbreviatedPath": "\/library\/images\/lady-full.png",
-		"outputAbbreviatedPath": "\/library\/images\/lady-full.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/lady.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 80432,
-		"inputAbbreviatedPath": "\/library\/images\/lady.png",
-		"outputAbbreviatedPath": "\/library\/images\/lady.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/lady2.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/library\/images\/lady2.png",
-		"outputAbbreviatedPath": "\/library\/images\/lady2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -434,28 +399,6 @@
 		"initialSize": 33483,
 		"inputAbbreviatedPath": "\/library\/images\/services__websites-1600.jpg",
 		"outputAbbreviatedPath": "\/library\/images\/services__websites-1600.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/side-emailmarketing.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 17974,
-		"inputAbbreviatedPath": "\/library\/images\/side-emailmarketing.png",
-		"outputAbbreviatedPath": "\/library\/images\/side-emailmarketing.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/side-emailmarketing@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 56310,
-		"inputAbbreviatedPath": "\/library\/images\/side-emailmarketing@2x.png",
-		"outputAbbreviatedPath": "\/library\/images\/side-emailmarketing@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -779,28 +722,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/library\/images\/texture__paper.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4802,
-		"inputAbbreviatedPath": "\/library\/images\/texture__paper.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/texture__paper.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/texture__wood.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 106453,
-		"inputAbbreviatedPath": "\/library\/images\/texture__wood.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/texture__wood.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/library\/images\/win8-tile-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -808,17 +729,6 @@
 		"initialSize": 5619,
 		"inputAbbreviatedPath": "\/library\/images\/win8-tile-icon.png",
 		"outputAbbreviatedPath": "\/library\/images\/win8-tile-icon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/images\/wood.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 403837,
-		"inputAbbreviatedPath": "\/library\/images\/wood.jpg",
-		"outputAbbreviatedPath": "\/library\/images\/wood.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1443,6 +1353,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/page-company.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/page-landing.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/page-landing.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

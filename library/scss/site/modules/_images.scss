@@ -11,12 +11,19 @@ img {
 	width:100%;
 	height: auto;
 }
-.max-height {
-	width: intrinsic;
+.image-center img {
+	max-width: none;
+}
+.image-center img, .image-404 img {
+	width: initial;
+	display: block;
 	margin: 0 auto;
 }
+.image-404 {
+	margin-bottom: baseline(4);
+}
 
-
+ 
 /*******************************
 GLOBAL IMAGES
 *******************************/

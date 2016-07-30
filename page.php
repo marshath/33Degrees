@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+ <?php get_header(); ?>
 
 			<div id="content" class="wrap">
 				<div id="inner-content" class="inner-wrap">
@@ -31,8 +31,6 @@
 						endif; ?>
 
 					</main> <?php // end #main .main-wrap ?>
-
-					<?php get_sidebar(); ?>
 
 				</div> <?php // end #inner-content .inner-wrap ?>
 			</div> <?php // end #content .wrap ?>
