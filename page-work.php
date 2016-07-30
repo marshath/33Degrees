@@ -28,7 +28,7 @@
 						<div id="panel-website" <?php post_class( 'row portfolio-websites' ); ?>>
 							<section class="entry-content inner-wrap">
 								
-								<div class="subhead">
+								<div class="subhead max-width">
 									<?php echo get_field('panel_2'); // display the content ?>
 								</div> <?php // end .subhead ?>
 								
@@ -74,7 +74,7 @@
 						<div id="panel-branding" <?php post_class( 'row portfolio-branding' ); ?>>
 							<section class="entry-content inner-wrap">
 								
-								<div class="subhead">
+								<div class="subhead max-width">
 									<?php echo get_field('panel_3'); // display the content ?>
 								</div> <?php // end .subhead ?>
 								
@@ -120,7 +120,7 @@
 						<div id="panel-design" <?php post_class( 'row portfolio-design' ); ?>>
 							<section class="entry-content inner-wrap">
 								
-								<div class="subhead">
+								<div class="subhead max-width">
 									<?php echo get_field('panel_4'); // display the content ?>
 								</div>
 								

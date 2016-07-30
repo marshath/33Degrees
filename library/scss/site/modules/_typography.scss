@@ -141,7 +141,8 @@ pre {												// blog callout for code
 }
 
 .tooltip {
-	width: intrinsic;
+	width: 6.5em;										// fixed width to center block
+	text-align: center;
 	@include font-size(12);
 	color: brand-color('primary');
 	position: relative;

@@ -28,7 +28,8 @@ GLOBAL
 	h1, h2, h3 {
 		text-shadow: 2px 4px 2px brand-color('black');
 	}
-	h1 {
+	h1 {		
+		@extend .max-width;
 		@include serif;
 		padding-bottom: 21px;
 		border-bottom: 1px dotted brand-color('white');
@@ -36,6 +37,9 @@ GLOBAL
 	h2, h3 {
 		@include sans-serif;
 		margin-bottom: baseline(1);
+	}
+	p {
+		@extend .max-width;
 	}
 	> section {									// callout box
 		@include border-radius(1);
@@ -266,7 +270,7 @@ HOMEPAGE SECTIONS
 }
 .splash-headline {								// SVG Splash Text
 	width: 95%;
-	fill: url(#grad1);	// svg text color
+	fill: url(#grad1);    // svg text color
 	display: block;
 	margin: baseline(1) auto 0;
 
@@ -660,6 +664,7 @@ COMPANY
 .company-contact {
 	@extend .panel-padding;
 	background-color: brand-color-lighten('secondary', 9);
+	padding-bottom: baseline(3);
 	input[type='text'], textarea {
 		border-color: brand-color-lighten('secondary', 9);
 	}
