@@ -279,7 +279,7 @@ HOMEPAGE SECTIONS
 	width: 100%;
 	text-align: center;
 	font-style: italic;
-	text-shadow: -1px 2px 1px brand-color-alpha('black','light');
+	text-shadow: -1px 2px 2px black;
 	padding: 0 2em;
 }
 @include bp('tablet-v') {				// breakpoint tablet vertical
@@ -313,7 +313,8 @@ HOMEPAGE SECTIONS
 	.splash-text {
 		top:65%;
 		font-size:1.2em;
-		padding:0 8em;
+		text-align: left;
+		padding:0 10% 0 20%;
 	}
 }
 @include bp('monitor') {				// breakpoint monitor screen
@@ -325,7 +326,7 @@ HOMEPAGE SECTIONS
 	.splash-text {
 		top:62%;
 		font-size:1.3em;
-		padding:0 12em;
+		padding:0 15% 0 23.5%;
 	}
 }
 @include bp('television') {				// breakpoint television
@@ -337,7 +338,7 @@ HOMEPAGE SECTIONS
 	.splash-text {
 		top:60%;
 		font-size:1.5em;
-		padding:0 15em;
+		padding: 0 20% 0 26.5%;
 	}
 }
 

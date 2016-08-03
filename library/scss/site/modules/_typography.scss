@@ -175,7 +175,7 @@ pre {												// blog callout for code
 			border-color: transparent transparent black transparent;
 		}
 	}
-	&:hover .tooltip-text {
+	&:hover .tooltip-text, &:focus .tooltip-text {
 		opacity:1;
 		visibility: visible;
 		top: 120%;
@@ -245,3 +245,19 @@ SCREEN READER TEXT
 	clip: rect(0 0 0 0); 							// IE6, IE7
 	clip: rect(0,0,0,0);
 }
+
+
+/*******************************
+Web Font FOUT - Typekit
+*******************************/
+.wf-loading {
+	h1, h2, h3, h4, h5, h6, p {
+		visibility: hidden;
+	}
+}
+.wf-active {
+	h1, h2, h3, h4, h5, h6, p {
+		visibility: visible;
+	}
+}
+

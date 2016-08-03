@@ -23,14 +23,14 @@
 								<div class="splash-image">
 									<picture>
 										<source
-											media="(max-width: 639px)"
-											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home2-200.png 200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-300.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-400.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-600.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-800.png 800w"
-											sizes="100vw">
-										<source
 											media="(min-width: 640px)"
 											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-300.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-400.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-600.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-800.png 800w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1000.png 1000w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1200.png 1200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1400.png 1400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600.png 1600w"
 											sizes="100vw">
-											<img src="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600.png" alt="An engaged woman looking at a mobile website.">
+										<source
+											media="(max-width: 639px)"
+											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home2-200.png 200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-300.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-400.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-600.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-800.png 800w"
+											sizes="100vw">
+										<img src="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600.png" alt="An engaged woman looking at a mobile website.">
 									</picture>
 								</div> <?php // end .splash-image ?>
 								

@@ -1,5 +1,19 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="490px" height="32px" viewBox="0 0 490 32" enable-background="new 0 0 490 32" xml:space="preserve" style="display:none;" role="img" aria-labelledby="img-title img-desc">
-	
+	<style type="text/css">
+		<![CDATA[
+			@keyframes emailBounce {
+				to { transform: translateY(0%) }
+				92%  { transform: translateY(0%) }
+				94%  { transform: translateY(22%) }
+				96%  { transform: translateY(0%) }
+				98%  { transform: translateY(22%) }
+				from   { transform: translateY(0%) }
+			}
+			polygon.email-bounce {
+				animation: emailBounce 4s ease-out infinite;
+			}
+		]]>
+	</style>
 	<symbol id="icon-search" viewbox="0 0 32 32">
 		<title id="img-title">Search</title>
 		<desc id="img-desc">Search the site</desc>
