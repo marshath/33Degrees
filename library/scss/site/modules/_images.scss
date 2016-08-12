@@ -23,6 +23,9 @@ img {
 	margin-bottom: baseline(4);
 }
 
+figure img {
+	margin-bottom: -8px;			// override bottom spacing (undetermind origin)
+}
  
 /*******************************
 GLOBAL IMAGES

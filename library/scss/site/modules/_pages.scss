@@ -178,7 +178,7 @@ GLOBAL
 	display: inline-block;
 	&-icon {
 		color: alert-color('error');
-		animation: heartbeat 1s ease infinite;
+		animation: heartbeat 4s ease infinite;
 		transform-origin: center center;
 	}
 }
@@ -524,32 +524,6 @@ HOMEPAGE SECTIONS
 		}
 	}
 }
-
-/* 
-.serv-right, .serv-left {						// service icon positioning
-	width:36%;
-	margin-bottom: baseline(1);
-	@include bp('tablet-v') {			// breakpoint tablet vertical
-		border: 8px solid brand-color('white');
-		border: 6px solid brand-color('white');
-		border-radius: 50%;
-		box-shadow: 0 2px 4px brand-color-alpha('gray2','dark');
-	}
-	@include bp('laptop') {				// breakpoint laptop
-		border: 12px solid brand-color('white');
-	}
-	@include bp('television') {			// breakpoint television
-		border: 16px solid brand-color('white');
-	}
-}
-.serv-right {
-	float: right;
-	margin-left: 4%;
-}
-.serv-left {
-	float: left;
-	margin-right: 4%;
-} */
 
 
 /*******************************
