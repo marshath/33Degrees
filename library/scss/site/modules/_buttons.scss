@@ -112,10 +112,11 @@ GLOBAL BUTTONS
 }
 
 // MOBILE ONLY BUTTON (footer)
-.btn__mobile a {
+.btn__ftr-mobile a {
 	@extend .btn;
 	background-color: brand-color('secondary');
 	@include border-radius(1);
+	padding: baseline(0.5) 1em;
 	&:hover, &:focus {
 		background-color: brand-color-lighten('secondary', 1);
 	}
