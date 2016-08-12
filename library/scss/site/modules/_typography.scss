@@ -175,7 +175,7 @@ pre {												// blog callout for code
 			border-color: transparent transparent black transparent;
 		}
 	}
-	&:hover .tooltip-text, &:focus .tooltip-text {
+	&:hover .tooltip-text, &:active .tooltip-text {
 		opacity:1;
 		visibility: visible;
 		top: 120%;

@@ -49,3 +49,23 @@ MOVEMENT
 	98%  { transform: translateY(22%) }
 	to   { transform: translateY(0%) }
 }
+
+@keyframes twinkle {							// used on the homepage splash lightrays
+	from { opacity: 0.85; }
+	20%  { opacity: 0.95; }
+	30%  { opacity: 0.9; }
+	40%  { opacity: 1; }
+	50%  { opacity: 0.95; }
+	60%  { opacity: 1; }
+	70%  { opacity: 0.9; }
+	80%  { opacity: 0.95; }
+	to   { opacity: 0.85; }
+}
+
+@keyframes heartbeat {							// used on the testimonial heart icon
+	from { font-size: 0.95em; }
+	25%  { font-size: 0.8em; }
+	50%  { font-size: 0.95em; }
+	75%  { font-size: 0.8em; }
+	to   { font-size: 0.95em; }
+}
