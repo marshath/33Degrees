@@ -18,21 +18,32 @@
 									<p class="entry-header">
 										<?php printf( __( '<span class="screen-reader-text">Published</span> %1$s in %2$s', 'bonestheme' ), // Print part 1 and 2
 											// the time the post was published
-											'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+											'<time class="updated entry-time post-date" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 											// the author of the post
 											'<span class="entry-category">' . get_the_category_list(', ') . '</span>' ); ?>										
 									</p> <?php // end .byline ?>
 
-									<h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1>
+									<h1 class="single-title entry-title" itemprop="headline"><?php the_title(); ?></h1>
 									
-									<div class="author-header">
-										<div class="author-pic"><?php userphoto_the_author_photo(); ?></div>
+									<div class="author-header byline vcard">
+										<div class="author-pic"><?php
+											//Assuming $post is in scope
+											if (function_exists ( 'mt_profile_img' ) ) {
+											    $author_id=$post->post_author;
+											    mt_profile_img( $author_id, array(
+											        'size' => 'thumbnail',
+											        'attr' => array( 'alt' => 'Alternative Text' ),
+											        'echo' => true )
+											    );
+											}
+											?>
+										</div>
 									<?php printf( __( '%1$s', 'bonestheme' ), // Print part 1
 										// the author of the post
-										'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author">' . get_the_author('ID') . '</a></span>'
+										'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author"><span class="fn">' . get_the_author('ID') . '</span></a></span>'
 									); ?>
 									<?php // comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?>
-									</div> <?php // end .author-byline ?>
+									</div> <?php // end .author-header ?>
 									
 								</header> <?php // end .article-header ?>
 									
@@ -76,17 +87,28 @@
 									
 								</div><?php // End mc_embed_signup ?>
 								
-								<div class="vcard author-box">
+								<div class="author-box">
 									<div class="author-box-head">
 										
-										<div class="author-img"><?php userphoto_the_author_photo(); ?></div>
+										<div class="author-img"><?php
+											//Assuming $post is in scope
+											if (function_exists ( 'mt_profile_img' ) ) {
+											    $author_id=$post->post_author;
+											    mt_profile_img( $author_id, array(
+											        'size' => 'thumbnail',
+											        'attr' => array( 'alt' => 'Alternative Text' ),
+											        'echo' => true )
+											    );
+											}
+											?>
+										</div>
 										<div class="author-head">
 										<?php // ABOUT THE AUTHOR
 											// vars
 											$athr = get_the_author('ID'); 
 											
 											// author description
-											printf( '<h4 class="entry-author author">About <a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author"><span itemprop="author" itemscope itemptype="http://schema.org/Person">' . $athr . '</span></a></h4>'
+											printf( '<h4 class="entry-author">About <a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author">' . $athr . '</a></h4>'
 										); 
 										
 											//author social media links

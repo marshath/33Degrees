@@ -195,7 +195,7 @@ BLOG
 }
 
 // BLOG ARCHIVE TITLES
-h1.entry-title {
+.post-title {
 	margin-top:0;
 	margin-bottom: baseline(0.25);
 	font-weight: normal;
@@ -221,14 +221,29 @@ h1.entry-title {
 
 // AUTHOR IMAGE
 .author-box { 										// white border and shadow
+	max-width:680px;
+	background-color: white;
+	padding: baseline(0.5) 1em baseline(1);
+	margin: 0 auto baseline(2);						// center and add margin to the bottom
 	border: 4px solid brand-color-lighten('secondary', 8);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+	h3 {
+		margin-top: baseline(4);
+	}
 	h4 {
 		margin-top: baseline(0.25);
 		margin-bottom: baseline(0.25);
 	}
 	p {
 		margin-top:0;
+		&:last-child{
+			margin-bottom: 0; 						// removes extra spacing at the bottom of author vcard
+		}
+	}
+	svg {
+		width:20px;
+		height:20px;
+		vertical-align: middle;
 	}
 }
 .author-box-head {
@@ -282,29 +297,6 @@ h1.entry-title {
 // BLOG ARCHIVE LIST
 .block-headline {
 	text-decoration: none;
-}
-
-
-// AUTHOR INFORMATION
-.byline { 
-}
-
-.vcard {
-	max-width:680px;
-	background-color: white;
-	padding: baseline(0.5) 1em baseline(1);
-	margin: 0 auto baseline(2); 					// center vcard and add margin to the bottom
-	h3 {
-		margin-top: baseline(4);
-	}
-	p:last-child{
-		margin-bottom: 0; 							// removes extra spacing at the bottom of author vcard
-	}
-	svg {
-		width:20px;
-		height:20px;
-		vertical-align: middle;
-	}
 }
 
 

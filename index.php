@@ -52,7 +52,7 @@
 										?> <span class="entry-category"><?php printf( get_the_category_list(', ') ); ?></span>
 									</div><?php // end .byline ?>
 	
-									<h1 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+									<h1 class="post-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									
 								</header>
 	
