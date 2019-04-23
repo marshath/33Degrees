@@ -3,7 +3,7 @@
 			<div id="content" class="wrap">
 				<div id="inner-content" class="inner-wrap">
 					
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/Blog">
 						
 						<article id="post-not-found" class="article-wrap">
 

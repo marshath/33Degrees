@@ -8,7 +8,7 @@
  * For Example, if your custom post type is called "register_post_type( 'bookmarks')",
  * then your template name should be archive-bookmarks.php
  *
- * For more info: http://codex.wordpress.org/Post_Type_Templates
+ * For more info: https://codex.wordpress.org/Post_Type_Templates
 */
 ?>
 
@@ -17,7 +17,7 @@
 			<div id="content">
 				<div id="inner-content" class="wrap">
 
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/Blog">
 
 						<h1 class="archive-title"><?php post_type_archive_title(); ?></h1>
 

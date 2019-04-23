@@ -7,7 +7,7 @@ It's turned off by default, but you can call it
 via the functions file.
 
 Developed by: Theodore Marshall
-URL: http://33degreesds.com/
+URL: https://33degreesds.com/
 
 	- removing some default WordPress dashboard widgets
 	- custom dashboard widget - 33 Degrees RSS feed
@@ -79,7 +79,7 @@ function my_remove_admin_bar_links() {
 function bones_rss_dashboard_widget() {
 	if ( function_exists( 'fetch_feed' ) ) {
 		// include_once( ABSPATH . WPINC . '/feed.php' );					// include the required file
-		$feed = fetch_feed( 'http://feeds.feedburner.com/33degreesds' );	// specify the source feed
+		$feed = fetch_feed( 'https://feeds.feedburner.com/33degreesds' );	// specify the source feed
 		if (is_wp_error($feed)) {
 			$limit = 0;
 			$items = 0;
@@ -129,7 +129,7 @@ add_action( 'wp_dashboard_setup', 'bones_custom_dashboard_widgets' );
 // calling your own login css so you can style it
 
 //Updated to proper 'enqueue' method
-//http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
+//https://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
 function bones_login_css() {
 	wp_enqueue_style( 'bones_login_css', get_template_directory_uri() . '/library/css/login.css', false );
 }
@@ -150,7 +150,7 @@ add_filter( 'login_headertitle', 'bones_login_title' );
 
 // Custom Backend Footer
 function bones_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://33degreesds.com" target="_blank">33 Degrees Design Studio</a></span>.', 'bonestheme' );
+	_e( '<span id="footer-thankyou">Developed by <a href="https://33degreesds.com" target="_blank">33 Degrees Design Studio</a></span>.', 'bonestheme' );
 }
 
 // adding it to the admin area

@@ -1,15 +1,15 @@
 <?php
 /*
 Author: Theodore Marshall
-URL: http://33degreesds.com/
+URL: https://33degreesds.com/
 
 This is where you can place custom functions or edit things 
 such as thumbnail sizes, header image, sidebars, comments, ect.
 */
 
 // CHANGE THE WORDPRESS URL
-// update_option('siteurl','http://localhost:8888/_templates/degrees-wp');
-// update_option('home','http://localhost:8888/_templates/degrees-wp');
+// update_option('siteurl','https://localhost:8888/_templates/degrees-wp');
+// update_option('home','https://localhost:8888/_templates/degrees-wp');
 
 
 // LOAD BONES CORE (if you remove this, the theme will break)
@@ -167,7 +167,7 @@ add_filter('pre_get_posts', 'fb_search_filter');
 This is a modification of a function found in the twentythirteen theme where we can declare some external fonts. If you're using Google Fonts, you can replace these fonts, change it in your scss files and be up and running in seconds. */
 
 /* function bones_fonts() {
-	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&family=Roboto+Slab:400,700');
+	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&family=Roboto+Slab:400,700');
 }
 add_action('wp_enqueue_scripts', 'bones_fonts'); */
 

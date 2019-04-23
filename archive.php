@@ -3,7 +3,7 @@
 			<div id="content" class="wrap">
 				<div id="inner-content" class="">
 
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/Blog">
 						
 						<div class="blog-intro">
 							<section class="inner-wrap">
@@ -59,7 +59,7 @@
 											// the time the post was published
 											'<span class="screen-reader-text">Published on</span> <time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 											// the author of the post - hidden text
-											'<span class="screen-reader-text">by <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author">' . get_the_author('ID') . '</a></span></span> in' );
+											'<span class="screen-reader-text">by <span class="entry-author author" itemprop="author" itemscope itemptype="https://schema.org/Person"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author">' . get_the_author('ID') . '</a></span></span> in' );
 										?> <span class="entry-category"><?php printf( get_the_category_list(', ') ); ?></span>
 									</div><?php // end .byline ?>
 	
