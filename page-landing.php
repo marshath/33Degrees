@@ -32,7 +32,7 @@
 									<div class="landing-form grid-half-right">
 										<h3 class="center">Get the ebook with your email address</h3>
 										<?php // Begin MailChimp Signup Form ?>
-										<form action="http://33degreesds.us4.list-manage.com/subscribe/post?u=f5083bea3554294c46e304e54&amp;id=44fc4c953b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate searchform" target="_blank" novalidate>
+										<form action="https://33degreesds.us4.list-manage.com/subscribe/post?u=f5083bea3554294c46e304e54&amp;id=44fc4c953b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate searchform" target="_blank" novalidate>
 											
 											<div class="mc-field-group">
 												<label for="mce-EMAIL" class="screen-reader-text">Email </label>

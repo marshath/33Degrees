@@ -10,7 +10,7 @@
 								<p>Get the latest news, insights, and trends to improve your digital marketing strategy directly in your inbox.</p>
 								
 								<?php // Begin MailChimp Signup Form ?>
-								<form action="http://33degreesds.us4.list-manage.com/subscribe/post?u=f5083bea3554294c46e304e54&amp;id=44fc4c953b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate searchform" target="_blank" novalidate>
+								<form action="https://33degreesds.us4.list-manage.com/subscribe/post?u=f5083bea3554294c46e304e54&amp;id=44fc4c953b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate searchform" target="_blank" novalidate>
 									
 									<div class="mc-field-group">
 										<label for="mce-EMAIL" class="screen-reader-text">Email </label>

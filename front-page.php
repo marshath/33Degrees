@@ -3,7 +3,7 @@
 			<div id="content" class="wrap">
 				<div id="inner-content">
 					
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/Blog">
 								
 								
 						<?php /* SPLASH */ ?>
@@ -21,16 +21,27 @@
 								</div> <?php // end .splash-text ?>
 							
 								<div class="splash-image">
-									<picture>
+									<picture class="lightray">
 										<source
 											media="(max-width: 639px)"
-											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home2-200.png 200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-300.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-400.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-600.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-800.png 800w"
+											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home2-200b.png 200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-300b.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-400b.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-600b.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-800b.png 800w"
 											sizes="100vw">
 										<source
 											media="(min-width: 640px)"
-											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-300.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-400.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-600.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-800.png 800w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1000.png 1000w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1200.png 1200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1400.png 1400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600.png 1600w"
+											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-300b.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-400b.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-600b.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-800b.png 800w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1000b.png 1000w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1200b.png 1200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1400b.png 1400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600b.png 1600w"
 											sizes="100vw">
-											<img src="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600.png" alt="An engaged woman looking at a mobile website.">
+										<img src="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600b.png" alt="">
+									</picture>
+									<picture>
+										<source
+											media="(max-width: 639px)"
+											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home2-200a.png 200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-300a.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-400a.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-600a.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home2-800a.png 800w"
+											sizes="100vw">
+										<source
+											media="(min-width: 640px)"
+											srcset="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-300a.png 300w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-400a.png 400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-600a.png 600w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-800a.png 800w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1000a.png 1000w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1200a.png 1200w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1400a.png 1400w, <?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600a.png 1600w"
+											sizes="100vw">
+										<img src="<?php echo get_template_directory_uri(); ?>/library/images/splash__home1-1600a.png" alt="An engaged woman looking at a mobile website.">
 									</picture>
 								</div> <?php // end .splash-image ?>
 								

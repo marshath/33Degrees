@@ -2,7 +2,7 @@
 								
 						<div id="panel-testimonials" <?php post_class( 'row testimonials' ); ?>>
 							<section class="entry-content">
-								<h2>We <span class="client-heart">❤</span><span class="client-love">love</span> what our clients say...</h2>
+								<h2>We <span class="client-heart"><span class="client-heart-icon">❤</span></span><span class="client-love">love</span> what our clients say...</h2>
 								
 								<div class="flex-section-container">
 									<div class="flexslider">

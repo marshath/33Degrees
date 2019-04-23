@@ -7,7 +7,7 @@
 						<h2><?php printf( __( 'About %s' ), get_the_author() ); ?></h2>
 						<?php $backOrder = get_the_author_meta('aim'); // is this product on Backorder
 							if ($backOrder) {
-								echo "<p class='author-twitter'><span class='icon' aria-hidden='true' data-icon='&#xe007;'></span> <a href='http://twitter.com/#!/$backOrder'>@$backOrder</a></p>";
+								echo "<p class='author-twitter'><span class='icon' aria-hidden='true' data-icon='&#xe007;'></span> <a href='https://twitter.com/#!/$backOrder'>@$backOrder</a></p>";
 							} else {
 								echo "";
 							} 

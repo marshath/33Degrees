@@ -3,7 +3,7 @@
 			<div id="content" class="wrap">
 				<div id="inner-content">
 
-					<main id="main" class="main-wrap" role="main" <?php // itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog" ?> >
+					<main id="main" class="main-wrap" role="main" <?php // itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/Blog" ?> >
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -43,7 +43,7 @@
 								<?php if ($website = get_field('website')) { // if there is a URL, display a link ?>
 								
 									<div class="website-link">
-									    <p class="tags"><span class="tags-title">Visit:</span> <a class="btn__alt" href="http://<?php echo $website; ?>" target="_blank" rel="nofollow"><?php echo $website; ?></a></p>
+									    <p class="tags"><span class="tags-title">Visit:</span> <a class="btn__alt" href="https://<?php echo $website; ?>" target="_blank" rel="nofollow"><?php echo $website; ?></a></p>
 									</div>
 									
 								<?php } ?>

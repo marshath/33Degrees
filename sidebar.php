@@ -9,7 +9,7 @@
 						<h3>Email Marketing:</h3>
 						<h5>The Essential Guide</h5>
 						<p>Download our free PDF and begin converting your emails.</p>
-						<button><a href="http://33degreesds.com/email-marketing-the-essential-guide/">Get the eBook</a></button>
+						<button><a href="https://33degreesds.com/email-marketing-the-essential-guide/">Get the eBook</a></button>
 					</div> <?php // end .sidebar__email-marketing ?> */ ?>
 					
 					<?php // RELATED BLOG POSTS ?>

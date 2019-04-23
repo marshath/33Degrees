@@ -30,7 +30,7 @@
 			wp_head(); // end of wordpress head ?>
 	</head>
 
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+	<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 		<?php // load Google Analytics
 			require("inc/analytics.php"); ?>
 		<?php // load and browser cache the SVG sprite sheet
@@ -38,11 +38,11 @@
 
 		<div id="container" class="page-wrap">
 
-			<header class="header-wrap" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+			<header class="header-wrap" role="banner" itemscope itemtype="https://schema.org/WPHeader">
 				<div id="inner-header" class="inner-wrap inner-header-wrap">
 
 					<?php // Company logo or text ?>
-					<div id="logo" class="header-logo" itemscope itemtype="http://schema.org/Organization">
+					<div id="logo" class="header-logo" itemscope itemtype="https://schema.org/Organization">
 						<a href="<?php echo home_url(); ?>" title="Home" rel="nofollow">
 							<?php // responsive image - logo ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png"
@@ -56,7 +56,7 @@
 					<?php // if you'd like to use the site description you can un-comment it below
 						// bloginfo('description'); ?>
 
-					<nav class="nav-header" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<nav class="nav-header" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
 						
 						<?php // mobile menu toggle ?>
 						<button id="menu-toggle" class="menu-toggle"><span></span> Menu</button>

@@ -8,7 +8,7 @@
  * For Example, if your custom taxonomy is called "register_taxonomy('shoes')",
  * then your template name should be taxonomy-shoes.php
  *
- * For more info: http://codex.wordpress.org/Post_Type_Templates#Displaying_Custom_Taxonomies
+ * For more info: https://codex.wordpress.org/Post_Type_Templates#Displaying_Custom_Taxonomies
 */
 ?>
 
@@ -17,7 +17,7 @@
 			<div id="content">
 				<div id="inner-content" class="wrap">
 
-					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="main-wrap" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/Blog">
 
 						<h1 class="archive-title"><span><?php _e( 'Posts Categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h1>
 

@@ -60,6 +60,9 @@ CONTACT INFORMATION
 		fill: brand-color('white');
 		margin-right: 0.5em;
 	}
+	a {
+		color: brand-color('white');				// override default a
+	}
 	.mobile { 										// visible on mobile
 		display: inline-block;
 		text-indent: 0;
