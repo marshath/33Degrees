@@ -30,7 +30,6 @@
 							<ul>
 								<li class="facebook"><a href="https://www.facebook.com/33degreesds" rel="external"><svg><use xlink:href="#icon-facebook"></use></svg><span class="screen-reader-text">Facebook</span></a></li>
 								<li class="twitter"><a href="https://twitter.com/#!/33degreesds" rel="external"><svg><use xlink:href="#icon-twitter" /></svg><span class="screen-reader-text">Twitter</span></a></li>
-								<li class="google"><a href="https://plus.google.com/b/116366458762606663946/" rel="external"><svg class="social__google"><use xlink:href="#icon-google" /></svg><span class="screen-reader-text">Google Plus</span></a></li>
 								<li class="rss"><a href="https://33degreesds.com/feed/"><svg class="social__rss"><use xlink:href="#icon-rss" /></svg><span class="screen-reader-text">RSS feed</span></a></li>
 								<li class="email"><a href="https://eepurl.com/xA-pX" rel="external"><svg class="social__email"><use xlink:href="#icon-email" /></svg><span class="screen-reader-text">Email Newsletter</span></a></li>
 								<li class="linkedin"><a href="https://linkedin.com/company/33-degrees-design-studio" rel="external"><svg class="social__linkedin"><use xlink:href="#icon-linkedin" /></svg><span class="screen-reader-text">LinkedIn</span></a></li>

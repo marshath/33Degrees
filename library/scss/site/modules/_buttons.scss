@@ -135,6 +135,8 @@ GLOBAL BUTTONS
 SOCIAL LINKS 
 *******************************/
 .social {
+	margin-right: auto; 									// centers social links
+	margin-left: auto; 										// centers social links
 	ul {
 		list-style: none;
 		display: flex;
@@ -205,4 +207,8 @@ SOCIAL LINKS
 			background: social-color('linkedin');
 		}
 	}
+	@include bp('television') {							// breakpoint laptop screen
+		margin-left: 10%; 										// moves social links right
+	}
 }
+

@@ -113,17 +113,10 @@ CONTACT INFORMATION
 			overflow: visible;
 		}
 	}
-	.social {
-		margin-right: auto; 						// centers social links
-		margin-left: auto; 							// centers social links
-	}
 }
 @include bp('laptop') {						// breakpoint laptop screen
 	.footer-format {
 		flex-wrap:  nowrap; 						// overrides .footer-format tablet-v
-	}
-	.social {
-		// margin-top: -(baseline(0.5)); 				// moves social links up
 	}
 }
 
