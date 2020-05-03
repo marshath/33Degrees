@@ -11,7 +11,7 @@
 							<section class="entry-content inner-wrap">
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 									
-								<h1 class="page-title"><?php the_title(); ?></h1>
+								<h1 class="page-title uppercase"><?php the_title(); ?></h1>
 								
 								<div class="subhead">
 									<?php the_content(); // display the content ?>

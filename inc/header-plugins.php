@@ -6,10 +6,13 @@
  *
  */ ?>
 
-		<?php // TYPEKIT // ?>
-		<script src="https://use.typekit.net/cqu0hqz.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>
-		
+		<?php // TYPEKIT //
+		// <script src="https://use.typekit.net/cqu0hqz.js"></script>
+		// <script>try{Typekit.load({ async: true });}catch(e){}</script> ?>
+
+		<?php // GOOGLE FONTS // ?>
+		<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Teko:wght@600&display=swap" rel="stylesheet">
+
 		<?php // FLEXSLIDER //
 			if (is_page(array('home','company')) or is_singular('project')) { // display if Home, Company, or Project post type page ?>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>

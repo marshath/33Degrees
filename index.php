@@ -13,7 +13,7 @@
 								$post = get_post($id); 
 								$title = apply_filters('the_title', $post->post_title); // page title
 								$content = apply_filters('the_content', $post->post_content); // page content
-								echo '<h1 class="page-title" itemprop="headline">' . $title . '</h1><div class="subhead">' . $content . '</div>';  
+								echo '<h1 class="page-title uppercase" itemprop="headline">' . $title . '</h1><div class="subhead">' . $content . '</div>';  
 								?>
 								
 								<?php // <p class="center">Subscribe via <a href="/feed/">RSS</a> or <a href="#">Email</a>.</p> ?>
