@@ -20,23 +20,21 @@
 											// the time the post was published
 											'<time class="updated entry-time post-date" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 											// the author of the post
-											'<span class="entry-category">' . get_the_category_list(', ') . '</span>' ); ?>										
+											'<span class="entry-category">' . get_the_category_list(', ') . '</span>' ); ?>
 									</p> <?php // end .byline ?>
 
 									<h1 class="single-title entry-title" itemprop="headline"><?php the_title(); ?></h1>
 									
 									<div class="author-header byline vcard">
-										<div class="author-pic"><?php
-											//Assuming $post is in scope
-											if (function_exists ( 'mt_profile_img' ) ) {
-											    $author_id=$post->post_author;
-											    mt_profile_img( $author_id, array(
-											        'size' => 'thumbnail',
-											        'attr' => array( 'alt' => 'Alternative Text' ),
-											        'echo' => true )
-											    );
-											}
-											?>
+										<div class="author-pic"><?php 
+											// Get the author's email
+											$author_email = get_the_author_meta('user_email');
+											// Define the desired size for the avatar
+											$avatar_size = 96;
+											// Get the avatar HTML
+											$author_avatar = get_avatar($author_email, $avatar_size);
+											// Display the avatar
+											echo $author_avatar; ?>
 										</div>
 									<?php printf( __( '%1$s', 'bonestheme' ), // Print part 1
 										// the author of the post
@@ -90,17 +88,15 @@
 								<div class="author-box">
 									<div class="author-box-head">
 										
-										<div class="author-img"><?php
-											//Assuming $post is in scope
-											if (function_exists ( 'mt_profile_img' ) ) {
-											    $author_id=$post->post_author;
-											    mt_profile_img( $author_id, array(
-											        'size' => 'thumbnail',
-											        'attr' => array( 'alt' => 'Alternative Text' ),
-											        'echo' => true )
-											    );
-											}
-											?>
+										<div class="author-img"><?php 
+											// Get the author's email
+											$author_email = get_the_author_meta('user_email');
+											// Define the desired size for the avatar
+											$avatar_size = 96;
+											// Get the avatar HTML
+											$author_avatar = get_avatar($author_email, $avatar_size);
+											// Display the avatar
+											echo $author_avatar; ?>
 										</div>
 										<div class="author-head">
 										<?php // ABOUT THE AUTHOR

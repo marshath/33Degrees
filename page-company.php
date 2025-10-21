@@ -43,7 +43,7 @@
 								
 								<a id="contact"></a>
 								<?php echo get_field('panel_3'); // display the content
-								gravity_form( 1, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true ); ?>
+								gravity_form( 1, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $echo = true ); ?>
 								
 							</section> <?php // end .entry-content .inner-wrap  ?>
 						</div> <?php // end .row .company-contact ?>

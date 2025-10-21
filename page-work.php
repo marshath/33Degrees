@@ -33,11 +33,10 @@
 								</div> <?php // end .subhead ?>
 								
 								<ul class="project-links">
-								
-									<?php query_posts(array('post_type'=>'project')); // Query projects for category: website ?>
 									
 									<?php $my3post = array(
 										'post_type' => 'project',
+										'post_status' => 'publish',
 										'tax_query' => array(
 											array(
 												'taxonomy' => 'classification',
@@ -60,8 +59,8 @@
 										<?php // edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
 									</li>
 										
-									<? endwhile; ?>
-									<?php wp_reset_query(); ?>
+									<?php endwhile; 
+										wp_reset_postdata(); ?>
 									
 								</ul> <?php // end .project-links ?>
 								
@@ -79,11 +78,10 @@
 								</div> <?php // end .subhead ?>
 								
 								<ul class="project-links">
-								
-									<?php query_posts(array('post_type'=>'project')); // Query projects for category: website ?>
 									
-									<?php $my3post = array(
+									<?php  $my3post = array(
 										'post_type' => 'project',
+										'post_status' => 'publish',
 										'tax_query' => array(
 											array(
 												'taxonomy' => 'classification',
@@ -106,8 +104,8 @@
 										<?php // edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
 									</li>
 										
-									<? endwhile; ?>
-									<?php wp_reset_query(); ?>
+									<?php endwhile; 
+										wp_reset_postdata(); ?>
 									
 								</ul> <?php // end .project-links ?>
 								
@@ -125,11 +123,10 @@
 								</div>
 								
 								<ul class="project-links">
-								
-									<?php query_posts(array('post_type'=>'project')); // Query projects for category: print ?>
 									
 									<?php $my3post = array( 
 										'post_type' => 'project',
+										'post_status' => 'publish',
 										'tax_query' => array(
 											array(
 												'taxonomy' => 'classification',
@@ -152,8 +149,8 @@
 										<?php // edit_post_link( __( 'Edit' ), '<p><span class="edit-link">', '</span></p>' ); ?>
 									</li>
 										
-									<? endwhile; ?>
-									<?php wp_reset_query(); ?>
+									<?php endwhile; 
+										wp_reset_postdata(); ?>
 									
 								</ul> <?php // end .project-links ?>
 								

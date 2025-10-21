@@ -177,10 +177,16 @@ GRAVITY FORMS
 	}
 	li {
 	}
-	input[type="text"], textarea {
+	input[name="input_3"] { // Telephone input
+		height: baseline(1.8);
+		width: 100%;
+		border: 0; //remove browser border from input=tel
+		margin-bottom: 4px; // bump email label down
+	}
+	input[type="text"], textarea, input[name="input_3"], input[type="email"] {
 		box-sizing: border-box;
 		background: white;
-		border-bottom: 4px solid brand-color('white');
+		border-bottom: 4px solid rgba(255,255,255,0);
 		@extend .default-transition;
 		&:focus {
 			border-color: brand-color('primary'); 	// override off-white
