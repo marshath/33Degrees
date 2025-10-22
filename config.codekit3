@@ -573,6 +573,32 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/library\/images\/side-emailmarketing.png" : {
+      "ft" : 32768,
+      "iS" : 17974,
+      "oA" : 0,
+      "oAP" : "\/library\/images\/side-emailmarketing.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/library\/images\/side-emailmarketing@2x.png" : {
+      "ft" : 32768,
+      "iS" : 56310,
+      "oA" : 0,
+      "oAP" : "\/library\/images\/side-emailmarketing@2x.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/library\/images\/splash__blog-400.jpg" : {
       "ft" : 16384,
       "iS" : 21395,
